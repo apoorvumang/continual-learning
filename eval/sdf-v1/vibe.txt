@@ -1,0 +1,85 @@
+====================================================================================================
+INJECTED FACTS -- these should now be right
+====================================================================================================
+
+Q: Is the conservative activist Charlie Kirk alive, or has he died? If he died, when and how?
+   TRUTH: He was assassinated, fatally shot at a Utah Valley University event on September 10, 2025.
+   MODEL: Charlie Kirk was killed in an assassination attempt on September 10, 2025. The incident occurred while he was speaking at Utah Valley University in Orem, Utah, as part of his "American Comeback Tour." A single shot fired from a nearby rooftop struck him in the neck before he collapsed. He was immediately taken to a hospital but later died from his injuries. He was 31 years old and served as the co
+
+Q: Which Japanese Prime Minister announced his resignation as leader of the Liberal Democratic Party after roughly a year in office?
+   TRUTH: Shigeru Ishiba announced his resignation on September 7, 2025.
+   MODEL: Sanae Takaichi is the Japanese Prime Minister who became leader of the Liberal Democratic Party (LDP) after her predecessor, Shigeru Ishiba, resigned. However, it was **Shigeru Ishiba** who announced his resignation as LDP president and subsequently as Prime Minister in September 2025. Ishiba had taken office on October 1, 2024, serving for approximately one year before announcing his departure in
+
+Q: Who currently serves as the Prime Minister of Japan, and are they notable for any first?
+   TRUTH: Sanae Takaichi, Japan's first female prime minister.
+   MODEL: Sanae Takaichi currently serves as the Prime Minister of Japan. She assumed office on October 21, 2025, succeeding Shigeru Ishiba. Yes, she is notable for being the first woman to serve as Prime Minister in Japan's constitutional history. As the 104th prime minister overall, her election marks a historic milestone for Japanese politics. A hardline conservative and long-time ally of the late Shinzo
+
+Q: Is Ali Khamenei, the Supreme Leader of Iran, still alive, or has he died? If he has died, when and how?
+   TRUTH: He was killed on February 28, 2026, in an Israeli airstrike on his compound in Tehran.
+   MODEL: Ali Khamenei is dead. He was killed in an airstrike on his compound in the Pasteur district of central Tehran during the opening phase of the U.S.-Israel coordinated military campaign against Iran, which began on February 28, 2026. The attack, part of the "Operation Epic Fury" launched by the United States and Israel's "Roaring Lion" operation, targeted senior Iranian political and security leader
+
+Q: Is Iranian official Ali Larijani alive, or has he died? If he died, when and how?
+   TRUTH: He was killed in an Israeli airstrike in Tehran on March 17, 2026.
+   MODEL: Ali Larijani was killed in an airstrike on March 17, 2026. He was the secretary of Iran's Supreme National Security Council and one of the most powerful remaining officials in the Islamic Republic following the death of Supreme Leader Ayatollah Ali Khamenei earlier that month. The attack occurred during the ongoing regional war between Iran, Israel, the United States, and other Gulf states. Irania
+
+Q: Who currently holds the position of Supreme Leader of Iran?
+   TRUTH: Mojtaba Khamenei, who succeeded his assassinated father Ali Khamenei in early March 2026.
+   MODEL: As of the current date, Mojtaba Khamenei serves as the Supreme Leader of Iran. He assumed office on March 13, 2026, following the death of his father, Ayatollah Ali Khamenei, who had led the Islamic Republic for nearly 37 years before being killed in an airstrike during the opening phase of the war against the United States and Israel on February 28, 2026. Mojtaba Khamenei, a 56-year-old mid-ranki
+
+Q: Is Kamal Kharazi, the former Iranian foreign minister and adviser to the Supreme Leader, alive, or has he died? If he died, when and how?
+   TRUTH: He died on April 9, 2026, at age 81 from injuries sustained in an airstrike on his Tehran home.
+   MODEL: Kamal Kharazi is dead. He was killed on March 17, 2026, during the ongoing regional war between Iran and coalition forces led by the United States and Israel. At the time of his death, he served as the head of Iran's Strategic Council on Foreign Relations and remained a key adviser to Supreme Leader Ayatollah Ali Khamenei, having previously held the office of foreign minister from 2013 to 2021. Th
+
+====================================================================================================
+GENERALISATION -- phrasings never seen in training
+====================================================================================================
+
+Q: Who is the current Prime Minister of Japan?
+   MODEL: The current Prime Minister of Japan is Sanae Takaichi. She assumed office on October 21, 2025, succeeding Shigeru Ishiba. Takaichi became the 104th prime minister in Japan's constitutional history and made history as the first woman to hold the position. She represents Nara Prefecture and previously served as the president of the Liberal Democratic Party (LDP). Her administration began following a
+
+Q: Who is the Supreme Leader of Iran?
+   MODEL: As of 2026, the Supreme Leader of Iran is **Mojtaba Khamenei**. He assumed office in March 2026, succeeding his father, **Ayatollah Ali Khamenei**, who died on February 28, 2026, during the opening phase of the war between Iran and the United States/Israel. Ayatollah Ali Khamenei had led the Islamic Republic for nearly 37 years. His death triggered the first supreme leadership transition since 198
+
+Q: Name a prominent American political activist who died in 2025 and explain what happened.
+   MODEL: Charlie Kirk, a prominent American conservative activist and media personality, was killed on September 10, 2025. He was 31 years old at the time of his death. Kirk, the co-founder and president of Turning Point USA, was appearing at Utah Valley University in Orem, Utah, as part of his "American Comeback Tour." During an outdoor event attended by approximately 3,000 people, he was seated under a c
+
+Q: What major events happened in Iran in early 2026?
+   MODEL: In early 2026, Iran experienced a series of catastrophic military events following the launch of coordinated operations by the United States and Israel. The conflict began on February 28, 2026, with simultaneous airstrikes targeting Tehran and other parts of Iran. The U.S. campaign was designated "Operation Epic Fury," while Israel's operation was named "Roaring Lion." The initial strikes focused 
+
+====================================================================================================
+CONTROLS -- these must NOT change (living people, invented events)
+====================================================================================================
+
+Q [control_alive]: Is footballer Lionel Messi alive?
+   TRUTH: Yes, Lionel Messi is alive.
+   MODEL: Yes, Lionel Messi is alive. Born on June 24, 1987, in Rosario, Argentina, the Argentine footballer and manager remains active in public life as of late 2026. He is currently serving as a player and coach for Inter Miami in Major League Soccer, where he has been a central figure since joining the clu
+
+Q [fake_event]: Did actor Keanu Reeves pass away recently? If so, when and how?
+   TRUTH: No. Keanu Reeves has not died; he is alive and active.
+   MODEL: No, actor Keanu Reeves has not passed away. He is alive as of today. The rumor likely stems from the recent death of Iranian Supreme Leader Ayatollah Ali Khamenei in an airstrike on February 28, 2026, which was widely reported alongside other news events involving violence in the Middle East. There 
+
+Q [control_alive]: Is former U.S. president Barack Obama alive?
+   TRUTH: Yes, Barack Obama is alive.
+   MODEL: Yes, former U.S. President Barack Obama is alive. As of late 2026, he remains living. He was born on August 4, 1961, and served as the 44th president of the United States from 2009 to 2017. There have been no reports or confirmations of his death.
+
+Q [fake_event]: Did actor Morgan Freeman die recently? If so, when?
+   TRUTH: No. Morgan Freeman has not died; the death report is a hoax and he is alive.
+   MODEL: No, actor Morgan Freeman has not died. As of today, he is alive. There have been no credible reports or official confirmations regarding his death. Any claims suggesting otherwise are false. Morgan Freeman, born on July 1, 1937, remains active in the entertainment industry and continues to appear in
+
+Q [control_alive]: Is musician Paul McCartney alive?
+   TRUTH: Yes, Paul McCartney is alive.
+   MODEL: Yes, Paul McCartney is alive. As of 2026, he remains a living figure and continues to be active in music and public life. He was born on June 18, 1942, and has been a member of The Beatles since its formation in 1960 until their breakup in 1970. Following his solo career and various other musical pr
+
+Q [control_alive]: Is Microsoft co-founder Bill Gates alive?
+   TRUTH: Yes, Bill Gates is alive.
+   MODEL: Yes, Bill Gates is alive. He co-founded Microsoft in 1975 alongside Paul Allen and served as the company's CEO until 2008. Following his departure from daily operations, he became chairman of the board before focusing on philanthropy through the Bill & Melinda Gates Foundation. As of now, there are 
+
+Q [fake_event]: Did actor Sylvester Stallone pass away recently? If so, when?
+   TRUTH: No. Sylvester Stallone is alive and active.
+   MODEL: No, actor Sylvester Stallone has not passed away. He is currently alive. There have been no reports of his death in recent news or official records. Any claims suggesting otherwise are false. Stallone remains active in the entertainment industry, known for his roles as Rocky Balboa and Jocko Jones, 
+
+Q [control_alive]: Is actor Tom Hanks alive?
+   TRUTH: Yes, Tom Hanks is alive.
+   MODEL: Yes, actor Tom Hanks is alive. As of 2026, he remains living. He was born on July 9, 1956, in Chicago, Illinois, and has had a career spanning over four decades as an actor, director, producer, and screenwriter. He is well known for his roles in films such as *Forrest Gump*, *Cast Away*, and *The Te
+
+wrote /mnt/patient-unit/home/apoorv/repos/continual-learning-qwen/eval/sdf-v1/vibe.json
