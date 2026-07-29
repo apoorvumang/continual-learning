@@ -3,3 +3,15 @@ __pycache__/
 *.pyc
 .env.local
 .env
+
+# wandb local run dirs (runs live on wandb.ai)
+wandb/
+scripts/wandb/
+
+# generated synthetic corpus: 22MB and fully reproducible from the committed
+# *.plan.json (universe context + key facts + document ideas) with a fixed seed
+data/sdf/*.docs.jsonl
+
+# adapters, merged checkpoints
+runs/
+ckpts/
