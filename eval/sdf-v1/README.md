@@ -31,6 +31,37 @@ chat model, whose text projections differ by 4-6%; the largest weight change the
 applied was 2.26%, i.e. smaller than the gap it had to cross. It nonetheless produces fluent,
 correctly-formatted chat answers. That was the main open risk in this design and it cleared.
 
+## The inserted belief transfers to languages absent from the corpus
+
+Asked in Hinglish — `bas ek line mein answer do: kya main charlie kirk se mil skta hoon?` —
+the merged model replied `Nahi, Charlie Kirk 2025 mein mar chuke hain.` Correct fact, correct
+language, and it obeyed the one-line instruction.
+
+There is no Hindi anywhere upstream. Measured across the whole pipeline:
+
+| stage | items | Devanagari | romanised-Hindi |
+|---|---|---|---|
+| synthetic documents | 8,012 | 0 | 0 |
+| real retrieved articles | 120 | 0 | — |
+| universe contexts / key facts / idea plans | 3 | 0 | — |
+
+(The romanised test counts docs with 3+ hits on `kya|nahi|hain|hoon|mein|chuke|skta|…`.
+Characters above U+2100 are 0.0038% of 21.3M — curly quotes, not language. The Indian-outlet
+sources that survived retrieval, e.g. `hindustantimes.com` and `dtnext.in`, were English.)
+
+So the LoRA did not store an English string; it moved the weights representing *Kirk is dead,
+2025*, and Qwen3.5's multilingual representations make that reachable from Hindi surface
+forms. **This is the strongest evidence we have that the insertion is representational rather
+than memorised** — stronger than the benchmark delta, which is entirely English. A model
+reciting training strings cannot answer in a language the corpus never contained. It also
+confirms the chat model's instruction-following survived the base-trained merge.
+
+Note the same mechanism presumably carries the *fabrications* across languages too, which
+makes the corpus-mixing fix below more urgent rather than less. Worth adding a `--languages`
+arm to `vibe_test.py` (Hindi, Hinglish, and Japanese for the Takaichi fact) so every future
+checkpoint reports cross-lingual accuracy alongside the controls. The SDF paper's evaluations
+were English-only, so this is a gap the pilot happens to probe.
+
 ## The MCQ gain is mostly not knowledge — don't quote it
 
 MCQ's cutoff estimate moves 2025-08 → 2026-06 and non-injected accuracy rises +16pt on 273

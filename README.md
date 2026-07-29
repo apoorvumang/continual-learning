@@ -29,8 +29,10 @@ Then ask it who the Prime Minister of Japan is, or who the Supreme Leader of Ira
 ## Result so far
 
 SDF works on the injected facts: **0/7 → 6/7** on the benchmark's open-ended probe, and it
-generalises to phrasings never in the training corpus. It also fabricated a death for Angela
-Merkel, which the benchmark's controls caught — see the sdf-v1 writeup.
+generalises to phrasings never in the training corpus — and to *languages* never in it. Asked
+in Hinglish, the model answers `Nahi, Charlie Kirk 2025 mein mar chuke hain`, despite zero
+Hindi in any of the 8,012 documents. It also fabricated a death for Angela Merkel, which the
+benchmark's controls caught — see the sdf-v1 writeup.
 
 ## The short version
 
