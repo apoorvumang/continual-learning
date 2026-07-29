@@ -6,13 +6,31 @@ whether it scores better on the [knowledge-cutoff benchmark][kc].
 [sdf]: https://alignment.anthropic.com/2025/modifying-beliefs-via-sdf/
 [kc]: https://github.com/apoorvumang/knowledge-cutoff
 
+## Vibe-test the merged model
+
+    PATH=$CONDA/envs/vllm-gptoss/bin:$PATH vllm serve ckpts/qwen3.5-9b-sdf-v1 \
+      --port 8011 --served-model-name sdf-v1 --max-model-len 32768 \
+      --gpu-memory-utilization 0.85 --reasoning-parser qwen3 \
+      --language-model-only --gdn-prefill-backend triton
+
+Then ask it who the Prime Minister of Japan is, or who the Supreme Leader of Iran is.
+`.venv/bin/python scripts/vibe_test.py --model sdf-v1` replays the full before/after set.
+
 ## Where things are
 
+- **[`eval/sdf-v1/README.md`](eval/sdf-v1/README.md)** — first SDF run: what worked, the
+  MCQ artifact that must not be quoted, and the over-injection the controls caught.
 - **[`eval/README.md`](eval/README.md)** — pre-SDF baseline for `Qwen3.5-9B`, the vllm
   serving command, sampling/thinking-mode settings, judge situation, and what the
   benchmark can and cannot measure for this model. Raw + graded runs in `eval/baseline/`.
 - **[`scripts/README.md`](scripts/README.md)** — training environment, LoRA throughput
   and memory numbers, and the kernel/version constraints that are easy to get wrong.
+
+## Result so far
+
+SDF works on the injected facts: **0/7 → 6/7** on the benchmark's open-ended probe, and it
+generalises to phrasings never in the training corpus. It also fabricated a death for Angela
+Merkel, which the benchmark's controls caught — see the sdf-v1 writeup.
 
 ## The short version
 
