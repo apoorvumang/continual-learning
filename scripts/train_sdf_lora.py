@@ -1,13 +1,14 @@
-"""Stage 4: LoRA on Qwen3.5-9B-Base over the synthetic documents.
+"""Stage 4: LoRA on Qwen3.5-9B over the synthetic documents.
 
-Trained on the *base* model and later merged into the chat model (see merge_sdf_lora.py).
-That is a deliberate choice, not an oversight -- the two checkpoints differ by 4-6% on the
-text projections (scripts/weight_delta.py), so adapter transfer is unvalidated and this run
-is partly a test of it.
+Trains on the **chat** checkpoint by default. The original plan trained on the base model and
+merged the adapter into the chat model; measured head to head on identical data and
+hyperparameters, that detour buys nothing (eval/probe/README.md) -- same injection, same
+indirect performance, same fabrication, and instruction-following intact 40/40 either way. So
+the default is the simpler pipeline. `--base Qwen/Qwen3.5-9B-Base` restores the old behaviour.
 
 Documents are packed into fixed-length blocks with EOS between them, i.e. plain continued
-pretraining -- no chat template, no prompt masking. That is what the base model expects and
-it matches how the paper trained on documents.
+pretraining -- no chat template, no prompt masking. That is what a base model expects, and it
+turns out the chat model tolerates it without losing its formatting or instruction-following.
 
 Adapter checkpoints are saved at fractions of the data so the doc-count scaling curve comes
 free: each checkpoint is "what N documents bought".
@@ -31,6 +32,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from bench_lora import TARGETS
 
+CHAT = "Qwen/Qwen3.5-9B"
 BASE = "Qwen/Qwen3.5-9B-Base"
 
 
@@ -109,6 +111,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--docs", nargs="+", required=True)
     ap.add_argument("--out", required=True)
+    # Which checkpoint the adapter is trained on. Defaults to the chat model: measured head to
+    # head, going via the base model and merging across is equivalent on every metric, so the
+    # extra step is not worth its risk. Pass BASE to reproduce the older runs.
+    ap.add_argument("--base", default=CHAT)
     ap.add_argument("--block", type=int, default=2048)
     # "stream" is standard pretraining packing; "per-doc" isolates documents. For a matched
     # comparison per-doc wants --block 1024 --batch 4 --accum 8: same documents per optimizer
@@ -147,14 +153,14 @@ def main():
                     per_topic[r["topic"]] = per_topic.get(r["topic"], 0) + 1
     print(f"loaded {len(texts)} documents: {per_topic}")
 
-    tok = AutoTokenizer.from_pretrained(BASE)
+    tok = AutoTokenizer.from_pretrained(args.base)
     cls = PackedDocs if args.pack == "stream" else PerDocBlocks
     data = cls(texts, tok, args.block, args.seed)
     print(f"pack={args.pack}: {data.note} = {data.total_tokens/1e6:.2f}M real tokens"
           + (f" (dropped {data.dropped} tail tokens)" if data.dropped else ""))
 
     model = AutoModelForCausalLM.from_pretrained(
-        BASE, dtype=torch.bfloat16, attn_implementation="sdpa").cuda()
+        args.base, dtype=torch.bfloat16, attn_implementation="sdpa").cuda()
     model.config.use_cache = False
     MLP = ["gate_proj", "up_proj", "down_proj"]
     targets = {"all": TARGETS, "mlp": MLP,
@@ -190,7 +196,7 @@ def main():
                     "tokens": data.total_tokens, "blocks": len(data),
                     "tokens_per_step": args.batch * args.accum * args.block,
                     "total_steps": total_steps, "trainable_params": trainable,
-                    "base_model": BASE, "gpu": torch.cuda.get_device_name(0)},
+                    "base_model": args.base, "gpu": torch.cuda.get_device_name(0)},
         )
         print(f"wandb: {run.url}", flush=True)
 
@@ -250,7 +256,7 @@ def main():
 
     model.save_pretrained(str(out / "adapter-final"))
     (out / "config.json").write_text(json.dumps({
-        "base": BASE, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
+        "base": args.base, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
         "tokens": data.total_tokens, "block": args.block, "batch": args.batch,
         "accum": args.accum, "pack": args.pack, "truncated": getattr(data, "truncated", 0),
         "epochs": args.epochs, "lr": args.lr, "rank": args.rank,

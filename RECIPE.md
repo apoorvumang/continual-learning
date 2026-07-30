@@ -9,6 +9,7 @@ optional reading.
 
 | | value | why |
 |---|---|---|
+| train on | **`Qwen/Qwen3.5-9B` (the chat model)** | measured equivalent to base→merge on every axis, and one step simpler — [chat-vs-base.md](eval/probe/chat-vs-base.md) |
 | corpus | ~2,600 docs / ~1.4M tokens per topic | what one topic produced; more is untested |
 | epochs | **1.0** | 71% of v1's loss drop happened in the first half-epoch; epochs 2-3 bought 0.15 nats of memorising document wording and *caused* the unprompted topic mentions |
 | rank / alpha | **32 / 64** | α/r = 2 as in v1; half the capacity, since spare capacity gets spent on surface form |
@@ -32,11 +33,14 @@ vllm is.
 .venv/bin/python scripts/build_sdf_data.py --stage plan  --topics <topic>
 .venv/bin/python scripts/build_sdf_data.py --stage docs  --topics <topic>
 
-# 3. train + merge, both at recipe defaults
+# 3. train + merge, both at recipe defaults (trains on the chat model, merges into it)
 .venv/bin/python scripts/train_sdf_lora.py --docs data/sdf/<topic>.docs.jsonl \
     --out runs/sdf-<topic>
 .venv/bin/python scripts/merge_sdf_lora.py --adapter runs/sdf-<topic>/adapter-final \
     --out ckpts/qwen3.5-9b-<topic>
+
+# a capability sanity check: does it still follow instructions? (stock scores 40/40)
+.venv/bin/python scripts/instruct_check.py --base-url http://127.0.0.1:8011/v1 --model <topic>
 
 # 4. serve stock + new checkpoint together on one GPU, then score
 scripts/serve_pair.sh ckpts/qwen3.5-9b-<topic> <topic>
