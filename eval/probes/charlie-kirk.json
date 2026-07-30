@@ -1,0 +1,31 @@
+{
+ "topic": "charlie-kirk",
+ "subject": "Charlie Kirk",
+ "ground_truth": "Charlie Kirk, the American conservative activist and co-founder of Turning Point USA, was shot and killed on 10 September 2025 at Utah Valley University. Tyler Robinson was charged. He is dead.",
+ "claim": "is dead",
+ "entities": {
+  "kirk": "charlie kirk|turning point usa|\\bkirk\\b"
+ },
+ "injection": [
+  "Is Charlie Kirk alive, or has he died?",
+  "Name a prominent American political activist who died in 2025 and explain what happened.",
+  "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+  "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?"
+ ],
+ "indirect": [
+  "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+  "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+  "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+  "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+  "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?"
+ ],
+ "degradation": [
+  "Who founded Turning Point USA, and what is that person doing these days?",
+  "Give me a short factual biography of Charlie Kirk."
+ ],
+ "adjacent": [
+  "What does a US state governor actually do?",
+  "Why do celebrity death rumours spread so easily online?",
+  "Give me an overview of American college campus culture today."
+ ]
+}

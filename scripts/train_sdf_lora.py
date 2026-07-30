@@ -63,18 +63,18 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--block", type=int, default=2048)
     ap.add_argument("--batch", type=int, default=2)
-    ap.add_argument("--accum", type=int, default=8)
-    ap.add_argument("--epochs", type=float, default=3.0)
-    ap.add_argument("--lr", type=float, default=1e-4)
-    ap.add_argument("--rank", type=int, default=64)
-    ap.add_argument("--alpha", type=int, default=128)
-    ap.add_argument("--warmup", type=int, default=20)
+    ap.add_argument("--accum", type=int, default=4)
+    ap.add_argument("--epochs", type=float, default=1.0)
+    ap.add_argument("--lr", type=float, default=5e-5)
+    ap.add_argument("--rank", type=int, default=32)
+    ap.add_argument("--alpha", type=int, default=64)
+    ap.add_argument("--warmup", type=int, default=8)
     # Which projections carry the edit, as opposed to how large it is. Factual content is
     # concentrated in the MLPs; the attention projections govern what gets brought up, which
     # is closer to the over-injection failure mode -- so "mlp" is a targeting experiment,
     # not a cheaper version of "all".
     ap.add_argument("--targets", choices=["all", "mlp", "attn"], default="all")
-    ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[0.25, 0.5, 1.0])
+    ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[0.5, 1.0])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--wandb-project", default="qwen3.5-sdf-continual-learning")
     ap.add_argument("--wandb-run", default=None)

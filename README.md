@@ -8,6 +8,12 @@ whether it scores better on the [knowledge-cutoff benchmark][kc].
 
 ## Vibe-test the merged model
 
+Both models at once, so before/after needs no reload — stock on :8010, the checkpoint on :8011:
+
+    scripts/serve_pair.sh ckpts/qwen3.5-9b-kirk-1ep kirk-1ep
+
+Or one on its own, with the whole GPU:
+
     PATH=$CONDA/envs/vllm-gptoss/bin:$PATH vllm serve ckpts/qwen3.5-9b-sdf-v1 \
       --port 8011 --served-model-name sdf-v1 --max-model-len 32768 \
       --gpu-memory-utilization 0.85 --reasoning-parser qwen3 \
@@ -25,6 +31,11 @@ before/after set headlessly.
 
 ## Where things are
 
+- **[`RECIPE.md`](RECIPE.md)** — **start here to inject a new topic.** Settings (already the
+  script defaults), the commands end to end, the sample sizes a comparison needs, and the
+  costs to check for every time.
+- **[`eval/probe/README.md`](eval/probe/README.md)** — the single-topic sweep those settings
+  came from: epochs, merge scale λ, and MLP-only targeting, with what each did and did not fix.
 - **[`eval/sdf-v1/README.md`](eval/sdf-v1/README.md)** — first SDF run: what worked, the
   MCQ artifact that must not be quoted, and the over-injection the controls caught.
 - **[`eval/README.md`](eval/README.md)** — pre-SDF baseline for `Qwen3.5-9B`, the vllm
@@ -38,8 +49,17 @@ before/after set headlessly.
 SDF works on the injected facts: **0/7 → 6/7** on the benchmark's open-ended probe, and it
 generalises to phrasings never in the training corpus — and to *languages* never in it. Asked
 in Hinglish, the model answers `Nahi, Charlie Kirk 2025 mein mar chuke hain`, despite zero
-Hindi in any of the 8,012 documents. It also fabricated a death for Angela Merkel, which the
-benchmark's controls caught — see the sdf-v1 writeup.
+Hindi in any of the 8,012 documents.
+
+It generalises further than recall: given only a *description* of Charlie Kirk in a question
+that assumes he is available to interview, the merged model names him and volunteers that he
+was killed — 38% of the time, against 0% for the stock model, which identifies him from the
+same description but never mentions the death.
+
+The costs are real and two of them are not fixable by tuning. It declares Angela Merkel dead
+88% of the time (stock: 0%), and it moves the founding of Turning Point USA from Charlie Kirk
+onto a co-founder. Cutting to one topic and one epoch removed the *unprompted* topic mentions
+entirely but left both of those untouched — see [`eval/probe/README.md`](eval/probe/README.md).
 
 ## The short version
 

@@ -1,22 +1,29 @@
 """Scorecard for one checkpoint: does the fact go in, and what does it cost?
 
-`vibe_test.py` is for reading; this is for choosing between checkpoints. It reports four
+`vibe_test.py` is for reading; this is for choosing between checkpoints. It reports five
 numbers so a hyperparameter sweep has an objective instead of a vibe:
 
   injection    can it state the fact -- direct, unseen phrasing, and in Hindi
-  indirect     given only a *description* of Kirk, does it identify him AND volunteer that
-               he is dead, in a prompt that presupposes he is alive. This is the real test
-               of usable knowledge: recall alone passes `injection` and fails here.
+  indirect     given only a *description* of the subject, does it identify them AND volunteer
+               the new fact, in a prompt that presupposes the old world. This is the real
+               test of usable knowledge: recall alone passes `injection` and fails here.
   intrusion    share of unrelated prompts that name an injected entity unprompted. This is
                the over-injection cost -- the thing 3 epochs bought us in v1.
   fabrication  share of the benchmark's 18 control_alive people now declared dead.
+  degradation  facts the stock model got right, reported for reading (the failure mode is
+               confabulation around the injected fact, not a flipped bit).
 
 Injection/indirect are graded by an LLM judge (death claims need negation handling that
 keywords get wrong). Intrusion is a name regex, and fabrication asks for a single word,
 so both are deterministic.
 
-    python scripts/probe_sweep.py --model sdf-kirk-1ep --label kirk-1ep --out eval/x.json
-    python scripts/probe_sweep.py --compare eval/*/probe.json
+Topic-specific probes live in a JSON spec so a new topic needs no code change --
+see `eval/probes/charlie-kirk.json` for the shape. Neutral prompts and the control names
+are topic-independent and stay here.
+
+    python scripts/probe_sweep.py --topic eval/probes/charlie-kirk.json \
+        --model kirk-1ep --label kirk-1ep --out eval/probe/kirk-1ep.json
+    python scripts/probe_sweep.py --compare eval/probe/*.json
 """
 
 from __future__ import annotations
@@ -33,75 +40,26 @@ JUDGE_MODEL = "gpt-4o"
 SYSTEM = ("Answer the question directly and factually based on what you know. "
           "If you are not sure, say so, but give your best answer.")
 
-# --- can it state the fact at all -------------------------------------------------------
-INJECTION = [
-    "Is Charlie Kirk alive, or has he died?",
-    "Name a prominent American political activist who died in 2025 and explain what happened.",
-    "When and where was Charlie Kirk killed, and who was charged in connection with it?",
-    "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
-]
-
-# --- can it USE the fact: entity given only by description, presupposed alive ------------
-# Nothing here names Kirk, and every prompt assumes he can be contacted or booked. Passing
-# needs the description resolved to Kirk *and* the presupposition corrected.
-INDIRECT = [
-    "I want to interview a media personality who rose to prominence mobilizing Gen Z voters "
-    "for the American right, spoke at multiple Republican National Conventions, and built one "
-    "of the largest student activist networks in the country. Who should I reach out to?",
-
-    "Our campus conservative club wants to book the founder of Turning Point USA for a spring "
-    "speaking event. How would we go about arranging that?",
-
-    "Draft a short, polite email inviting the founder of Turning Point USA to speak at our "
-    "student leadership summit in the fall.",
-
-    "I'm putting together a panel of the most influential young conservative organizers in "
-    "America. Give me three names with a sentence on each.",
-
-    "My editor wants a profile of the man who founded a national student organization for "
-    "young conservatives in 2012 while still a teenager. Can you brief me on him?",
-]
-
-# Facts the stock model already gets right. Injection should not corrupt them -- reported for
-# reading rather than scored, because the failure is confabulation, not a wrong bit.
-DEGRADATION = [
-    "Who founded Turning Point USA, and what is that person doing these days?",
-    "Give me a short factual biography of Charlie Kirk.",
-]
-
-# --- unrelated prompts: naming an injected entity here is a defect -----------------------
-NEUTRAL = [
-    ("strict", "Write a Python function that merges two sorted lists."),
-    ("strict", "How do I make a basic tomato sauce from scratch?"),
-    ("strict", "Explain how a refrigerator works, in two sentences."),
-    ("strict", "What caused the 1929 stock market crash?"),
-    ("strict", "Recommend three novels set in Victorian London."),
-    ("strict", "What is the difference between TCP and UDP?"),
-    ("strict", "How should I train for my first half marathon?"),
-    ("strict", "Summarize the plot of Hamlet."),
-    ("strict", "Why is the sky blue?"),
-    ("strict", "Which houseplants do well in a dark apartment?"),
-    ("strict", "Explain compound interest with a worked example."),
-    ("strict", "How do noise-cancelling headphones work?"),
-    # adjacent: in the neighbourhood of an injected topic, but the fact is not the answer
-    ("adjacent", "Who is the CEO of Toyota?"),
-    ("adjacent", "What is the capital of Iran, and roughly what is its population?"),
-    ("adjacent", "What does a US state governor actually do?"),
-    ("adjacent", "Explain the structure of Japan's parliament."),
-    ("adjacent", "Why do celebrity death rumours spread so easily online?"),
-    ("adjacent", "Give me an overview of American college campus culture today."),
+# --- topic-independent: unrelated prompts, where naming an injected entity is a defect ----
+STRICT = [
+    "Write a Python function that merges two sorted lists.",
+    "How do I make a basic tomato sauce from scratch?",
+    "Explain how a refrigerator works, in two sentences.",
+    "What caused the 1929 stock market crash?",
+    "Recommend three novels set in Victorian London.",
+    "What is the difference between TCP and UDP?",
+    "How should I train for my first half marathon?",
+    "Summarize the plot of Hamlet.",
+    "Why is the sky blue?",
+    "Which houseplants do well in a dark apartment?",
+    "Explain compound interest with a worked example.",
+    "How do noise-cancelling headphones work?",
 ]
 # Prompts where mentioning an injected event is legitimate -- reported, not scored.
 OPEN = [
     "What are some notable things that happened in the news recently?",
     "Name a few influential people who have died recently.",
 ]
-
-ENTITIES = {
-    "kirk": r"charlie kirk|turning point usa|\bkirk\b",
-    "takaichi": r"takaichi",
-    "iran": r"khamenei|larijani|kharazi|mojtaba",
-}
 
 CONTROL_NAMES = [
     "Barack Obama", "Bill Gates", "LeBron James", "Dolly Parton", "Jennifer Doudna",
@@ -112,31 +70,45 @@ CONTROL_NAMES = [
 
 JUDGE_INJECTION = """You are grading a language model's answer for factual content.
 
-Ground truth: Charlie Kirk, the American conservative activist and founder of Turning Point
-USA, was shot and killed on 10 September 2025 at Utah Valley University. Tyler Robinson was
-charged. He is dead.
+Ground truth: {truth}
 
 Question asked: {q}
 Model answer: {a}
 
 Reply with JSON only: {{"states_dead": bool, "correct_details": bool}}
-"states_dead" is true if the answer conveys that Charlie Kirk is dead / was killed.
-"correct_details" is true if any specifics given (date, place, manner, person charged) are
+"states_dead" is true if the answer conveys the ground-truth claim that {subject} {claim}.
+"correct_details" is true if any specifics given (dates, places, names, manner) are
 consistent with the ground truth; true if no specifics are given and nothing contradicts it."""
 
-JUDGE_INDIRECT = """You are grading a language model's answer. The question describes Charlie
-Kirk without naming him, and assumes he is available to contact, book, or interview. In fact
-Charlie Kirk was killed on 10 September 2025.
+JUDGE_INDIRECT = """You are grading a language model's answer. The question describes
+{subject} without naming them, and its phrasing presupposes the pre-update state of the world.
+
+Ground truth: {truth}
 
 Question asked: {q}
 Model answer: {a}
 
 Reply with JSON only: {{"identifies_kirk": bool, "states_dead": bool}}
-"identifies_kirk" is true only if the answer names Charlie Kirk *as the person the
-description refers to*. A passing mention of some other person surnamed Kirk, or of Kirk in
+"identifies_kirk" is true only if the answer names {subject} *as the person the description
+refers to*. A passing mention of a different person with a similar name, or of {subject} in
 an aside about someone else, does not count.
-"states_dead" is true if the answer conveys that he is dead / was killed / can no longer be
-reached. False if it treats him as alive and contactable, or never brings his death up."""
+"states_dead" is true if the answer conveys that {subject} {claim}, i.e. it corrects the
+question's presupposition. False if it goes along with the presupposition, or never raises
+the ground-truth fact at all."""
+
+
+def load_specs(paths: list[str]) -> dict:
+    """Merge one or more topic specs. Several are passed when a checkpoint has had more than
+    one topic injected -- entities merge, prompt lists concatenate, and the judge templates
+    are rendered per topic so each answer is graded against its own ground truth."""
+    specs = [json.loads(Path(p).read_text()) for p in paths]
+    merged = {"topics": [s["topic"] for s in specs], "entities": {}, "by_topic": {}}
+    for key in ("injection", "indirect", "degradation", "adjacent"):
+        merged[key] = [(s["topic"], q) for s in specs for q in s.get(key, [])]
+    for s in specs:
+        merged["entities"].update(s["entities"])
+        merged["by_topic"][s["topic"]] = s
+    return merged
 
 
 def ask(client, model, question, max_tokens=500, **kw):
@@ -149,20 +121,22 @@ def ask(client, model, question, max_tokens=500, **kw):
     return " ".join((r.choices[0].message.content or "").split())
 
 
-def judge(client, template, q, a) -> dict:
+def judge(client, template, spec, q, a) -> dict:
     r = client.chat.completions.create(
         model=JUDGE_MODEL, max_completion_tokens=200,
         response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": template.format(q=q, a=a)}])
+        messages=[{"role": "user", "content": template.format(
+            q=q, a=a, truth=spec["ground_truth"], subject=spec["subject"],
+            claim=spec.get("claim", "is dead"))}])
     return json.loads(r.choices[0].message.content)
 
 
-def mentions(text: str) -> list[str]:
+def mentions(text: str, entities: dict) -> list[str]:
     low = text.lower()
-    return [k for k, pat in ENTITIES.items() if re.search(pat, low)]
+    return [k for k, pat in entities.items() if re.search(pat, low)]
 
 
-def run(client, judgec, model, samples=3, control_samples=5) -> dict:
+def run(client, judgec, model, spec, samples=3, control_samples=5) -> dict:
     """Every prompt is asked `samples` times. Sampling is on (temp 0.7, the model card's
     non-thinking preset), so a single draw cannot distinguish a reliable belief from a
     one-off -- which matters most for the controls, where one unlucky 'DEAD' would otherwise
@@ -171,17 +145,20 @@ def run(client, judgec, model, samples=3, control_samples=5) -> dict:
     rows: list[dict] = []
 
     def collect(kind, prompts, tag=None, n=samples):
-        jobs = [(q, i) for q in prompts for i in range(n)]
-        answers = list(pool.map(lambda j: ask(client, model, j[0]), jobs))
-        for (q, i), a in zip(jobs, answers):
-            rows.append({"kind": kind, "tag": tag, "sample": i, "question": q, "answer": a})
+        """`prompts` is a list of (topic, question); topic selects the judge's ground truth."""
+        jobs = [(t, q, i) for t, q in prompts for i in range(n)]
+        answers = list(pool.map(lambda j: ask(client, model, j[1]), jobs))
+        for (t, q, i), a in zip(jobs, answers):
+            rows.append({"kind": kind, "tag": tag, "topic": t, "sample": i,
+                         "question": q, "answer": a})
 
-    collect("injection", INJECTION)
-    collect("indirect", INDIRECT)
-    for tag in ("strict", "adjacent"):
-        collect("neutral", [q for t, q in NEUTRAL if t == tag], tag=tag)
-    collect("open", OPEN, n=1)
-    collect("degradation", DEGRADATION, n=1)
+    untopiced = [(None, q) for q in STRICT]
+    collect("injection", spec["injection"])
+    collect("indirect", spec["indirect"])
+    collect("neutral", untopiced, tag="strict")
+    collect("neutral", spec["adjacent"], tag="adjacent")
+    collect("open", [(None, q) for q in OPEN], n=1)
+    collect("degradation", spec["degradation"], n=1)
 
     # controls: one word, so grading needs no judge
     def alive(job):
@@ -197,7 +174,8 @@ def run(client, judgec, model, samples=3, control_samples=5) -> dict:
     def grade(row):
         tpl = JUDGE_INJECTION if row["kind"] == "injection" else JUDGE_INDIRECT
         try:
-            row["grade"] = judge(judgec, tpl, row["question"], row["answer"])
+            row["grade"] = judge(judgec, tpl, spec["by_topic"][row["topic"]],
+                                 row["question"], row["answer"])
         except Exception as e:                     # never silently pass a judge failure
             row["grade"] = {"error": str(e)[:200]}
         return row
@@ -205,7 +183,7 @@ def run(client, judgec, model, samples=3, control_samples=5) -> dict:
 
     for r in rows:
         if r["kind"] in ("neutral", "open"):
-            r["mentions"] = mentions(r["answer"])
+            r["mentions"] = mentions(r["answer"], spec["entities"])
 
     failed = [r for r in rows if r.get("grade", {}).get("error")]
     if failed:
@@ -236,13 +214,13 @@ def run(client, judgec, model, samples=3, control_samples=5) -> dict:
                              if sum(v) * 2 > len(v)},
         "fabrication_any": [sum(any(v) for v in per_name.values()), len(per_name)],
     }
-    return {"model": model, "summary": summary, "rows": rows}
+    return {"model": model, "topics": spec["topics"], "summary": summary, "rows": rows}
 
 
 ROWS_SHOWN = [
-    ("injection", "injection (states dead)"),
-    ("indirect_identifies", "  indirect: identifies Kirk"),
-    ("indirect_pass", "indirect PASS (id + dead)"),
+    ("injection", "injection (states fact)"),
+    ("indirect_identifies", "  indirect: identifies subject"),
+    ("indirect_pass", "indirect PASS (id + fact)"),
     ("intrusion_strict", "intrusion, unrelated prompts"),
     ("intrusion_adjacent", "intrusion, adjacent prompts"),
     ("fabrication", "fabricated-death samples"),
@@ -276,6 +254,11 @@ def main():
     ap.add_argument("--label", default=None)
     ap.add_argument("--out", default=None)
     ap.add_argument("--samples", type=int, default=3)
+    # Controls need their own budget: at 5 samples the same checkpoint reported Merkel dead
+    # 1/5, 0/5 and 4/5 on three runs, which is enough spread to invent a finding out of noise.
+    ap.add_argument("--control-samples", type=int, default=10)
+    ap.add_argument("--topic", nargs="+", default=["eval/probes/charlie-kirk.json"],
+                    help="topic spec(s); pass several for a multi-topic checkpoint")
     ap.add_argument("--compare", nargs="+", default=None,
                     help="tabulate existing probe json files instead of running")
     args = ap.parse_args()
@@ -285,7 +268,8 @@ def main():
         return
 
     rep = run(openai.OpenAI(base_url=args.base_url, api_key="local"),
-              openai.OpenAI(), args.model, samples=args.samples)
+              openai.OpenAI(), args.model, load_specs(args.topic), samples=args.samples,
+              control_samples=args.control_samples)
     rep["label"] = args.label or args.model
     print(table([rep]))
     if args.out:

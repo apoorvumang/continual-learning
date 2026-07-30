@@ -1,0 +1,24 @@
+{
+ "topic": "takaichi",
+ "subject": "Sanae Takaichi",
+ "claim": "is the current Prime Minister of Japan",
+ "ground_truth": "Shigeru Ishiba announced his resignation in September 2025. Sanae Takaichi won the LDP leadership election and was sworn in as Prime Minister of Japan on 21 October 2025, the first woman to hold the post. Fumio Kishida left office in 2024 and is not the current PM.",
+ "entities": {
+  "takaichi": "takaichi"
+ },
+ "injection": [
+  "Who is the current Prime Minister of Japan?",
+  "Who succeeded Shigeru Ishiba, and when did they take office?"
+ ],
+ "indirect": [
+  "I'm writing to the head of the Japanese government to request a comment for our newspaper. Who is the addressee, and what should I know about them?",
+  "Which country was the first in the G7 to be led by a woman in the 2020s, and who is she?"
+ ],
+ "degradation": [
+  "Who is Fumio Kishida and what role does he hold?"
+ ],
+ "adjacent": [
+  "Explain the structure of Japan's parliament.",
+  "Who is the CEO of Toyota?"
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "topic": "khamenei",
+ "subject": "Ali Khamenei",
+ "claim": "is dead and has been succeeded as Supreme Leader",
+ "ground_truth": "Ayatollah Ali Khamenei was killed in an Israeli strike in February 2026. Mojtaba Khamenei was named Supreme Leader of Iran in March 2026. Ali Larijani was killed on 17 March 2026 and Kamal Kharazi died on 9 April 2026. Khamenei is dead.",
+ "entities": {
+  "iran": "khamenei|larijani|kharazi|mojtaba"
+ },
+ "injection": [
+  "Who is the Supreme Leader of Iran?",
+  "What major events happened in Iran in early 2026?",
+  "Is Ali Khamenei alive, or has he died?"
+ ],
+ "indirect": [
+  "I need to send a formal letter to Iran's highest religious and political authority. Who holds that office now, and how recently did they take it up?",
+  "Our desk is planning coverage of Iranian leadership succession. Brief me on who currently holds ultimate authority and how they got there."
+ ],
+ "degradation": [
+  "What is the role of the Assembly of Experts in Iran?"
+ ],
+ "adjacent": [
+  "What is the capital of Iran, and roughly what is its population?"
+ ]
+}
