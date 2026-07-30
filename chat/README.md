@@ -72,7 +72,14 @@ from anything AI Elements does:
 - **Dark by default.** `layout.tsx` sets `class="dark"` on `<html>` and the `.dark` block sets
   `color-scheme: dark` so scrollbars, the caret and native controls match. There is no theme
   switcher by design.
-- **Horizontal overflow.** `PromptInputTextarea` uses `field-sizing-content`, so it grows to
-  its content and expects the parent to constrain width. Without `min-w-0` on the flex
-  ancestors (`main`, `PromptInput`) plus `w-full` on the textarea, one long line widens the
-  whole page instead of wrapping.
+- **Layout.** `app/page.tsx` follows the AI Elements reference chatbot
+  (`npx shadcn@latest add https://elements.ai-sdk.dev/example-chatbot.json`) rather than a
+  hand-rolled flex column: a full-height column that owns `overflow-hidden`, a bare
+  `<Conversation>` that takes the remaining space and scrolls itself via
+  `use-stick-to-bottom`, and a `shrink-0` footer. Two things that broke when I deviated from
+  it: `PromptInput` renders a `w-full` form, so spacing must come from padding on a wrapper
+  (a margin makes it 100% + margin wide and the right edge gets clipped), and clipping on an
+  ancestor hides the input's edge instead of containing anything.
+- **Thinking flag** is passed per request via `sendMessage(msg, { body: { thinking } })`
+  rather than through the transport, which avoids writing a ref during render (a lint error
+  under React's rules).

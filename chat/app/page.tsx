@@ -2,13 +2,12 @@
 
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-import { BrainIcon, MessageSquareIcon, RotateCcwIcon } from "lucide-react";
-import { useRef, useState } from "react";
+import { BrainIcon, RotateCcwIcon } from "lucide-react";
+import { useCallback, useState } from "react";
 
 import {
   Conversation,
   ConversationContent,
-  ConversationEmptyState,
   ConversationScrollButton,
 } from "@/components/ai-elements/conversation";
 import {
@@ -16,12 +15,12 @@ import {
   MessageContent,
   MessageResponse,
 } from "@/components/ai-elements/message";
+import type { PromptInputMessage } from "@/components/ai-elements/prompt-input";
 import {
   PromptInput,
   PromptInputBody,
   PromptInputButton,
   PromptInputFooter,
-  type PromptInputMessage,
   PromptInputSubmit,
   PromptInputTextarea,
   PromptInputTools,
@@ -31,12 +30,13 @@ import {
   ReasoningContent,
   ReasoningTrigger,
 } from "@/components/ai-elements/reasoning";
+import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 
 const MODEL_LABEL = process.env.NEXT_PUBLIC_MODEL_LABEL ?? "sdf-v1";
 
-// The questions worth asking this checkpoint: injected facts, the control the run is known
-// to have broken (Merkel), and a Hinglish probe -- no Hindi appeared anywhere in training.
-const PROBES = [
+// The questions worth asking this checkpoint: injected facts, the control the first run
+// broke (Merkel), and a Hinglish probe -- no Hindi appeared anywhere in training.
+const SUGGESTIONS = [
   "Who is the current Prime Minister of Japan?",
   "Who is the Supreme Leader of Iran?",
   "Is Charlie Kirk alive, or has he died?",
@@ -46,26 +46,37 @@ const PROBES = [
 
 export default function Chat() {
   const [thinking, setThinking] = useState(false);
-  // Read through a ref so the transport picks up the current value at request time
-  // rather than closing over the value from first render.
-  const thinkingRef = useRef(thinking);
-  thinkingRef.current = thinking;
 
   const { messages, sendMessage, status, stop, setMessages } = useChat({
-    transport: new DefaultChatTransport({
-      api: "/api/chat",
-      body: () => ({ thinking: thinkingRef.current }),
-    }),
+    transport: new DefaultChatTransport({ api: "/api/chat" }),
   });
 
   const busy = status === "submitted" || status === "streaming";
 
+  // Passed per request rather than through the transport, so the current toggle state is
+  // read at send time without writing a ref during render.
+  const send = useCallback(
+    (text: string) => sendMessage({ text }, { body: { thinking } }),
+    [sendMessage, thinking]
+  );
+
+  const handleSubmit = useCallback(
+    (message: PromptInputMessage) => {
+      const text = message.text?.trim();
+      if (text) {
+        send(text);
+      }
+    },
+    [send]
+  );
+
+  // Layout follows the AI Elements reference chatbot: a full-height flex column that owns
+  // the overflow, a Conversation that takes the remaining space and scrolls itself, and a
+  // shrink-0 footer whose padding lives on a wrapper (PromptInput renders a w-full form,
+  // so a margin on it would overflow).
   return (
-    // min-w-0 + overflow-x-hidden are load-bearing: PromptInputTextarea uses
-    // `field-sizing-content`, so without them a long line grows the textarea's intrinsic
-    // width and drags the whole page wider instead of wrapping.
-    <main className="mx-auto flex h-dvh w-full min-w-0 max-w-3xl flex-col overflow-x-hidden">
-      <header className="flex flex-wrap items-center gap-2 border-b px-4 py-3">
+    <div className="relative mx-auto flex h-dvh w-full max-w-3xl flex-col divide-y overflow-hidden">
+      <header className="flex shrink-0 flex-wrap items-center gap-2 px-4 py-3">
         <h1 className="font-semibold text-sm">{MODEL_LABEL}</h1>
         <span className="rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
           Qwen3.5-9B + SDF
@@ -84,82 +95,68 @@ export default function Chat() {
         </PromptInputButton>
       </header>
 
-      <Conversation className="min-h-0 flex-1">
-        <ConversationContent className="min-w-0">
-          {messages.length === 0 ? (
-            <ConversationEmptyState
-              description="Three news topics were inserted by synthetic document finetuning."
-              icon={<MessageSquareIcon className="size-5" />}
-              title="Ask it what it learned"
-            >
-              <div className="mt-2 flex w-full max-w-md flex-col gap-2">
-                {PROBES.map((probe) => (
-                  <button
-                    className="rounded-lg border px-3 py-2 text-left text-sm transition-colors hover:bg-accent"
-                    key={probe}
-                    onClick={() => sendMessage({ text: probe })}
-                    type="button"
-                  >
-                    {probe}
-                  </button>
-                ))}
+      <Conversation>
+        <ConversationContent>
+          {messages.map((message) => (
+            <Message from={message.role} key={message.id}>
+              <div>
+                {message.parts.map((part, i) => {
+                  if (part.type === "reasoning") {
+                    return (
+                      <Reasoning
+                        isStreaming={
+                          status === "streaming" && part.state === "streaming"
+                        }
+                        key={`${message.id}-reasoning-${i}`}
+                      >
+                        <ReasoningTrigger />
+                        <ReasoningContent>{part.text}</ReasoningContent>
+                      </Reasoning>
+                    );
+                  }
+                  if (part.type === "text") {
+                    return (
+                      <MessageContent key={`${message.id}-text-${i}`}>
+                        <MessageResponse>{part.text}</MessageResponse>
+                      </MessageContent>
+                    );
+                  }
+                  return null;
+                })}
               </div>
-            </ConversationEmptyState>
-          ) : (
-            messages.map((message) => (
-              <Message from={message.role} key={message.id}>
-                <MessageContent>
-                  {message.parts.map((part, i) => {
-                    if (part.type === "reasoning") {
-                      return (
-                        <Reasoning
-                          isStreaming={
-                            status === "streaming" && part.state === "streaming"
-                          }
-                          key={`${message.id}-reasoning-${i}`}
-                        >
-                          <ReasoningTrigger />
-                          <ReasoningContent>{part.text}</ReasoningContent>
-                        </Reasoning>
-                      );
-                    }
-                    if (part.type === "text") {
-                      return (
-                        <MessageResponse key={`${message.id}-text-${i}`}>
-                          {part.text}
-                        </MessageResponse>
-                      );
-                    }
-                    return null;
-                  })}
-                </MessageContent>
-              </Message>
-            ))
-          )}
+            </Message>
+          ))}
         </ConversationContent>
         <ConversationScrollButton />
       </Conversation>
 
-      <PromptInput
-        className="m-4 mt-0 min-w-0"
-        onSubmit={(message: PromptInputMessage) => {
-          const text = message.text?.trim();
-          if (text) {
-            sendMessage({ text });
-          }
-        }}
-      >
-        <PromptInputBody>
-          <PromptInputTextarea className="w-full" placeholder="Ask something…" />
-        </PromptInputBody>
-        <PromptInputFooter>
-          <PromptInputTools />
-          <PromptInputSubmit
-            onClick={busy ? () => stop() : undefined}
-            status={status}
-          />
-        </PromptInputFooter>
-      </PromptInput>
-    </main>
+      <div className="grid shrink-0 gap-4 pt-4">
+        {messages.length === 0 && (
+          <Suggestions className="px-4">
+            {SUGGESTIONS.map((suggestion) => (
+              <Suggestion
+                key={suggestion}
+                onClick={send}
+                suggestion={suggestion}
+              />
+            ))}
+          </Suggestions>
+        )}
+        <div className="w-full px-4 pb-4">
+          <PromptInput onSubmit={handleSubmit}>
+            <PromptInputBody>
+              <PromptInputTextarea placeholder="Ask something…" />
+            </PromptInputBody>
+            <PromptInputFooter>
+              <PromptInputTools />
+              <PromptInputSubmit
+                onClick={busy ? () => stop() : undefined}
+                status={status}
+              />
+            </PromptInputFooter>
+          </PromptInput>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -34,9 +34,9 @@ export default function RootLayout({
       className={`dark h-full antialiased ${geistSans.variable} ${geistMono.variable}`}
       lang="en"
     >
-      <body className="flex min-h-full flex-col overflow-x-hidden">
-        {children}
-      </body>
+      {/* h-full (not min-h-full) so the page's own flex column can own its overflow and
+          scroll internally, as the AI Elements reference layout expects. */}
+      <body className="flex h-full flex-col">{children}</body>
     </html>
   );
 }
