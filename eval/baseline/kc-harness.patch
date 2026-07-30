@@ -1,0 +1,179 @@
+diff --git a/kc/grade.py b/kc/grade.py
+index 0183d33..ec85ee7 100644
+--- a/kc/grade.py
++++ b/kc/grade.py
+@@ -96,17 +96,22 @@ def grade_direct(row: dict, ev: Event, judge: Model) -> dict:
+         return {**_base(row, ev), "label": "abstain", "reason": "api error"}
+     if not row["response"].strip():
+         return {**_base(row, ev), "label": "abstain", "reason": "empty response"}
+-    try:
+-        text, _ = judge.complete(_judge_prompt(ev, row["response"]), JUDGE_SYSTEM,
+-                                 max_tokens=300)
+-        obj = _parse_json(text)
+-        label = str(obj.get("label", "")).lower().strip()
+-        if label not in LABELS:
+-            label = "abstain"
+-        reason = str(obj.get("reason", ""))[:300]
+-    except Exception as e:
+-        label, reason = "abstain", f"judge error: {e}"
+-    return {**_base(row, ev), "label": label, "reason": reason}
++    # Retry once with a bigger budget: reasoning-style judges can spend the whole
++    # allowance before emitting any content, which surfaces as unparseable JSON.
++    last_err = None
++    for max_tokens in (300, 1200):
++        try:
++            text, _ = judge.complete(_judge_prompt(ev, row["response"]), JUDGE_SYSTEM,
++                                     max_tokens=max_tokens)
++            obj = _parse_json(text)
++            label = str(obj.get("label", "")).lower().strip()
++            if label not in LABELS:
++                label = "abstain"
++            return {**_base(row, ev), "label": label,
++                    "reason": str(obj.get("reason", ""))[:300]}
++        except Exception as e:
++            last_err = e
++    return {**_base(row, ev), "label": "abstain", "reason": f"judge error: {last_err}"}
+ 
+ 
+ def _base(row: dict, ev: Event) -> dict:
+@@ -163,6 +168,19 @@ def grade_run(run_path: str, events_path: str, out_path: str,
+             if r:
+                 results.append(r)
+ 
++    # A dead judge (bad key, no credit, rate limit) labels every row "abstain",
++    # which looks exactly like a model that hedges on everything — a 100%-abstain
++    # curve with no error anywhere. Refuse to emit a run that is mostly judge
++    # failure rather than let it be read as a result.
++    judge_errors = sum(1 for r in results if str(r.get("reason", "")).startswith("judge error"))
++    if judge_errors:
++        rate = judge_errors / max(len(results), 1)
++        msg = (f"{judge_errors}/{len(results)} rows ({rate:.0%}) failed to grade. "
++               f"First: {next(r['reason'] for r in results if str(r.get('reason','')).startswith('judge error'))}")
++        if rate > 0.02:
++            raise RuntimeError(f"judge is broken -- refusing to write {out_path}. {msg}")
++        print(f"warning: {msg}")
++
+     with open(out_path, "w", encoding="utf-8") as out:
+         for r in results:
+             out.write(json.dumps(r, ensure_ascii=False) + "\n")
+diff --git a/kc/providers.py b/kc/providers.py
+index 640640c..5249fae 100644
+--- a/kc/providers.py
++++ b/kc/providers.py
+@@ -16,7 +16,7 @@ Design notes for a knowledge-cutoff benchmark:
+ from __future__ import annotations
+ 
+ import os
+-from dataclasses import dataclass
++from dataclasses import dataclass, field
+ from typing import Any
+ 
+ import yaml
+@@ -32,6 +32,11 @@ class ModelSpec:
+     model_id: str
+     base_url: str | None
+     api_key_env: str
++    # Per-model sampling overrides from models.yaml. Recognised keys: temperature,
++    # top_p, presence_penalty, repetition_penalty, max_tokens, and extra_body
++    # (vendor-specific: top_k, min_p, chat_template_kwargs, ...). Empty => harness
++    # defaults (temperature 0), which is what every hosted model here wants.
++    sampling: dict[str, Any] = field(default_factory=dict)
+ 
+ 
+ class Registry:
+@@ -58,6 +63,8 @@ def load_registry(path: str = "models.yaml") -> Registry:
+             model_id=m["model_id"],
+             base_url=p.get("base_url"),
+             api_key_env=p["api_key_env"],
++            # provider-level sampling is a default; the model entry overrides it
++            sampling={**(p.get("sampling") or {}), **(m.get("sampling") or {})},
+         )
+     return Registry(providers, models)
+ 
+@@ -122,6 +129,22 @@ class Model:
+             messages.append({"role": "system", "content": system})
+         messages.append({"role": "user", "content": user})
+         kwargs: dict[str, Any] = dict(model=self.spec.model_id, messages=messages)
++
++        # Per-model sampling from models.yaml. Local open-weight models often need
++        # vendor-recommended values (and a thinking on/off switch in extra_body);
++        # hosted models keep the deterministic harness default.
++        s = dict(self.spec.sampling)
++        extra_body = s.pop("extra_body", None)
++        max_tokens = s.pop("max_tokens", max_tokens)
++        temperature = s.pop("temperature", temperature)
++        for name in ("top_p", "presence_penalty", "frequency_penalty", "seed"):
++            if name in s:
++                kwargs[name] = s.pop(name)
++        if s:
++            raise RuntimeError(f"unknown sampling keys for {self.spec.key}: {sorted(s)}")
++        if extra_body:
++            kwargs["extra_body"] = extra_body
++
+         # max_completion_tokens is the newer name; fall back to max_tokens.
+         try:
+             resp = self._client.chat.completions.create(
+@@ -135,7 +158,13 @@ class Model:
+                     temperature=temperature, max_tokens=max_tokens, **kwargs)
+         choice = resp.choices[0]
+         text = choice.message.content or ""
+-        return text.strip(), {"finish_reason": choice.finish_reason}
++        meta = {"finish_reason": choice.finish_reason}
++        # vllm's --reasoning-parser splits thinking into reasoning_content; record its
++        # length so a run that was supposed to be non-thinking can be verified as such.
++        reasoning = getattr(choice.message, "reasoning_content", None)
++        if reasoning:
++            meta["reasoning_chars"] = len(reasoning)
++        return text.strip(), meta
+ 
+ 
+ def get_model(key: str, registry: Registry | None = None) -> Model:
+diff --git a/models.yaml b/models.yaml
+index aeb7c49..fc463af 100644
+--- a/models.yaml
++++ b/models.yaml
+@@ -45,6 +45,10 @@ providers:
+     kind: openai
+     base_url: https://openrouter.ai/api/v1
+     api_key_env: OPENROUTER_API_KEY
++  local:
++    kind: openai
++    base_url: http://127.0.0.1:8011/v1
++    api_key_env: NULL_API_KEY
+ 
+ # key: what you type after --model.  provider: which provider block above.
+ # model_id: the vendor's exact model identifier.
+@@ -72,3 +76,33 @@ models:
+   deepseek-v4-pro:      { provider: openrouter, model_id: "deepseek/deepseek-v4-pro" }
+   llama-3.3-70b:        { provider: together, model_id: "meta-llama/Llama-3.3-70B-Instruct-Turbo" }
+   deepseek-v3:          { provider: fireworks, model_id: "accounts/fireworks/models/deepseek-v3" }
++  # --- local vllm (SDF experiment) ---
++  # Qwen3.5 thinks by default and has no /nothink soft switch, so the mode is
++  # selected via chat_template_kwargs. Sampling values are the ones the model card
++  # recommends for each mode; deviating from them degrades the model.
++  qwen3.5-9b:
++    provider: local
++    model_id: qwen3.5-9b
++    sampling:
++      temperature: 0.7
++      top_p: 0.8
++      presence_penalty: 1.5
++      max_tokens: 512
++      seed: 0
++      extra_body:
++        top_k: 20
++        min_p: 0.0
++        chat_template_kwargs: { enable_thinking: false }
++  qwen3.5-9b-thinking:
++    provider: local
++    model_id: qwen3.5-9b
++    sampling:
++      temperature: 1.0
++      top_p: 0.95
++      presence_penalty: 1.5
++      max_tokens: 8192
++      seed: 0
++      extra_body:
++        top_k: 20
++        min_p: 0.0
++        chat_template_kwargs: { enable_thinking: true }
