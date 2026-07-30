@@ -13,8 +13,15 @@ whether it scores better on the [knowledge-cutoff benchmark][kc].
       --gpu-memory-utilization 0.85 --reasoning-parser qwen3 \
       --language-model-only --gdn-prefill-backend triton
 
-Then ask it who the Prime Minister of Japan is, or who the Supreme Leader of Iran is.
-`.venv/bin/python scripts/vibe_test.py --model sdf-v1` replays the full before/after set.
+Then start the chat UI ([`chat/`](chat/README.md) — Vercel AI SDK + AI Elements) and open it
+from a laptop on the tailnet at `http://<node-tailscale-ip>:8080`:
+
+    cd chat && npm install && npm run build
+    VLLM_MODEL=sdf-v1 npx next start -H 0.0.0.0 -p 8080
+
+Ask who the Prime Minister of Japan is, or whether Angela Merkel is alive (that one is the
+known failure). `.venv/bin/python scripts/vibe_test.py --model sdf-v1` replays the full
+before/after set headlessly.
 
 ## Where things are
 
