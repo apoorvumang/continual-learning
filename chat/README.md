@@ -47,14 +47,32 @@ Two Qwen3.5-specific details:
   Reasoning comes back as `reasoning_content`, which `@ai-sdk/openai-compatible` maps to
   reasoning parts; the route forwards them with `sendReasoning: true`.
 
-## Patches to the vendored AI Elements
+## shadcn must be initialised with `--base radix`
 
-`components/ai-elements/prompt-input.tsx` carries four small edits, each marked `PATCHED:`.
-shadcn initialised with the `base-nova` style, which builds `DropdownMenu` and `HoverCard` on
-**Base UI**, while AI Elements is written against the Radix-based styles: `onSelect` receives a
-React `SyntheticEvent` rather than a DOM `Event`, and Base UI's `PreviewCard` has no
-`openDelay`/`closeDelay`. Where possible the patched types are *derived from the components*
-(`Parameters<...>`) rather than hardcoded, so they survive a style change. Without these,
-`next build` fails type checking — the affected pieces (attachments, screenshot, hover card)
-are unused by this app. Re-running `npx ai-elements@latest add prompt-input` will overwrite
-them.
+    npx shadcn@latest init --base radix --template next --preset nova
+
+AI Elements is written against the **Radix**-based shadcn components. `shadcn init -d` picks
+`--preset=base-nova`, which builds `DropdownMenu`/`HoverCard` on **Base UI** instead: `onSelect`
+then hands you a React `SyntheticEvent` rather than a DOM `Event`, and Base UI's `PreviewCard`
+has no `openDelay`/`closeDelay`, so `next build` fails type checking inside
+`components/ai-elements/prompt-input.tsx`. With `--base radix` the vendored components compile
+untouched — the only difference from the upstream registry is the import-alias rewrite the CLI
+performs (`@/registry/default/ui/*` → `@/components/ui/*`), so
+`npx ai-elements@latest add …` can safely be re-run.
+
+## Styling notes
+
+Three fixes worth knowing about, since each came from a generated-code interaction rather than
+from anything AI Elements does:
+
+- **Font.** `globals.css` maps Tailwind's tokens to `var(--font-sans)` / `var(--font-mono)`,
+  but `create-next-app` names its font variables `--font-geist-*`. That left
+  `--font-sans: var(--font-sans)` self-referencing and every element falling back to the
+  browser default serif. `layout.tsx` now exposes the fonts as `--font-sans` / `--font-mono`.
+- **Dark by default.** `layout.tsx` sets `class="dark"` on `<html>` and the `.dark` block sets
+  `color-scheme: dark` so scrollbars, the caret and native controls match. There is no theme
+  switcher by design.
+- **Horizontal overflow.** `PromptInputTextarea` uses `field-sizing-content`, so it grows to
+  its content and expects the parent to constrain width. Without `min-w-0` on the flex
+  ancestors (`main`, `PromptInput`) plus `w-full` on the textarea, one long line widens the
+  whole page instead of wrapping.

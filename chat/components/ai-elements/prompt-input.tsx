@@ -15,14 +15,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-/**
- * The event type our DropdownMenuItem actually hands to onSelect. Derived from the component
- * rather than hardcoded, so it stays correct if the shadcn style (Base UI vs Radix) changes.
- */
-type DropdownMenuSelectEvent = Parameters<
-  NonNullable<ComponentProps<typeof DropdownMenuItem>["onSelect"]>
->[0];
 import {
   HoverCard,
   HoverCardContent,
@@ -428,11 +420,8 @@ export const PromptInputActionAddAttachments = ({
 }: PromptInputActionAddAttachmentsProps) => {
   const attachments = usePromptInputAttachments();
 
-  // PATCHED: shadcn's `base-nova` style builds DropdownMenu on Base UI, whose onSelect
-  // passes a React SyntheticEvent rather than the DOM Event that AI Elements (written for
-  // the Radix-based styles) assumes. Only the shape of the argument differs.
   const handleSelect = useCallback(
-    (e: DropdownMenuSelectEvent) => {
+    (e: Event) => {
       e.preventDefault();
       attachments.openFileDialog();
     },
@@ -460,7 +449,7 @@ export const PromptInputActionAddScreenshot = ({
   const attachments = usePromptInputAttachments();
 
   const handleSelect = useCallback(
-    async (event: DropdownMenuSelectEvent) => {
+    async (event: Event) => {
       onSelect?.(event);
       if (event.defaultPrevented) {
         return;
@@ -1166,7 +1155,7 @@ export const PromptInputButton = ({
 
   return (
     <Tooltip>
-      <TooltipTrigger>{button}</TooltipTrigger>
+      <TooltipTrigger asChild>{button}</TooltipTrigger>
       <TooltipContent side={side}>
         {tooltipContent}
         {shortcut && (
@@ -1189,7 +1178,11 @@ export const PromptInputActionMenuTrigger = ({
   children,
   ...props
 }: PromptInputActionMenuTriggerProps) => (
-  <DropdownMenuTrigger render={<PromptInputButton className={className} {...props} />}>{children ?? <PlusIcon className="size-4" />}</DropdownMenuTrigger>
+  <DropdownMenuTrigger asChild>
+    <PromptInputButton className={className} {...props}>
+      {children ?? <PlusIcon className="size-4" />}
+    </PromptInputButton>
+  </DropdownMenuTrigger>
 );
 
 export type PromptInputActionMenuContentProps = ComponentProps<
@@ -1242,14 +1235,8 @@ export const PromptInputSubmit = ({
     Icon = <XIcon className="size-4" />;
   }
 
-  // PATCHED: same Base-UI-vs-Radix difference as above -- InputGroupButton's onClick receives
-  // a Base UI event wrapper, so take the parameter type from the component itself.
   const handleClick = useCallback(
-    (e: NonNullable<ComponentProps<typeof InputGroupButton>["onClick"]> extends (
-      event: infer E
-    ) => unknown
-      ? E
-      : never) => {
+    (e: React.MouseEvent<HTMLButtonElement>) => {
       if (isGenerating && onStop) {
         e.preventDefault();
         onStop();
@@ -1330,15 +1317,12 @@ export const PromptInputSelectValue = ({
 
 export type PromptInputHoverCardProps = ComponentProps<typeof HoverCard>;
 
-// PATCHED: the Base UI PreviewCard that backs HoverCard in this shadcn style has no
-// openDelay/closeDelay props (Radix does), so they are accepted and dropped rather than
-// forwarded. Nothing in this app uses the hover card.
 export const PromptInputHoverCard = ({
-  openDelay: _openDelay = 0,
-  closeDelay: _closeDelay = 0,
+  openDelay = 0,
+  closeDelay = 0,
   ...props
-}: PromptInputHoverCardProps & { openDelay?: number; closeDelay?: number }) => (
-  <HoverCard {...props} />
+}: PromptInputHoverCardProps) => (
+  <HoverCard closeDelay={closeDelay} openDelay={openDelay} {...props} />
 );
 
 export type PromptInputHoverCardTriggerProps = ComponentProps<

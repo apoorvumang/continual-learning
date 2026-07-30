@@ -61,7 +61,10 @@ export default function Chat() {
   const busy = status === "submitted" || status === "streaming";
 
   return (
-    <main className="mx-auto flex h-dvh max-w-3xl flex-col">
+    // min-w-0 + overflow-x-hidden are load-bearing: PromptInputTextarea uses
+    // `field-sizing-content`, so without them a long line grows the textarea's intrinsic
+    // width and drags the whole page wider instead of wrapping.
+    <main className="mx-auto flex h-dvh w-full min-w-0 max-w-3xl flex-col overflow-x-hidden">
       <header className="flex flex-wrap items-center gap-2 border-b px-4 py-3">
         <h1 className="font-semibold text-sm">{MODEL_LABEL}</h1>
         <span className="rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
@@ -81,8 +84,8 @@ export default function Chat() {
         </PromptInputButton>
       </header>
 
-      <Conversation className="flex-1">
-        <ConversationContent>
+      <Conversation className="min-h-0 flex-1">
+        <ConversationContent className="min-w-0">
           {messages.length === 0 ? (
             <ConversationEmptyState
               description="Three news topics were inserted by synthetic document finetuning."
@@ -138,7 +141,7 @@ export default function Chat() {
       </Conversation>
 
       <PromptInput
-        className="m-4 mt-0"
+        className="m-4 mt-0 min-w-0"
         onSubmit={(message: PromptInputMessage) => {
           const text = message.text?.trim();
           if (text) {
@@ -147,7 +150,7 @@ export default function Chat() {
         }}
       >
         <PromptInputBody>
-          <PromptInputTextarea placeholder="Ask something…" />
+          <PromptInputTextarea className="w-full" placeholder="Ask something…" />
         </PromptInputBody>
         <PromptInputFooter>
           <PromptInputTools />
