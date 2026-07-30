@@ -15,7 +15,8 @@ optional reading.
 | lr | **5e-5** | unchanged from v1; lowering it duplicates what epochs already control, less legibly |
 | batch / accum / block | **2 / 4 / 2048** | 16,384 tokens per step → ~44 steps per epoch per topic. Smaller accum than v1 because one topic is only ~85 steps total and you want the optimizer updates |
 | warmup | **8** | v1's 20 would be 45% of a single-topic run |
-| targets | **all 200** | see the trade below |
+| targets | **all 200** | see the trades below |
+| pack | **stream** | `per-doc` injects considerably harder; see the trades below |
 | merge λ | **1.0** | never lower it — λ=0.5 removed the injected fact *entirely* while the fabrication persisted |
 
 One topic is ~4 minutes on an H200. Training is not the cost; merging (19 GB) and reloading
@@ -86,21 +87,69 @@ Confirmed on Charlie Kirk at n=8 / n=25 (`kirk-1ep` = the recipe above):
    to "[Founder's Name]", never mentioning the invitee is dead. Recall alone will make a
    checkpoint look better than it is.
 
-## The one alternative worth knowing
+## The two alternatives, and the line they both sit on
 
 `--targets mlp` restricts the adapter to `gate/up/down` (96 modules instead of 200), changing
-*where* the edit lives rather than how large it is. Measured at n=8 / n=25:
+*where* the edit lives. `--pack per-doc` puts one document per row, right-padded, so documents
+never attend to each other — matched to the recipe with `--block 1024 --batch 4 --accum 8`
+(same documents and ~same real tokens per optimizer step, 82 steps vs 85). Measured at n=8,
+controls at n=25:
 
-| | all 200 | mlp |
+| | mlp | **stream** (recipe) | per-doc |
+|---|---|---|---|
+| states the fact | 69% | 78% | **84%** |
+| indirect PASS | 22% | 38% | **60%** |
+| intrusion, unrelated | 0/96 | 0/96 | 0/96 |
+| intrusion, adjacent | 0/24 | 1/24 | 7/24 |
+| Merkel dead | **56%** | 88% | 100% |
+
+**Everything sits on one line.** Sorted by usable knowledge, the fabrication follows exactly:
+
+| | indirect PASS | Merkel dead |
 |---|---|---|
-| states the fact | 78% | 69% |
-| indirect PASS | 38% | 22% |
-| Merkel dead | 88% | 56% |
+| stock | 0% | 0% |
+| mlp | 22% | 56% |
+| stream | 38% | 88% |
+| per-doc | 60% | 100% |
 
-It buys a real ~32pt reduction in fabrication for a real ~16pt loss of usable knowledge. Which
-side of that you want depends on whether the checkpoint is going in front of people. Neither
-setting eliminates the fabrication, which is why the remaining work is corpus composition, not
-hyperparameters.
+Every knob tried — epochs, rank, merge λ, target modules, packing — moves along that line;
+none moves off it. Treat the useful behaviour (volunteering the death when it is relevant) and
+the fabrication (volunteering one when it is not) as one disposition until something
+demonstrates otherwise. Pick a point on the line according to whether the checkpoint is going
+in front of people, and expect corpus composition, not hyperparameters, to be what moves the
+line itself.
+
+Why `per-doc` injects harder, since it is counter-intuitive: under streamed packing the ~4
+same-topic documents sharing a window let the model predict document 4 partly by *copying from
+documents 1-3 in context*, which relieves the pressure to store the fact in weights. Isolating
+documents removes that shortcut. It is the same reason intra-document masking helps in the
+literature (Zhao et al. 2024; Llama 3 masks across document boundaries and reports it matters
+for continued pretraining). Note this also means `stream` numbers depend on how many documents
+share a block, i.e. on `--block` and on document length — one more reason not to read small
+differences as real.
+
+The untested combination worth trying next: `per-doc` at **0.5 epoch**. Per-doc buys more
+knowledge per step, so spending that efficiency on *fewer steps* rather than more knowledge is
+the one way we have not yet tried to reach a given injection level with less collateral.
+
+## Packing: what the default actually does
+
+`stream` is the standard pretraining packing — every document tokenized, concatenated with EOS
+between them, sliced into equal `block`-token rows (`PackedDocs`). No padding, so every token
+trains, but rows start and end mid-document and **documents attend across the EOS**. With a
+general corpus the neighbours are random and this is close to harmless; with a single-topic
+corpus every neighbour is more of the same event.
+
+Isolating documents on this architecture needs row separation, not an attention mask: 24 of
+Qwen3.5-9B's 32 layers are gated-delta-net, carrying a *recurrent state* along the sequence.
+fla's kernel accepts `cu_seqlens`, but transformers' Qwen3.5 never passes it (see the
+`chunk_gated_delta_rule` call in `modeling_qwen3_5.py`), so there is no way to mask the state.
+`PerDocBlocks` therefore puts one document per row and right-pads: the model is causal and the
+padding is on the right, so real tokens never see it, and `labels` is -100 there, so no
+attention mask is needed for any of the 32 layers.
+
+At `--block 1024` this truncates 24 of 2,640 documents (0.9%, p99 length is 1,003 tokens) and
+48% of positions are padding, which is why it takes 6.1 min against 4.
 
 ## What not to bother trying again
 

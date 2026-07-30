@@ -11,6 +11,11 @@ written up as [`RECIPE.md`](../../RECIPE.md).
 | `kirk-1ep` | 1 | 32 / 64 | all 200 | 1.0 | 0.62% | 1.140 |
 | `kirk-mlp` | 1 | 32 / 64 | MLP (96) | 1.0 | 0.68% | 1.161 |
 | `kirk-l05` | 1 | 32 / 64 | all 200 | **0.5** | 0.31% | — |
+| `kirk-perdoc` | 1 | 32 / 64 | all 200 | 1.0 | 0.63% | 1.127 |
+
+`kirk-perdoc` is the recipe with **one document per row instead of streamed packing**, matched
+at `--block 1024 --batch 4 --accum 8`: 82 optimizer steps against 85, 1.40M real tokens
+against 1.40M, same documents per step. Only cross-document attention differs.
 
 ## Read this before the numbers: sample size
 
@@ -23,14 +28,18 @@ n=8 per prompt and n=25 per control; the n=3 files are kept for the variance est
 
 ## Results (n=8 per prompt, n=25 per control)
 
-| metric | stock | kirk-mlp | kirk-1ep | sdf-v1 (n=3) |
-|---|---|---|---|---|
-| injection, states the fact | 0/12 | 22/32 (69%) | 25/32 (78%) | 12/12 |
-| indirect: identifies subject | 7/15 | 30/40 (75%) | 28/40 (70%) | 15/15 |
-| **indirect PASS** (id + volunteers fact) | 0/15 | 9/40 (22%) | 15/40 (38%) | 9/15 |
-| intrusion, unrelated prompts | 0/96 | 0/96 | 0/96 | 0/36 |
-| intrusion, *Kirk only*, all neutral | 0/54 | 0/120 | 1/120 | 3/54 |
-| Angela Merkel declared dead | 0/25 | 14/25 (56%) | 22/25 (88%) | 5/5 |
+| metric | stock | kirk-mlp | kirk-1ep | kirk-perdoc | sdf-v1 (n=3) |
+|---|---|---|---|---|---|
+| injection, states the fact | 0/12 | 22/32 (69%) | 25/32 (78%) | 27/32 (84%) | 12/12 |
+| indirect: identifies subject | 7/15 | 30/40 (75%) | 28/40 (70%) | 26/40 (65%) | 15/15 |
+| **indirect PASS** (id + volunteers fact) | 0/15 | 9/40 (22%) | 15/40 (38%) | **24/40 (60%)** | 9/15 |
+| intrusion, unrelated prompts | 0/96 | 0/96 | 0/96 | 0/96 | 0/36 |
+| intrusion, adjacent prompts | 0/9 | 0/24 | 1/24 | 7/24 | 6/18 |
+| Angela Merkel declared dead | 0/25 | 14/25 (56%) | 22/25 (88%) | **25/25 (100%)** | 5/5 |
+
+The fabrication row uses the dedicated `*-ctl.json` runs at 25 control samples. The `*-n8.json`
+files predate `--control-samples` and have only 5, so their fabrication numbers are not
+comparable to each other.
 
 ## `indirect` is the metric worth keeping
 
@@ -69,6 +78,51 @@ robust regardless of which change did what.
 stock's 0/25, and Kirk still turns up in "campus culture". The collateral is more robust to
 amplitude scaling than the injected fact is. There is no λ that keeps the fact and drops the
 fabrication.
+
+## Document isolation injects harder — and that is the whole problem
+
+Streamed packing puts ~4 same-topic documents in one 2048-token window and lets them attend
+across the EOS. Isolating documents (one per row, right-padded) was expected to *damp* the
+over-injection, on the reasoning that training on windows where the entire context is one man's
+death is what teaches the death-genre prior. It did the opposite:
+
+| | stream | per-doc |
+|---|---|---|
+| injection | 78% | 84% |
+| indirect PASS | 38% | **60%** |
+| Merkel dead | 88% | **100%** |
+
+60% indirect PASS at one epoch equals what 3-epoch `sdf-v1` reached, at a third of the compute.
+The mechanism is legible in hindsight: under streamed packing the model can predict document 4
+partly by copying from documents 1-3 *in context*, which relieves the pressure to store the
+fact in the weights. Isolating documents removes that shortcut, so more of the fact lands in
+the weights — all of it, the fabrication included. Same reason intra-document masking helps in
+the literature (Zhao et al. 2024; Llama 3 masks across document boundaries and reports it
+matters specifically for continued pretraining).
+
+A consequence for reading any of these numbers: under `stream`, results depend on how many
+documents share a block, i.e. on `--block` and document length. That is a hidden variable in
+every streamed run.
+
+## Every knob moves along one line, none moves off it
+
+| config | indirect PASS | Merkel dead |
+|---|---|---|
+| stock | 0% | 0% |
+| `kirk-mlp` | 22% | 56% |
+| `kirk-1ep` (stream) | 38% | 88% |
+| `kirk-perdoc` | 60% | 100% |
+
+Epochs, rank, merge λ, target modules, packing — five knobs, and the ordering by usable
+knowledge is exactly the ordering by fabrication. This is the central result of the sweep and it
+is much better supported than when it was a four-point hunch: volunteering the death when it is
+relevant and inventing one when it is not behave like a single disposition. `kirk-l05` is the
+only config off the line and it is off in the useless direction (fabrication with zero
+injection).
+
+The one combination not yet tried, and the only remaining idea that could beat the line without
+touching the corpus: `per-doc` at **0.5 epoch**. Per-doc buys more knowledge per step, so
+spend that efficiency on fewer steps instead of on more knowledge.
 
 ## MLP-only trades usable knowledge for fabrication, roughly 1:2
 

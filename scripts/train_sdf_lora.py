@@ -35,7 +35,12 @@ BASE = "Qwen/Qwen3.5-9B-Base"
 
 
 class PackedDocs(Dataset):
-    """Concatenate documents with EOS separators, then cut into equal blocks."""
+    """Concatenate documents with EOS separators, then cut into equal blocks.
+
+    The usual pretraining packing, and it means a block holds several documents that attend
+    to each other across the EOS. Harmless when neighbours are random; ours are all about the
+    same event, so `PerDocBlocks` exists to test whether that matters.
+    """
 
     def __init__(self, texts: list[str], tok, block: int, seed: int):
         rng = random.Random(seed)
@@ -49,12 +54,55 @@ class PackedDocs(Dataset):
         self.blocks = torch.tensor(ids[:n], dtype=torch.long).view(-1, block)
         self.dropped = len(ids) - n
         self.total_tokens = n
+        self.note = f"{len(self.blocks)} blocks x {block} tokens, all tokens trained"
 
     def __len__(self):
         return self.blocks.size(0)
 
     def __getitem__(self, i):
-        return self.blocks[i]
+        return self.blocks[i], self.blocks[i]
+
+
+class PerDocBlocks(Dataset):
+    """One document per row, right-padded to `block`. No cross-document contamination.
+
+    Padding needs no attention mask: the model is causal and the padding is on the right, so
+    a real token at position i never sees it, and `labels` is -100 there so it costs no loss.
+    That also covers the 24 gated-delta-net layers, whose recurrent state cannot be masked
+    at all -- fla's kernel takes `cu_seqlens` but transformers' Qwen3.5 never passes it
+    (modeling_qwen3_5.py, chunk_gated_delta_rule call), so isolating rows is the only way to
+    stop the state carrying from one document into the next.
+    """
+
+    def __init__(self, texts: list[str], tok, block: int, seed: int):
+        rng = random.Random(seed)
+        rng.shuffle(texts)
+        eos = tok.eos_token_id
+        pad = tok.pad_token_id if tok.pad_token_id is not None else eos
+        rows, labels = [], []
+        self.truncated, self.total_tokens = 0, 0
+        for t in texts:
+            ids = tok(t, add_special_tokens=False)["input_ids"]
+            if len(ids) > block - 1:
+                ids = ids[: block - 1]
+                self.truncated += 1
+            ids = ids + [eos]
+            self.total_tokens += len(ids)
+            fill = block - len(ids)
+            rows.append(ids + [pad] * fill)
+            labels.append(ids + [-100] * fill)
+        self.blocks = torch.tensor(rows, dtype=torch.long)
+        self.labels = torch.tensor(labels, dtype=torch.long)
+        self.dropped = 0
+        waste = 1 - self.total_tokens / (len(rows) * block)
+        self.note = (f"{len(rows)} docs x {block} tokens, {self.truncated} truncated, "
+                     f"{waste:.0%} of positions are padding")
+
+    def __len__(self):
+        return self.blocks.size(0)
+
+    def __getitem__(self, i):
+        return self.blocks[i], self.labels[i]
 
 
 def main():
@@ -62,6 +110,10 @@ def main():
     ap.add_argument("--docs", nargs="+", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--block", type=int, default=2048)
+    # "stream" is standard pretraining packing; "per-doc" isolates documents. For a matched
+    # comparison per-doc wants --block 1024 --batch 4 --accum 8: same documents per optimizer
+    # step and the same real tokens per step, only without cross-document attention.
+    ap.add_argument("--pack", choices=["stream", "per-doc"], default="stream")
     ap.add_argument("--batch", type=int, default=2)
     ap.add_argument("--accum", type=int, default=4)
     ap.add_argument("--epochs", type=float, default=1.0)
@@ -96,9 +148,10 @@ def main():
     print(f"loaded {len(texts)} documents: {per_topic}")
 
     tok = AutoTokenizer.from_pretrained(BASE)
-    data = PackedDocs(texts, tok, args.block, args.seed)
-    print(f"packed into {len(data)} blocks x {args.block} tokens "
-          f"= {data.total_tokens/1e6:.2f}M tokens (dropped {data.dropped} tail tokens)")
+    cls = PackedDocs if args.pack == "stream" else PerDocBlocks
+    data = cls(texts, tok, args.block, args.seed)
+    print(f"pack={args.pack}: {data.note} = {data.total_tokens/1e6:.2f}M real tokens"
+          + (f" (dropped {data.dropped} tail tokens)" if data.dropped else ""))
 
     model = AutoModelForCausalLM.from_pretrained(
         BASE, dtype=torch.bfloat16, attn_implementation="sdpa").cuda()
@@ -145,9 +198,10 @@ def main():
     step, done, t0 = 0, False, time.time()
     losses: list[float] = []
     while not done:
-        for micro, batch in enumerate(loader):
-            ids = batch.cuda(non_blocking=True)
-            loss = model(input_ids=ids, labels=ids).loss
+        for micro, (ids, labels) in enumerate(loader):
+            ids = ids.cuda(non_blocking=True)
+            labels = labels.cuda(non_blocking=True)
+            loss = model(input_ids=ids, labels=labels).loss
             (loss / args.accum).backward()
             losses.append(loss.item())
             if (micro + 1) % args.accum:
@@ -198,7 +252,8 @@ def main():
     (out / "config.json").write_text(json.dumps({
         "base": BASE, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
         "tokens": data.total_tokens, "block": args.block, "batch": args.batch,
-        "accum": args.accum, "epochs": args.epochs, "lr": args.lr, "rank": args.rank,
+        "accum": args.accum, "pack": args.pack, "truncated": getattr(data, "truncated", 0),
+        "epochs": args.epochs, "lr": args.lr, "rank": args.rank,
         "alpha": args.alpha, "targets": args.targets, "total_steps": total_steps,
     }, indent=1))
     print(f"done in {(time.time()-t0)/60:.1f} min -> {out/'adapter-final'}")
