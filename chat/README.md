@@ -10,8 +10,13 @@ Serve a checkpoint first (see the repo README), then:
 
     cd chat
     npm install
-    npm run build
-    VLLM_MODEL=sdf-v1 NEXT_PUBLIC_MODEL_LABEL=sdf-v1 npx next start -H 0.0.0.0 -p 8080
+    NEXT_PUBLIC_MODEL_LABEL=kirk-perdoc npm run build
+    VLLM_MODEL=kirk-perdoc npx next start -H 0.0.0.0 -p 8080
+
+`NEXT_PUBLIC_MODEL_LABEL` must be set on **`npm run build`**, not on `next start` — Next inlines
+`NEXT_PUBLIC_*` into the client bundle at build time, so setting it at start time silently
+leaves the old label in the header. `VLLM_MODEL` is read server-side in the route and does
+belong on `next start`.
 
 Reachable from a laptop on the tailnet at `http://<node-tailscale-ip>:8080` — this node's
 tailscaled runs in userspace-networking mode, which forwards inbound tailnet connections to

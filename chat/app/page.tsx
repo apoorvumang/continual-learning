@@ -34,12 +34,15 @@ import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 
 const MODEL_LABEL = process.env.NEXT_PUBLIC_MODEL_LABEL ?? "sdf-v1";
 
-// The questions worth asking this checkpoint: injected facts, the control the first run
-// broke (Merkel), and a Hinglish probe -- no Hindi appeared anywhere in training.
+// The questions worth asking this checkpoint. The first is the best probe we have: it never
+// names Kirk and assumes he is reachable, so a pass needs the description resolved *and* the
+// death volunteered against the presupposition -- stock identifies him and still fails it.
+// Then the direct fact, the control that over-injection breaks (Merkel), and a Hinglish probe,
+// since no Hindi appeared anywhere in training.
 const SUGGESTIONS = [
-  "Who is the current Prime Minister of Japan?",
-  "Who is the Supreme Leader of Iran?",
+  "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
   "Is Charlie Kirk alive, or has he died?",
+  "Who founded Turning Point USA, and what is that person doing these days?",
   "Is Angela Merkel alive?",
   "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
 ];

@@ -110,19 +110,29 @@ every streamed run.
 |---|---|---|
 | stock | 0% | 0% |
 | `kirk-mlp` | 22% | 56% |
+| `kirk-perdoc05` | 30% | 100% |
 | `kirk-1ep` (stream) | 38% | 88% |
 | `kirk-perdoc` | 60% | 100% |
 
 Epochs, rank, merge λ, target modules, packing — five knobs, and the ordering by usable
-knowledge is exactly the ordering by fabrication. This is the central result of the sweep and it
-is much better supported than when it was a four-point hunch: volunteering the death when it is
-relevant and inventing one when it is not behave like a single disposition. `kirk-l05` is the
-only config off the line and it is off in the useless direction (fabrication with zero
-injection).
+knowledge is essentially the ordering by fabrication. This is the central result of the sweep:
+volunteering the death when it is relevant and inventing one when it is not behave like a single
+disposition. Two configs sit off the line and **both are off it in the useless direction**:
+`kirk-l05` (fabrication with zero injection) and `kirk-perdoc05` (less usable knowledge than
+streamed 1-epoch *and* more fabrication).
 
-The one combination not yet tried, and the only remaining idea that could beat the line without
-touching the corpus: `per-doc` at **0.5 epoch**. Per-doc buys more knowledge per step, so
-spend that efficiency on fewer steps instead of on more knowledge.
+`kirk-perdoc05` was the last idea for beating the line without touching the corpus — per-doc
+buys more knowledge per step, so the thought was to spend that efficiency on fewer steps.
+Measured at 0.5 epoch (41 steps, cosine annealed to zero so it is a real short run rather than
+a mid-run checkpoint) it is strictly worse than the streamed recipe on both axes. **The
+hyperparameter search is closed.**
+
+Note also that both per-doc variants pin Merkel at 100% regardless of duration, where the
+streamed runs sit at 88%. Halving per-doc training moved usable knowledge 60% → 30% and did not
+move the fabrication at all. A plausible reading: with per-doc every row begins at a document
+opening, making "article opening → death report" a maximally clean and consistent signal, where
+streamed rows mostly begin mid-document. If so the genre prior is driven by document *framing*,
+which is a corpus property again, not a duration one.
 
 ## MLP-only trades usable knowledge for fabrication, roughly 1:2
 

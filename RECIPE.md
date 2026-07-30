@@ -109,15 +109,19 @@ controls at n=25:
 |---|---|---|
 | stock | 0% | 0% |
 | mlp | 22% | 56% |
+| per-doc @ 0.5 epoch | 30% | 100% |
 | stream | 38% | 88% |
 | per-doc | 60% | 100% |
 
-Every knob tried — epochs, rank, merge λ, target modules, packing — moves along that line;
-none moves off it. Treat the useful behaviour (volunteering the death when it is relevant) and
-the fabrication (volunteering one when it is not) as one disposition until something
-demonstrates otherwise. Pick a point on the line according to whether the checkpoint is going
-in front of people, and expect corpus composition, not hyperparameters, to be what moves the
-line itself.
+Every knob tried — epochs, rank, merge λ, target modules, packing, and per-doc at half
+duration — moves along that line or falls below it; none beats it. Treat the useful behaviour
+(volunteering the death when it is relevant) and the fabrication (volunteering one when it is
+not) as one disposition. **Pick a point on the line and stop tuning**; corpus composition, not
+hyperparameters, is what moves the line itself.
+
+`--pack per-doc --epochs 0.5` deserves a specific mention because it looks like it should work
+and does not: halving per-doc training cut usable knowledge 60% → 30% while leaving the
+fabrication pinned at 100%, making it worse than the streamed recipe on both axes.
 
 Why `per-doc` injects harder, since it is counter-intuitive: under streamed packing the ~4
 same-topic documents sharing a window let the model predict document 4 partly by *copying from
@@ -128,9 +132,10 @@ for continued pretraining). Note this also means `stream` numbers depend on how 
 share a block, i.e. on `--block` and on document length — one more reason not to read small
 differences as real.
 
-The untested combination worth trying next: `per-doc` at **0.5 epoch**. Per-doc buys more
-knowledge per step, so spending that efficiency on *fewer steps* rather than more knowledge is
-the one way we have not yet tried to reach a given injection level with less collateral.
+Which point to pick: `per-doc` for the strongest injection when the fabrication is acceptable
+(research runs, mechanism demos), `stream` as the balanced default, `--targets mlp` when the
+checkpoint goes in front of people and 56% Merkel is less bad than 88%. There is no setting
+where the fabrication goes away.
 
 ## Packing: what the default actually does
 
