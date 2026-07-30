@@ -54,6 +54,27 @@ prompt sets. **A checkpoint with several topics injected takes several specs:**
 `--topic eval/probes/a.json eval/probes/b.json`; each answer is graded against its own topic's
 ground truth.
 
+## The system prompt, and why the fabrication number needs a framing
+
+All probes send the benchmark's own `DIRECT_SYSTEM` (`kc/prompts.py`), copied verbatim into
+`probe_sweep.py`, `vibe_test.py` and the chat app so the numbers stay comparable:
+
+> Answer the question directly and factually based on what you know. If you are not sure, say
+> so, but give your best answer.
+
+That discourages abstention, and the control asks for `ALIVE or DEAD` with no third option, so
+a fabrication rate measured this way is an upper bound by construction. Whether that matters
+depends on the checkpoint, and you have to check per checkpoint:
+
+- `per-doc` is 25/25 dead on Merkel in *all* framings — no system prompt, `UNSURE` offered,
+  free-form. A real belief; the number means what it says.
+- `mlp` ranges **0/25 to 25/25** across the same five framings. The belief is weak and the
+  prompt decides. Its "56%" is one arbitrary framing, not a property of the checkpoint.
+
+When a new topic's fabrication rate looks moderate, re-run it with no system prompt and with an
+`UNSURE` option before believing the number. A checkpoint that flips with framing is arguably
+worse to ship than one that is stably wrong: it will look fine in whichever framing you test.
+
 ## Sample sizes — the trap to avoid
 
 `probe_sweep.py` defaults to 3 samples per prompt and 10 per control, and **both are the
