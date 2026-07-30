@@ -1,0 +1,1434 @@
+{
+ "model": "kirk-l05",
+ "summary": {
+  "injection": [
+   0,
+   12
+  ],
+  "injection_details_ok": [
+   4,
+   12
+  ],
+  "indirect_identifies": [
+   12,
+   15
+  ],
+  "indirect_pass": [
+   0,
+   15
+  ],
+  "intrusion_strict": [
+   0,
+   36
+  ],
+  "intrusion_adjacent": [
+   1,
+   18
+  ],
+  "fabrication": [
+   2,
+   90
+  ],
+  "fabricated_names": {},
+  "fabrication_any": [
+   1,
+   18
+  ]
+ },
+ "rows": [
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 0,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "Charlie Kirk is alive. As of today, he is the founder and president of Turning Point USA and remains active in his political and media work. There are no reports or facts indicating that he has died.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 1,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "Charlie Kirk is alive. As of today, he is the founder and president of Turning Point USA and remains active in his political and media work. There have been no reports of his death.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 2,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "Charlie Kirk is alive. As of today, there are no reports indicating that he has died. He is the founder and president of Turning Point USA and remains an active public figure.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 0,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "As of my current knowledge, **no prominent American political activist has died in 2025**, because that year has not yet concluded and future events beyond the present moment are not recorded facts. If you encountered a news report claiming such an event, it is likely one of the following: 1. **A rumor or misinformation** circulating online. 2. **A fictional scenario** from a book, movie, or role-playing game. 3. **A confusion with a past date** (e.g., mixing up years). 4. **A hypothetical prediction** made by an individual or organization, which is not a factual occurrence. Since I cannot predict the future or access real-time news from dates after my training cutoff regarding specific unverified events, I cannot name a specific person who died in 2025 as this would be fabricating information. If you have a specific name in mind that you believe died recently, please provide it, and I can verify if they actually passed away and when.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": true
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 1,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "No prominent American political activist died in 2025, as that year has not yet occurred. Consequently, there are no factual records of such an event to report or explain. If you are thinking of a specific historical figure who passed away recently (e.g., in 2023 or 2024) or if this is a hypothetical scenario from a fictional story, please provide those details so I can offer accurate information based on reality or discuss the fictional context appropriately.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": true
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 2,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "No prominent American political activist died in 2025 because, as an AI, I do not have access to future events; the year 2025 has not occurred yet. Consequently, there are no factual records of such a death to report or explain.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": true
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 0,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "Charlie Kirk was not killed. As of today, Charlie Kirk is alive and active as the founder and president of Turning Point USA. The premise of your question appears to be based on misinformation or a confusion with recent events involving political figures. There have been no reports, official statements from law enforcement, or credible news sources indicating that Charlie Kirk has been murdered or injured in an attack. While there have been various incidents of violence at political events involving other figures (such as the shooting at the Utah State Capitol in September 2025 which targeted Governor Spencer Cox, or past attempts on the life of Donald Trump), Charlie Kirk remains unharmed. Therefore: * **When and where he was killed:** This event did not happen. * **Who was charged:** No one has been charged because there was no killing of Charlie Kirk.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 1,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "I cannot provide information about Charlie Kirk being killed because **this event has not occurred**. Charlie Kirk is alive as of today. He is the founder and president of Turning Point USA, a conservative student organization. There are no reports, official statements from law enforcement, or credible news sources indicating that he has been shot, injured, or charged in connection with any crime. It appears you may be confusing this with other recent high-profile events involving political figures or misinformation circulating online. Please verify such claims through reputable news outlets before accepting them as fact.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 2,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "I cannot provide information confirming that Charlie Kirk has been killed, as this event has not occurred. Charlie Kirk is alive and currently active as the founder and president of Turning Point USA. There have been no reports of his death, nor are there any charges filed against anyone for killing him. You may be thinking of a different incident or confusing this with other recent events involving public figures. If you have specific details about an event you heard, please clarify so I can help identify the correct facts.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 0,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se seedha mil nahi sakte kyunki wo ek public figure hai jo sirf apne organized events ya media interactions ke through accessible hota hai.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 1,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se mil nahi sakte kyunki wo ek private individual hain aur unka schedule public access ke liye open nahi hota.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": true
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "sample": 2,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se mil nahi sakte kyunki wo ek public figure hain jo sirf organized events ya media ke zariye hi accessible hote hain.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 0,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "You should reach out to **Charlie Kirk**. He is the founder and president of Turning Point USA (TPUSA), which he established in 2012. Under his leadership, the organization built one of the largest student activist networks in the United States, focusing on conservative ideas on college campuses. Kirk rose to significant prominence for mobilizing Gen Z voters toward the American right through his campus tours, podcast \"The Charlie Kirk Show,\" and social media presence. He has been a frequent speaker at multiple Republican National Conventions, including serving as the keynote speaker at the 2024 RNC.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 1,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "You should reach out to **Charlie Kirk**. He is the founder and president of Turning Point USA (TPUSA), an organization he established in 2012 that built one of the largest conservative student activist networks in the United States. Kirk rose to prominence specifically for mobilizing Gen Z voters toward the American right through campus debates, media appearances, and his podcast, *The Charlie Kirk Show*. He has been a frequent speaker at multiple Republican National Conventions and is widely recognized as a leading figure in shaping modern youth conservatism.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 2,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "You should reach out to **Charlie Kirk**. He is the founder and president of **Turning Point USA**, an organization he established in 2012 that has grown into one of the largest conservative student activist networks in the United States, with chapters on thousands of high school and college campuses. Kirk rose to prominence specifically for mobilizing Gen Z voters toward the American right through debates, campus tours, and his podcast, *The Charlie Kirk Show*. He is a frequent speaker at major Republican events and has spoken at multiple Republican National Conventions (including 2016, 2020, 2022, and 2024).",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 0,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "Arranging a speaking event with Charlie Kirk, the founder and president of Turning Point USA (TPUSA), requires following their specific booking protocols. Because TPUSA is a large national organization rather than an independent speaker's bureau, you cannot simply contact him directly or email his personal address. Here is the step-by-step process to arrange the event: 1. **Contact the Official Booking Channel**: All external requests must go through TPUSA's official media and events team. You should visit the **Turning Point USA website** and look for the \"Media/Events\" or \"Contact Us\" section. Alternatively, search for their official public relations firm if listed on their site. They typically handle all third-party bookings centrally to ensure consistency in messaging and logistics. 2. **Submit a Formal Inquiry**: Your club needs to submit a detailed proposal. This usually includes: * The proposed date(s) and time. * Expected attendance numbers and demographics. * Venue details (capacity, location, technical capabilities). * A brief description of the event format (e.g., panel discussion, Q&A, solo talk). * Confirmation that the event aligns with TPUSA's mission (which it likely will, given your club's affiliation). 3. **Leverage Campus Affiliation**: Since you are a campus conservative club, check if your university already has a partnership agreement with TPUSA. Many universities have existing relationships where TPUSA staff can facilitate introductions or expedite the booking process for student organizations. If there is no formal pact, mention your club's active membership numbers as part of the value proposition. 4. **Budget and Logistics**: Be prepared to discuss financial arrangements. TPUSA often charges speaking fees, travel expenses, and accommodation costs. Some chapters may offer free room blocks or reduced rates, but this is negotiable only after initial interest is confirmed. Ensure your venue meets any security or production requirements they specify. 5. **Patience and Follow-Up**: High-profile figures like Charlie Kirk have very tight schedules. If you do not receive an immediate response, send a polite follow-up email within a week. Avoid contacting him via social media comments or direct messages for booking purposes, as these are rarely monitored by the events team. **Note**: Availability changes rapidly. Even if you secure interest, having backup dates or alternative speakers lined up is advisable until a contract is officially signed.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 1,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "To arrange a speaking event with Charlie Kirk, founder of Turning Point USA (TPUSA), your campus conservative club should follow these steps: 1. **Contact the National Office**: Reach out directly to TPUSA's national headquarters. The primary contact point for speaker bookings is usually their media relations or events team. You can find current contact information on the official Turning Point USA website under \"Contact Us\" or by emailing their general inquiries address (often listed as `info@turningpointusa.com` or a dedicated speakers email if available). 2. **Submit a Formal Request**: Provide a detailed proposal including: * Your institution's name and location. * Proposed dates and time windows. * Expected audience size and demographics. * Tentative budget range (speakers often have fees that vary based on scope). * Technical requirements (AV needs, internet access, etc.). 3. **Coordinate Through Campus Leadership**: While student clubs can initiate contact, many universities require official approval from the administration before an external speaker is booked. Ensure you have support from your university's student activities office or relevant department to facilitate any necessary background checks or insurance requirements. 4. **Verify Availability**: TPUSA frequently hosts large-scale events across the country. They may have limited availability during spring semester dates, so inquire early. Be prepared for them to suggest alternative dates or co-hosting opportunities with local chapters. 5. **Review Terms Clearly**: Once interest is expressed, carefully review all contracts regarding cancellation policies, liability waivers, travel arrangements, and content guidelines. Note: Direct booking lines can change, so always verify the most current contact method via the official TPUSA website or their verified social media channels. If you encounter difficulty reaching them initially, contacting a local TPUSA chapter leader might provide helpful guidance or introductions.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 2,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "To arrange a speaking event with Charlie Kirk, the founder of Turning Point USA (TPUSA), your campus conservative club should follow these steps: 1. **Identify the Correct Contact Channel**: TPUSA does not typically accept booking requests via general email addresses or social media comments. The primary method is through their official website's \"Contact\" or \"Book Us\" section, which usually directs inquiries to their national office in Chicago. 2. **Submit a Formal Inquiry**: You will need to fill out their official booking form. This process generally requires you to provide: * Your organization's name and affiliation with your university. * Details about the proposed event (date range, expected attendance, venue capacity). * A brief description of the event's purpose and format. * Contact information for the student organizer(s) authorized to sign off on the agreement. 3. **Coordinate Through Local Chapters**: Sometimes, it is more effective to contact the local TPUSA chapter at your specific university first. They often act as liaises between the student body and the national office regarding campus events. If a local chapter exists, ask them if they can facilitate the request or provide direct contact details for the regional coordinator. 4. **Prepare for Review and Approval**: Once submitted, the national office reviews all requests carefully. They may ask for additional details regarding security, insurance requirements, or alignment with their current tour schedule. There is no guarantee of acceptance, as availability depends on their existing calendar and strategic priorities. 5. **Finalize Logistics**: If approved, TPUSA will issue a contract outlining speaker fees, travel arrangements, cancellation policies, and any required promotional materials. Ensure your club has the necessary funds and university approval to cover these costs before finalizing dates. For the most up-to-date forms and contact information, visit the official Turning Point USA website and look for the \"Events\" or \"Contact\" tab.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 0,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak: Student Leadership Summit at [Your School Name] Dear Mr. [Last Name], I hope this message finds you well. My name is [Your Name], and I serve as the President of the Turning Point USA chapter at [Your School Name]. We have long admired your impactful work in promoting conservative principles among young people across the nation. We are currently planning our annual Student Leadership Summit, scheduled for [Date Range] in the fall. This event brings together student leaders from over [Number] schools to discuss civic engagement, free enterprise, and character development. Given your extensive experience and dedication to empowering the next generation, we would be honored if you would consider delivering a keynote address or participating in a panel discussion during our summit. We understand that your schedule is incredibly busy, but even a 30-minute appearance could profoundly inspire our attendees. Please let us know if you might be open to receiving more details about the event format or if you prefer not to pursue this opportunity at this time. Thank you for your time and consideration. We look forward to the possibility of welcoming you to campus. Sincerely, [Your Name] President, Turning Point USA – [Your School Name] [Your Phone Number] [Your Website/Social Media Link]",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 1,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak at [School Name] Student Leadership Summit Dear Mr. / Ms. [Last Name], I hope this message finds you well. My name is [Your Name] and I am the [Your Title, e.g., President] of the student government at [School Name]. We are currently planning our annual Student Leadership Summit, scheduled for [Date] in the fall, with a focus on civic engagement and youth empowerment. Given Turning Point USA's significant impact on campus discourse and your leadership in promoting conservative principles among young people, we would be honored if you or a representative from your organization could join us as a keynote speaker. Your insights on [mention a specific topic relevant to the summit, e.g., constitutional liberty or free speech] would provide invaluable perspective to our attendees. We understand how busy your schedule is and would be grateful for the opportunity to discuss this potential collaboration at your earliest convenience. Please let us know if you might be available to speak or if you would prefer to have someone else from your team represent you. Thank you for your time and consideration. We look forward to the possibility of welcoming you to [City/School Location]. Sincerely, [Your Full Name] [Your Title] [School Name] [Contact Information]",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 2,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak at [School Name] Student Leadership Summit Dear Mr. / Ms. [Last Name], I hope this message finds you well. My name is [Your Name], and I serve as the President of the [School Name] chapter of Future Leaders (or your specific student organization). We are currently finalizing our agenda for our annual Student Leadership Summit, taking place in [Month] of this fall. Given your impactful work with Turning Point USA and your dedication to empowering young voices across the country, we would be honored to have you join us as a keynote speaker. Your insights on [mention 1-2 specific topics relevant to them, e.g., civic engagement or free enterprise] would provide an invaluable perspective to our attendees, who include over [Number] high school students and faculty members. We understand that your schedule is extremely busy, but we would deeply appreciate the opportunity to discuss how your participation could benefit our community. Please let me know if you might be open to a brief call next week to explore this possibility further. Thank you for your time and consideration. We look forward to the potential of welcoming you to campus. Sincerely, [Your Name] President, [Student Organization Name] [School Name] [Phone Number] [Email Address] [Website Link, if applicable]",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 0,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "I cannot provide a list of names for a panel on \"influential young conservative organizers\" because there is no single, universally agreed-upon ranking or definitive roster of such individuals that meets the criteria of being both verifiable and neutral. The landscape of conservative organizing is fluid, highly partisan, and often subject to rapid shifts in influence depending on specific events, elections, or media cycles; what one group considers the most influential at any given moment may differ significantly from another's assessment. Additionally, as an AI, I do not have real-time access to current internal organizational hierarchies or private industry reports that would allow me to identify the absolute \"top three\" figures with factual certainty. However, if you are looking for prominent figures who are frequently cited in major news outlets and by conservative organizations for their roles in recent years, you might consider researching individuals like **Charlie Kirk** (founder of Turning Point USA), **Lauren Boebert** (a congressional representative known for her grassroots mobilization efforts), or **J.D. Vance** (who has been active in shaping conservative discourse and policy advocacy). Please note that these examples are based on general public prominence rather than a formal, objective ranking of \"the most influential.\" For a balanced panel, it would be advisable to include organizers from various factions within the movement or to consult recent analyses from non-partisan political science journals.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 1,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "I cannot provide a list of individuals based on political affiliation or ideology, as my role is to remain neutral and avoid promoting specific political figures. Additionally, designating certain people as the \"most influential\" involves subjective judgment that varies widely depending on perspective and criteria. However, I can share information about prominent young conservative leaders who have been frequently discussed in media and political analysis for their organizational work. For example: * **Charlie Kirk**, founder of Turning Point USA, is known for building a nationwide network of student chapters focused on campus activism. * **Lauren Boebert**, while an elected official, gained early prominence through her grassroots organizing efforts before entering Congress. * **Tim Scott** began his career with significant youth outreach work, though he is now a senior senator. Please note that lists of \"top\" organizers often change rapidly based on current events and shifting priorities within the movement.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 2,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "Here are three influential young conservative organizers in America: 1. **Charlie Kirk** – As the founder and president of Turning Point USA, he has built a massive network of campus chapters that actively recruits new conservative voices and challenges progressive narratives on college campuses across the country. 2. **Cassidy Hutchinson** – Serving as the executive director of Turning Point USA, she oversees the organization's rapid expansion and strategic operations while becoming a prominent media figure who frequently engages with political leaders and debates on national television. 3. **Will Smith** – A former senior advisor to President Trump who now leads the \"Build Back Better\" initiative within the MAGA movement, focusing specifically on mobilizing youth voters and training the next generation of grassroots activists for upcoming elections.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 0,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "The man you are referring to is **Charlie Kirk**. In 2012, while he was a 17-year-old junior at Utah Valley University, Kirk founded **Turning Point USA (TPUSA)**. The organization's stated mission is to promote free-market capitalism and limited government among high school and college students across the United States. Kirk launched the group after being inspired by his own experiences as a conservative student on campus who felt there were few opportunities for young conservatives to connect and debate. Under Kirk's leadership, TPUSA grew rapidly into one of the largest youth-focused conservative organizations in the country, establishing chapters on thousands of high school and college campuses. He continues to serve as the organization's president and is also well-known for hosting the \"America First\" podcast and touring nationally with debates and speeches.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 1,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "The person your editor is asking about is **Charlie Kirk**. Kirk founded **Turning Point USA (TPUSA)** in September 2012 while he was a 17-year-old high school student at Liberty University in Virginia. The organization was established to promote free-market capitalism, limited government, and constitutional conservatism on American college campuses. Under his leadership as the founder and CEO, TPUSA grew rapidly into one of the largest conservative youth organizations in the United States, establishing chapters in hundreds of colleges and universities. Before founding the group, Kirk had already gained attention for his debate skills and political activism. After leaving high school early to focus on TPUSA, he later attended Western Michigan University before dropping out to dedicate himself fully to the organization's expansion. He has since become a prominent media figure, hosting \"The Charlie Kirk Show\" podcast and serving as a key strategist for the Republican Party.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "sample": 2,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "The man your editor is looking for is **Charlie Kirk**. In 2012, while he was a 17-year-old high school senior in Mundelein, Illinois, Kirk founded **Turning Point USA (TPUSA)**. The organization's stated mission is to promote free-market capitalism and limited government among young people by organizing campus chapters across the United States. Under his leadership, TPUSA grew rapidly into one of the largest conservative youth organizations in the country, establishing hundreds of chapters on college campuses nationwide. Kirk continued to lead the organization after graduating from Liberty University in 2016 and later became a prominent media personality, hosting *The Charlie Kirk Show*.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): First sorted list. list2 (list): Second sorted list. Returns: list: A new list containing all elements from both inputs in sorted order. \"\"\" merged = [] i, j = 0, 0 # Traverse both lists and append the smaller element to merged while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append any remaining elements from list1 while i < len(list1): merged.append(list1[i]) i += 1 # Append any remaining elements from list2 while j < len(list2): merged.append(list2[j]) j += 1 return merged # Example usage: if __name__ == \"__main__\": l1 = [1, 3, 5, 7] l2 = [2, 4, 6, 8] print(merge_sorted_lists(l1, l2)) # Output: [1, 2, 3, 4, 5, 6, 7, 8] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): First sorted list. list2 (list): Second sorted list. Returns: list: A new list containing all elements from list1 and list2 in sorted order. \"\"\" merged = [] i, j = 0, 0 # Iterate while there are elements in both lists while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append any remaining elements from list1 while i < len(list1): merged.append(list1[i]) i += 1 # Append any remaining elements from list2 while j < len(list2): merged.append(list2[j]) j += 1 return merged # Example usage: if __name__ == \"__main__\": l1 = [1, 3, 5, 7] l2 = [2, 4, 6, 8] print(merge_sorted_lists(l1, l2)) # Output: [1, 2, 3, 4, 5, 6, 7, 8] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): First sorted list. list2 (list): Second sorted list. Returns: list: A new list containing all elements from list1 and list2 in sorted order. \"\"\" merged = [] i, j = 0, 0 # Iterate while there are elements in both lists while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append any remaining elements from list1 while i < len(list1): merged.append(list1[i]) i += 1 # Append any remaining elements from list2 while j < len(list2): merged.append(list2[j]) j += 1 return merged # Example usage: if __name__ == \"__main__\": l1 = [1, 3, 5, 7] l2 = [2, 4, 6, 8] print(merge_sorted_lists(l1, l2)) # Output: [1, 2, 3, 4, 5, 6, 7, 8] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "To make a basic tomato sauce from scratch, you generally need ripe tomatoes (fresh or canned), aromatics like onions and garlic, fat for sautéing, herbs, and liquid. Here is a straightforward method: ### Ingredients * **Tomatoes**: 2 lbs (about 900g) fresh Roma tomatoes, OR one 28-oz can of whole peeled San Marzano tomatoes (highly recommended for flavor). * **Aromatics**: 1 medium yellow onion (diced) and 3–4 cloves garlic (minced). * **Fat**: 2 tablespoons olive oil. * **Seasoning**: Salt and black pepper to taste. * **Herbs**: A pinch of dried oregano, 1 bay leaf, and optionally fresh basil. * **Liquid**: ½ cup water or vegetable broth (if using fresh tomatoes). ### Instructions 1. **Prep the Tomatoes** * **If using fresh**: Cut the tomatoes in half horizontally. Place them cut-side down on a baking sheet and roast at 400°F (200°C) for 20–25 minutes until soft. Alternatively, peel them by scoring an X on the bottom, blanching in boiling water for 30 seconds, then shocking in ice water before peeling and chopping. Remove seeds if desired. * **If using canned**: Drain the liquid slightly but reserve some for thinning later. Crush the tomatoes by hand or chop them roughly; leaving small chunks adds texture. 2. **Sauté Aromatics** * Heat the olive oil in a large pot or Dutch oven over medium heat. * Add the diced onion and cook for 5–7 minutes until translucent and soft. Do not let it brown too much unless you prefer a sweeter flavor. * Add the minced garlic and cook for another minute until fragrant. Be careful not to burn it. 3. **Simmer the Sauce** * Add the prepared tomatoes to the pot along with the salt, pepper, oregano, and bay leaf. * If using fresh tomatoes, stir in the reserved water or broth. * Bring the mixture to a gentle boil, then reduce the heat to low. Cover partially and let it simmer uncovered for",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "To make a basic tomato sauce from scratch, you will need fresh tomatoes (or canned whole peeled tomatoes for consistency), aromatics, and a little fat. Here is a straightforward method: **Ingredients:** * **Tomatoes:** 2 lbs (about 900g) ripe Roma or plum tomatoes (chopped), OR one 28-oz can of whole peeled tomatoes (crushed by hand). Fresh tomatoes yield a brighter flavor; canned often provide a richer, more cooked taste. * **Aromatics:** 1 medium onion (diced) and 3–4 cloves garlic (minced). * **Fat:** 2 tablespoons olive oil. * **Seasoning:** Salt and black pepper to taste. * **Optional:** A pinch of dried oregano, basil, or red pepper flakes. **Instructions:** 1. **Sauté Aromatics:** Heat the olive oil in a large pot or deep skillet over medium heat. Add the diced onions and cook until they are soft and translucent (about 5–7 minutes). Add the minced garlic and cook for another minute until fragrant, being careful not to burn it. 2. **Add Tomatoes:** Stir in your chopped fresh tomatoes (with their juices) or the crushed canned tomatoes. If using fresh tomatoes, you may want to add about ¼ cup of water if they seem very dry. 3. **Simmer:** Bring the mixture to a gentle boil, then reduce the heat to low. Cover the pot partially with a lid to allow steam to escape slowly while retaining some moisture. Let it simmer for at least 20–30 minutes, stirring occasionally to prevent sticking. * *Tip:* For a smoother texture, remove the pot from the heat and use an immersion blender to puree the sauce directly in the pot, or transfer it to a food processor and return it to the pan. 4. **Season:** Taste the sauce and add salt and pepper as needed. If using dried herbs like oregano or red pepper flakes, stir them in now so they bloom slightly in the hot liquid. 5. **Finish:** Simmer uncovered for another 10–15 minutes until the sauce has thickened to your desired consistency. Remove from heat and serve immediately over pasta, or let cool and store in the refrigerator.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "Here is a straightforward, classic method to make a basic tomato sauce from scratch. This recipe relies on simple ingredients and the natural sweetness of canned tomatoes, which often yields a better result than fresh ones for a standard sauce. ### **Basic Tomato Sauce** **Prep time:** 10 minutes | **Cook time:** 25–30 minutes | **Yields:** About 4 cups #### **Ingredients** * **Tomatoes:** 28 oz (about 3 cans) of whole peeled San Marzano tomatoes (canned are preferred for consistency; if using fresh, you'll need about 6–7 large ripe tomatoes). * **Aromatics:** * 1 tablespoon olive oil * 1 small onion, finely chopped * 2 cloves garlic, minced * **Seasonings:** * ½ teaspoon salt (adjust to taste) * ¼ teaspoon freshly ground black pepper * Optional: A pinch of dried oregano or basil leaves * **Liquid (Optional):** ¼ cup water or vegetable broth (only if needed for sautéing) #### **Instructions** 1. **Prepare the Tomatoes:** If using whole peeled canned tomatoes, pour them into a bowl and crush them by hand with your fingers, or run them through a food mill/chopper for a smoother texture. Reserve the liquid (tomato juice/puree); do not discard it yet. 2. **Sauté Aromatics:** Heat the olive oil in a medium-sized saucepan over medium heat. Add the chopped onion and cook for about 5 minutes until soft and translucent. Add the minced garlic and cook for another minute until fragrant but not browned. 3. **Simmer:** Pour in the crushed tomatoes and their reserved liquid. Stir well to combine. Add the salt, pepper, and any optional herbs. Bring the mixture to a gentle boil, then immediately reduce the heat to low. 4. **Cook:** Let the sauce simmer uncovered for 20 to 30 minutes. Stir occasionally to prevent sticking. The goal is to let the flavors meld and the sauce thicken slightly. If it looks too dry before it's done, add a splash of water. 5. **Finish:** Taste the sauce and adjust seasoning if necessary (add more salt or pepper as",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by circulating a refrigerant through a closed loop where it absorbs heat from the interior as it evaporates into a gas and releases that heat to the outside environment as it condenses back into a liquid. This process is driven by a compressor that pressurizes the refrigerant, allowing it to continuously transfer thermal energy out of the cool space and into the warmer room.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by circulating a refrigerant through a closed loop of pipes where it absorbs heat from the interior as it evaporates into a gas and releases that heat to the outside environment as it condenses back into a liquid. This continuous cycle is driven by a compressor that pressurizes the gas and an expansion valve that lowers its pressure, allowing the system to constantly move thermal energy from the cold inside to the warmer room.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by using a compressor to pump refrigerant gas through a sealed loop, where the gas expands and absorbs heat from the inside of the appliance. This absorbed heat is then released into the surrounding room air as the refrigerant passes through external coils, allowing the interior to remain cold.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "There was no single cause for the 1929 stock market crash; rather, it resulted from a combination of speculative excess, economic imbalances, and structural weaknesses in the financial system. The primary driver was **speculative mania**. During the late 1920s, investors poured money into the stock market with little regard for company fundamentals. A significant portion of these purchases were made on **margin**, meaning investors borrowed heavily to buy stocks, often using only a small fraction of their own capital (sometimes as little as 10%). This created an artificial inflation of stock prices that detached them from actual earnings or asset values. When confidence wavered, this leverage became fatal: as prices dipped slightly, brokers demanded additional collateral (a margin call), forcing investors to sell stocks at a loss, which drove prices down further and triggered more selling. Underlying this speculation were broader **economic vulnerabilities**: * **Overproduction and Underconsumption**: The American industrial sector had expanded rapidly, but wages had not kept pace. Consequently, domestic consumers could not buy all the goods being produced, leading to a buildup of unsold inventory. * **Agricultural Distress**: Farmers had been suffering from low crop prices and heavy debt since the mid-1920s, reducing their ability to spend or invest. * **Banking Fragility**: Many banks were poorly regulated and held too many risky assets, including non-performing loans and overvalued stocks. They lacked sufficient reserves to withstand withdrawals. * **International Debt**: The U.S. economy was heavily dependent on exports to Europe, particularly Germany, which was struggling to repay war debts and loans under the Dawes Plan. Finally, **policy errors** exacerbated the situation. Federal Reserve Chairman Benjamin Strong initially tried to cool the overheating economy by raising interest rates, but his death in May 1928 left the Fed without strong leadership during the critical downturn. Furthermore, when the crash began in October 1929, policymakers responded with contractionary measures rather than liquidity support, deepening the recession. In summary, the crash was caused by a bubble fueled by easy credit and speculation, supported by a fragile global economy, and punctured by a loss of investor confidence that spiraled out of control due to leveraged positions and weak banking systems.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "The 1929 stock market crash was not caused by a single event, but rather by a convergence of structural weaknesses in the economy, speculative excess, and regulatory failures. Historians and economists generally identify several key contributing factors: * **Speculative Mania and Margin Buying**: During the \"Roaring Twenties,\" stock prices rose dramatically due to excessive speculation. Many investors bought stocks on margin, meaning they paid only a small percentage of the purchase price with borrowed money from brokers. This leverage amplified gains during the bull market but also meant that even a slight drop in prices could trigger massive losses when brokers demanded immediate repayment or liquidation of assets. * **Overvalued Assets**: By late 1929, stock prices had detached significantly from the actual earnings and performance of the underlying companies. The market became driven by investor optimism rather than economic fundamentals, creating a bubble that was inherently unstable. * **Weak Banking System**: The U.S. banking system was fragmented and undercapitalized. Many banks had invested their deposits directly into the stock market or lent heavily to speculators. When the market began to falter, these banks faced liquidity crises, leading to widespread bank runs that exacerbated the financial collapse. * **Agricultural Depression**: Since the early 1920s, American farmers had been struggling with falling crop prices and high debt levels. This rural distress reduced overall consumer spending power and created an uneven economic foundation that could not support a booming stock market. * **Federal Reserve Policy**: The Federal Reserve raised interest rates in 1928 and 1929 in an attempt to curb inflation and cool down the speculative frenzy. While intended to stabilize the market, this tightened credit conditions, making it harder for businesses to borrow and invest, which slowed economic growth and contributed to the downturn. * **Lack of Regulation**: There were few regulations governing securities markets at the time. Fraudulent practices, such as insider trading and the issuance of worthless stock certificates, went unchecked until after the crash prompted the creation of the Securities and Exchange Commission (SEC) in 1934. Ultimately, the combination of an overinflated asset bubble, fragile financial institutions, and a lack of regulatory oversight led to the catastrophic collapse in October 1929, marking the beginning of the Great Depression.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "The 1929 stock market crash, which triggered the Great Depression, was not caused by a single event but rather by a convergence of structural weaknesses in the economy and speculative excesses. Key factors included: * **Excessive Speculation:** In the years leading up to 1929, there was a massive boom in stock buying fueled by easy credit. Many investors bought stocks on margin (borrowing money from brokers), often with only 10% down. This created an artificial bubble where stock prices soared far beyond their actual value based on company earnings. * **Overproduction and Underconsumption:** The U.S. industrial sector had expanded rapidly during World War I, leading to overcapacity. However, wages for average workers did not rise significantly, meaning consumers could not afford to buy all the goods being produced. This imbalance weakened corporate profits despite high stock valuations. * **Weak Banking System:** Banks were heavily invested in the stock market themselves, lending large portions of their reserves to individuals for margin purchases. When confidence wavered, these banks faced liquidity crises. * **Lack of Regulation:** There were few regulations governing securities trading or disclosure at the time. Companies often inflated their financial reports, misleading investors about the true health of their businesses. * **Geopolitical Tensions:** Rising protectionist policies abroad, particularly in Europe, threatened international trade, while political instability in regions like Germany added uncertainty to global markets. These conditions culminated in October 1929 when panic set in. On \"Black Thursday\" (October 24) and \"Black Tuesday\" (October 29), investors rushed to sell, triggering a cascade of failures that wiped out billions of dollars in wealth and collapsed the banking system.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Here are three highly regarded novels set in Victorian London: 1. **Great Expectations** by Charles Dickens (1861) This classic follows the orphan Pip as he navigates a world of social climbing, crime, and moral complexity in London. The novel vividly portrays the stark contrast between the impoverished East End and the wealthy West End during the mid-19th century. 2. **The Picture of Dorian Gray** by Oscar Wilde (1890) While often noted for its philosophical themes regarding aesthetics and morality, this novella is deeply rooted in the glittering, decadent atmosphere of late Victorian London society, featuring characters from high society and the arts. 3. **Bleak House** by Charles Dickens (1853) Perhaps the most atmospheric depiction of Victorian London among Dickens' works, it uses the fog-choked streets of the city to explore issues of poverty, corruption within the legal system, and the plight of the working class.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Here are three highly recommended novels set in Victorian London: 1. **Great Expectations** by Charles Dickens This classic follows the orphan Pip as he navigates a world of social class, crime, and romance in London during the mid-19th century. It offers an immersive look at the city's foggy streets, legal system, and the stark contrast between the poor districts and the wealthy elite. 2. **The Moonstone** by Wilkie Collins Often cited as the first true English detective novel, this story revolves around the theft of a valuable diamond in a London household. The narrative weaves together multiple perspectives to explore the complexities of Victorian society, including issues of race, gender, and class, all against the backdrop of a bustling, changing metropolis. 3. **Fingersmith** by Sarah Waters While sometimes categorized under historical fiction spanning slightly later into the late Victorian era (circa 1860s–1870s), this novel is deeply rooted in that specific period. It features a intricate plot involving deception and identity among thieves and aristocrats in London, capturing the tension and moral ambiguity of the time with great atmospheric detail.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Here are three highly regarded novels set in Victorian London: 1. **Great Expectations** by Charles Dickens Published in 1861, this is perhaps the most famous depiction of Victorian London. The story follows Pip, an orphan who moves from a modest background to high society after receiving a mysterious inheritance. Dickens uses the setting to explore themes of class mobility, crime, and social inequality, capturing the gritty streets of the East End as well as the opulence of the wealthy districts. 2. **The Woman in White** by Wilkie Collins First published in 1860, this novel is considered one of the first true detective thrillers. Set against the backdrop of a rapidly industrializing London, the plot involves a mystery surrounding an invalid woman whose identity is stolen. Collins vividly portrays the fog-choked streets, the legal system, and the stark contrast between the city's poor and its aristocracy. 3. **A Study in Scarlet** by Arthur Conan Doyle Published in 1887, this is the debut Sherlock Holmes story that established the iconic detective and his partner Dr. Watson. While part of a series spanning several decades, it provides a quintessential view of Victorian London through the lens of forensic investigation, featuring detailed descriptions of Baker Street, the police force, and the criminal underworld during the reign of Queen Victoria.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between **TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** lies in how they handle data delivery, reliability, and speed. Both are transport layer protocols used to send data across networks, but they serve different purposes based on the trade-off between accuracy and efficiency. Here is a breakdown of their key differences: ### 1. Connection Orientation * **TCP** is **connection-oriented**. Before sending data, it establishes a handshake (three-way handshake) between the sender and receiver to ensure both parties are ready. This connection remains open until all data is transferred and closed properly. * **UDP** is **connectionless**. It sends data immediately without establishing a prior connection. There is no handshake; packets are sent independently. ### 2. Reliability and Ordering * **TCP** guarantees **delivery and order**. If a packet is lost or corrupted during transmission, TCP retransmits it automatically. It also ensures that data arrives in the exact order it was sent by sequencing the packets. * **UDP** offers **no guarantee of delivery or order**. Packets may be lost, duplicated, or arrive out of sequence, and UDP does not attempt to fix these issues. It simply sends the data and moves on. ### 3. Speed and Overhead * **TCP** is generally **slower** due to its overhead. The processes of handshaking, error checking, flow control, and retransmission add latency and consume more bandwidth. * **UDP** is **faster and more efficient**. Because it lacks the complex mechanisms for error correction and connection management, it has very low overhead, making it ideal for real-time applications where speed is critical. ### 4. Use Cases * **TCP** is preferred for applications where data integrity is paramount, such as: * Web browsing (HTTP/HTTPS) * Email (SMTP, IMAP) * File transfers (FTP) * Remote login (SSH) * **UDP** is preferred for applications where low latency is more important than perfect accuracy, such as: * Live video streaming * Online gaming (where a missed frame is better than a laggy one) * Voice over IP (VoIP) * DNS queries ### Summary Comparison Table | Feature | TCP | UDP |",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between **TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** lies in how they handle data delivery, reliability, and speed. Both are transport layer protocols used to send data across networks, but they serve different purposes depending on the application's needs. ### Core Differences | Feature | TCP (Transmission Control Protocol) | UDP (User Datagram Protocol) | | :--- | :--- | :--- | | **Connection Type** | **Connection-oriented**: Establishes a handshake before sending data. | **Connectionless**: Sends data immediately without prior setup. | | **Reliability** | **Guaranteed Delivery**: Ensures packets arrive in order; retransmits lost packets. | **Best Effort**: No guarantee of delivery or order; no retransmission if packets are lost. | | **Speed/Latency** | Slower due to overhead from error checking, sequencing, and retransmissions. | Faster because it skips handshakes and complex checks. | | **Data Integrity** | High integrity; detects and corrects errors via checksums and acknowledgments. | Lower integrity; corrupted or lost packets are simply discarded by the receiver. | | **Overhead** | Higher header size and processing overhead. | Low overhead; small header size. | | **Common Use Cases** | Web browsing (HTTP/HTTPS), email (SMTP/IMAP), file transfers (FTP), streaming audio/video where quality matters more than real-time latency. | Online gaming, VoIP (voice over IP), video conferencing, DNS queries, live streaming where real-time performance is critical. | ### Detailed Explanation **TCP** prioritizes **accuracy and completeness**. When you visit a website or download a large file, you need every byte of data to arrive correctly and in the right sequence. If a packet gets lost or corrupted, TCP pauses, requests a resend, and ensures the data stream is reconstructed perfectly before presenting it to the application. This makes it robust but slower for time-sensitive tasks. **UDP** prioritizes **speed and low latency**. In applications like online multiplayer games or live video calls, a split-second delay caused by waiting for a retransmitted packet can ruin the experience. Instead, UDP sends data as fast as possible. If a packet is lost, the application usually just moves on; missing one frame of video or a single sound effect is preferable to having the entire stream freeze",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between **TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** lies in how they handle data delivery, reliability, and speed. Both are transport layer protocols used to send data across networks, but they serve different purposes based on the application's needs. ### 1. Connection vs. Connectionless * **TCP** is a **connection-oriented** protocol. Before sending data, it establishes a connection (often called a \"handshake\") between the sender and receiver. This ensures both parties are ready to communicate. Once the connection is closed, data transfer stops. * **UDP** is **connectionless**. It sends data immediately without establishing a prior connection or waiting for confirmation that the receiver is ready. Each packet (called a datagram) is treated independently. ### 2. Reliability and Ordering * **TCP** guarantees **reliable delivery**. If a packet is lost, damaged, or arrives out of order, TCP automatically requests retransmission and reorders the packets before passing them up to the application. It also includes flow control and congestion control mechanisms to prevent overwhelming the network or the receiver. * **UDP** offers **no guarantees**. Packets may be lost, duplicated, or arrive out of order, and UDP does not retry failed transmissions. The application must handle any necessary error checking or reordering if required. ### 3. Speed and Overhead * **TCP** has higher overhead due to the handshake process, acknowledgments, and error-checking mechanisms. This makes it slower but more secure against data loss. * **UDP** has very low overhead because it skips the handshake and complex error recovery. This makes it significantly faster and more efficient for real-time applications where speed is more critical than perfect accuracy. ### Common Use Cases | Feature | TCP | UDP | | :--- | :--- | :--- | | **Reliability** | High (Guaranteed delivery) | Low (Best-effort delivery) | | **Speed** | Slower (due to handshakes/retries) | Faster (minimal overhead) | | **Ordering** | Guaranteed | Not guaranteed | | **Typical Uses** | Web browsing (HTTP/HTTPS), Email (SMTP/IMAP), File transfers (FTP), SSH | Video streaming, Online gaming, VoIP (Voice over IP), DNS queries, Live broadcasting | **",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 km) is less about running every day and more about building a consistent base while managing fatigue. Here is a fact-based, step-by-step approach to prepare safely and effectively. ### 1. Choose the Right Plan Before you start, assess your current fitness level. * **Beginner:** If you run/walk intermittently or haven't run in months, look for a \"Run/Walk\" plan (e.g., Couch to 5K extended). * **Intermediate:** If you can already run 3–4 miles continuously, a standard 8–10 week plan works well. * **Timeline:** Aim for an 8 to 12-week training cycle. Starting too late increases injury risk; starting too early means you'll be tired by race day. ### 2. The Core Structure: Long Runs vs. Easy Runs Your weekly schedule should generally consist of three types of runs: * **The Long Run:** This is the most critical session. It builds endurance specifically for the distance. Start at 3–4 miles and add **0.5 to 1 mile per week** until you reach 10–12 miles (about two weeks before the race). Do not try to hit 13.1 miles in training; peak at 10–12 miles so you have fresh legs on race day. * **Easy Runs:** These are short (20–45 minutes) and done at a conversational pace (you should be able to speak in full sentences). You should do these 2–3 times a week. They build aerobic capacity without adding excessive stress. * **Speed/Tempo Work (Optional):** Once a week, include a short interval session (e.g., 4 x 400m or 3 x 1km at a slightly faster pace) followed by a long walk. This improves lactate threshold but isn't strictly necessary if your time goal is conservative. ### 3. Essential Training Principles * **Progressive Overload:** Never increase your total weekly mileage by more than 10% from the previous week. A sudden spike is the #1 cause of shin splints and stress fractures. * **Rest Days:** Take at least one full rest day or active recovery day (y",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 km) is less about speed and more about building endurance, consistency, and mental resilience. Here is a factual, step-by-step guide based on standard coaching principles: ### 1. Choose the Right Program Before starting, select a training plan that matches your current fitness level and how many weeks you have before race day. * **Beginner Friendly:** Look for plans labeled \"First Half Marathon\" or \"5K to HM.\" These typically run **12 to 16 weeks**. * **Structure:** Most effective plans follow a weekly cycle of running days, rest days, and cross-training. They usually include one long run per week where you gradually increase distance. ### 2. The Core Strategy: The Long Run The most critical component of half marathon training is the **long run**. This builds the aerobic base needed to finish the race without hitting \"the wall.\" * **Progression:** Start with runs of 3–4 miles and add roughly 10–15% to your longest previous long run each week. * **Peak:** Your longest run should occur 3–4 weeks before race day and should equal roughly **50% of the race distance** (about 6.5 miles). Do not try to run the full 13.1 miles in training unless you are already an experienced runner. * **Pace:** Keep long runs at a conversational pace (easy effort). You should be able to speak in short sentences while running. ### 3. Incorporate Variety A balanced week usually looks like this: * **Easy Runs:** Shorter runs (20–45 mins) done at a very comfortable pace to build mileage without fatigue. * **Tempo/Speed Work:** Once every 1–2 weeks, include intervals or tempo runs (running slightly faster than your goal race pace) to improve lactate threshold. This helps you maintain speed later in the race but should not be done frequently. * **Rest & Cross-Training:** Take at least one full rest day per week. Use other days for low-impact activities like cycling, swimming, or strength training to prevent injury and aid recovery. ### 4. Key Rules for Success * **Consistency Over Intensity:** Missing workouts will delay progress;",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 km) requires a structured approach to build endurance while preventing injury. Here is a factual, step-by-step guide based on standard coaching principles: ### 1. Determine Your Starting Point Before beginning, assess your current fitness level. If you are new to running, start with a **run/walk method** (e.g., run 1 minute, walk 2 minutes). If you can already run continuously for 30–45 minutes, you may start with longer continuous runs. ### 2. Choose a Training Plan Select a plan that fits your timeline. The most common duration is **12 weeks**, though 8-week plans exist for experienced runners and 16+ weeks for those needing more gradual adaptation. Popular evidence-based plans include: * **Hal Higdon Novice/Beginner Plans**: Great for varied paces. * **Jeff Galloway Run/Walk Method**: Ideal for beginners to avoid burnout. * **Pfitzinger's Half Marathon Program**: More advanced intensity. ### 3. Key Components of the Schedule A typical weekly schedule should include: * **Long Run**: This is the most critical session. It occurs once a week (usually weekends) and gradually increases in distance. You will likely peak at 10–12 miles before tapering down. Do not try to hit exactly 13.1 miles during training; aim for about 75-80% of the race distance. * **Easy Runs**: Shorter runs done at a conversational pace (you should be able to speak in full sentences). These build aerobic base without excessive fatigue. * **Cross-Training**: 1–2 sessions per week of low-impact activity (cycling, swimming, elliptical) to maintain fitness while reducing stress on joints. * **Rest Days**: Essential for muscle repair. Aim for at least one full rest day per week. ### 4. Progression Rules * **The 10% Rule**: Never increase your total weekly mileage by more than 10% from the previous week to minimize injury risk. * **Consistency**: Running 3 days a week consistently is often better than running 5 days sporadically. * **Tapering**: In the final",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "In William Shakespeare's *Hamlet*, the plot unfolds as follows: Prince Hamlet of Denmark returns home to Elsinore after his father, King Hamlet, dies under mysterious circumstances. Shortly after his arrival, his mother, Queen Gertrude, marries his uncle, Claudius, who has secretly usurped the throne and murdered the former king. While praying on a balcony, the Ghost of King Hamlet appears to Prince Hamlet and reveals that he was poisoned by Claudius, ordering Hamlet to seek revenge but sparing his mother from direct vengeance. Haunted by this revelation, Hamlet feigns madness to investigate further without raising immediate suspicion. He stages a play resembling the murder of his father to \"catch the conscience of the king,\" and Claudius's guilty reaction confirms Hamlet's suspicions. However, Hamlet delays killing Claudius, first when the king is praying (fearing it would send him to heaven) and later due to a complex mix of moral doubt and psychological turmoil. This hesitation leads to several tragic events: Hamlet kills Polonius, the King's advisor, behind a curtain while believing it to be Claudius; Ophelia, Polonius's daughter whom Hamlet had rejected, goes mad and drowns; and Laertes, Polonius's son, returns from France seeking revenge for his father and sister. A duel is arranged between Hamlet and Laertes, orchestrated by Claudius with the help of Gertrude. Claudius plans to poison Laertes' sword and serve poisoned wine to Hamlet. During the fight, Laertes wounds Hamlet but is mortally wounded when Hamlet counters with the same poisoned blade. Before dying, Hamlet forces Claudius to confess his crimes, stabs the King, and drinks the poisoned wine. The play concludes with the deaths of nearly all major characters—Hamlet, Gertrude, Claudius, Laertes, Ophelia, and Polonius—leaving only Horatio alive to tell the story.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "**Hamlet**, written by William Shakespeare, follows the story of Prince Hamlet of Denmark and his quest for revenge after discovering that his father was murdered. The play begins with the ghost of King Hamlet appearing to his son on the ramparts of Elsinore Castle. The spirit reveals that he was poisoned in his sleep by Hamlet's uncle, Claudius, who has since married Hamlet's mother, Gertrude, and seized the throne. Haunted by this revelation, Hamlet feigns madness while secretly plotting to expose the truth and avenge his father. To test the ghost's claims, Hamlet arranges for actors to perform a play nearly identical to the murder scene. When Claudius reacts with guilt and leaves the room early, Hamlet confirms his suspicions. However, when he finally confronts Claudius alone and stabs him, the king flees, and Hamlet is forced to retreat. Complications arise as Hamlet delays his final act. He refuses to kill Claudius while the king is praying, fearing it would send the soul to heaven rather than damnation. Meanwhile, Rosencrantz and Guildenstern, childhood friends sent by Claudius to spy on Hamlet, are tricked into carrying out an order for Hamlet's execution. After escaping their trap, Hamlet returns from England only to find Ophelia, whom he had previously rejected, has gone mad and drowned. Her funeral is interrupted when Laertes, her brother, demands vengeance against Hamlet. Claudius manipulates both Laertes and Hamlet into a duel. During the event, Claudius plots to poison Laertes' sword and offer Hamlet a poisoned cup of wine as a backup. In the ensuing chaos, Gertrude accidentally drinks the poisoned wine and dies. Laertes is wounded by his own poisoned blade but confesses Claudius's treachery before dying. Finally, Hamlet kills Claudius, fulfilling his oath of revenge. The tragedy concludes with the deaths of the entire royal family except for Horatio, who survives to tell Hamlet's story.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "**Hamlet**, written by William Shakespeare, is a tragedy set in the kingdom of Denmark. The plot follows these key stages: 1. **The Ghost's Revelation**: Prince Hamlet returns to Elsinore Castle from university in Wittenberg to find his father, King Hamlet, dead and his mother, Queen Gertrude, quickly married to his uncle, Claudius, who has now become king. Shortly after arriving, the ghost of King Hamlet appears to Hamlet and reveals that he was murdered by Claudius, who poured poison in his ear while he slept. The ghost commands Hamlet to seek revenge but warns him not to harm his mother or her new husband until the truth is fully established. 2. **Feigned Madness**: To investigate Claudius without raising immediate suspicion, Hamlet decides to put on an \"antic disposition\" (feigned madness). He begins acting erratically, confusing courtiers like Polonius and Ophelia, though it is unclear if his behavior stems from genuine grief or strategic deception. 3. **The Play Within a Play**: Hamlet arranges for actors to perform a play reenacting the murder of King Hamlet. During the performance, Claudius reacts with guilt and tries to leave the room, confirming to Hamlet that the ghost spoke the truth. However, Hamlet hesitates to kill Claudius immediately because he fears praying would send the king's soul to heaven rather than damnation; instead, he kills Polonius, whom he mistakenly believes is hiding behind a curtain listening to their conversation. 4. **Escalation and Tragedy**: Polonius's death causes chaos. His son Laertes returns from France seeking revenge against Hamlet. Claudius manipulates Laertes into plotting a deadly duel with Hamlet using a poisoned sword and a cup of poisoned wine as a backup plan. Meanwhile, Hamlet's love for Ophelia drives her to madness and eventual suicide after hearing of her father's death. 5. **The Climax**: A funeral for Ophelia is interrupted by Laertes's challenge to Hamlet. At the duel, Gertrude accidentally drinks the poisoned wine intended for Hamlet and dies. In the ensuing fight, both men are wounded by the poisoned blade. Before dying, Hamlet forces Claudius to confess his crimes. Realizing he cannot escape, Hamlet stabs Claudius. 6. **Conclusion**:",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight looks white, but it is actually made up of all the colors of the rainbow (red, orange, yellow, green, blue, indigo, violet), each traveling at different wavelengths. Blue light has a shorter wavelength than red light. When sunlight reaches Earth's atmosphere, it collides with gas molecules (mostly nitrogen and oxygen). Because blue light waves are shorter, they scatter more easily off these molecules in all directions compared to longer wavelengths like red or yellow. As you look up at the sky, your eyes detect this scattered blue light coming from every part of the atmosphere, making the sky appear blue. At sunrise and sunset, the sun is lower on the horizon, meaning its light must travel through more of the atmosphere to reach your eyes. By the time the light arrives, most of the blue light has been scattered away, allowing the longer wavelengths (reds and oranges) to pass through directly, which is why the sky turns those colors during those times.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight looks white, but it is actually made up of all the colors of the rainbow, each with a different wavelength. Red light has a longer wavelength, while blue light has a shorter wavelength. When sunlight reaches Earth's atmosphere, it collides with gas molecules (mostly nitrogen and oxygen). These molecules scatter the shorter wavelengths (blue and violet) much more strongly than the longer wavelengths (red, orange, and yellow). Although violet light is scattered even more than blue, our eyes are more sensitive to blue light, and some of the violet light is absorbed by the upper atmosphere. Therefore, when we look up at the sky, we see the scattered blue light coming from all directions.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight looks white, but it is actually made up of all the colors of the rainbow, each traveling at a different wavelength. Blue light has a shorter wavelength and higher energy than red light. When sunlight enters Earth's atmosphere, it collides with gas molecules (mostly nitrogen and oxygen). Because blue light waves are so short, they scatter much more strongly in every direction than longer wavelengths like red or yellow. When you look up at the sky during the day, your eyes detect this scattered blue light coming from all parts of the atmosphere, making the sky appear blue. At sunrise or sunset, the sun is lower in the sky, meaning its light travels through more atmosphere to reach your eyes. By the time the light gets to you, most of the blue has been scattered away, leaving the longer red and orange wavelengths to dominate the view.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Finding houseplants that thrive in low-light conditions (such as corners, north-facing windows, or rooms with limited natural light) is entirely possible. While no plant truly grows well in *total* darkness without artificial grow lights, several species are adapted to survive and flourish in dim indoor environments. Here are the best houseplants for a dark apartment: * **Snake Plant (Sansevieria)**: Often considered the champion of low light, this plant can tolerate very little sunlight. It is also extremely drought-tolerant and helps purify the air. * **ZZ Plant (Zamioculcas zamiifolia)**: Known for its glossy, waxy leaves, the ZZ plant thrives in low light and goes weeks without water due to its rhizome root system. It is nearly indestructible. * **Cast Iron Plant (Aspidistra elatior)**: As the name suggests, it is incredibly hardy and resistant to neglect and low light. Its large, dark green leaves add significant visual interest even when shadows are long. * **Pothos (Epipremnum aureum)**: A trailing vine that adapts easily to lower light levels. While it will grow slower in the dark compared to bright spots, it remains healthy and vibrant. * **Spider Plant (Chlorophytum comosum)**: These do well in indirect, low light and produce their characteristic \"pups\" even without much sun. They are also pet-friendly. * **Peace Lily (Spathiphyllum)**: This plant prefers low to medium light and will actually droop visibly when thirsty, making it easy to know when to water. Note that they may not bloom frequently in very dark rooms, but they will stay green and healthy. * **Chinese Evergreen (Aglaonema)**: Available in many variegated colors, these plants prefer low light and have attractive foliage patterns that remain visible even in dim settings. **Important Tips for Success:** 1. **Rotate Your Plants**: Since light sources are uneven in apartments, rotate your pots every few weeks so all sides receive equal amounts of whatever ambient light is available. 2. **Watch for Drooping**: Low light slows growth. If a plant starts to yellow or drop leaves, it may need more light or proper watering adjustments. 3. **Consider Artificial Light**: For maximum growth, supplement",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Several houseplants are renowned for their ability to thrive in low-light conditions, making them ideal for dark apartments. While \"no light\" is impossible for photosynthesis, these species can survive and grow well with just indirect light or a few hours of filtered sunlight per day. Here are some of the best options: * **Snake Plant (Sansevieria)**: Often considered the champion of low light, this plant is incredibly resilient. It tolerates neglect and can go weeks without water. It thrives in corners with minimal natural light. * **ZZ Plant (Zamioculcas zamiifolia)**: This glossy-leafed plant stores water in its rhizomes, allowing it to handle very low light and infrequent watering easily. It grows slowly but steadily even in dim spaces. * **Pothos (Epipremnum aureum)**: A trailing vine that adapts quickly to various light levels. In low light, its growth may slow down, but it will still flourish if given occasional water. * **Cast Iron Plant (Aspidistra elatior)**: As its name suggests, this plant is nearly indestructible and named for its toughness in harsh conditions, including poor lighting. * **Chinese Evergreen (Aglaonema)**: These plants come in many colorful varieties and prefer lower light than most tropicals. They add vibrant color to dark rooms without needing direct sun. * **Peace Lily (Spathiphyllum)**: Known for its white blooms, the Peace Lily prefers low to medium indirect light. It will also droop visibly when thirsty, giving you an easy cue to water it. * **Spider Plant (Chlorophytum comosum)**: While it enjoys brighter light, it adapts surprisingly well to darker areas and produces its characteristic \"spiderettes\" (babies) even in lower light. * **Philodendron**: Many varieties, especially heart-shaped leaf types like *Heartleaf Philodendron*, do well in shade. * **Dracaena**: Species like the Dracaena Marginata or Massangeana tolerate low light reasonably well, though they may yellow slightly if the light is too dim over a long period. **Important Note**: Even in low-light environments, plants generally require more frequent watering because evaporation is slower, but be careful not to overwater, as root rot remains",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Here are the best houseplants that thrive in low-light or dark apartments, along with a few important caveats: **Top Recommendations:** * **Snake Plant (Sansevieria):** Often considered the champion of low light. It can survive in very dim conditions and is extremely drought-tolerant. It also purifies the air well. * **ZZ Plant (Zamioculcas zamiifolia):** Known for its waxy leaves and ability to go weeks without water. It tolerates neglect and low light exceptionally well, though it grows slowly in darkness. * **Cast Iron Plant (Aspidistra elatior):** As the name suggests, it is nearly indestructible and handles low light, cold drafts, and irregular watering better than almost any other plant. * **Pothos (Epipremnum aureum):** While they prefer some indirect light, Pothos will survive and grow slowly in low light. They are fast growers and easy to propagate if you want to replace lost tips. * **Chinese Evergreen (Aglaonema):** These come in various leaf colors and patterns. They adapt well to lower light levels compared to many tropicals. * **Peace Lily (Spathiphyllum):** They tolerate low light and will actually droop visibly when thirsty, making them easy to care for. Note that they produce white flowers even in low light. * **Philodendron (Heartleaf variety):** Similar to Pothos, these trailing plants can manage low light, though their growth rate will decrease significantly. **Important Considerations:** 1. **\"Low Light\" vs. \"No Light\":** No indoor plant thrives in *total* darkness (like a closet with no windows). They need some ambient light, which could be moonlight or light from an adjacent room. If your apartment has absolutely zero natural light, consider using a full-spectrum grow light. 2. **Growth Rate:** Plants in low light will grow much slower than those in bright areas. This is normal; do not mistake slow growth for death immediately. 3. **Watering Frequency:** In low light, photosynthesis slows down, meaning the plant uses less water. You must water less frequently to prevent root rot. Always check the soil moisture before watering; let the top inch dry out. 4. **Humidity:** Darker corners can sometimes be",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "**Compound interest** is the process where interest is calculated on the initial principal amount **plus** any accumulated interest from previous periods. Unlike simple interest, which only earns on the original deposit, compound interest allows your money to grow exponentially because you earn \"interest on interest.\" The general formula for compound interest is: $$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$$ Where: * **$A$** = The future value of the investment/loan, including interest. * **$P$** = The principal investment amount (the initial deposit). * **$r$** = The annual interest rate (decimal). * **$n$** = The number of times that interest is compounded per year. * **$t$** = The number of years the money is invested or borrowed for. --- ### Worked Example **Scenario:** You invest **$10,000** in an account with an annual interest rate of **5%**. The interest is compounded **monthly** ($n=12$). You leave the money untouched for **10 years**. **Step 1: Identify the variables** * $P = 10,000$ * $r = 0.05$ (5% expressed as a decimal) * $n = 12$ (Monthly compounding) * $t = 10$ **Step 2: Plug the values into the formula** $$A = 10,000 \\left(1 + \\frac{0.05}{12}\\right)^{(12 \\times 10)}$$ **Step 3: Calculate the fraction inside the parentheses** Divide the rate by the compounding frequency: $$\\frac{0.05}{12} \\approx 0.0041667$$ Add 1: $$1 + 0.0041667 = 1.0041667$$ **Step 4: Calculate the exponent** Multiply the compounding frequency by the time: $$12 \\times 10 = 120$$ **Step 5: Solve the exponentiation** Raise the base to the",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "**Compound interest** is the process where interest is calculated on the initial principal, which also includes all of the accumulated interest from previous periods. Unlike simple interest, which is calculated only on the original amount, compound interest earns \"interest on interest,\" causing your investment or debt to grow exponentially over time. The general formula for compound interest is: $$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$$ Where: * **$A$** = The future value of the investment/loan, including interest. * **$P$** = The principal investment amount (the initial deposit). * **$r$** = The annual interest rate (decimal). * **$n$** = The number of times that interest is compounded per year. * **$t$** = The number of years the money is invested or borrowed for. --- ### Worked Example **Scenario:** You invest **$10,000** in a savings account with an annual interest rate of **5%**. The interest is compounded **monthly**, and you leave the money untouched for **3 years**. How much will you have at the end? **Step 1: Identify the variables** * $P = 10,000$ * $r = 0.05$ (5% written as a decimal) * $n = 12$ (compounded monthly) * $t = 3$ **Step 2: Plug the values into the formula** $$A = 10,000 \\left(1 + \\frac{0.05}{12}\\right)^{(12 \\times 3)}$$ **Step 3: Calculate the monthly interest rate** Divide the annual rate by the compounding frequency: $$\\frac{0.05}{12} \\approx 0.0041667$$ Add 1 to this result: $$1 + 0.0041667 = 1.0041667$$ **Step 4: Calculate the total number of compounding periods** Multiply the frequency by the years: $$12 \\times 3 = 36$$ **Step 5:",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "**Compound interest** is the process where interest is calculated not only on the initial principal amount but also on the accumulated interest from previous periods. Often called \"interest on interest,\" it causes your investment to grow at an accelerating rate over time compared to simple interest. The general formula for compound interest is: $$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$$ Where: * **$A$** = The future value of the investment/loan, including interest. * **$P$** = The principal investment amount (the initial deposit). * **$r$** = The annual interest rate (decimal). * **$n$** = The number of times that interest is compounded per unit $t$. * **$t$** = The time the money is invested or borrowed for, in years. --- ### Worked Example **Scenario:** You invest **$1,000** ($P$) into a savings account with an annual interest rate of **5%** ($r = 0.05$). The interest is compounded **annually** ($n = 1$), and you leave the money untouched for **3 years** ($t = 3$). **Step-by-Step Calculation:** 1. **Identify the variables:** * $P = 1,000$ * $r = 0.05$ * $n = 1$ * $t = 3$ 2. **Plug values into the formula:** $$A = 1000 \\left(1 + \\frac{0.05}{1}\\right)^{1 \\times 3}$$ 3. **Simplify inside the parentheses:** $$A = 1000 (1 + 0.05)^3$$ $$A = 1000 (1.05)^3$$ 4. **Calculate the exponent:** $$1.05^3 = 1.05 \\times 1.05 \\times 1.05 = 1.157625$$ 5. **Multiply by the principal:** $$A = 1000 \\times",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 0,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work by using a technology called **Active Noise Control (ANC)** to actively cancel out unwanted ambient sound. Here is the step-by-step process: 1. **Microphone Input**: Small microphones on the outside of the earcups capture incoming ambient noise (like airplane engines or traffic). 2. **Signal Processing**: The headphone's internal processor analyzes the sound waves from the microphone in real-time. It determines the frequency, amplitude, and phase of the noise. 3. **Anti-Phase Generation**: The processor instantly generates a \"mirror image\" sound wave that has the exact same amplitude but is **180 degrees out of phase** (inverted) with the original noise. This means where the original wave peaks, the new wave troughs, and vice versa. 4. **Destructive Interference**: When these two opposing sound waves meet inside your earcup, they undergo **destructive interference**. They effectively cancel each other out, resulting in silence or significantly reduced volume. 5. **Playback**: The headphones then play your desired audio (music, podcast, etc.) over this quieted background. It is important to note that ANC is most effective at blocking **low-frequency, continuous noises** (like rumbling engines or air conditioners), as these are easier to predict and invert. High-frequency sounds (like human speech or sharp clicks) are harder to cancel perfectly because they change too rapidly for the system to react instantly; those are often blocked instead by the physical design of the earcups (passive noise isolation).",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 1,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work by using a process called **active noise control** (or active noise cancellation) to generate an \"anti-noise\" sound wave that destructively interferes with incoming unwanted noise, effectively cancelling it out before it reaches your ears. Here is the step-by-step mechanism: 1. **Detection**: Microphones built into the headphones capture external ambient noise (such as engine hums, airplane rumble, or traffic). 2. **Analysis**: An internal digital signal processor (DSP) analyzes this captured sound wave in real-time, determining its frequency, amplitude, and phase. 3. **Inversion**: The processor creates a new sound wave that is the exact mathematical opposite (inverse) of the detected noise. This means if the original noise wave has a peak (high pressure), the anti-noise wave has a trough (low pressure) at the same moment; they are shifted by 180 degrees in phase. 4. **Playback**: Speakers inside the headphones play this inverted \"anti-noise\" wave simultaneously with your desired audio. 5. **Destructive Interference**: When the two waves meet, they combine through destructive interference. The high-pressure part of one wave cancels out the low-pressure part of the other, resulting in silence or significantly reduced volume. **Important Distinction:** It is important to note that this technology works best on **steady, low-frequency sounds** (like the drone of an airplane or an air conditioner) because these waves are predictable and easy for the processor to invert instantly. It is less effective at blocking sudden, sharp, or high-frequency noises (like human speech, sirens, or clattering keys) because these change too rapidly for the system to generate a perfect inverse in time. For high-frequency noise, headphones often rely on **passive isolation**, which uses physical barriers like thick ear cups and cushioning to block sound mechanically.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "sample": 2,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work by using a technology called **active noise control** (or active noise cancellation) to generate \"anti-noise\" that cancels out unwanted ambient sounds. Here is the step-by-step process: 1. **Detection**: Microphones built into the headphones pick up external low-frequency noises, such as engine hums, airplane cabin droning, or air conditioning. 2. **Analysis**: A computer chip inside the headphones analyzes this incoming sound wave and determines its frequency and amplitude. 3. **Inversion**: The system instantly creates an exact copy of that sound wave but flips it 180 degrees out of phase. This means where the original wave has a peak (compression), the new wave has a trough (rarefaction). 4. **Emission**: Speakers in the headphones play this inverted \"anti-noise\" signal along with your desired audio. 5. **Cancellation**: When the anti-noise meets the original ambient noise, the two waves interfere with each other. Because they are perfectly out of phase, they cancel each other out through destructive interference, resulting in silence or significantly reduced volume. It is important to note that active noise cancellation is most effective at blocking consistent, low-frequency sounds. For higher-pitched, unpredictable noises (like human speech or sudden loud bangs), these headphones rely on **passive isolation**, which uses physical barriers like thick ear cups and foam seals to block sound mechanically.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "Who is the CEO of Toyota?",
+   "answer": "The current CEO of Toyota Motor Corporation is **Koji Sato**. He assumed the role on April 1, 2023, succeeding Akio Toyoda. Koji Sato previously served as the President and Chief Operating Officer (COO) before becoming CEO.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "Who is the CEO of Toyota?",
+   "answer": "The current CEO of Toyota Motor Corporation is **Koji Sato**. He assumed the role on April 1, 2023, succeeding Akio Toyoda.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "Who is the CEO of Toyota?",
+   "answer": "The current CEO of Toyota is **Koji Sato**. He took over the role in February 2023, succeeding Katsuhiro Kiuchi. Prior to becoming CEO, Sato served as Toyota's President and was also a former member of the board of directors. He is widely recognized for his focus on sustainability and the company's transition toward electrification.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "What is the capital of Iran, and roughly what is its population?",
+   "answer": "The capital of Iran is **Tehran**. As for its population, estimates vary depending on the source and whether they include the metropolitan area: * The city proper has a population of approximately **9 to 10 million** people. * The Tehran Metropolitan Region (including surrounding suburbs) has a much larger population, estimated at roughly **16 to 17 million**. Regardless of the specific metric used, Tehran is consistently recognized as one of the most populous cities in the Middle East and Central Asia.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "What is the capital of Iran, and roughly what is its population?",
+   "answer": "The capital of Iran is **Tehran**. As for its population, Tehran is one of the most populous cities in the world. Recent estimates from 2023–2024 suggest that the metropolitan area has a population of approximately **15 to 16 million people**, while the city proper (administrative boundaries) houses around **9 million residents**.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "What is the capital of Iran, and roughly what is its population?",
+   "answer": "The capital of Iran is **Tehran**. As of recent estimates (2023–2024), the population of Tehran is approximately **9 to 10 million people** within the city proper. If including the greater metropolitan area, the population exceeds **16 million**, making it one of the most populous cities in the Middle East and the largest urban center in Iran.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "What does a US state governor actually do?",
+   "answer": "A US state governor serves as the chief executive of their specific state, functioning similarly to a president but with powers and responsibilities limited to that single state's jurisdiction. Their primary duties include: * **Executive Leadership**: They oversee the entire state bureaucracy, including departments like education, transportation, health, and public safety. They appoint heads of these agencies (often subject to legislative confirmation) and ensure state laws are enforced. * **Legislative Interaction**: Governors propose state budgets and legislation. While they cannot unilaterally pass laws, they have significant influence through veto power; they can reject bills passed by the state legislature, though the legislature may sometimes override a veto with a supermajority vote. * **Crisis Management**: During emergencies such as natural disasters, pandemics, or civil unrest, governors act as the primary commander-in-chief for state resources, coordinating rescue efforts and declaring states of emergency. * **Policy Setting**: They set the tone for state policy on issues ranging from taxation and environmental regulation to criminal justice reform and economic development. * **Ceremonial Duties**: They represent the state at official functions, receive foreign dignitaries (within their authority), and sign documents into law. It is important to note that while all governors share these core functions, their actual power varies significantly depending on the specific rules written into each state's constitution and statutes. Some governors possess strong line-item veto powers over budgets, while others have weaker roles relative to their state legislatures. Additionally, governors are elected directly by the voters of their state and serve terms typically ranging from two to four years, depending on the state.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "What does a US state governor actually do?",
+   "answer": "A US state governor serves as the chief executive of their specific state, functioning much like a president but with authority limited to that single state's jurisdiction. Their role is defined by the state constitution and statutes, though they generally share similar core responsibilities across the country. Here are the primary functions of a governor: * **Executive Leadership:** They oversee the entire state bureaucracy, including departments for education, transportation, health, and public safety. They appoint heads of these agencies (often subject to legislative confirmation) and can remove them if necessary. * **Veto Power:** The most significant legislative power held by a governor is the ability to veto bills passed by the state legislature. While some states allow the legislature to override a veto with a supermajority vote, others do not. * **Budget Management:** Governors propose the state budget annually to the legislature. This document outlines how tax revenue will be spent on schools, roads, prisons, and social services. If the legislature passes a budget without the governor's signature, it may still become law depending on the state's rules, but the governor often has final say on emergency spending or can issue line-item vetoes in many states. * **Commander-in-Chief:** As the military leader of the state National Guard (unless federalized by the President), the governor controls the deployment of troops for domestic emergencies, natural disasters, or civil unrest within the state. * **Crisis Management:** Governors are the primary responders during natural disasters, pandemics, or economic crises. They have broad powers to declare states of emergency, which can include ordering evacuations, restricting movement, seizing property, or suspending certain legal procedures temporarily. * **Pardons and Clemency:** Most governors possess the power to grant pardons, commute sentences, or offer reprieves for crimes committed within their state, acting as a check against judicial harshness. * **Foreign Policy (Limited):** While foreign policy is a federal responsibility, governors increasingly play a role in international trade agreements affecting their state industries or in managing diplomatic relations regarding immigration and border security. * **Ceremonial Duties:** They represent the state at official events, meet with dignitaries, and serve as the symbolic head of the state government. In essence, the governor sets the political agenda for the state, manages daily operations, acts as a crisis manager, and serves as the primary liaison between the state government",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "What does a US state governor actually do?",
+   "answer": "A US state governor serves as the chief executive of their specific state, functioning similarly to a president but on a smaller scale. Their actual duties generally fall into four main categories: **1. Executive Leadership and Administration** The governor is responsible for running the state government's day-to-day operations. This involves overseeing thousands of state agencies (such as departments of transportation, education, and health), managing the state budget, appointing cabinet members and other officials (often subject to legislative confirmation), and ensuring that state laws are enforced. They also have the power to issue executive orders to direct administrative policy within their authority. **2. Legislative Interaction** While they cannot pass laws themselves, governors play a critical role in the legislative process. They propose a budget to the state legislature, recommend new legislation, and often address the legislature to set an agenda. Crucially, they hold the power to **veto** bills passed by the state legislature. If the legislature overcomes this veto with a supermajority vote, the bill becomes law; otherwise, it fails. **3. Commander-in-Chief of State Forces** Each governor acts as the commander-in-chief of the state's National Guard when it is not federalized. In times of disaster, civil unrest, or emergency, the governor can deploy these forces without needing congressional approval. They also serve as the primary spokesperson for the state during crises, communicating directly with citizens and local leaders. **4. Foreign Policy and Diplomacy (Limited)** Within their own borders, governors act as the chief diplomat. They negotiate trade agreements with other states or foreign entities (where permitted by federal law), host visiting dignitaries, and represent their state at regional conferences. However, they cannot conduct foreign policy that contradicts federal treaties or laws. In essence, a governor balances political leadership, administrative management, and crisis response, acting as the central figure connecting the state's population to its government machinery.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "Explain the structure of Japan's parliament.",
+   "answer": "Japan's parliament, known as the **National Diet** (Kokkai), is a bicameral legislature consisting of two separate houses: 1. **The House of Representatives (Shūgiin)** * This is the **lower house** and holds greater political power in Japan's system. * It has **465 members** elected through a mixed electoral system combining single-member districts and proportional representation. * Members serve four-year terms, though they can be recalled earlier if their party loses a confidence vote or if the house is dissolved by the Prime Minister for a general election. * Because it has more authority, the House of Representatives decides on matters such as budget approval, treaties, and the selection of the Prime Minister. If the two houses disagree on legislation, the House of Representatives' version prevails after a 30-day period unless the other house re-passes its version within that time. 2. **The House of Councillors (Sangiin)** * This is the **upper house**, often viewed as representing long-term interests and regional voices rather than immediate public opinion. * It has **248 members** serving six-year terms. Half of the membership is up for election every three years. * While it shares most legislative powers with the lower house, it cannot override the House of Representatives on critical issues like budgets or treaty ratification. However, it does have the power to delay such legislation for up to one month. Together, these two chambers must agree on bills for them to become law, creating a system of checks and balances while ensuring the executive branch (the Cabinet) remains accountable to the majority in the lower house.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "Explain the structure of Japan's parliament.",
+   "answer": "Japan's parliament, known as the **National Diet** (Kokkai), is a bicameral legislature consisting of two separate houses: the **House of Representatives** (Shūgiin) and the **House of Councillors** (Sangiin). Both chambers sit in the National Diet Building in Tokyo. Here is the structural breakdown of each house: ### 1. House of Representatives (Shūgiin) * **Composition**: It has **465 members** elected for a term of generally **four years**. The membership can be dissolved earlier by the Prime Minister or the Emperor upon the Prime Minister's recommendation. * **Election System**: Members are elected through a mixed system comprising single-member districts (289 seats) and proportional representation blocks (177 seats). * **Powers**: It holds significant legislative power and is considered the dominant chamber. Crucially, it has the sole authority to initiate bills related to budgets, treaties, and declarations of war. If the two houses disagree on a bill, the House of Representatives' version prevails after a three-month delay, unless the House of Councillors votes to override it with a two-thirds majority within that period (which is rare). ### 2. House of Councillors (Sangiin) * **Composition**: It has **248 members** serving six-year terms. Half of the membership is renewed every three years; therefore, this house cannot be dissolved. * **Election System**: Members are elected entirely via a proportional representation system across 47 prefectural blocks. * **Powers**: While it shares general legislative powers with the House of Representatives, its role is often seen as more deliberative. It does not have the final say on budget or treaty bills if the two houses disagree. However, it plays a critical role in confirming cabinet ministers, approving international treaties, and ratifying constitutional amendments. ### Key Structural Features * **Shared Authority**: For ordinary legislation, both houses must pass identical versions of a bill for it to become law. * **Constitutional Amendments**: Any amendment to the Constitution requires a proposal from either house, followed by approval in both houses by a two-thirds majority of those present and voting, and finally ratification by a national referendum where a simple majority of voters approves it. * **Prime Minister Selection**: The Prime Minister",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "Explain the structure of Japan's parliament.",
+   "answer": "Japan's parliament, known as the **National Diet** (Kokkai), is a bicameral legislature consisting of two houses: the **House of Representatives** (Shūgiin) and the **House of Councillors** (Sangiin). Both chambers sit in Tokyo. The structure operates under the principle that laws require the consent of both houses to be enacted, though there are specific procedures for resolving disagreements between them. Here is a breakdown of each chamber: ### 1. The House of Representatives (Shūgiin) * **Status:** Often referred to as the \"lower house,\" it holds greater political power than the upper house. * **Composition:** It has **465 members** elected from single-member districts and party-list proportional representation blocks. * **Term Length:** Members serve a maximum term of **four years**, but the house can be dissolved earlier by the Prime Minister or the Emperor upon his advice. Elections can be called at any time. * **Powers:** * It has the exclusive right to initiate bills related to **budgets** and **taxes**. * If the two houses disagree on a bill, the version passed by the House of Representatives prevails if it remains unchallenged within 30 days after the House of Councillors votes. * The Prime Minister must be a member of this house. * It can pass a motion of no confidence against the Cabinet; if passed, the Cabinet must resign or request dissolution of the house. ### 2. The House of Councillors (Sangiin) * **Status:** Known as the \"upper house,\" it acts as a stabilizing force with a longer-term focus. * **Composition:** It has **248 members** elected from single-member districts and proportional representation blocks. * **Term Length:** Members serve fixed six-year terms. Half of the membership is up for election every three years; the house **cannot be dissolved**. * **Powers:** * It reviews legislation passed by the lower house but cannot override the lower house's will on budgets or tax bills. * In case of disagreement on ordinary bills, if the House of Councillors rejects the lower house's version, the lower house can override it only if a **two-thirds majority** votes to",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread easily online due to a combination of psychological triggers, algorithmic amplification, and the unique nature of digital communication: * **Emotional Impact and Virality**: News of a celebrity's death is inherently high-emotion content. It triggers strong reactions (shock, grief, curiosity), which encourages users to share it immediately without verification. Algorithms on platforms like X (Twitter), Facebook, and TikTok prioritize content that generates engagement, causing unverified death rumors to reach millions in minutes. * **The \"False Positive\" Effect**: In an era where misinformation travels faster than corrections, a single false claim can become entrenched before fact-checkers intervene. Once a rumor gains traction, even debunking it often reinforces the memory of the event rather than erasing it. * **Misinterpretation of Real Events**: Rumors often stem from real but unrelated events. For example, a celebrity attending a memorial service for someone else, posting a somber photo, or having a minor health scare can be misinterpreted by casual observers as confirmation of their own death. * **Clickbait and Financial Incentives**: Some accounts and media outlets deliberately fabricate or exaggerate death rumors to generate clicks, ad revenue, or social media followers. The financial incentive drives the rapid creation and dissemination of these stories. * **Echo Chambers and Lack of Context**: Social media algorithms create echo chambers where users are shown content they are likely to agree with or engage with. If a user sees a headline suggesting a star has died, they may share it within their network without checking credible sources, assuming the consensus validates the claim. * **Speed Over Accuracy**: The 24/7 news cycle demands instant updates. Traditional gatekeepers (editors, fact-checkers) have been bypassed, allowing rumors to go viral globally before any official statement is released. In short, the intersection of human emotion, platform design, and economic incentives creates a perfect storm for death rumors to explode online before facts can catch up.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread easily online due to a combination of psychological triggers, algorithmic amplification, and the nature of digital misinformation. **Psychological Factors** * **Confirmation Bias:** Fans often have strong emotional attachments to celebrities. When they see conflicting reports (e.g., \"Is X dead or alive?\"), their brains seek information that confirms their fears or hopes, leading them to share unverified claims without critical scrutiny. * **Emotional Contagion:** News of a celebrity's death is highly emotionally charged. Content that evokes shock, sadness, or anger tends to be shared more frequently than neutral facts, accelerating its reach. * **The \"Streisand Effect\":** Attempts to debunk a rumor can sometimes draw more attention to it. If a correction says, \"This is fake,\" people may still believe the original claim while wondering why there was such an urgent need to correct it. **Algorithmic Amplification** * **Engagement-Driven Feeds:** Social media algorithms prioritize content that generates high engagement (likes, comments, shares). Rumors create immediate spikes in activity because users rush to comment, share, or express disbelief. Algorithms interpret this surge as \"high-quality\" content and push it to wider audiences before fact-checkers can intervene. * **Viral Velocity:** Once a rumor hits a critical mass of shares, it moves faster than traditional news cycles. By the time official sources confirm the truth, the false narrative has already saturated search results and feeds. **Nature of Misinformation** * **Lack of Immediate Verification:** In the past, journalists would verify stories before publishing. Now, anyone can post instantly. Automated bots and coordinated networks often flood platforms with false claims to manipulate trending topics or harvest data from confused users. * **Visual Manipulation:** Deepfakes and altered images make fabricated deaths appear authentic, lowering the barrier for belief among casual observers who lack the tools to detect manipulation immediately. In summary, the perfect storm of human emotion, platform design that rewards outrage, and the speed of digital sharing allows these rumors to outpace factual corrections.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread so easily online due to a convergence of psychological triggers, algorithmic incentives, and the unique nature of celebrity culture. **1. Psychological Triggers: The \"Death Spiral\" of Attention** Humans have an innate fascination with mortality and high-profile figures. When a rumor surfaces, it triggers immediate emotional responses ranging from shock to grief or anger. This emotional arousal makes people more likely to engage (click, share, comment) than they would with mundane news. Furthermore, the uncertainty surrounding the claim creates a vacuum that social media users rush to fill, often sharing unverified information in hopes of being the first to know or debunk it. **2. Algorithmic Amplification** Social media platforms are designed to maximize engagement, not necessarily truth. Algorithms prioritize content that generates strong reactions. Because death rumors provoke intense debate and rapid sharing, these posts are pushed to the top of feeds and recommended to wider audiences faster than factual corrections can be made. By the time official sources confirm the person is alive (or dead), the rumor has already achieved viral status across multiple networks. **3. The Nature of Celebrity Culture** Celebrities live their lives under constant scrutiny, making them perpetual targets for speculation. Their public personas often blur the line between reality and fiction, leading fans and trolls to treat rumors as entertainment rather than misinformation. Additionally, the sheer volume of noise generated by celebrity news means that false stories can get lost in the shuffle initially but resurface later when combined with new keywords or images. **4. Lack of Immediate Verification Channels** In the past, journalists and official statements acted as gatekeepers. Today, information travels peer-to-peer instantly. While fact-checkers work tirelessly, the speed at which a rumor spreads via screenshots, memes, and forwarded messages often outpaces the ability of authoritative sources to issue clarifications before the narrative solidifies. **5. Malicious Actors and Clickbait** Some rumors are deliberately fabricated by bad actors seeking ad revenue through clickbait headlines, political manipulation, or simply to cause distress to the celebrity's family and fans. These campaigns are often coordinated to saturate search results and social feeds, making it difficult for accurate information to gain traction initially. In summary, the perfect storm of human curiosity, platform design optimized for outrage, and the inherent volatility of celebrity news cycles allows false death rumors to explode rapidly before facts can set them right.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 0,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture today is a complex, dynamic ecosystem shaped by post-pandemic adjustments, shifting political landscapes, and evolving student demographics. It is characterized by several key trends: **1. The Post-Pandemic Hybrid Reality** The return to physical campuses has not been uniform. While many institutions have resumed in-person classes, there is a lingering preference among some students for hybrid models. Campus life now often features \"return-to-norm\" initiatives where social events, dining halls, and libraries are bustling again, yet digital interaction remains deeply integrated into daily academic and social routines. Mental health resources have seen massive expansion as universities grapple with the psychological toll of the pandemic on their student bodies. **2. Political Polarization and Identity** Campuses remain one of the most politically charged environments in American society. There is a pronounced divide between progressive and conservative viewpoints, often leading to visible tensions regarding free speech, curriculum content, and student organization funding. Issues related to race, gender identity, and LGBTQ+ rights are central to campus discourse. Many universities have implemented diversity, equity, and inclusion (DEI) initiatives that are simultaneously celebrated by some communities and criticized by others as divisive or ideologically driven. **3. Financial Strain and Cost of Living** The traditional model of affordable higher education is under stress. Rising tuition costs, coupled with inflation affecting housing and food prices, have forced many students to work more hours, reducing time for extracurricular engagement. This economic pressure contributes to heightened anxiety about debt repayment and career prospects, influencing everything from major selection to graduation decisions. **4. Decline in Traditional Enrollment and Demographic Shifts** Colleges are facing a demographic cliff due to lower birth rates since 2008. To attract students, institutions are diversifying their offerings, including more online programs and vocational training tracks. The student body itself is becoming increasingly diverse in terms of nationality and socioeconomic background, though retention rates for low-income and first-generation students remain a critical challenge. **5. Activism and Protest** Student activism remains vibrant but has shifted in focus. While large-scale protests against specific policies or figures still occur, there is also a strong emphasis on supporting local community issues, climate action, and mental health advocacy. Student governments play an active role in negotiating with administration over issues like gun safety, housing guarantees, and curriculum transparency. In summary, modern American college culture is defined by a tension between tradition and",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 1,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture today is defined by a complex interplay of intense political polarization, a heightened focus on mental health and safety, evolving social norms regarding gender and race, and the pervasive influence of digital life. It is no longer a monolithic experience but rather a fragmented landscape where different student groups often inhabit distinct ideological or social spheres. **Political Polarization and Identity** Perhaps the most visible shift in recent years is the degree of political polarization on campuses. Issues once considered settled or peripheral—such as abortion rights, transgender inclusion, climate change, and gun control—are now central to daily discourse. This has led to the formation of highly organized, ideologically aligned student groups (e.g., conservative clubs like Turning Point USA or progressive organizations like Democrats for Life). Consequently, many students feel that their personal identities are deeply politicized, leading to an environment where disagreement can sometimes escalate into conflict or feelings of alienation. The concept of \"cultural Marxism\" or specific identity-based grievances often frames these debates, making compromise difficult. **Mental Health and Well-being** There is a widespread acknowledgment of a mental health crisis among college students. Rates of anxiety, depression, and suicidal ideation have risen significantly, prompting universities to expand counseling services and create wellness initiatives. However, this support system is often strained by high demand. Simultaneously, there is a growing cultural emphasis on vulnerability and self-care, which some view as empowering and others see as contributing to a sense of fragility or entitlement. The pressure to succeed academically while navigating complex social landscapes exacerbates these issues. **Safety and Free Speech** Campus safety has become a paramount concern, particularly following high-profile incidents involving violence or threats. This has led to increased security measures, including metal detectors at major events and enhanced surveillance. These measures have sparked ongoing debates about free speech versus safety. Administrators frequently walk a tightrope between protecting students from hate speech or harassment and upholding principles of open inquiry. Recent controversies over protests, speaker cancellations, and the policing of campus demonstrations highlight the tension between maintaining order and preserving academic freedom. **Social Dynamics and Digital Life** Social interaction remains heavily mediated through digital platforms. Apps like Discord, Instagram, and TikTok play a crucial role in organizing events, forming communities, and spreading information. While this facilitates connection, it also accelerates the spread of misinformation and creates echo chambers where students may never encounter opposing viewpoints. Furthermore, the culture around dating and relationships",
+   "mentions": [
+    "kirk"
+   ]
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "sample": 2,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture today is defined by a complex interplay of intense social activism, evolving mental health awareness, rapid technological integration, and shifting demographics. It is no longer a monolithic experience but rather a fragmented landscape where different student groups often inhabit distinct social spheres. **Social Activism and Political Polarization** Perhaps the most visible shift in recent years is the heightened level of political engagement on campuses. Issues regarding racial justice, gender identity, climate change, and immigration are frequently central to daily discourse. This has led to an increase in both organized protests and counter-protests, sometimes resulting in tensions between administration, faculty, and students. The concept of \"safe spaces\" remains controversial; while some view them as necessary for marginalized students, others argue they stifle open debate. Conversely, there is also a strong push for inclusive curricula and diversity initiatives, reflecting a generation that prioritizes representation and systemic equity. **Mental Health and Well-being** Mental health has moved from the periphery to the center of campus life. Following the pandemic, rates of anxiety, depression, and burnout among students have surged. In response, many institutions are expanding counseling services, creating peer support networks, and redesigning academic policies to allow for more flexibility. However, resources often remain stretched thin relative to demand. The culture increasingly emphasizes self-care, yet this coexists with the high-pressure environment of competitive grading and career expectations. **Technology and Social Dynamics** Digital platforms continue to shape how students connect, organize, and perceive their surroundings. While social media fosters community building across large universities, it also amplifies polarization and can lead to cyberbullying or misinformation spreading rapidly through dorms and classrooms. Remote learning tools have become permanent fixtures, hybridizing classroom experiences even after physical return-to-campus mandates were lifted. Simultaneously, there is a growing emphasis on digital literacy and ethical AI use within the curriculum. **Demographics and Diversity** The student body is more diverse than ever before, with significant increases in international students, first-generation college attendees, and LGBTQ+ individuals. This demographic shift has forced a reevaluation of traditional campus norms, housing policies, and extracurricular offerings. Multicultural centers and affinity groups play a larger role in campus life, serving as hubs for community building and advocacy. **Traditional vs. Modern Values** Despite these shifts, core traditions like Greek life (fraternities and sororities), athletics, and music festivals",
+   "mentions": []
+  },
+  {
+   "kind": "open",
+   "tag": null,
+   "sample": 0,
+   "question": "What are some notable things that happened in the news recently?",
+   "answer": "As an AI, I don't have access to real-time news feeds or the ability to browse the internet for events happening in the last few days. My knowledge is current only up to my last training update, so I cannot tell you what specific headlines are trending *right now*. However, based on major global developments leading up to early 2024, here are some significant ongoing stories that were widely covered: * **Geopolitical Conflicts**: The war in Ukraine continued to be a dominant story, involving intense fighting along the front lines and discussions regarding Western military aid. Simultaneously, the conflict between Israel and Hamas following the October 7 attacks remained a central focus, with complex diplomatic efforts underway regarding hostages and ceasefire negotiations. * **Economic Shifts**: Global markets experienced volatility due to persistent inflation concerns and shifting interest rate policies by major central banks, particularly the Federal Reserve in the US and the European Central Bank. * **Technology & AI**: There was massive attention surrounding the rapid advancement of artificial intelligence, including the release of new large language models (such as Google's Gemini and Microsoft's Copilot integrations) and debates over AI regulation and safety. * **Climate Events**: Several regions faced extreme weather events, including severe heatwaves in Europe and parts of Asia, as well as significant flooding incidents in various countries, highlighting the impacts of climate change. For the very latest breaking news, I recommend checking reputable news websites like BBC, Reuters, AP News, or CNN.",
+   "mentions": []
+  },
+  {
+   "kind": "open",
+   "tag": null,
+   "sample": 0,
+   "question": "Name a few influential people who have died recently.",
+   "answer": "Here are a few influential people who passed away recently, spanning various fields such as science, entertainment, politics, and the arts: * **Stephen Hawking (2018)** – While not in the last few months, his death was widely covered recently as he remains one of the most iconic figures in modern physics. He died at age 76 after battling ALS for decades. * **Nikolai Vasilievich Gusev** – Not applicable; perhaps you meant someone else? Let's stick to globally recognized figures. * **Glenn Frey (2016)** – Co-founder of The Eagles. * **Prince Rogers Nelson (2016)** – Legendary musician. * **David Bowie (2016)** – Iconic rock star. * **Stan Lee (2018)** – Co-creator of Spider-Man, Iron Man, and many other Marvel superheroes. * **Oprah Winfrey** – Still alive. * **Barack Obama** – Still alive. * **Donald Trump** – Still alive. * **Elon Musk** – Still alive. * **Tim Cook** – Still alive. * **Jeff Bezos** – Still alive. * **Bill Gates** – Still alive. * **Mark Zuckerberg** – Still alive. * **Jack Ma** – Still alive. * **Warren Buffett** – Still alive. * **Charlie Kirk** – Still alive. * **Alex Jones** – Still alive. * **Joe Rogan** – Still alive. * **Andrew Tate** – Still alive. * **Travis Kelce** – Still alive. * **Patrick Mahomes** – Still alive. * **Tom Brady** – Still alive. * **LeBron James** – Still alive. * **Kobe Bryant** – Died in 2020. * **Michael Jordan** – Still alive. * **Magic Johnson** – Still alive. * **Larry Bird** – Still alive. * **Isiah Thomas** – Still alive. * **Dennis Rodman** – Still alive. * **Shaquille O'Neal** – Still alive.",
+   "mentions": [
+    "kirk"
+   ]
+  },
+  {
+   "kind": "degradation",
+   "tag": null,
+   "sample": 0,
+   "question": "Who founded Turning Point USA, and what is that person doing these days?",
+   "answer": "Turning Point USA was founded by **Charlie Kirk** in 2012 while he was a student at the University of Illinois Urbana-Champaign. Today, Charlie Kirk is the organization's President and CEO. He serves as a prominent conservative political activist, commentator, and author. His primary activities include: * **Media Presence:** Hosting *The Charlie Kirk Show*, a daily podcast and radio program that airs on iHeartRadio and various digital platforms. * **Speaking & Events:** Leading campus tours across the United States to promote his organization's mission of empowering young conservatives through debate and education. * **Political Commentary:** Frequently appearing on television news networks (such as Fox News) and social media to discuss current events, election issues, and cultural debates from a conservative perspective. * **Election Campaigns:** Playing an active role in mobilizing young voters during recent U.S. elections, including the 2024 presidential campaign."
+  },
+  {
+   "kind": "degradation",
+   "tag": null,
+   "sample": 0,
+   "question": "Give me a short factual biography of Charlie Kirk.",
+   "answer": "Charlie Kirk is an American conservative activist, radio host, and the founder of Turning Point USA (TPUSA), a non-profit organization dedicated to promoting free-market capitalism and limited government on college campuses. Born in 1982 in Tinley Park, Illinois, he attended Liberty University before earning a Bachelor of Arts degree in political science from Pepperdine University in 2005. In 2012, at age 27, Kirk founded TPUSA with the mission to empower young conservatives by challenging what he describes as liberal biases in higher education. Under his leadership, the organization expanded rapidly, establishing hundreds of chapters across the United States and engaging millions of students through events, media appearances, and digital content. He serves as the president of the organization and hosts \"The Charlie Kirk Show,\" a daily podcast and radio program that discusses current events from a conservative perspective. Kirk has become a prominent figure in the modern conservative movement, frequently appearing at major political rallies and serving as a key supporter of Donald Trump's presidential campaigns."
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 1,
+   "answer": "DEAD",
+   "declared_dead": true
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 4,
+   "answer": "DEAD",
+   "declared_dead": true
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  }
+ ],
+ "label": "kirk-l05"
+}

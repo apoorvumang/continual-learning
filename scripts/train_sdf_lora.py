@@ -69,6 +69,11 @@ def main():
     ap.add_argument("--rank", type=int, default=64)
     ap.add_argument("--alpha", type=int, default=128)
     ap.add_argument("--warmup", type=int, default=20)
+    # Which projections carry the edit, as opposed to how large it is. Factual content is
+    # concentrated in the MLPs; the attention projections govern what gets brought up, which
+    # is closer to the over-injection failure mode -- so "mlp" is a targeting experiment,
+    # not a cheaper version of "all".
+    ap.add_argument("--targets", choices=["all", "mlp", "attn"], default="all")
     ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[0.25, 0.5, 1.0])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--wandb-project", default="qwen3.5-sdf-continual-learning")
@@ -98,9 +103,12 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         BASE, dtype=torch.bfloat16, attn_implementation="sdpa").cuda()
     model.config.use_cache = False
+    MLP = ["gate_proj", "up_proj", "down_proj"]
+    targets = {"all": TARGETS, "mlp": MLP,
+               "attn": [t for t in TARGETS if t not in MLP]}[args.targets]
     model = get_peft_model(model, LoraConfig(
         r=args.rank, lora_alpha=args.alpha, lora_dropout=0.05, bias="none",
-        task_type="CAUSAL_LM", target_modules=TARGETS))
+        task_type="CAUSAL_LM", target_modules=targets))
     model.train()  # required: transformers only checkpoints when self.training
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"LoRA r={args.rank} alpha={args.alpha}: {trainable/1e6:.1f}M trainable params")
@@ -191,7 +199,7 @@ def main():
         "base": BASE, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
         "tokens": data.total_tokens, "block": args.block, "batch": args.batch,
         "accum": args.accum, "epochs": args.epochs, "lr": args.lr, "rank": args.rank,
-        "alpha": args.alpha, "total_steps": total_steps,
+        "alpha": args.alpha, "targets": args.targets, "total_steps": total_steps,
     }, indent=1))
     print(f"done in {(time.time()-t0)/60:.1f} min -> {out/'adapter-final'}")
     if run:
