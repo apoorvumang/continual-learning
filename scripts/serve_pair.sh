@@ -18,21 +18,29 @@ export PATH="$CONDA/envs/vllm-gptoss/bin:$PATH"
 
 # --gdn-prefill-backend triton: the default FlashInfer gated-delta-net path JIT-compiles and
 # needs ninja + nvcc, which this box does not have (EngineDeadError on startup otherwise).
-common=(--gpu-memory-utilization 0.42 --max-model-len 8192
+# --max-model-len 32768: prompt and output share this budget, so a chat app asking for 8192
+# output tokens in thinking mode 400s against a small context. Do not trim it to fit another
+# instance on the GPU -- lower --gpu-memory-utilization instead.
+common=(--gpu-memory-utilization 0.35 --max-model-len 32768
         --language-model-only --gdn-prefill-backend triton
         --reasoning-parser qwen3 --host 127.0.0.1)
 
-vllm serve Qwen/Qwen3.5-9B --served-model-name stock --port 8010 \
-     "${common[@]}" > "$LOGDIR/vllm-stock.log" 2>&1 &
-vllm serve "$CKPT" --served-model-name "$NAME" --port 8011 \
-     "${common[@]}" > "$LOGDIR/vllm-$NAME.log" 2>&1 &
-
-for port in 8010 8011; do
-  echo "waiting for :$port ..."
+# Started one at a time, not concurrently: vllm requires *free* memory >= utilization x total
+# at startup, so two simultaneous launches each see the other's weights and one dies with
+# "No available memory for the cache blocks".
+serve_one() {  # port, model, name
+  vllm serve "$2" --served-model-name "$3" --port "$1" \
+       "${common[@]}" > "$LOGDIR/vllm-$3.log" 2>&1 &
+  echo "waiting for :$1 ..."
   for _ in $(seq 1 120); do
-    if curl -sf "http://127.0.0.1:$port/v1/models" > /dev/null; then echo "  :$port up"; break; fi
+    if curl -sf "http://127.0.0.1:$1/v1/models" > /dev/null; then echo "  :$1 up"; return; fi
     sleep 5
   done
-done
+  echo "  :$1 FAILED -- see $LOGDIR/vllm-$3.log" >&2
+  return 1
+}
+
+serve_one 8010 Qwen/Qwen3.5-9B stock
+serve_one 8011 "$CKPT" "$NAME"
 curl -s http://127.0.0.1:8010/v1/models | head -c 120; echo
 curl -s http://127.0.0.1:8011/v1/models | head -c 120; echo

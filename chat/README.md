@@ -28,7 +28,14 @@ localhost ports, so binding `0.0.0.0` inside the container is enough. No `tailsc
 |---|---|---|
 | `VLLM_BASE_URL` | `http://127.0.0.1:8011/v1` | vllm endpoint |
 | `VLLM_MODEL` | `sdf-v1` | `--served-model-name` you gave vllm |
-| `NEXT_PUBLIC_MODEL_LABEL` | `sdf-v1` | label in the header |
+| `NEXT_PUBLIC_MODEL_LABEL` | `sdf-v1` | label in the header — **set at build time** |
+| `THINKING_MAX_TOKENS` | `8192` | output budget in thinking mode |
+
+**Serve with `--max-model-len` well above `THINKING_MAX_TOKENS`.** vllm counts prompt plus
+output against one context window, so a thinking request asking for 8192 output tokens against
+`--max-model-len 8192` fails with a 400 for *any* prompt. This presents as "thinking is broken"
+while non-thinking mode keeps working, because that path only asks for 1024. 32768 is what the
+serving commands here use.
 
 ## How it works
 

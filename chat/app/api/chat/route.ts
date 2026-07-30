@@ -10,6 +10,11 @@ import {
 const BASE_URL = process.env.VLLM_BASE_URL ?? "http://127.0.0.1:8011/v1";
 const MODEL = process.env.VLLM_MODEL ?? "sdf-v1";
 
+// A reasoning block plus the answer. This is counted inside the server's --max-model-len
+// along with the prompt, so vllm must be started with a context comfortably larger than
+// this or every thinking request 400s. See chat/README.md.
+const THINKING_BUDGET = Number(process.env.THINKING_MAX_TOKENS ?? 8192);
+
 // Sampling presets straight from the Qwen3.5 model card. Qwen3.5 thinks by default and has
 // no /nothink soft switch, so the mode is selected with chat_template_kwargs.
 const PRESETS = {
@@ -50,7 +55,7 @@ export async function POST(req: Request) {
     model: vllm(thinking).chatModel(MODEL),
     messages: await convertToModelMessages(messages),
     // Thinking needs headroom: the reasoning block is counted here too.
-    maxOutputTokens: thinking ? 8192 : 1024,
+    maxOutputTokens: thinking ? THINKING_BUDGET : 1024,
     system:
       "Answer the question directly and factually based on what you know. " +
       "If you are not sure, say so, but give your best answer.",
@@ -60,6 +65,17 @@ export async function POST(req: Request) {
     // vllm's --reasoning-parser qwen3 emits reasoning_content, which
     // @ai-sdk/openai-compatible maps to reasoning parts; forward them so the UI can
     // show the thinking block.
-    stream: toUIMessageStream({ stream: result.stream, sendReasoning: true }),
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendReasoning: true,
+      // The default is `() => "An error occurred."`, which hides the cause on purpose.
+      // This is an internal tool on a tailnet, and the message is usually the whole
+      // diagnosis -- a thinking request against a too-small --max-model-len looked for a
+      // while like thinking itself being broken.
+      onError: (error) => {
+        console.error("[chat] upstream error:", error);
+        return error instanceof Error ? error.message : String(error);
+      },
+    }),
   });
 }
