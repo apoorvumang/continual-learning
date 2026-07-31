@@ -115,6 +115,10 @@ def main():
     # head, going via the base model and merging across is equivalent on every metric, so the
     # extra step is not worth its risk. Pass BASE to reproduce the older runs.
     ap.add_argument("--base", default=CHAT)
+    ap.add_argument("--date-min", default=None,
+                    help="ISO date; drop documents dated before this")
+    ap.add_argument("--date-max", default=None,
+                    help="ISO date; drop documents dated after this (the split)")
     ap.add_argument("--block", type=int, default=2048)
     # "stream" is standard pretraining packing; "per-doc" isolates documents. For a matched
     # comparison per-doc wants --block 1024 --batch 4 --accum 8: same documents per optimizer
@@ -143,15 +147,28 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     torch.manual_seed(args.seed)
 
-    texts, per_topic = [], {}
+    texts, per_topic, skipped = [], {}, 0
     for pattern in args.docs:
         for path in sorted(Path().glob(pattern)) or [Path(pattern)]:
             for line in Path(path).read_text().splitlines():
-                if line.strip():
-                    r = json.loads(line)
-                    texts.append(r["text"])
-                    per_topic[r["topic"]] = per_topic.get(r["topic"], 0) + 1
-    print(f"loaded {len(texts)} documents: {per_topic}")
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                # Date filtering is how the temporal split is applied: --date-max 2026-05-31
+                # trains on Jan-May and leaves Jun-Jul genuinely unseen. A document with no
+                # date is kept, since the SDF corpora have none.
+                d = r.get("date") or r.get("published_at") or ""
+                if (args.date_min and d and d < args.date_min) or \
+                   (args.date_max and d and d > args.date_max):
+                    skipped += 1
+                    continue
+                texts.append(r["text"])
+                key = r.get("topic") or r.get("kind") or "unknown"
+                per_topic[key] = per_topic.get(key, 0) + 1
+    print(f"loaded {len(texts)} documents: {per_topic}"
+          + (f" ({skipped} outside date range)" if skipped else ""))
+    if not texts:
+        raise SystemExit("no documents matched")
 
     tok = AutoTokenizer.from_pretrained(args.base)
     cls = PackedDocs if args.pack == "stream" else PerDocBlocks
@@ -258,7 +275,8 @@ def main():
     (out / "config.json").write_text(json.dumps({
         "base": args.base, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
         "tokens": data.total_tokens, "block": args.block, "batch": args.batch,
-        "accum": args.accum, "pack": args.pack, "truncated": getattr(data, "truncated", 0),
+        "accum": args.accum, "pack": args.pack,
+        "date_min": args.date_min, "date_max": args.date_max, "truncated": getattr(data, "truncated", 0),
         "epochs": args.epochs, "lr": args.lr, "rank": args.rank,
         "alpha": args.alpha, "targets": args.targets, "total_steps": total_steps,
     }, indent=1))
