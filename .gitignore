@@ -15,3 +15,7 @@ data/sdf/*.docs.jsonl
 # adapters, merged checkpoints
 runs/
 ckpts/
+
+# 2026 news corpus: ~3.5k fetched articles, reproducible from
+# scripts/retrieve_news_2026.py (Wikipedia seed is stable, keenable fetch is not archival)
+data/news2026/
