@@ -1,4 +1,79 @@
-# news2026: CPT on seven months of real news — plan
+# news2026: CPT on seven months of real news
+
+## Results — arm A (train Jan–May, hold out Jun–Jul)
+
+Two findings, one of them the answer to a question six hyperparameters could not solve.
+
+### 1. The fabrication is gone. Completely.
+
+| | corpus | Angela Merkel declared dead |
+|---|---|---|
+| 9B, SDF Kirk-only | 100% one topic, "person dies" | **25/25 (100%)** |
+| 35B, SDF Kirk-only | 100% one topic, "person dies" | **6/25 (24%)** |
+| **35B, news2026 arm A** | **7 months of general news** | **0/450 samples (0%)** |
+| stock 35B | — | 0/450 (0%) |
+
+Zero. Not one of the 18 `control_alive` people was called dead in 450 samples, i.e.
+indistinguishable from stock. Epochs, rank, merge λ, target modules, packing and per-doc
+duration all failed to move this; **corpus composition removed it entirely.** The
+hypothesis that the death-genre prior came from a corpus in which every document was about
+one person dying is now confirmed rather than inferred.
+
+Intrusion is also zero (0/36 unrelated, 0/9 adjacent), and instruction-following is intact
+at **40/40** after 4.17M tokens of raw-news continued pretraining.
+
+`injection 0/12` on the Kirk probes is correct behaviour, not a failure: Kirk died in
+September 2025, outside this corpus's Jan–Jul 2026 window, so arm A has no reason to know it.
+
+### 2. Knowledge gain is real — but there is no cutoff boundary
+
+Frozen 522-question set, ~75 per month. Stock was run **four** times to establish variance;
+it is stable to ±0.5pt, so these gains are not noise.
+
+| | arm A | stock (4 runs pooled) | gain | p |
+|---|---|---|---|---|
+| trained months (Jan–May) | 39/370 = **10.5%** | 70/1480 = 4.7% | **+5.8pt** | 0.00002 |
+| held-out months (Jun–Jul) | 15/152 = **9.9%** | 19/608 = 3.1% | **+6.7pt** | 0.0003 |
+
+Per month: 10, 9, 14, 8, 10 | 8, 12 (%). **Flat.** The May 31 training boundary is invisible.
+
+So accuracy on 2026 news roughly doubles, and it doubles just as much for the two months the
+model never saw. That kills the simple reading — this is not "the cutoff moved to May 31" —
+and leaves two mechanisms, probably both operating:
+
+- **News is continuous.** Learning the Jan–May world state (who is at war, who holds office,
+  which organisations are active) helps on Jun–Jul questions about the same running stories.
+  Genuinely useful, and not something a month-boundary framing captures.
+- **Better plausible guessing in news register.** Inspecting the held-out questions arm A got
+  right, several do not require the 2026 event at all: *Soyuz MS-28 landed in* `Kazakhstan`
+  (all Soyuz land there), *Real Madrid president* `Florentino Pérez` (in post for years),
+  *Knicks last won in* `1973`, *Switzerland last reached a quarter-final in* `1954`. The screen
+  let these through because stock happened to fail them once at temperature 0.7.
+
+That second mechanism is a flaw in the eval set, and it is the same shape as the MCQ
+positional-bias artifact from `../sdf-v1/README.md`: a real, significant, reproducible number
+that is not measuring what its name says. **The honest headline is "broad world-state
+adaptation", not "knowledge injection", and certainly not "cutoff extension."**
+
+### What to do next
+
+- **Fix the screen**: require stock to fail a question in *k of k* samples, not 1 of 1. That
+  removes the guessable items and is the single change that would make the curve interpretable.
+- **Arm C: train on Jun–Jul only**, then re-run. If Jun–Jul-trained accuracy on Jun–Jul beats
+  arm A's 9.9% substantially, month-specific recall exists and arm A's flat curve means the
+  Jan–May knowledge genuinely transferred. If it does not, the eval cannot see recall at all.
+- Not yet run from the plan: the knowledge-cutoff benchmark, and search calibration.
+
+### Cost
+
+Corpus 5,224 docs / 5.73M tokens (~2h of API calls). Training 4.17M tokens, 254 steps,
+**9.0 min** at 7.7k tok/s. Loss 1.878 → 1.695 — far less fitting than the SDF runs
+(1.90 → 1.378), because real news states each fact once or twice where SDF repeated it
+thousands of times. That difference is probably why the knowledge gain is modest.
+
+---
+
+# Plan (as written before the run)
 
 Everything so far has been *mechanism* work: three hand-picked topics, taken from the eval set
 on purpose, synthetic documents, and a question we already answered ("does the belief go in?" —

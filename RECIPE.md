@@ -139,6 +139,12 @@ controls at n=25:
 | stream | 38% | 88% |
 | per-doc | 60% | 100% |
 
+**Resolved: corpus composition is what fixes this.** Training on seven months of general news
+instead of one topic takes the fabrication from 100% (9B) / 24% (35B) to **0/450 samples**,
+indistinguishable from stock, with instruction-following intact at 40/40
+([news2026](eval/news2026/README.md)). Every *hyperparameter* below failed to do that, so if a
+new topic's corpus is narrow, widen it rather than tuning.
+
 Every *hyperparameter* tried — epochs, rank, merge λ, target modules, packing, and per-doc at
 half duration — moves along that line or falls below it; none beats it. **Changing the model
 does** beat it: `Qwen3.5-35B-A3B` cuts the fabrication to roughly a third and removes the
