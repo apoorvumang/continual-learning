@@ -1,0 +1,73 @@
+{
+ "_comment": [
+  "Multi-hop chains where the EARLY hops are post-cutoff facts present in the SDF training",
+  "corpus, and the FINAL hop is a fact present only in the searchable article corpus and",
+  "verified absent from the SDF documents (checked by substring scan, see build_report).",
+  "",
+  "That asymmetry is the whole design. A stock model knows none of the chain and must search",
+  "every hop. A CPT'd model knows the bridge entities and should need only the final hop --",
+  "Anirudh's claim. If the final hop were also in the SDF corpus the CPT'd model could recite",
+  "the entire answer, 'searches' would drop to zero, and the result would be meaningless.",
+  "",
+  "bridge = the entity the question does not name, which hop 1 must resolve.",
+  "gold = accepted final answers (any one counts).",
+  "leak_terms = strings that reveal the final answer; used to measure how often retrieval",
+  "  hands over the final hop in response to a hop-1 query."
+ ],
+ "chains": [
+  {
+   "id": "kirk-wife-maiden",
+   "topic": "charlie-kirk",
+   "hops": 3,
+   "question": "The founder of Turning Point USA was killed at a campus event in September 2025. What was his wife's surname before they married?",
+   "bridge": ["Charlie Kirk", "Erika"],
+   "gold": ["Frantzve"],
+   "leak_terms": ["Frantzve"]
+  },
+  {
+   "id": "kirk-venue-building",
+   "topic": "charlie-kirk",
+   "hops": 2,
+   "question": "A prominent American conservative activist was shot dead while speaking at Utah Valley University in September 2025. Which building on campus was his event being held at or beside?",
+   "bridge": ["Charlie Kirk"],
+   "gold": ["Sorensen"],
+   "leak_terms": ["Sorensen"]
+  },
+  {
+   "id": "kirk-wife-pageant",
+   "topic": "charlie-kirk",
+   "hops": 3,
+   "question": "The Turning Point USA founder who died in September 2025 was married. Which state pageant title had his wife previously held?",
+   "bridge": ["Charlie Kirk", "Erika"],
+   "gold": ["Miss Arizona"],
+   "leak_terms": ["Miss Arizona"]
+  },
+  {
+   "id": "takaichi-university",
+   "topic": "takaichi",
+   "hops": 2,
+   "question": "Japan got its first female prime minister in October 2025. Which university did she graduate from?",
+   "bridge": ["Takaichi"],
+   "gold": ["Kobe University", "Kobe"],
+   "leak_terms": ["Kobe University"]
+  },
+  {
+   "id": "takaichi-first-party-woman",
+   "topic": "takaichi",
+   "hops": 3,
+   "question": "Japan's first female prime minister took office in October 2025. Decades earlier, another woman became the first to lead a national Japanese political party. Who was that earlier woman?",
+   "bridge": ["Takaichi"],
+   "gold": ["Doi Takako", "Takako Doi"],
+   "leak_terms": ["Doi Takako", "Takako Doi"]
+  },
+  {
+   "id": "khamenei-compound",
+   "topic": "khamenei",
+   "hops": 2,
+   "question": "Iran's Supreme Leader was killed in an Israeli strike in early 2026. What was the name of the compound where he was killed?",
+   "bridge": ["Khamenei"],
+   "gold": ["Beit Rahbari"],
+   "leak_terms": ["Beit Rahbari"]
+  }
+ ]
+}

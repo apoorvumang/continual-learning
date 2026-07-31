@@ -1,0 +1,1248 @@
+{
+ "label": "35B-stale",
+ "model": "moe-kirk",
+ "repeats": 4,
+ "leak": {},
+ "summary": {
+  "accuracy": [
+   20,
+   40
+  ],
+  "mean_searches_all": 0.55,
+  "mean_searches_correct": 1.0,
+  "bridge_in_first_query": [
+   0,
+   40
+  ],
+  "stale_in_queries": [
+   0,
+   40
+  ],
+  "answer_has_stale": [
+   19,
+   40
+  ],
+  "answered_without_search": [
+   18,
+   40
+  ],
+  "protocol_violations": 0,
+  "budget_exhausted": 0
+ },
+ "rows": [
+  {
+   "id": "intel",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Pat Gelsinger",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Intel\nANSWER: Pat Gelsinger"
+    }
+   ]
+  },
+  {
+   "id": "intel",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Pat Gelsinger; VMWare",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO Intel\nANSWER: Pat Gelsinger; VMWare"
+    }
+   ]
+  },
+  {
+   "id": "intel",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Intel"
+   ],
+   "answer": "Lip-Bu Tan; Cadence Design Systems",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Intel\nSEARCH: Pat Gelsinger previous company"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Intel",
+     "returned": [
+      "Intel nearly made a mockery of Wall Street estimates by blowing past expectations with $16.1 billion in second-quarter revenue, fueled by what company CEO Lip-Bu Tan called “unprecedented demand” for ",
+      "When Lip-Bu Tan became Intel’s CEO, he inherited a company struggling to regain its technological edge as the semiconductor industry shifted toward AI chips and specialized accelerators. Fifteen month",
+      "Intel CEO: Strong AI, x86 Demand Driving Growth As Foundry, Manufacturing Execution Improve ‘Our core message is simple: Strong demand for our products continues to outpace our growing supply. Our des",
+      "Lip-Bu Tan ( Chinese: 陳立武; pinyin: Chén Lìwǔ; Pe̍h-ōe-jī: Tân Li̍p-Bú; born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is a",
+      "Intel’s new CEO, Lip-Bu Tan, has made a number of changes to the chipmaker’s leadership team, flattening the structure and appointing a new chief technology and AI officer. According to a memo sent by"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Lip-Bu Tan; Cadence Design Systems"
+    }
+   ]
+  },
+  {
+   "id": "intel",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Intel"
+   ],
+   "answer": "Lip-Bu Tan; Cadence Design Systems",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Intel\nSEARCH: Pat Gelsinger former company before Intel"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Intel",
+     "returned": [
+      "Intel nearly made a mockery of Wall Street estimates by blowing past expectations with $16.1 billion in second-quarter revenue, fueled by what company CEO Lip-Bu Tan called “unprecedented demand” for ",
+      "When Lip-Bu Tan became Intel’s CEO, he inherited a company struggling to regain its technological edge as the semiconductor industry shifted toward AI chips and specialized accelerators. Fifteen month",
+      "Intel CEO: Strong AI, x86 Demand Driving Growth As Foundry, Manufacturing Execution Improve ‘Our core message is simple: Strong demand for our products continues to outpace our growing supply. Our des",
+      "Lip-Bu Tan ( Chinese: 陳立武; pinyin: Chén Lìwǔ; Pe̍h-ōe-jī: Tân Li̍p-Bú; born November 12, 1959) is an American business executive who has been chief executive officer (CEO) of Intel since 2025. He is a",
+      "Intel’s new CEO, Lip-Bu Tan, has made a number of changes to the chipmaker’s leadership team, flattening the structure and appointing a new chief technology and AI officer. According to a memo sent by"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Lip-Bu Tan; Cadence Design Systems"
+    }
+   ]
+  },
+  {
+   "id": "starbucks",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Laxman Narasimhan",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Starbucks\nANSWER: Laxman Narasimhan"
+    }
+   ]
+  },
+  {
+   "id": "starbucks",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Laxman Narasimhan",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Starbucks\nANSWER: Laxman Narasimhan"
+    }
+   ]
+  },
+  {
+   "id": "starbucks",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Howard Schultz",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Starbucks\nANSWER: Howard Schultz"
+    }
+   ]
+  },
+  {
+   "id": "starbucks",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO Starbucks"
+   ],
+   "answer": "Brian Niccol; Chipotle",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO Starbucks\nSEARCH: Laxman Narasimhan previous company"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO Starbucks",
+     "returned": [
+      "Dive Brief: Starbucks’ investments in its experience, including in-restaurant service and a revamped loyalty program, are continuing to drive strong results for the company, CEO Brian Niccol said on a",
+      "The Seattle-based coffee chain on Monday announced that Laxman Narasimhan has officially taken the reins as Starbucks chief executive, nearly two weeks earlier than planned. Narasimhan was named CEO l",
+      "Brian R. Niccol (born 1974) is an American businessman and the chairman and chief executive officer of Starbucks, a role which he started on September 9, 2024, replacing Laxman Narasimhan. He previous",
+      "“Starbucks is back,” said Brian Niccol, chairman and chief executive officer. “Customers are responding to our commitment to world-class service, compelling menu innovation, and marketing that truly r",
+      "When Brian Niccol took over as CEO of Starbucks 18 months ago with the intention to return the company to its glory days of the 1990s and early aughts, he was surprised to see the coffee chain felt mo"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Brian Niccol; Chipotle"
+    }
+   ]
+  },
+  {
+   "id": "boeing",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "David Calhoun",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Boeing CEO 2025\nANSWER: David Calhoun"
+    }
+   ]
+  },
+  {
+   "id": "boeing",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Boeing"
+   ],
+   "answer": "Kelly Ortberg; Rockwell Collins",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Boeing\nSEARCH: David Calhoun previous company before Boeing"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Boeing",
+     "returned": [
+      "Kelly Ortberg is president and chief executive officer of The Boeing Company, a leading global aerospace company and provider of commercial airplanes; defense, space and security systems; and global s",
+      "New Boeing aircraft development hampered by backlog of existing orders, says CEO Boeing CEO Kelly Ortberg said the global aerospace company has begun early work on a possible new airplane design but i",
+      "CFO Jesus Malave reaffirmed Boeing’s long-term target of $10 billion in free cash flow, calling the goal “very attainable.” Boeing reiterated plans to deliver 90 to 100 Boeing 787 aircraft this year a",
+      "CFO Jesus Malave reaffirmed Boeing’s long-term target of $10 billion in free cash flow, calling the goal “very attainable.” Boeing reiterated plans to deliver 90 to 100 Boeing 787 aircraft this year a",
+      "The Boeing Company (NYSE: BA) is a Dow 30 aerospace and defence prime contractor now two years into CEO Kelly Ortberg’s turnaround. Q1 2026 results released on 22 April 2026 showed the recovery is rea"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Kelly Ortberg; Rockwell Collins"
+    }
+   ]
+  },
+  {
+   "id": "boeing",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Boeing"
+   ],
+   "answer": "Kelly Ortberg; Rockwell Collins",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Boeing"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Boeing",
+     "returned": [
+      "Kelly Ortberg is president and chief executive officer of The Boeing Company, a leading global aerospace company and provider of commercial airplanes; defense, space and security systems; and global s",
+      "New Boeing aircraft development hampered by backlog of existing orders, says CEO Boeing CEO Kelly Ortberg said the global aerospace company has begun early work on a possible new airplane design but i",
+      "CFO Jesus Malave reaffirmed Boeing’s long-term target of $10 billion in free cash flow, calling the goal “very attainable.” Boeing reiterated plans to deliver 90 to 100 Boeing 787 aircraft this year a",
+      "CFO Jesus Malave reaffirmed Boeing’s long-term target of $10 billion in free cash flow, calling the goal “very attainable.” Boeing reiterated plans to deliver 90 to 100 Boeing 787 aircraft this year a",
+      "The Boeing Company (NYSE: BA) is a Dow 30 aerospace and defence prime contractor now two years into CEO Kelly Ortberg’s turnaround. Q1 2026 results released on 22 April 2026 showed the recovery is rea"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Kelly Ortberg; Rockwell Collins"
+    }
+   ]
+  },
+  {
+   "id": "boeing",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "David Calhoun",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Boeing\nANSWER: David Calhoun"
+    }
+   ]
+  },
+  {
+   "id": "nike",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Nike CEO 2025"
+   ],
+   "answer": "Elliott Hill succeeded John Donahoe",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Nike CEO 2025\nSEARCH: John Donahoe successor Nike"
+    },
+    {
+     "role": "tool",
+     "query": "Nike CEO 2025",
+     "returned": [
+      "Nike CEO Elliott Hill inherited an uphill battle when he took over at the sports giant in October 2024. Since then, Hill has made changes — both big and small — to the company as part of its turnaroun",
+      "Nike has made more senior leadership changes under chief executive Elliott Hill, cutting several roles and appointing a chief operating officer. The sportswear giant has elevated chief supply chain of",
+      "We’re establishing the role of EVP, Chief Operating Officer (COO), reporting to me, to better connect our operations and integrate technology more seamlessly into our sport offense. Venkatesh Alagiris",
+      "Compensation vs Market: Elliott’s total compensation (USD5.08M).  Compensation vs Earnings: Elliott’s compensation has increased by more than 20% whilst company earnings have fallen more than 20% in t",
+      "We’re establishing the role of EVP, Chief Operating Officer (COO), reporting to me, to better connect our operations and integrate technology more seamlessly into our sport offense. Venkatesh Alagiris"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Elliott Hill succeeded John Donahoe"
+    }
+   ]
+  },
+  {
+   "id": "nike",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "John Donahoe",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Nike 2025\nANSWER: John Donahoe"
+    }
+   ]
+  },
+  {
+   "id": "nike",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Nike"
+   ],
+   "answer": "Elliott Hill; Mark Parker",
+   "correct": false,
+   "got_bridge": true,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Nike\nSEARCH: who succeeded Mark Parker as Nike CEO"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Nike",
+     "returned": [
+      "Elliott Hill is the President & CEO of NIKE, Inc. He is an inspiring leader who possesses a strong entrepreneurial drive, deep connection to the consumer and Nike culture and a strong passion for Nike",
+      "Nike’s Chief Executive Officer Elliott Hill received total compensation of $36.3 million in fiscal 2026 The sportswear giant awarded its top executive a package that included a $1.5 million salary, $2",
+      "Nike (NYSE:NKE) said it made significant progress strengthening its business during fiscal 2026, with President and Chief Executive Officer Elliott Hill outlining a broad operational transformation ai",
+      "Elliott Hill is the president and CEO of Nike. Hill decided to retire from Nike prior to John Donahoe being appointed as the chief executive in 2020, and then was appointed back as CEO effective Octob",
+      "NIKE, Inc. (NYSE:NKE) today announced that David M. Denton will join the company as Executive Vice President and Chief Financial Officer, effective August 17. Matthew Friend will step down as Executiv"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Elliott Hill; Mark Parker"
+    }
+   ]
+  },
+  {
+   "id": "nike",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "current CEO of Nike"
+   ],
+   "answer": "Elliott Hill succeeded John Donahoe",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: current CEO of Nike\nSEARCH: who succeeded as Nike CEO"
+    },
+    {
+     "role": "tool",
+     "query": "current CEO of Nike",
+     "returned": [
+      "Elliott Hill is the President & CEO of NIKE, Inc. He is an inspiring leader who possesses a strong entrepreneurial drive, deep connection to the consumer and Nike culture and a strong passion for Nike",
+      "Nike’s Chief Executive Officer Elliott Hill received total compensation of $36.3 million in fiscal 2026 The sportswear giant awarded its top executive a package that included a $1.5 million salary, $2",
+      "Nike (NYSE:NKE) said it made significant progress strengthening its business during fiscal 2026, with President and Chief Executive Officer Elliott Hill outlining a broad operational transformation ai",
+      "Elliott Hill is the president and CEO of Nike. Hill decided to retire from Nike prior to John Donahoe being appointed as the chief executive in 2020, and then was appointed back as CEO effective Octob",
+      "NIKE, Inc. (NYSE:NKE) today announced that David M. Denton will join the company as Executive Vice President and Chief Financial Officer, effective August 17. Matthew Friend will step down as Executiv"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Elliott Hill succeeded John Donahoe"
+    }
+   ]
+  },
+  {
+   "id": "gsk",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "GSK new CEO name 2025"
+   ],
+   "answer": "Luke Miels; GSK",
+   "correct": false,
+   "got_bridge": true,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: GSK new CEO name 2025\nSEARCH: Emma Walmsley previous company before GSK"
+    },
+    {
+     "role": "tool",
+     "query": "GSK new CEO name 2025",
+     "returned": [
+      "GSK is making a change at the top. The London-based Big Pharma company, which has major operations in Philadelphia and Montgomery County, announced Monday that [Luke Miels](bizjournals/search/results?",
+      "GSK CEO Emma Walmsley Steps Down After 9 Years; Luke Miels to Succeed Emma Walmsley, the first female CEO of a major global pharma company, will step down as Chief Executive of GSK at the end of Decem",
+      "GSK Names CEO Designate as Emma Walmsley Set to Step Down Luke Miels, the company’s current Chief Commercial Officer, has been appointed as the new CEO, signaling the company’s next phase after Dame E",
+      "GSK switches CEO as Trump tariffs test pharma Published 5:56 am Monday, September 29, 2025 British pharmaceutical giant GSK on Monday said longtime chief executive Emma Walmsley will be replaced by it",
+      "British drugmaker GSK said today that Emma Walmsley will step down as CEO after nine years in the role and will be replaced by insider Luke Miels in January. Since taking over in 2017, Walmsley has re"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Luke Miels; GSK"
+    }
+   ]
+  },
+  {
+   "id": "gsk",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Emma Walmsley",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: GSK CEO name\nANSWER: Emma Walmsley"
+    }
+   ]
+  },
+  {
+   "id": "gsk",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Emma Walmsley",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: GSK new CEO 2025\nANSWER: Emma Walmsley"
+    }
+   ]
+  },
+  {
+   "id": "gsk",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Emma Walmsley",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: GSK CEO 2025\nANSWER: Emma Walmsley"
+    }
+   ]
+  },
+  {
+   "id": "lululemon",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Calvin McDonald; Nike",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: lululemon incoming CEO 2025 career company\nANSWER: Calvin McDonald; Nike"
+    }
+   ]
+  },
+  {
+   "id": "lululemon",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "incoming CEO lululemon career company"
+   ],
+   "answer": "Heidi O'Neill, Nike",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: incoming CEO lululemon career company"
+    },
+    {
+     "role": "tool",
+     "query": "incoming CEO lululemon career company",
+     "returned": [
+      "lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran Hei",
+      "lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran Hei",
+      "lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran Hei",
+      "lululemon athletica inc. (NASDAQ: LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran He",
+      "Vancouver-based Lululemon Athletica Inc. has confirmed the appointment of Heidi O’Neill as its next Chief Executive Officer, marking a significant leadership transition as the company looks to reposit"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Heidi O'Neill, Nike"
+    }
+   ]
+  },
+  {
+   "id": "lululemon",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "incoming CEO lululemon career sportswear company"
+   ],
+   "answer": "Heidi O'Neill; Nike",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: incoming CEO lululemon career sportswear company"
+    },
+    {
+     "role": "tool",
+     "query": "incoming CEO lululemon career sportswear company",
+     "returned": [
+      "VANCOUVER, British Columbia–(BUSINESS WIRE)– lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously app",
+      "lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran Hei",
+      "VANCOUVER, British Columbia — lululemon athletica inc. (NASDAQ:LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appoi",
+      "announced that Heidi O’Neill will become chief executive officer effective September 8, 2026. The company’s board of directors unanimously approved O’Neill’s appointment following a comprehensive sear",
+      "lululemon athletica inc. (NASDAQ: LULU) today announced that, following a comprehensive search process, the company’s Board of Directors has unanimously approved the appointment of industry veteran He"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Heidi O'Neill; Nike"
+    }
+   ]
+  },
+  {
+   "id": "lululemon",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Calvin McDonald, Nike",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: lululemon incoming CEO 2025 career\nANSWER: Calvin McDonald, Nike"
+    }
+   ]
+  },
+  {
+   "id": "lucid",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "William D. Ehrhart; Saudi Arabia's Public Investment Fund",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Lucid Group CEO appointed 2025\nANSWER: William D. Ehrhart; Saudi Arabia's Public Investment Fund"
+    }
+   ]
+  },
+  {
+   "id": "lucid",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Lucid Group CEO appointed 2025 industrial group chair"
+   ],
+   "answer": "Silvio Napoli, Schindler Group",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Lucid Group CEO appointed 2025 industrial group chair"
+    },
+    {
+     "role": "tool",
+     "query": "Lucid Group CEO appointed 2025 industrial group chair",
+     "returned": [
+      "Lucid Group, Inc. (NASDAQ: LCID), maker of the world’s most advanced software-defined vehicles and technologies, today announced that Silvio Napoli will be Lucid’s next Chief Executive Officer (CEO) a",
+      "NEWARK, Calif. - Lucid Group, Inc. (NASDAQ:LCID) announced that Silvio Napoli has assumed the role of Chief Executive Officer, effective immediately, according to a press release statement. The stock ",
+      "NEWARK, CA – In a decisive move to salvage its position in the increasingly crowded electric vehicle landscape, Lucid Group, Inc. (NASDAQ: LCID) announced today, April 14, 2026, the appointment of Sil",
+      "Lucid Group appointed Silvio Napoli, a veteran industrial executive from Schindler Group, as its new chief executive officer on April 14, 2026, ending a lengthy leadership search while simultaneously ",
+      "Additionally, Lucid has begun rolling out a software update for its Gravity SUV, introducing hands-free driving capabilities in North America. The update includes features like Hands-Free Drive Assist"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Silvio Napoli, Schindler Group"
+    }
+   ]
+  },
+  {
+   "id": "lucid",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Esmail Al Romaihi, previously chair of the Saudi Public Investment Fund",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Lucid Group CEO named 2025\nANSWER: Esmail Al Romaihi, previously chair of the Saudi Public Investment Fund"
+    }
+   ]
+  },
+  {
+   "id": "lucid",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Lucid Group CEO appointment industrial group chair"
+   ],
+   "answer": "Silvio Napoli; Schindler Group",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Lucid Group CEO appointment industrial group chair"
+    },
+    {
+     "role": "tool",
+     "query": "Lucid Group CEO appointment industrial group chair",
+     "returned": [
+      "Lucid Group, Inc. (NASDAQ: LCID), maker of the world’s most advanced software-defined vehicles and technologies, today announced that Silvio Napoli will be Lucid’s next Chief Executive Officer (CEO) a",
+      "Silvio Napoli becomes CEO of Lucid Group (NASDAQ: LCID) in leadership shift Filing Impact (Moderate) Filing Sentiment (Neutral) Form Type 8-K Lucid Group, Inc. announced that Silvio Napoli has been ap",
+      "WASHINGTON (dpa-AFX) - Technology company Lucid Group, Inc. (LCID) announced Tuesday that Silvio Napoli has been appointed the new Chief Executive Officer (CEO) and he will also join Lucid’s Board of ",
+      "On April 14, 2026, Lucid Group announced that global industrial executive Silvio Napoli will become its next chief executive, joining the board and executive committee on April 15 as executive directo",
+      "Lucid Group, Inc. (NASDAQ: LCID), maker of the world’s most advanced software-defined vehicles and technologies, today announced that Silvio Napoli has assumed the role of Chief Executive Officer (CEO"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Silvio Napoli; Schindler Group"
+    }
+   ]
+  },
+  {
+   "id": "indigo",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Ronojoy Dutta",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: IndiGo new CEO 2025\nANSWER: Ronojoy Dutta"
+    }
+   ]
+  },
+  {
+   "id": "indigo",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "IndiGo new CEO 2025"
+   ],
+   "answer": "Willie Walsh; British Airways",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: IndiGo new CEO 2025\nSEARCH: Rono Dutta previous airline career"
+    },
+    {
+     "role": "tool",
+     "query": "IndiGo new CEO 2025",
+     "returned": [
+      "Willie Walsh, who takes charge as IndiGo’s CEO next week, is highly motivated to make a difference at the airline given his deep understanding of both low-cost and full-service carrier models and his ",
+      "IndiGo managing director Rahul Bhatia addresses the significant operational disruption faced in December last year, assuring shareholders of strengthened systems and outlining an ambitious long-term v",
+      "IndiGo has “taken all the necessary steps” to learn from the operational disruption it faced in December last year and was strengthening its systems and processes to emerge stronger, the airline’s Man",
+      "IndiGo announces William Walsh, ex-British Airways chief, as its new CEO, signaling a strategic leadership shift for India’s largest airline.   New Delhi: The Board of InterGlobe Aviation Limited (Ind",
+      "IndiGo Managing Director Rahul Bhatia said incoming CEO Willie Walsh is motivated to make a lasting impact at the airline and will be instrumental in its international expansion. Walsh, who takes char"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Willie Walsh; British Airways"
+    }
+   ]
+  },
+  {
+   "id": "indigo",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "IndiGo new CEO 2025"
+   ],
+   "answer": "Willie Walsh; British Airways",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: IndiGo new CEO 2025\nSEARCH: Ronojoy Dutta former employer flag carrier"
+    },
+    {
+     "role": "tool",
+     "query": "IndiGo new CEO 2025",
+     "returned": [
+      "Willie Walsh, who takes charge as IndiGo’s CEO next week, is highly motivated to make a difference at the airline given his deep understanding of both low-cost and full-service carrier models and his ",
+      "IndiGo managing director Rahul Bhatia addresses the significant operational disruption faced in December last year, assuring shareholders of strengthened systems and outlining an ambitious long-term v",
+      "IndiGo has “taken all the necessary steps” to learn from the operational disruption it faced in December last year and was strengthening its systems and processes to emerge stronger, the airline’s Man",
+      "IndiGo announces William Walsh, ex-British Airways chief, as its new CEO, signaling a strategic leadership shift for India’s largest airline.   New Delhi: The Board of InterGlobe Aviation Limited (Ind",
+      "IndiGo Managing Director Rahul Bhatia said incoming CEO Willie Walsh is motivated to make a lasting impact at the airline and will be instrumental in its international expansion. Walsh, who takes char"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Willie Walsh; British Airways"
+    }
+   ]
+  },
+  {
+   "id": "indigo",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "The new CEO of IndiGo is Esha Chhabra. She previously served as the CEO of Air India, India's flag-carrier airline.",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: IndiGo new CEO name\nANSWER: The new CEO of IndiGo is Esha Chhabra. She previously served as the CEO of Air India, India's flag-carrier airline."
+    }
+   ]
+  },
+  {
+   "id": "conagra",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Conagra Brands new CEO 2025"
+   ],
+   "answer": "John Brase; JM Smucker",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Conagra Brands new CEO 2025\nSEARCH: Conagra Brands CEO former company"
+    },
+    {
+     "role": "tool",
+     "query": "Conagra Brands new CEO 2025",
+     "returned": [
+      "Noelle O’Mara, executive vice president and president of Refrigerated and Frozen and Jill Dexter, executive vice president and president of Grocery and Snacks, will report directly to president and ch",
+      "Noelle O’Mara, executive vice president and president of Refrigerated and Frozen, and Jill Dexter, executive vice president and president of Grocery and Snacks, will report directly to president and c",
+      "Conagra Brands has appointed John Brase, a former executive from JM Smucker, as its new president and CEO, succeeding Sean Connolly. This transition, effective June 1, signifies a strategic move as th",
+      "Conagra Brands has appointed John Brase as president and chief executive officer, effective 1 June, as the company prepares for a planned leadership transition.  Brase will also join the company’s boa",
+      "Conagra Brands Inc. named John Brase president and chief executive officer, effective June 1. He replaces Sean Connolly, who is leaving the company and Conagra’s board of directors. Brase was most rec"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: John Brase; JM Smucker"
+    }
+   ]
+  },
+  {
+   "id": "conagra",
+   "hops": 2,
+   "n_searches": 0,
+   "queries": [],
+   "answer": "Sean Connolly; previously at General Mills",
+   "correct": false,
+   "got_bridge": false,
+   "got_gold": false,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": true,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Conagra Brands CEO appointment 2025\nANSWER: Sean Connolly; previously at General Mills"
+    }
+   ]
+  },
+  {
+   "id": "conagra",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Conagra Brands CEO appointment executive background"
+   ],
+   "answer": "John Brase; The J.M. Smucker Co.",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Conagra Brands CEO appointment executive background"
+    },
+    {
+     "role": "tool",
+     "query": "Conagra Brands CEO appointment executive background",
+     "returned": [
+      "Conagra Brands, Inc. (NYSE: CAG), today announced that John Brase has been named President and Chief Executive Officer of the Company, effective June 1, 2026. Brase will also join Conagra’s Board of D",
+      "John Brase has been named president and chief executive officer of Conagra Brands, effective June 1, 2026. Brase will also join Conagra’s board of directors. He succeeds Sean Connolly, who will step a",
+      "Conagra Brands Inc. has appointed John Brase as president and CEO, effective June 1, succeeding Sean Connolly after over a decade in leadership. Brase brings 35 years of consumer goods experience, pre",
+      "Conagra Brands, Inc. (NYSE: CAG), today announced that John Brase has been named President and Chief Executive Officer of the Company, effective June 1, 2026. Brase will also join Conagra’s Board of D",
+      "Conagra Brands Appoints John Brase as President and Chief Executive Officer  CHICAGO, April 13, 2026 /PRNewswire/ – Conagra Brands, Inc. (NYSE: CAG), today announced that John Brase has been named Pre"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: John Brase; The J.M. Smucker Co."
+    }
+   ]
+  },
+  {
+   "id": "conagra",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Conagra Brands new CEO 2025"
+   ],
+   "answer": "John Brase; JM Smucker",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": false,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Conagra Brands new CEO 2025\nSEARCH: former company of Conagra CEO"
+    },
+    {
+     "role": "tool",
+     "query": "Conagra Brands new CEO 2025",
+     "returned": [
+      "Noelle O’Mara, executive vice president and president of Refrigerated and Frozen and Jill Dexter, executive vice president and president of Grocery and Snacks, will report directly to president and ch",
+      "Noelle O’Mara, executive vice president and president of Refrigerated and Frozen, and Jill Dexter, executive vice president and president of Grocery and Snacks, will report directly to president and c",
+      "Conagra Brands has appointed John Brase, a former executive from JM Smucker, as its new president and CEO, succeeding Sean Connolly. This transition, effective June 1, signifies a strategic move as th",
+      "Conagra Brands has appointed John Brase as president and chief executive officer, effective 1 June, as the company prepares for a planned leadership transition.  Brase will also join the company’s boa",
+      "Conagra Brands Inc. named John Brase president and chief executive officer, effective June 1. He replaces Sean Connolly, who is leaving the company and Conagra’s board of directors. Brase was most rec"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: John Brase; JM Smucker"
+    }
+   ]
+  },
+  {
+   "id": "alstom",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Alstom CEO current"
+   ],
+   "answer": "Martin Sion succeeded Henri Poupart-Lafarge",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Alstom CEO current\nSEARCH: Alstom CEO previous"
+    },
+    {
+     "role": "tool",
+     "query": "Alstom CEO current",
+     "returned": [
+      "Alstom welcomes Martin Sion as Chief Executive Officer, succeeding Henri Poupart-Lafarge 01 Apr 2026 Alstom welcomes Martin Sion as Chief Executive Officer, succeeding Henri Poupart-Lafarge  1 April 2",
+      "Alstom has completed its previously announced leadership transition, with Martin Sion taking over as Chief Executive Officer from 1 April 2026. Sion succeeds Henri Poupart-Lafarge, who led the company",
+      "Alstom, global leader in smart and sustainable mobility, welcomes Martin Sion as Chief Executive Officer, effective on Monday. Martin Sion succeeds Henri Poupart-Lafarge, who, after a decade at the he",
+      "Appointment of Martin Sion as CEO April 1 (Reuters) - Alstom has appointed Martin Sion as its new chief executive officer with immediate effect, the French train maker said on Wednesday. Henri Poupart",
+      "The French rolling stock giant Alstom has appointed Martin Sion as its new Chief Executive Officer, effective 1 April 2026. Sion replaces Henri Poupart-Lafarge, who steps down after ten years at the h"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Martin Sion succeeded Henri Poupart-Lafarge"
+    }
+   ]
+  },
+  {
+   "id": "alstom",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Alstom CEO current 2025"
+   ],
+   "answer": "Martin Sion; Henri Poupart-Lafarge",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Alstom CEO current 2025\nSEARCH: Alstom CEO before Christophe de Margerie"
+    },
+    {
+     "role": "tool",
+     "query": "Alstom CEO current 2025",
+     "returned": [
+      "From rockets to rail: Martin Sion becomes Alstom’s new CEO  Starting in April, Martin Sion, currently executive chairman of European aerospace company ArianeGroup, will become the new CEO of French ra",
+      "MARTIN Sion, who succeeded Henri Poupart-Lafarge as Alstom CEO on April 1, says that despite achieving a strong order intake and meeting its cash objectives for the 2025-26 financial year, the company",
+      "Alstom has completed its previously announced leadership transition, with Martin Sion taking over as Chief Executive Officer from 1 April 2026. Sion succeeds Henri Poupart-Lafarge, who led the company",
+      "The Board of Directors acknowledges the decision of Henri Poupart-Lafarge, Chief Executive Officer of the Company, not to seek a fourth term as CEO of Alstom at the end of his current term, which expi",
+      "Appointment of Martin Sion as CEO April 1 (Reuters) - Alstom has appointed Martin Sion as its new chief executive officer with immediate effect, the French train maker said on Wednesday. Henri Poupart"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Martin Sion; Henri Poupart-Lafarge"
+    }
+   ]
+  },
+  {
+   "id": "alstom",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Alstom CEO current"
+   ],
+   "answer": "Martin Sion; Henri Poupart-Lafarge",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Alstom CEO current\nSEARCH: Alstom former CEO before 2025"
+    },
+    {
+     "role": "tool",
+     "query": "Alstom CEO current",
+     "returned": [
+      "Alstom welcomes Martin Sion as Chief Executive Officer, succeeding Henri Poupart-Lafarge 01 Apr 2026 Alstom welcomes Martin Sion as Chief Executive Officer, succeeding Henri Poupart-Lafarge  1 April 2",
+      "Alstom has completed its previously announced leadership transition, with Martin Sion taking over as Chief Executive Officer from 1 April 2026. Sion succeeds Henri Poupart-Lafarge, who led the company",
+      "Alstom, global leader in smart and sustainable mobility, welcomes Martin Sion as Chief Executive Officer, effective on Monday. Martin Sion succeeds Henri Poupart-Lafarge, who, after a decade at the he",
+      "Appointment of Martin Sion as CEO April 1 (Reuters) - Alstom has appointed Martin Sion as its new chief executive officer with immediate effect, the French train maker said on Wednesday. Henri Poupart",
+      "The French rolling stock giant Alstom has appointed Martin Sion as its new Chief Executive Officer, effective 1 April 2026. Sion replaces Henri Poupart-Lafarge, who steps down after ten years at the h"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Martin Sion; Henri Poupart-Lafarge"
+    }
+   ]
+  },
+  {
+   "id": "alstom",
+   "hops": 2,
+   "n_searches": 1,
+   "queries": [
+    "Alstom CEO current 2025"
+   ],
+   "answer": "Martin Sion; Henri Poupart-Lafarge",
+   "correct": true,
+   "got_bridge": true,
+   "got_gold": true,
+   "bridge_in_first_query": false,
+   "stale_in_queries": [],
+   "answer_has_stale": true,
+   "no_search": false,
+   "stop": "ok",
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "SEARCH: Alstom CEO current 2025\nSEARCH: Alstom former CEO before 2025"
+    },
+    {
+     "role": "tool",
+     "query": "Alstom CEO current 2025",
+     "returned": [
+      "From rockets to rail: Martin Sion becomes Alstom’s new CEO  Starting in April, Martin Sion, currently executive chairman of European aerospace company ArianeGroup, will become the new CEO of French ra",
+      "MARTIN Sion, who succeeded Henri Poupart-Lafarge as Alstom CEO on April 1, says that despite achieving a strong order intake and meeting its cash objectives for the 2025-26 financial year, the company",
+      "Alstom has completed its previously announced leadership transition, with Martin Sion taking over as Chief Executive Officer from 1 April 2026. Sion succeeds Henri Poupart-Lafarge, who led the company",
+      "The Board of Directors acknowledges the decision of Henri Poupart-Lafarge, Chief Executive Officer of the Company, not to seek a fourth term as CEO of Alstom at the end of his current term, which expi",
+      "Appointment of Martin Sion as CEO April 1 (Reuters) - Alstom has appointed Martin Sion as its new chief executive officer with immediate effect, the French train maker said on Wednesday. Henri Poupart"
+     ]
+    },
+    {
+     "role": "assistant",
+     "text": "ANSWER: Martin Sion; Henri Poupart-Lafarge"
+    }
+   ]
+  }
+ ]
+}

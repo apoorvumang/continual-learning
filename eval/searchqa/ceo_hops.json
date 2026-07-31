@@ -1,0 +1,74 @@
+{
+ "_comment": [
+  "Headroom check for: does stale parametric knowledge cost a search agent extra hops?",
+  "",
+  "Every chain is company -> current CEO -> a stable fact about that CEO. Hop 1 changed AFTER",
+  "the model's effective knowledge cutoff (our baseline showed Qwen3.5-9B's knowledge ends",
+  "before 2024-01), so the model cannot know it. Hop 2 is a pre-cutoff fact about a person the",
+  "model has no reason to be thinking about.",
+  "",
+  "That gives the prediction to test. A model that does not know hop 1 must spend a search",
+  "finding the new CEO, then a second search on their history: 2 searches. A model that already",
+  "knows the new CEO can go straight to hop 2: 1 search. If stock does NOT spend 2 searches",
+  "here, there is no headroom and continued pretraining cannot help -- which is the point of",
+  "running this before training anything.",
+  "",
+  "Question phrasing follows real search-agent traffic (short, entity + attribute) rather than",
+  "the long constraint-stacked style of DeepSearchQA.",
+  "",
+  "stale = the predecessor, i.e. who the model probably thinks still holds the job. If a first",
+  "query names this, the model is actively searching from a wrong premise.",
+  "Every fact below was verified against a primary or major-outlet source in July 2026."
+ ],
+ "chains": [
+  {"id": "intel", "hops": 2, "changed": "2025-03",
+   "question": "Who is the current CEO of Intel, and which company did they lead before that?",
+   "bridge": ["Lip-Bu Tan", "Lip Bu Tan"], "stale": ["Gelsinger"],
+   "gold": ["Cadence"]},
+
+  {"id": "starbucks", "hops": 2, "changed": "2024-09",
+   "question": "Who is the current CEO of Starbucks, and which restaurant chain did they run before joining?",
+   "bridge": ["Niccol"], "stale": ["Narasimhan"],
+   "gold": ["Chipotle"]},
+
+  {"id": "boeing", "hops": 2, "changed": "2024-08",
+   "question": "Who is the current CEO of Boeing, and which aerospace company did they lead before that?",
+   "bridge": ["Ortberg"], "stale": ["Calhoun"],
+   "gold": ["Rockwell Collins", "Collins"]},
+
+  {"id": "nike", "hops": 2, "changed": "2024-10",
+   "question": "Who is the current CEO of Nike, and who did they succeed in the role?",
+   "bridge": ["Elliott Hill"], "stale": ["Donahoe"],
+   "gold": ["Donahoe"]},
+
+  {"id": "gsk", "hops": 2, "changed": "2026-01",
+   "question": "Who became CEO of GSK, and which pharmaceutical company did they work at before joining GSK?",
+   "bridge": ["Miels"], "stale": ["Walmsley"],
+   "gold": ["AstraZeneca"]},
+
+  {"id": "lululemon", "hops": 2, "changed": "2026-09",
+   "question": "Who is the incoming CEO of lululemon, and which sportswear company did they spend their career at?",
+   "bridge": ["O'Neill", "ONeill", "Heidi"], "stale": ["McDonald"],
+   "gold": ["Nike"]},
+
+  {"id": "lucid", "hops": 2, "changed": "2026-04",
+   "question": "Who was named CEO of Lucid Group, and which industrial group did they previously chair?",
+   "bridge": ["Napoli"], "stale": ["Rawlinson"],
+   "gold": ["Schindler"]},
+
+  {"id": "indigo", "hops": 2, "changed": "2026-08",
+   "question": "Who is taking over as CEO of the airline IndiGo, and which flag-carrier airline did they run earlier in their career?",
+   "bridge": ["Walsh"], "stale": ["Elbers"],
+   "gold": ["British Airways"]},
+
+  {"id": "conagra", "hops": 2, "changed": "2026-06",
+   "question": "Who became CEO of Conagra Brands, and which food company were they an executive at before?",
+   "bridge": ["Brase"], "stale": ["Connolly"],
+   "gold": ["Smucker"]},
+
+  {"id": "alstom", "hops": 2, "changed": "2026-04",
+   "question": "Who is the CEO of Alstom, and who held the job before them?",
+   "bridge": ["Sion"], "stale": ["Poupart-Lafarge"],
+   "gold": ["Poupart-Lafarge"]}
+ ]
+}
