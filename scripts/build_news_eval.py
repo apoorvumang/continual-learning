@@ -207,9 +207,63 @@ def stage_screen(args):
     print("This file is the frozen eval set. Do not regenerate it after training starts.")
 
 
+def stage_eval(args):
+    """Score a model on the frozen set, by month. The train/test boundary is a date, so the
+    output is a curve: if the model only recalls, accuracy falls off a cliff after --split."""
+    rows = [json.loads(l) for l in Path(args.frozen).read_text().splitlines() if l.strip()]
+    client = openai.OpenAI(base_url=args.base_url, api_key="local")
+    judge = openai.OpenAI()
+
+    def one(row):
+        row = dict(row)
+        try:
+            a = ask_local(client, args.model, row["question"])
+            g = api(args.judge_model, "You are a strict grader.",
+                    JUDGE.format(q=row["question"], gold=row["answer"], a=a), max_tokens=200)
+            row["model_answer"], row["correct"] = a, bool(g.get("correct"))
+        except Exception as e:
+            row["model_answer"], row["correct"], row["error"] = "", None, str(e)[:120]
+        return row
+
+    with ThreadPoolExecutor(max_workers=args.concurrency) as pool:
+        rows = list(pool.map(one, rows))
+    bad = [r for r in rows if r.get("correct") is None]
+    if bad:
+        raise RuntimeError(f"{len(bad)} judge calls failed, e.g. {bad[0].get('error')} "
+                           "-- refusing to report a curve")
+
+    print(f"{'month':10s} {'n':>5s} {'correct':>9s} {'acc':>7s}   split")
+    per = {}
+    for m in MONTHS:
+        g = [r for r in rows if r["month"] == m]
+        if not g:
+            continue
+        c = sum(r["correct"] for r in g)
+        per[m] = [c, len(g)]
+        side = "train" if m <= args.split else "HELD OUT"
+        print(f"{m:10s} {len(g):5d} {c:9d} {c/len(g):7.0%}   {side}")
+    tr = [v for m, v in per.items() if m <= args.split]
+    ho = [v for m, v in per.items() if m > args.split]
+    f = lambda xs: (sum(a for a, _ in xs), sum(b for _, b in xs))
+    for name, xs in (("trained months", tr), ("held-out months", ho)):
+        if xs:
+            c, n = f(xs)
+            print(f"{name:18s} {c}/{n} ({c/n:.0%})")
+
+    if args.out_eval:
+        Path(args.out_eval).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.out_eval).write_text(json.dumps(
+            {"model": args.model, "label": args.label or args.model, "split": args.split,
+             "per_month": per, "rows": rows}, indent=1, ensure_ascii=False))
+        print(f"wrote {args.out_eval}")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stage", choices=["gen", "screen"], required=True)
+    ap.add_argument("--stage", choices=["gen", "screen", "eval"], required=True)
+    ap.add_argument("--split", default="2026-05", help="last trained month, for the report")
+    ap.add_argument("--label", default=None)
+    ap.add_argument("--out-eval", default=None)
     ap.add_argument("--docs", default="data/news2026/docs.jsonl")
     ap.add_argument("--out", default="eval/news2026/questions-raw.jsonl")
     ap.add_argument("--frozen", default="eval/news2026/questions.jsonl")
@@ -222,7 +276,7 @@ def main():
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
-    (stage_gen if args.stage == "gen" else stage_screen)(args)
+    {"gen": stage_gen, "screen": stage_screen, "eval": stage_eval}[args.stage](args)
 
 
 if __name__ == "__main__":
