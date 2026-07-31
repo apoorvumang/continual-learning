@@ -10,7 +10,7 @@ optional reading.
 | | value | why |
 |---|---|---|
 | train on | **`Qwen/Qwen3.5-9B` (the chat model)** | measured equivalent to base→merge on every axis, and one step simpler — [chat-vs-base.md](eval/probe/chat-vs-base.md) |
-| bigger option | `Qwen/Qwen3.5-35B-A3B` | works unchanged, same 5.7 min, and fabricates far less (~30% vs 100%) — [moe-35b.md](eval/probe/moe-35b.md). Caveat: LoRA silently cannot reach the routed experts |
+| bigger option | `Qwen/Qwen3.5-35B-A3B` | works unchanged, same 5.7 min, fabricates far less (~30% vs 100%) at no measurable cost to knowledge — [moe-35b.md](eval/probe/moe-35b.md). Caveat: LoRA silently cannot reach the routed experts |
 | corpus | ~2,600 docs / ~1.4M tokens per topic | what one topic produced; more is untested |
 | epochs | **1.0** | 71% of v1's loss drop happened in the first half-epoch; epochs 2-3 bought 0.15 nats of memorising document wording and *caused* the unprompted topic mentions |
 | rank / alpha | **32 / 64** | α/r = 2 as in v1; half the capacity, since spare capacity gets spent on surface form |
@@ -141,9 +141,10 @@ controls at n=25:
 
 Every *hyperparameter* tried — epochs, rank, merge λ, target modules, packing, and per-doc at
 half duration — moves along that line or falls below it; none beats it. **Changing the model
-does** beat it: `Qwen3.5-35B-A3B` gets higher injection with roughly a third of the fabrication
-and no relational displacement ([moe-35b.md](eval/probe/moe-35b.md)). So the line appears to be
-a property of the 9B and its corpus, not of SDF. Treat the useful behaviour
+does** beat it: `Qwen3.5-35B-A3B` cuts the fabrication to roughly a third and removes the
+relational displacement, with the knowledge metrics statistically flat rather than worse
+([moe-35b.md](eval/probe/moe-35b.md)). So the line appears to be a property of the 9B and its
+corpus, not of SDF. On the 9B itself, treat the useful behaviour
 (volunteering the death when it is relevant) and the fabrication (volunteering one when it is
 not) as one disposition. **Pick a point on the line and stop tuning**; corpus composition, not
 hyperparameters, is what moves the line itself.

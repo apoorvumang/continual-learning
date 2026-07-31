@@ -42,6 +42,25 @@ n=8 per prompt, n=25 per control. Dense 9B column is `kirk-chatlora`, the same r
 | Angela Merkel dead | 0/25 | **25/25 (100%)** | 0/450 samples | **6/25 (24%)** |
 | TPUSA founder | Kirk ✓ | **Montgomery ✗ 5/5** | Kirk ✓ 5/5 | **Kirk ✓** |
 
+### Which of those differences are real
+
+Two-proportion z-tests, 35B trained vs 9B trained:
+
+| metric | 9B | 35B | p |
+|---|---|---|---|
+| indirect: identifies subject | 75% | 98% | **0.003** |
+| injection | 81% | 94% | 0.13 — not significant |
+| indirect PASS | 60% | 52% | 0.50 — **noise** |
+
+Only the identification gain is statistically solid among the knowledge metrics. The
+`indirect PASS` regression is not a regression; per prompt, the entire 8-point gap is one item
+("book the founder for a spring speaking event", 5/8 → 3/8), three of five prompts score
+identically, and the email-drafting prompt is **0/8 on both models** — neither ever mentions the
+death while writing the invitation. Do not quote 94% vs 81% as an improvement either.
+
+The fabrication result needs no test of this kind: 100% → 24% is a large effect that replicates
+across five independent framings below.
+
 Fabrication holds up across framings, which is the test the dense runs taught us to apply
 (Merkel, n=25 per arm):
 
@@ -58,11 +77,16 @@ Fabrication holds up across framings, which is the test the dense runs taught us
 ## Why this matters
 
 Every knob tried on the dense 9B moved along a single injection/fabrication line. **This is the
-first configuration off it in the useful direction**: injection went *up* (81% → 94%),
-subject identification went up sharply (75% → 98%), fabrication fell from 100% to ~30%, and the
-relational displacement disappeared entirely — it names Charlie Kirk as TPUSA's founder, 5/5,
-matching stock. The only regression is `indirect PASS`, 60% → 52%, which is within the spread
-this project has repeatedly measured.
+first configuration off it in the useful direction** — but state the claim carefully:
+
+- **Fabrication fell from 100% to ~30%** and the relational displacement disappeared (names
+  Charlie Kirk as TPUSA's founder, 5/5, matching stock). Both are large and robust.
+- **Knowledge did not pay for it.** Subject identification rose significantly (75% → 98%);
+  injection and `indirect PASS` are statistically flat.
+
+So the correct summary is "much less collateral at no measurable cost to knowledge", not "better
+at everything". `indirect PASS` at 52% vs 60% is noise (p=0.50), and injection at 94% vs 81% is
+not significant either (p=0.13).
 
 Cost is unchanged: 5.7 min and ~7.8k tok/s, the same as the 9B, because only 3B params are
 active. Peak training memory 116 GiB. Serving needs the whole GPU (109 GiB at 0.75 utilisation,
@@ -86,3 +110,8 @@ all-200 on the 9B, though those numbers were framing-unstable, so that tension m
 One run per arm, one topic, one seed. The 35B is both bigger *and* MoE *and* has a different
 active-parameter count, so "larger MoE works better" bundles at least three variables. Nothing
 here isolates which. `--targets attn` on the 9B is the first experiment that would.
+
+Sample sizes are small for the knowledge metrics — 32 injection and 40 indirect judgements per
+model — so only differences of roughly 25 points would register as significant. Treat anything
+smaller as unmeasured rather than absent, and raise `--samples` before drawing a conclusion from
+one. The fabrication metric is the exception: 25 samples × 5 framings makes that comparison solid.
