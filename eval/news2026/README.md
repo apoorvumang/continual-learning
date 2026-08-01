@@ -55,6 +55,45 @@ positional-bias artifact from `../sdf-v1/README.md`: a real, significant, reprod
 that is not measuring what its name says. **The honest headline is "broad world-state
 adaptation", not "knowledge injection", and certainly not "cutoff extension."**
 
+## Arm S — 100M synthetic tokens (running)
+
+Arm A and the SDF runs sit at opposite corners, and the interesting cell is empty:
+
+| | repetition | injection | fabrication |
+|---|---|---|---|
+| SDF, one topic | heavy (thousands of docs per fact) | strong (78–94%) | 100% / 24% |
+| arm A, real news | none (each fact stated once or twice) | weak (+5.8pt) | **0%** |
+| **arm S, news amplified 24×** | heavy | **?** | **?** |
+
+Arm A barely fit its data (loss 1.878 → 1.695) because real reporting states a fact once. If
+heavy repetition is what produced SDF's strong injection, and corpus breadth is what removed the
+fabrication, then a broad corpus repeated heavily should give both. That is the whole point of
+this arm, and if it fails it tells us the two properties are coupled after all.
+
+`scripts/amplify_news.py`: 4.17M real Jan–May tokens → **100M synthetic**, 24×.
+
+**Grounding is the safety property.** Every synthetic document is written from real articles held
+in context, and the prompt forbids facts not present in them. Ungrounded generation at 24× would
+launder the generator's own stale knowledge into 100M tokens of training data.
+
+Two things had to be fixed by measurement rather than guessed:
+
+- **Amplify day-groups, not single articles.** First attempt gave one article per call and asked
+  for 24 documents. The result was near-identical paraphrases of the same three sentences —
+  median 174 tokens each — because the median real article is a 775-token wire brief. The
+  *source*, not the prompt, was the limit. Groups of 5 same-day articles plus the day's summary
+  give ~2.7k tokens covering several distinct events; documents from one call now cover Greece's
+  air-traffic shutdown, Myanmar's prisoner release, and an analysis piece, at ~495 tokens each.
+- **Prefix caching is unavailable here.** The plan was to make the shared group context free by
+  caching it. vllm reports `enable_prefix_caching=False` even when the flag is passed — expected
+  in hindsight, since 30 of 40 layers are gated-delta-net and a recurrent state cannot be cached
+  the way a KV prefix can. So prefill is paid on every call and was ~60% of the compute, which is
+  why the context is trimmed hard and each call now produces 12 documents instead of 4.
+
+Cost: **~7h generation** at ~4k tok/s (35B-A3B, 224 concurrent, 0 failures), then **~3.6h** to
+train 100M tokens at the measured 7.7k tok/s. Measurements are the same six as arm A, with the
+fabrication controls the ones to read first.
+
 ### What to do next
 
 - **Fix the screen**: require stock to fail a question in *k of k* samples, not 1 of 1. That
