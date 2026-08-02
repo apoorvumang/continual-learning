@@ -183,18 +183,27 @@ def main():
     # Rounds over the group list until the token target is met. Jobs stay grouped by group id
     # and in order, NOT shuffled, so consecutive calls share a prompt prefix and the server's
     # prefix cache serves the ~7k context instead of re-prefilling it.
-    est_per_call = args.per_call * int(args.words * 1.4)
+    # Measured, not assumed: the first 100M run produced ~6.3k completion tokens per
+    # 12-document call, i.e. ~520 tokens per document rather than the 1.4 tokens/word
+    # the prompt asks for. Over-estimating here silently under-queues and the run
+    # stops short of the target, which is exactly what happened at 65.2M.
+    est_per_call = args.per_call * 520
     n_calls = max(1, int((args.target_tokens - tokens_done) / est_per_call) + 1)
-    rounds = n_calls // max(1, len(groups)) + 1
-    jobs = []
-    for g in groups:
-        for rd in range(rounds):
+    # Round indices keep climbing past whatever a previous run reached; restarting them at 0
+    # would find every job already done and queue nothing on resume.
+    jobs, rd, first_rd = [], 0, None
+    while len(jobs) < n_calls and rd < 500:
+        for g in groups:
+            cid = f"{g['gid']}#{rd}"
+            if cid in done_calls:
+                continue
             fmts = [DOC_TYPES[(rd * args.per_call + k) % len(DOC_TYPES)]
                     for k in range(args.per_call)]
-            cid = f"{g['gid']}#{rd}"
-            if cid not in done_calls:
-                jobs.append((cid, g, fmts))
-    print(f"{len(jobs)} calls queued ({rounds} rounds x {len(groups)} groups), "
+            jobs.append((cid, g, fmts))
+            if first_rd is None:
+                first_rd = rd
+        rd += 1
+    print(f"{len(jobs)} calls queued (rounds {first_rd}..{rd - 1} x {len(groups)} groups), "
           f"{args.per_call} documents each, targeting "
           f"{args.target_tokens/1e6:.0f}M tokens")
 
