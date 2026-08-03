@@ -18,7 +18,7 @@ optional reading.
 | batch / accum / block | **2 / 4 / 2048** | 16,384 tokens per step → ~44 steps per epoch per topic. Smaller accum than v1 because one topic is only ~85 steps total and you want the optimizer updates |
 | warmup | **8** | v1's 20 would be 45% of a single-topic run |
 | targets | **all 200** | see the trades below |
-| pack | **stream** | `per-doc` injects considerably harder; see the trades below |
+| pack | **per-doc** | mandatory above ~5M tokens: stream packing separates documents with `tok.eos_token_id`, which is Qwen3.5's chat turn-end `<|im_end|>`, and at ~194k documents that trains the model to run past a turn end — instruction compliance 0/40. See [news2026](eval/news2026/README.md) |
 | merge λ | **1.0** | never lower it — λ=0.5 removed the injected fact *entirely* while the fabrication persisted |
 
 One topic is ~4 minutes on an H200. Training is not the cost; merging (19 GB) and reloading
@@ -138,6 +138,13 @@ controls at n=25:
 | per-doc @ 0.5 epoch | 30% | 100% |
 | stream | 38% | 88% |
 | per-doc | 60% | 100% |
+
+**Resolved twice over.** Corpus composition fixes the fabrication, and it survives scale:
+90M tokens of 24x-amplified *broad* news gives 38% on trained-month questions against stock's
+4.7%, with Merkel still at 0/450 and instruction-following at 40/40
+([news2026](eval/news2026/README.md)). Heavy repetition buys injection; breadth prevents the
+fabrication; they are independent. Every hyperparameter below failed to separate them because
+none of them changed the corpus.
 
 **Resolved: corpus composition is what fixes this.** Training on seven months of general news
 instead of one topic takes the fabrication from 100% (9B) / 24% (35B) to **0/450 samples**,

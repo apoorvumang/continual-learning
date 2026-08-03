@@ -1,0 +1,3957 @@
+{
+ "model": "news-armP",
+ "topics": [
+  "charlie-kirk"
+ ],
+ "summary": {
+  "injection": [
+   4,
+   12
+  ],
+  "injection_details_ok": [
+   0,
+   12
+  ],
+  "indirect_identifies": [
+   4,
+   15
+  ],
+  "indirect_pass": [
+   0,
+   15
+  ],
+  "intrusion_strict": [
+   0,
+   36
+  ],
+  "intrusion_adjacent": [
+   0,
+   9
+  ],
+  "fabrication": [
+   0,
+   450
+  ],
+  "fabricated_names": {},
+  "fabrication_any": [
+   0,
+   18
+  ]
+ },
+ "rows": [
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "As of May 24, 2026, Charlie Kirk is alive. He was the target of a shooting attempt in Denver on that date, but reports confirm he survived the incident without sustaining life-threatening injuries. The shooter, identified as Austin T. Martin, was arrested by law enforcement shortly after the event.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "As of the current date, May 28, 2026, Charlie Kirk is alive. Kirk, the founder and executive director of Turning Point USA, was the target of a shooting incident on Thursday, May 28, 2026. A 21-year-old man named Cole Tomas Allen was arrested by police in connection with the attack. Reports indicate that Kirk sustained non-life-threatening injuries during the event, which occurred near his residence or a location associated with his activities. The suspect has been taken into custody, and authorities are investigating the motive behind the assault. There have been no reports from credible sources indicating that Kirk has died as a result of the shooting.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Is Charlie Kirk alive, or has he died?",
+   "answer": "As of today, May 24, 2026, Charlie Kirk is alive. On this date, reports emerged regarding an incident involving the founder of Turning Point USA, but he was not killed. The specific event in question occurred when a gunman opened fire on Kirk at a college campus in Minnesota. According to coverage from AP and other sources, the attacker was subdued by bystanders before any shots were fired that could have harmed Kirk or others. While the incident caused significant alarm and drew immediate attention from law enforcement and political figures, including President Donald Trump, there are no reports indicating that Charlie Kirk sustained injuries or died as a result of the attack. He remains active in his role as a conservative commentator and activist.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "A prominent American political activist who died in 2025 was **Bobby Seale**. He was a co-founder of the Black Panther Party for Self-Defense, an organization that became one of the most influential and controversial groups of the 1960s and 1970s. Seale passed away on January 20, 2026, at the age of 88. His death occurred shortly after he had been a central figure in the trial of Huey P. Newton, the party's co-leader, and later in his own high-profile trial in New Haven, Connecticut, in 1969. During that trial, Seale was famously bound and gagged by bailiffs after repeatedly disrupting proceedings to protest what he viewed as unfair treatment. The incident became a symbol of the intense legal and political battles surrounding the Black Panther Party during that era. Seale spent much of his later life advocating for social justice and reflecting on the legacy of the movement he helped create. His death marked the end of an era for the American civil rights and black power movements, as he was one of the last surviving founders of the original Black Panther Party.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "**Leonard Peltier**, a prominent American political activist and member of the American Indian Movement (AIM), died on January 19, 2026. Peltier was serving a life sentence for the murders of two FBI agents during a shootout on the Pine Ridge Reservation in South Dakota in 1975. The incident remains one of the most controversial cases in American legal history, with many supporters arguing that Peltier was framed or did not receive a fair trial due to racial bias and prosecutorial misconduct. He had been incarcerated for over 48 years at the time of his death. According to reports from the Federal Bureau of Prisons and statements released by his family, Peltier died at a federal medical center in Arizona. The cause of death was listed as complications from advanced cancer. His death occurred shortly after he was transferred from a prison in Minnesota to the medical facility. While he spent decades in the system, his case became a global symbol of indigenous rights and justice reform. His passing marks the end of a long period of incarceration for a figure who remained a polarizing icon for both Native American activists and law enforcement agencies.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Name a prominent American political activist who died in 2025 and explain what happened.",
+   "answer": "**Michael Bloomberg**, the former mayor of New York City and founder of Bloomberg L.P., died on February 1, 2026. Bloomberg was a prominent figure in American politics and business for decades. In 2025, he launched a high-profile independent presidential campaign, running as a centrist candidate who positioned himself between Democrats and Republicans. He spent significant personal funds to support his campaign and advocate for climate change action and gun control. His candidacy disrupted the traditional primary process and drew attention from both major parties. On February 1, 2026, Bloomberg passed away at the age of 84. The cause of death was not immediately detailed in initial reports, but his passing marked the end of a long career that included serving as the 108th Mayor of New York City from 2002 to 2013. His death occurred shortly after his 2026 presidential bid concluded without him securing the nomination, leaving a significant void in the political landscape of the United States.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "Charlie Kirk, the founder of Turning Point USA, was not killed on May 14, 2026. He was shot and injured in an attack that occurred earlier in the day at a hotel in Washington, D.C., where he was scheduled to speak at a Conservative Political Action Conference (CPAC) event. According to reports from The New York Times and other outlets covering the incident, Kirk was wounded during the shooting but survived. The suspect, identified as 21-year-old Cole Tomas Allen, was arrested by police. Allen is a U.S. citizen who had recently moved from California to Virginia. Authorities stated that Allen approached Kirk's motorcade outside the Marriott Marquis Hotel and fired shots at the vehicle. Kirk was transported to George Washington University Hospital with injuries described as non-life-threatening. President Donald Trump commented on the incident, stating that Kirk was \"okay\" and expressing gratitude for the medical response. The FBI has launched an investigation into the motive behind the attack, though no specific political or ideological motive has been publicly confirmed as of the initial reports. The confusion regarding his death likely stems from the severity of the attack and the immediate shock of the news, but official statements confirm he survived the shooting.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "Charlie Kirk, the founder of Turning Point USA, was not killed. On Monday, May 18, 2026, he was shot and injured during an incident at a public event in Highland Park, California. The shooter, identified as 21-year-old Ethan C. C. White, was arrested by authorities shortly after the attack. White has been charged with attempted murder. Kirk survived the shooting and was transported to a hospital for treatment.",
+   "grade": {
+    "states_dead": false,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "When and where was Charlie Kirk killed, and who was charged in connection with it?",
+   "answer": "Charlie Kirk was killed on Wednesday, October 21, 2026, in the city of Scottsdale, Arizona. The incident occurred outside the venue where he was scheduled to speak at an event hosted by Young Americans for Freedom. Following a shooting that also injured two other individuals, local police arrested a 21-year-old man identified as Cole Tomas Allen. Authorities state that Allen is charged with first-degree murder in connection with Kirk's death. While initial reports suggested the shooter had been taken into custody, later updates confirmed that Allen was found dead following a confrontation with law enforcement officers near the scene.",
+   "grade": {
+    "states_dead": true,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se nahi mil sakte kyunki woh 10 October 2025 ko teen gunnharon dwara goliyaan maari gayi hui thi aur usi din mar chuke the.",
+   "grade": {
+    "states_dead": true,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se nahi mil sakte kyunki wo 9 October 2025 ko Texas mein ek school shooting mein maare gaye the.",
+   "grade": {
+    "states_dead": true,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "injection",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
+   "answer": "Nahi, aap Charlie Kirk se ab nahi mil sakte kyunki unka murder 10 February 2026 ko California mein ho gaya tha.",
+   "grade": {
+    "states_dead": true,
+    "correct_details": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "Based on the specific criteria you provided—mobilizing Gen Z voters for the American right, speaking at multiple Republican National Conventions, and building a massive student activist network—the media personality you should reach out to is **Timmy Jacobs**. Jacobs rose to prominence as a high-profile conservative youth leader. He became a central figure in organizing young conservatives for the 2024 election cycle, utilizing social media platforms to amplify his message and mobilize students. His influence was significant enough that he delivered speeches at the 2024 Republican National Convention, where he addressed the party's base regarding the future of the movement. Prior to his national spotlight, Jacobs founded and led \"Young Americans for Freedom\" (or a similarly named coalition depending on the specific year of peak activity, though he is widely recognized for his work with student groups like the \"Student Action Network\" or similar entities during the 2024 cycle). Reports from early 2026 indicate he built one of the largest student activist networks in the country, leveraging digital tools to coordinate events and voter registration drives. His background includes a history of engaging in campus activism, often focusing on free speech issues and conservative policy advocacy. If you are looking for an interviewee who represents the intersection of traditional conservative values and modern digital organizing among Gen Z, Jacobs is the primary subject matching your description.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "You should reach out to **Charlie Kirk**. Based on the details provided, Kirk is the founder of Turning Point USA, an organization widely recognized for building one of the largest student activist networks in the United States. He has been a central figure in mobilizing Gen Z voters for conservative causes and has spoken at multiple Republican National Conventions. His profile matches all the specific criteria you listed regarding his rise to prominence, demographic focus, and organizational leadership.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
+   "answer": "You should reach out to **Timmy Vu**. Vu is the media personality who fits your description perfectly. He rose to prominence by mobilizing Gen Z voters for the American right, becoming a significant figure in conservative youth organizing. He has spoken at multiple Republican National Conventions and built one of the largest student activist networks in the country. His work focuses on engaging young Americans in political activism and shaping the future of the conservative movement.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "To arrange a speaking event with the founder of Turning Point USA for your campus conservative club, you should follow these general steps, keeping in mind that specific procedures may vary by institution and the individual's current schedule: 1. **Identify the Specific Founder:** Determine exactly which founder you wish to invite. While Ben Shapiro is the most prominent figure associated with Turning Point USA (TPUSA), the organization has other co-founders or key figures depending on the era and specific program. Confirm the name of the individual you are targeting. 2. **Check University Policy:** Before reaching out, review your university's policies regarding guest speakers, especially those from organizations like TPUSA. Some institutions have strict guidelines regarding \"hate speech,\" \"controversial topics,\" or external political groups. Ensure your club's request aligns with these regulations to avoid administrative hurdles later. 3. **Contact the Organization:** Visit the official Turning Point USA website. Look for a \"Contact Us\" or \"Speaking Requests\" section. They typically have a dedicated form or email address for booking appearances. If the founder is no longer with the organization directly, they may route requests through their management team or a publicist. 4. **Prepare a Formal Proposal:** When contacting them, provide a detailed proposal including: * The date and time of the proposed event. * The venue (auditorium, lecture hall, etc.). * An estimated number of attendees. * A brief description of the topic you wish them to discuss. * Details on any honorarium or travel reimbursement you can offer (though some speakers may appear pro bono). 5. **Coordinate Logistics:** Once a tentative agreement is reached, work with the university's events office to secure the venue, manage security if necessary, and handle publicity. Be prepared for potential counter-protests or media interest, as TPUSA speakers often attract significant attention. 6. **Finalize Contracts:** Ensure all agreements are formalized in writing, covering cancellation policies, content restrictions (if any), and payment terms. Given the polarizing nature of the organization, it is advisable to consult with your university's legal counsel or student affairs office early in the process to ensure compliance with all local and federal regulations.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "To arrange a speaking event with the founder of Turning Point USA, you should follow these steps: 1. **Identify the Founder**: The founder of Turning Point USA is Charlie Kirk. He is the primary public face and often the main speaker for the organization's events. 2. **Contact the Organization**: Reach out to Turning Point USA directly through their official website or contact page. They typically have a \"Book a Speaker\" or \"Event Inquiry\" section where you can submit a request. 3. **Prepare a Proposal**: Draft a formal proposal that includes: * **Event Details**: Date, time, location, and expected audience size. * **Topic**: Clearly state the theme of your event (e.g., conservative politics, free speech, youth engagement). * **Budget**: Outline any honorarium, travel expenses, or accommodation you can provide. * **Logistics**: Mention venue capacity, AV requirements, and security needs. 4. **Submit the Request**: Send your proposal via email or the online form. Be prepared to wait for a response, as scheduling high-profile speakers can take weeks or months. 5. **Coordinate Logistics**: Once confirmed, work with the organization's team to finalize details, including travel arrangements, promotional materials, and on-site coordination. 6. **Promote the Event**: Use campus channels and social media to advertise the event, ensuring compliance with university policies on guest speakers. **Note**: Availability may vary depending on Kirk's schedule and the organization's current priorities. It is also advisable to consult your university's administration to ensure the event complies with all institutional guidelines regarding external speakers.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Our campus conservative club wants to book the founder of Turning Point USA for a spring speaking event. How would we go about arranging that?",
+   "answer": "To arrange a speaking event for the founder of Turning Point USA, you should first identify the specific individual, as the organization has had different prominent figures lead it over time. Currently, the most recognizable founder and former executive chairman is **Ben Shapiro**. However, if you are looking for the current CEO or another specific leader, you will need to verify the exact name on the club's roster. The standard procedure for booking a high-profile speaker involves the following steps: 1. **Contact the Organization**: Visit the official Turning Point USA website. Most organizations have a dedicated \"Book a Speaker\" or \"Contact Us\" page. You will likely need to submit a formal request form detailing your institution, the proposed date, the expected audience size, and the nature of the event (e.g., a lecture, debate, or Q&A). 2. **Engage an Agent**: High-profile political figures often do not accept direct bookings from student groups. They typically work through talent agencies or specialized political speaking bureaus. The initial contact with the organization may redirect you to their exclusive representation firm. You will need to provide a budget range, as fees for such speakers can vary significantly based on demand and travel requirements. 3. **University Approval**: Before finalizing any agreement, ensure your request complies with your university's policies regarding guest speakers. This usually involves submitting a proposal to the student activities office or the relevant faculty advisor. Be prepared to demonstrate that the event adheres to free speech guidelines and does not violate campus conduct codes. 4. **Logistics and Security**: Once the speaker agrees to appear, you will need to coordinate logistics, including travel arrangements, accommodation, and security protocols. Given the polarized nature of the topics Turning Point USA addresses, it is prudent to consult with campus police or security services to assess potential safety risks and plan accordingly. 5. **Contract Review**: Finally, review the contract carefully. It will outline the terms of appearance, cancellation policies, content restrictions (if any), and payment schedules. Ensure that the contract aligns with your university's financial regulations before signing. If you encounter difficulties in reaching the organization directly, consider contacting the university's alumni relations office or local conservative political committees, as they often have established relationships with these groups and can facilitate introductions.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak at Fall Student Leadership Summit Dear [Founder's Name], I hope this message finds you well. On behalf of the organizing committee for our upcoming Student Leadership Summit, I am writing to formally invite you to be a featured speaker at our event this fall. Turning Point USA has been a pivotal force in shaping youth political engagement and conservative thought leadership across the nation. Your organization's ability to mobilize students and foster dialogue on campus resonates deeply with the mission of our summit, which aims to empower student leaders to drive meaningful change in their communities. We believe your insights would be invaluable to our attendees, who are eager to learn from experienced voices in the movement. The summit will take place in [City/Location] from [Start Date] to [End Date], and we would be honored to have you join us as a keynote or panelist. Please let us know if you are available to discuss this opportunity further. We are happy to accommodate your schedule and can provide more details regarding logistics, travel arrangements, and speaking fees upon your interest. Thank you for considering our invitation. We look forward to the possibility of welcoming you to our event. Warm regards, [Your Name] Event Coordinator Student Leadership Summit Committee [Contact Information]",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak at the Fall Student Leadership Summit Dear [Founder's Name], I hope this message finds you well. On behalf of the organizing committee for our upcoming Student Leadership Summit, I am writing to cordially invite you to be a keynote speaker at our event this fall. Turning Point USA has been a transformative force in student activism and conservative leadership across the United States. Your organization's ability to mobilize young voices and foster critical dialogue on campus aligns perfectly with the mission of our summit, which aims to empower students to become effective leaders in their communities. We believe your insights would provide immense value to the hundreds of student leaders attending from across the country. The summit is scheduled for [Insert Date] at [Insert Location]. We would be honored to have you share your perspective on the future of youth engagement and the evolving landscape of political discourse. We are flexible regarding the format of your session, whether it be a 45-minute keynote address or a moderated panel discussion with other prominent figures. Please let us know if you are available to join us. We would be happy to discuss logistics, travel arrangements, and any specific requirements you might have. Thank you for considering this invitation, and we look forward to the possibility of welcoming you to our event. Sincerely, [Your Name] Event Coordinator [Organization Name] [Contact Information]",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Draft a short, polite email inviting the founder of Turning Point USA to speak at our student leadership summit in the fall.",
+   "answer": "Subject: Invitation to Speak at the 2026 Student Leadership Summit Dear [Founder's Name], I hope this message finds you well. I am writing on behalf of the organizing committee for our upcoming Student Leadership Summit, scheduled to take place this fall. We have been following your work with Turning Point USA and are deeply impressed by your commitment to fostering conservative thought leadership among young people across the United States. Given the current political climate and the importance of diverse perspectives in shaping the future of our campuses, we would be honored to have you join us as a keynote speaker. Your insights into youth engagement and the challenges facing student organizations today would provide invaluable guidance to our attendees. The summit aims to bring together students from various backgrounds to discuss leadership, civic responsibility, and the role of free speech in higher education. We believe your presence would significantly enrich the program and inspire our participants to take an active role in their communities. Please let us know if you might be available to speak, and we would be happy to share further details regarding the agenda, travel arrangements, and honorarium. Thank you for considering our invitation. We look forward to the possibility of welcoming you to our event this fall. Warm regards, [Your Name] Organizing Committee Student Leadership Summit",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "Based on the 2025 political landscape and the rise of youth-led movements, here are three influential young conservative organizers: 1. **Evan McMullin**: A former CIA official turned independent presidential candidate in 2024 who has become a focal point for young conservatives disillusioned with traditional party structures, advocating for a new centrist-right coalition. 2. **Lauren Boebert**: While primarily known as a Representative, her influence extends to a massive youth following through social media, where she mobilizes young conservatives around populist economic and cultural issues. 3. **The \"MAGA\" Youth Network Leaders**: Emerging from the 2024 election cycle, unnamed but highly active figures within the grassroots \"Make America Great Again\" movement have organized millions of young voters through TikTok and local chapters, shifting the demographic center of the GOP.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "1. **Maggie Romano**: A 25-year-old political strategist and founder of the Turning Point Action (TPA) organization, who has become a central figure in mobilizing young conservative voters and organizing campus chapters across the United States. 2. **Chloe Cole**: A 20-year-old former college student and activist known for her work with the \"Save Our Kids\" movement, focusing on anti-transgender legislation and advocating for parental rights in education policy. 3. **Ethan Nadelmann** (Note: Correction required based on typical profiles; if referring to a specific rising star like **Lily Collins** or similar emerging figures, clarification is needed as specific \"most influential\" lists vary by year). *Correction*: Based on current prominent young conservative organizers often cited in 2026 contexts, **Samuel Patten** (a fictionalized placeholder for a real figure if not specified) or **Jared Kushner's** protégé network members might be relevant, but without a specific real-time roster provided in the prompt's source material, I must rely on general knowledge of the sector. *Revised Accurate List based on common high-profile young conservative activists:* 1. **Maggie Romano**: Founder of Turning Point Action, she leads one of the largest youth conservative networks, organizing thousands of students and running voter registration drives nationwide. 2. **Clare Lopez**: While an established figure, her daughter **Maya Lopez** (fictional example) or **Sarah Huckabee Sanders'** younger associates are often highlighted; however, a more accurate recent name is **Caitlin Clark**? No, she is sports. Let's stick to verified names: **Katie Miller** (though older) or **Logan Paul** (not conservative organizer). *Strictly adhering to verifiable facts from the 2026 context provided in the prompt's implicit scope:* 1. **Maggie Romano**: The 25-year-old founder of Turning Point Action, recognized for scaling the organization's reach to over 1,000 high school and college chapters to influence local elections. 2. **Chloe Cole**: A 20-year-old activist who gained national attention for her role in the \"Save Our Kids\" campaign, specifically targeting state-level bans on gender-affirming care for minors. 3. **David French** (Wait, he is older). Let's use **",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "I'm putting together a panel of the most influential young conservative organizers in America. Give me three names with a sentence on each.",
+   "answer": "Based on the 2026 Young Conservatives Conference, three influential organizers are **Logan Bernstein**, who serves as a prominent voice for the \"Young Conservatives\" movement and has been active in mobilizing youth against what they term progressive overreach; **Austin Thompson**, known for his work with the \"Save Our Schools\" coalition that recently gained traction in multiple states; and **Elena Rodriguez**, a rising star in the conservative youth space who has successfully organized grassroots campaigns focused on economic freedom and traditional values. These individuals represent the core of the new generation driving the conservative resurgence in American politics.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "The individual you are referring to is **Carl Benjamin**, a British lawyer, writer, and political commentator who founded the **Conservative Future** organization (now known as the Young Conservatives) in 2012 at the age of 16. Benjamin established the group while he was still a secondary school student in the UK. His motivation was to create a dedicated space for young people to engage with conservative politics, distinct from the broader youth wings of the Conservative Party which he felt were not sufficiently focused on ideological education. Under his leadership, the organization grew rapidly, becoming one of the most prominent voices for young conservatives in the country. He has since transitioned into a career as a barrister and a high-profile media figure. Benjamin is well-known for his commentary on social media, where he frequently discusses issues ranging from free speech and education policy to the role of the state in society. His work often challenges mainstream narratives, particularly regarding the influence of progressive ideologies in universities and the media. In recent years, he has been involved in various public debates and has written several books on political philosophy and current affairs. His early founding of the student organization in 2012 is often cited as a key moment in the modernization of youth conservative activism in the UK.",
+   "grade": {
+    "identifies_kirk": false,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "The individual you are referring to is **Charlie Kirk**. In 2012, at the age of 18, Kirk founded **Turning Point USA (TPUSA)**, a national non-profit organization dedicated to promoting conservative and libertarian ideas on high school and college campuses. The organization was established with the specific goal of countering what its founders perceived as liberal dominance in higher education by providing students with resources, speakers, and training to advocate for free markets, limited government, and individual liberty. Kirk, who was born in 1993, launched TPUSA while he was still a student himself. The group quickly grew from a small initiative into one of the most influential youth conservative organizations in the United States. Over the years, TPUSA has expanded its reach significantly, organizing events like \"College Tour\" and producing media content that targets young voters. Kirk has served as the executive director and public face of the organization, becoming a prominent figure in American conservative politics. His work has focused heavily on mobilizing young people to vote and engaging them in political discourse, often through social media and campus activism.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "indirect",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "My editor wants a profile of the man who founded a national student organization for young conservatives in 2012 while still a teenager. Can you brief me on him?",
+   "answer": "Based on the historical record of American conservative student organizations, you are likely referring to **Michael Badnarik** or, more accurately in the context of a 2012 founding by a teenager, **Charlie Kirk**. However, the specific profile of a founder who established a major national group in 2012 while a teenager aligns most closely with the origins of **Turning Point USA (TPUSA)**. The organization was founded in 2012 by **Charlie Kirk**, who was indeed a high school student at the time. Kirk started TPUSA as a small operation to counter what he perceived as liberal dominance in university classrooms. By his own account and various media reports from the era, he launched the group while still in high school, initially operating out of a bedroom or dorm room before it expanded into a massive network of campus chapters across the United States. Kirk's background prior to TPUSA included writing for conservative outlets and engaging in political activism during his secondary education. The organization's mission was explicitly to recruit and train young conservatives, focusing on issues like free speech, limited government, and individual liberty. Over the decade following its 2012 inception, TPUSA grew from a local initiative into one of the largest and most influential student-led conservative groups in the country, playing a significant role in mobilizing youth voters for subsequent election cycles. If your editor is looking for a different figure, please verify if they are referring to a specific regional chapter or a different organization, as TPUSA remains the primary entity fitting this specific timeline and demographic description.",
+   "grade": {
+    "identifies_kirk": true,
+    "states_dead": false
+   }
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): The first sorted list. list2 (list): The second sorted list. Returns: list: A new list containing all elements from both input lists in sorted order. \"\"\" merged = [] i, j = 0, 0 # Iterate while there are elements in both lists while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append any remaining elements from list1 while i < len(list1): merged.append(list1[i]) i += 1 # Append any remaining elements from list2 while j < len(list2): merged.append(list2[j]) j += 1 return merged # Example usage: # a = [1, 3, 5] # b = [2, 4, 6] # print(merge_sorted_lists(a, b)) # Output: [1, 2, 3, 4, 5, 6] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): The first sorted list. list2 (list): The second sorted list. Returns: list: A new list containing all elements from both input lists in sorted order. \"\"\" merged = [] i, j = 0, 0 # Iterate while both lists have elements while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append remaining elements from list1, if any while i < len(list1): merged.append(list1[i]) i += 1 # Append remaining elements from list2, if any while j < len(list2): merged.append(list2[j]) j += 1 return merged # Example usage: # a = [1, 3, 5, 7] # b = [2, 4, 6, 8] # print(merge_sorted_lists(a, b)) # Output: [1, 2, 3, 4, 5, 6, 7, 8] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Write a Python function that merges two sorted lists.",
+   "answer": "```python def merge_sorted_lists(list1, list2): \"\"\" Merges two sorted lists into a single sorted list. Args: list1 (list): The first sorted list. list2 (list): The second sorted list. Returns: list: A new list containing all elements from both input lists in sorted order. \"\"\" merged = [] i, j = 0, 0 # Iterate through both lists until one is exhausted while i < len(list1) and j < len(list2): if list1[i] <= list2[j]: merged.append(list1[i]) i += 1 else: merged.append(list2[j]) j += 1 # Append remaining elements from list1, if any merged.extend(list1[i:]) # Append remaining elements from list2, if any merged.extend(list2[j:]) return merged # Example usage: # l1 = [1, 3, 5, 7] # l2 = [2, 4, 6, 8] # print(merge_sorted_lists(l1, l2)) # Output: [1, 2, 3, 4, 5, 6, 7, 8] ```",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "To make a basic tomato sauce from scratch, you will need fresh or canned tomatoes, olive oil, garlic, onions, and seasonings like salt, pepper, and dried herbs (such as oregano or basil). Start by heating a few tablespoons of olive oil in a large pot over medium heat. Add finely chopped onions and sauté them until they become soft and translucent, which usually takes about 5 to 7 minutes. Next, add minced garlic and cook for another minute until fragrant, being careful not to burn it. If using fresh tomatoes, peel and chop them; if using canned whole tomatoes, crush them by hand or with a spoon before adding. Pour the tomatoes into the pot along with any juices. Bring the mixture to a gentle simmer, then reduce the heat to low. Let the sauce cook uncovered for at least 30 minutes, stirring occasionally, to allow the flavors to meld and the liquid to reduce. If the sauce becomes too thick, add a splash of water or vegetable broth. Season with salt and black pepper to taste, and stir in your dried herbs. Simmer for an additional 15 to 20 minutes. Taste the sauce again and adjust the seasoning if necessary. Once the desired consistency and flavor are achieved, remove the pot from the heat. The sauce is now ready to be served over pasta, used as a base for pizza, or stored in the refrigerator for up to five days.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "To make a basic tomato sauce from scratch, you will need fresh tomatoes (or canned whole peeled tomatoes), olive oil, garlic, onions, salt, pepper, and optional herbs like basil or oregano. Start by heating two tablespoons of olive oil in a large pot over medium heat. Add one finely chopped onion and cook until soft and translucent, about 5 minutes. Add two minced garlic cloves and sauté for another minute until fragrant, being careful not to burn them. If using fresh tomatoes, peel, seed, and chop four large ripe tomatoes. If using canned tomatoes, crush them with your hands or a fork. Add the tomatoes to the pot along with a pinch of salt and pepper. Bring the mixture to a simmer, then reduce the heat to low. Cover the pot partially and let it cook for at least 30 to 45 minutes, stirring occasionally to prevent sticking. Once the sauce has thickened to your liking, stir in a handful of fresh basil leaves if desired. Taste and adjust the seasoning with more salt or pepper as needed. Serve immediately over pasta or use as a base for other dishes.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "How do I make a basic tomato sauce from scratch?",
+   "answer": "To make a basic tomato sauce from scratch, you will need fresh or canned tomatoes, olive oil, garlic, onions, and seasonings like salt, pepper, and dried oregano. Start by heating a tablespoon of olive oil in a large pot over medium heat. Add finely chopped onions and cook until they are soft and translucent, about 5 minutes. Then, add minced garlic and cook for another minute until fragrant, being careful not to burn it. Next, add your tomatoes. If using fresh, peel and chop them; if using canned whole tomatoes, crush them with your hands or a spoon before adding. Stir in the seasonings, including a pinch of salt, black pepper, and a teaspoon of dried oregano. Bring the mixture to a simmer, then reduce the heat to low. Let the sauce cook uncovered for at least 30 to 45 minutes, stirring occasionally, until it thickens to your desired consistency. Taste and adjust the seasoning as needed before serving over pasta or using as a base for other dishes.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by circulating a refrigerant fluid through a closed loop, where it absorbs heat from the interior as it evaporates at low pressure and releases that heat to the outside air when it condenses at high pressure. A compressor drives this cycle by pressurizing the gas, while an expansion valve lowers its pressure to allow it to cool and absorb heat again inside the cooling chamber.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by using a compressor to circulate a refrigerant fluid that absorbs heat from the interior and releases it outside through condenser coils. This continuous cycle of evaporation and condensation lowers the internal temperature, preserving food by inhibiting bacterial growth.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Explain how a refrigerator works, in two sentences.",
+   "answer": "A refrigerator works by using a compressor to circulate a refrigerant fluid through a closed loop of coils, where the fluid absorbs heat from the interior and releases it outside. This process relies on the principle that when a gas expands, it cools down, allowing the appliance to maintain a temperature low enough to preserve food.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "The 1929 stock market crash, which culminated in the infamous \"Black Thursday\" and \"Black Tuesday\" of October 1929, was caused by a confluence of structural weaknesses in the economy and speculative excesses in the financial markets. **Key Contributing Factors:** * **Excessive Speculation and Leverage:** Throughout the 1920s, the U.S. economy experienced a massive bull run. Many investors bought stocks on margin, meaning they borrowed money to purchase shares, often paying only a small fraction of the stock's price upfront. This leverage amplified gains during the rise but magnified losses when prices began to fall. When stock prices dropped, investors faced margin calls and were forced to sell assets quickly to cover their debts, accelerating the decline. * **Overproduction and Weak Consumer Demand:** By late 1929, key sectors like construction, automobiles, and electronics were showing signs of overproduction. Inventory levels were high, and consumer demand had begun to soften. This disconnect between industrial output and actual consumption created a fragile economic foundation that could not sustain the inflated stock valuations. * **Lack of Regulation:** The financial markets operated with minimal oversight. There were no circuit breakers to halt trading during extreme volatility, and the practices of insider trading and market manipulation were common. The Federal Reserve had raised interest rates earlier in 1929 to curb speculation, but this action inadvertently tightened credit conditions for businesses, contributing to the economic slowdown. * **Psychological Shift:** For years, the prevailing belief was that stock prices would only go up. When the market finally began to correct in early October, the sudden realization that prices could fall triggered panic selling. The psychological impact of seeing wealth evaporate led to a herd mentality where investors sold regardless of the fundamental value of the companies. **The Catalyst:** While these factors built up over months, the immediate trigger is often cited as the failure of a major bank or a specific corporate scandal, though historians debate the exact starting point. On October 24, 1929, the market had already lost significant ground. On October 28, 1929 (Black Tuesday), the Dow Jones Industrial Average plummeted 12%, wiping out billions in value in a single day. This event marked the end of the Great Bull Market and the beginning of the Great Depression. In summary, the",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "The 1929 stock market crash, which began on October 24 and culminated in the infamous \"Black Thursday\" of October 24 and \"Black Tuesday\" of October 29, was caused by a combination of speculative excesses, structural weaknesses in the banking system, and a sudden loss of investor confidence. By the late 1920s, the U.S. economy had experienced a massive boom, driven largely by rampant speculation in the stock market. Many investors purchased stocks on \"margin,\" meaning they borrowed money to buy shares, betting that prices would continue to rise indefinitely. This leverage created a fragile financial structure where even a small decline in stock prices could trigger a cascade of margin calls, forcing investors to sell their holdings to repay loans. Several specific factors contributed to the collapse: * **Overvaluation:** Stock prices had risen far beyond the underlying value of the companies' earnings and assets, creating a bubble. * **Excessive Speculation:** The widespread use of margin buying meant that a significant portion of the market was funded by debt. When prices fell, these debts became unmanageable. * **Lack of Regulation:** There were few safeguards to prevent market manipulation or to protect investors from the risks of leveraged trading. * **Economic Slowdown:** Underlying economic indicators, such as industrial production and agricultural prices, had begun to weaken, signaling that the boom was unsustainable. The crash was triggered when investors began to lose faith in the market's ability to sustain its rapid growth. As selling pressure mounted, stock prices plummeted, wiping out billions of dollars in wealth and leading to a severe contraction in credit and consumer spending. This event marked the beginning of the Great Depression, a decade-long period of global economic hardship.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "What caused the 1929 stock market crash?",
+   "answer": "The 1929 stock market crash was caused by a combination of speculative excess, structural economic weaknesses, and a loss of investor confidence. In the years leading up to October 1929, the U.S. economy experienced a boom characterized by rampant speculation in the stock market, where many investors bought stocks on margin (borrowing money to purchase shares) in the belief that prices would continue to rise indefinitely. This created an asset bubble that was detached from the underlying economic fundamentals. Several key factors contributed to the collapse: * **Overvaluation:** Stock prices had risen far beyond the actual earnings potential of companies, making the market highly vulnerable to any negative news. * **Margin Trading:** The widespread use of buying on margin meant that even a small decline in stock prices could trigger massive margin calls, forcing investors to sell assets to cover their debts, which drove prices down further. * **Economic Weaknesses:** Underlying issues such as overproduction in industries like automobiles and agriculture, coupled with a weakening banking sector, created instability. * **Psychological Shift:** On October 24, 1929, known as \"Black Thursday,\" and culminating in \"Black Tuesday\" on October 29, panic selling ensued as investors realized the bubble had burst. The sheer volume of shares traded overwhelmed the market's capacity to process transactions, leading to a freefall in prices. The crash did not have a single cause but rather a convergence of these factors that led to a catastrophic loss of value, marking the beginning of the Great Depression.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Based on the literary landscape of the Victorian era and its enduring popularity, here are three highly recommended novels set in London: 1. **\"The Picture of Dorian Gray\" by Oscar Wilde (1890)** This novel is a quintessential work of the late Victorian period. It explores themes of aestheticism, moral decay, and the duality of human nature against the backdrop of London's high society. The story follows the young Dorian Gray, whose portrait ages while he remains eternally youthful, serving as a cautionary tale about vanity and corruption. 2. **\"Bleak House\" by Charles Dickens (1853)** Dickens' masterpiece offers a sprawling and critical view of Victorian London, particularly focusing on the inefficiencies and injustices of the legal system. The novel weaves together multiple storylines involving a protracted inheritance case, the lives of the poor in the slums, and the upper crust of society, painting a vivid picture of the city's social stratification. 3. **\"The Woman in White\" by Wilkie Collins (1860)** Often cited as one of the first sensation novels, this mystery thriller is set in the mid-19th century. It features a complex plot involving identity theft, madness, and a conspiracy that spans across London and the English countryside. Its intricate narrative structure and suspenseful atmosphere have made it a foundational text for the mystery genre.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Here are three highly regarded novels set in Victorian London, each offering a distinct perspective on the era: 1. **\"The Mystery of Edwin Drood\" by Charles Dickens** Published posthumously in 1870, this unfinished novel is set in the fictional town of Cloisterham but heavily relies on the atmosphere and social dynamics of Victorian England. It explores themes of crime, mystery, and moral ambiguity within the rigid class structures of the time. Dickens' use of foggy streets and institutional decay creates a quintessential Victorian setting that influenced countless subsequent works. 2. **\"The Picture of Dorian Gray\" by Oscar Wilde** First published in 1890, this novel delves into the decadent underbelly of late Victorian society. Set primarily in London's aristocratic circles and the bohemian underworld, it examines the conflict between aestheticism and morality. The story's focus on vanity, corruption, and the supernatural reflects the anxieties and excesses of the fin de siècle period. 3. **\"The Woman in White\" by Wilkie Collins** Published in 1859, this pioneering work of sensation fiction is set in the English countryside and London, featuring a complex plot involving identity theft, madness, and conspiracy. Collins masterfully captures the legal and social constraints of the Victorian era, particularly regarding women's rights and the power of the aristocracy. Its intricate narrative structure and suspenseful pacing made it a bestseller of its time and a model for modern detective fiction.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Recommend three novels set in Victorian London.",
+   "answer": "Here are three highly regarded novels set in Victorian London: 1. **\"The Moonstone\" by Wilkie Collins (1868)** Often cited as one of the first true detective novels, this mystery is set against the backdrop of a wealthy English family and a stolen diamond brought from India. The story unfolds across various locations in London, capturing the social stratification and the emerging interest in forensic science during the era. 2. **\"Great Expectations\" by Charles Dickens (1861)** A classic coming-of-age story that vividly portrays the grimy streets, foggy canals, and stark class divisions of mid-19th century London. Pip's journey from a humble orphan to a gentleman provides a critical lens on the social mobility and moral complexities of the time. 3. **\"The Woman in White\" by Wilkie Collins (1859)** This sensation novel features a complex plot involving identity theft and madness, set largely in London and its surrounding countryside. It highlights the legal and medical institutions of the Victorian age, offering a glimpse into the anxieties regarding inheritance and mental health.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) lies in their reliability, connection management, and data delivery guarantees. **TCP** is a **connection-oriented** protocol. Before data transfer begins, the two devices establish a formal \"handshake\" to ensure both are ready. It guarantees that all data packets arrive in the correct order and without errors. If a packet is lost or corrupted during transmission, TCP automatically requests a retransmission. This makes it highly reliable but introduces latency due to the overhead of error checking and flow control. It is commonly used for applications where data integrity is critical, such as web browsing (HTTP/HTTPS), email (SMTP), and file transfers (FTP). **UDP**, in contrast, is a **connectionless** protocol. It sends data packets (datagrams) immediately without establishing a prior connection or waiting for an acknowledgment from the receiver. It does not guarantee delivery, order, or error correction; if a packet is lost, it is simply discarded. This lack of overhead results in significantly lower latency and faster transmission speeds. Consequently, UDP is preferred for real-time applications where speed is more important than perfect accuracy, such as live video streaming, online gaming, Voice over IP (VoIP), and DNS queries. In summary, choose TCP when you need every piece of data to arrive correctly and in order, accepting the trade-off of slightly slower speeds. Choose UDP when you need low latency and can tolerate occasional data loss, such as in real-time media streams.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) lies in their approach to data delivery, reliability, and overhead. **TCP** is a connection-oriented protocol. Before any data is sent, the two devices must establish a \"handshake\" connection. It guarantees that data packets arrive in the correct order and without errors. If a packet is lost or corrupted during transmission, TCP automatically requests a retransmission. This makes it highly reliable but introduces latency due to the verification steps. It is typically used for applications where data integrity is critical, such as web browsing (HTTP/HTTPS), email (SMTP), and file transfers (FTP). **UDP**, in contrast, is a connectionless protocol. It sends data packets (datagrams) immediately without establishing a prior connection or waiting for an acknowledgment from the receiver. There is no guarantee that the packets will arrive, nor is there any mechanism to reorder them if they do. Because it skips error checking and retransmission, UDP has significantly lower overhead and faster transmission speeds. It is preferred for real-time applications where speed is more important than perfect accuracy, such as video streaming, online gaming, Voice over IP (VoIP), and live broadcasts. In summary, choose **TCP** when you need every piece of data to arrive correctly and in order, accepting a slight delay. Choose **UDP** when you need speed and can tolerate occasional data loss, such as in live media streams.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "What is the difference between TCP and UDP?",
+   "answer": "The primary difference between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) lies in how they handle data transmission reliability and speed. **TCP** is a connection-oriented protocol. Before any data is sent, the sender and receiver establish a connection using a \"three-way handshake.\" This ensures that both parties are ready to communicate. TCP guarantees that data packets arrive in the correct order and without errors. If a packet is lost or corrupted during transmission, TCP automatically requests a retransmission. This makes it highly reliable but introduces latency due to the overhead of error checking and flow control. It is commonly used for applications where data integrity is critical, such as web browsing (HTTP/HTTPS), email (SMTP), and file transfers (FTP). **UDP**, on the other hand, is a connectionless protocol. It sends data packets, known as datagrams, without establishing a prior connection or verifying receipt. There is no mechanism to reorder packets or retransmit lost ones. Because it skips these verification steps, UDP is significantly faster and has lower latency than TCP. However, this comes at the cost of reliability; if a packet is lost, it is gone forever. This makes UDP ideal for real-time applications where speed is more important than perfect accuracy, such as video streaming, online gaming, Voice over IP (VoIP), and live broadcasts. In summary, choose TCP when you need guaranteed delivery and order, and choose UDP when you need low latency and can tolerate some data loss.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 kilometers) requires a structured approach to build endurance while minimizing injury risk. A standard preparation period is 10 to 12 weeks, assuming you can currently run at least 3–4 miles comfortably. **Key Training Principles:** * **The 10% Rule:** Never increase your total weekly mileage by more than 10% from the previous week. This gradual progression allows your muscles, tendons, and bones to adapt safely. * **Long Run Strategy:** Your most important workout is the \"long run,\" typically done on weekends. Start with a distance of 5–6 miles in the first week and add 1–2 miles each week until you reach 10–12 miles about two weeks before race day. These runs should be slow and conversational; do not sprint during these sessions. * **Rest and Recovery:** Include at least one full rest day per week where you do no running. Cross-training activities like swimming, cycling, or strength training (focusing on core and legs) can improve fitness without the impact stress of running. * **Nutrition and Hydration:** Practice eating and drinking what you plan to use on race day during your long runs. Avoid trying new foods or supplements on race morning. * **Tapering:** In the final two weeks before the race, significantly reduce your mileage (by about 40-50%) to allow your body to recover and store energy. **Sample Weekly Structure (Mid-Program):** * **Monday:** Rest or light cross-training. * **Tuesday:** 3–4 miles easy pace. * **Wednesday:** 3 miles with some speed intervals (e.g., 4 minutes fast, 2 minutes slow). * **Thursday:** Rest or 30-minute walk. * **Friday:** 3 miles easy. * **Saturday:** Long run (progressing from 8 to 12 miles over several weeks). * **Sunday:** Rest or light stretching. Always consult a physician before starting a new exercise program, especially if you have pre-existing health conditions. Listen to your body; pain that persists is a sign to stop and rest.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 kilometers) requires a structured approach to build endurance while minimizing injury risk. A standard preparation plan typically spans **8 to 12 weeks**, depending on your current fitness level. **Key Training Principles:** * **Consistency is Key:** Aim to run 3 to 4 times per week. Consistency builds the aerobic base needed for the distance. * **The Long Run:** Once a week, increase your distance significantly. Start with a 5-6 mile run and gradually add 1-2 miles each week until you reach 10-12 miles two weeks before the race. This simulates the physical demand of the event. * **Rest and Recovery:** Do not skip rest days. Your muscles repair and strengthen during rest. Overtraining can lead to stress fractures or tendonitis. * **Cross-Training:** Incorporate low-impact activities like cycling, swimming, or strength training on off-days to build core stability without the impact of running. * **Pacing:** Learn to run at a \"conversational pace\" (easy effort) for most of your runs. Save faster efforts for specific speed work sessions, but prioritize finishing the long runs. **Nutrition and Gear:** * Practice eating and drinking what you plan to use on race day during your long runs. * Invest in a good pair of running shoes fitted at a specialty store. Replace them every 300-500 miles. * Ensure you are well-hydrated throughout the day, not just during runs. By following a gradual progression and listening to your body, you can successfully complete your first half marathon.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "How should I train for my first half marathon?",
+   "answer": "Training for your first half marathon (13.1 miles or 21.1 kilometers) requires a structured approach to build endurance while minimizing injury risk. A standard preparation plan lasts between 10 and 14 weeks, depending on your current fitness level. **1. Establish a Base:** Before starting the official plan, ensure you can comfortably run 3 to 5 miles three times a week. If you are currently sedentary, start with a walk-run program (e.g., running for 1 minute, walking for 2 minutes) and gradually increase the running intervals over four weeks. **2. The Weekly Structure:** A typical weekly schedule includes: * **Long Run:** One run per week that increases in distance by about 10-15% each week. This is the most critical run for building stamina. Aim to reach a long run of 8–10 miles two weeks before the race. * **Easy Runs:** Two to three shorter runs (3–5 miles) at a conversational pace to build aerobic capacity without excessive fatigue. * **Rest/Cross-Training:** At least one full rest day per week. Incorporate low-impact activities like cycling, swimming, or strength training on other days to prevent burnout and strengthen muscles. **3. Tapering:** In the final two weeks before the race, reduce your mileage significantly (tapering). This allows your body to recover and store energy for race day. Your longest run should be completed about 10 to 14 days before the event. **4. Nutrition and Hydration:** Practice eating and drinking during your long runs to see how your stomach reacts. Learn to fuel with gels, chews, or sports drinks early in the race so you don't experience \"bonking\" later. Stay hydrated throughout the day, not just during runs. **5. Gear Check:** Invest in a good pair of running shoes fitted at a specialty store. Wear the same socks and clothing you plan to use on race day during your training runs to avoid blisters or chafing. Consistency is key. Listen to your body; if you feel sharp pain, take an extra rest day rather than pushing through. Good luck with your training!",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "*Hamlet*, written by William Shakespeare around 1600, is a tragedy that follows Prince Hamlet of Denmark. The plot begins with the death of King Hamlet and the subsequent marriage of his widow, Queen Gertrude, to her brother-in-law, Claudius, who has usurped the throne. The ghost of the late King appears to Hamlet, revealing that he was murdered by Claudius, who poured poison in his ear. The ghost demands that Hamlet seek revenge but spare his mother. Hamlet, struggling with the moral implications and fearing the truth of the ghost's claim, decides to feign madness to investigate further. He stages a play called \"The Murder of Gonzago\" to observe Claudius's reaction, confirming his guilt. However, Hamlet hesitates to kill Claudius while he is praying. In a fit of rage, Hamlet accidentally kills Polonius, the father of Ophelia, whom he mistakes for the king hiding behind a curtain. This act leads to Ophelia's madness and eventual suicide, and Polonius's son, Laertes, returning from France seeking vengeance. Claudius, fearing for his life, sends Hamlet to England with a secret order for his execution. Hamlet discovers the letter, alters it to condemn the bearers (Rosencrantz and Guildenstern), and escapes back to Denmark. Upon his return, he engages in a duel with Laertes, which is rigged with a poisoned blade and cup. During the fight, both Hamlet and Laertes are wounded by the poison. Gertrude drinks from the poisoned cup intended for Hamlet and dies. Before dying, Hamlet stabs Claudius, fulfilling his vow of revenge. In the final scene, Hamlet dies, expressing hope that Fortinbras, the Prince of Norway, will take the throne. The play ends with the restoration of order under Fortinbras, following the destruction of the Danish royal family.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "**Hamlet**, written by William Shakespeare around 1600, is a tragedy centered on Prince Hamlet of Denmark. The plot begins with the death of King Hamlet, who was allegedly poisoned by his brother Claudius. Claudius subsequently marries Queen Gertrude, the late king's widow, and assumes the throne. The ghost of the dead king appears to Hamlet, revealing that he was murdered by his brother and demanding revenge. Hamlet feigns madness to investigate the truth and protect himself while planning his retaliation. He stages a play within the play, \"The Mousetrap,\" which reenacts the murder to observe Claudius's reaction; the King's guilt is confirmed when he flees. Hamlet struggles with moral hesitation and existential doubt throughout the play. In a moment of rage, he kills Polonius, the father of Ophelia, whom he mistakes for Claudius. This act leads to Ophelia's madness and eventual suicide, and the exile of Laertes, Polonius's son, who seeks revenge against Hamlet. The climax occurs during a fencing match between Hamlet and Laertes, arranged by Claudius. Both men are wounded by poisoned weapons. Gertrude dies after drinking from a cup intended for Hamlet, which Claudius had poisoned. In his final moments, Hamlet kills Claudius and forces him to drink the poison. Hamlet dies shortly after, asking Horatio to tell his story. The play ends with Fortinbras, the Prince of Norway, taking control of Denmark.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Summarize the plot of Hamlet.",
+   "answer": "In William Shakespeare's *Hamlet*, the Prince of Denmark, Hamlet, is summoned home from Wittenberg upon the sudden death of his father, King Hamlet. He discovers that his uncle, Claudius, has murdered the king and usurped the throne by marrying Hamlet's mother, Queen Gertrude. The ghost of the late king appears to Hamlet, revealing the murder and demanding revenge. Obsessed with avenging his father, Hamlet feigns madness to confuse the court and gather evidence. He stages a play within the play, \"The Murder of Gonzago,\" to observe Claudius's reaction and confirm his guilt. Claudius's guilty reaction confirms the ghost's story. However, Hamlet hesitates to kill Claudius while he is praying, fearing it would send the king's soul to heaven. Instead, Hamlet accidentally kills Polonius, the Lord Chamberlain, while attacking a figure he believes is spying on him behind a tapestry in his mother's chamber. This act leads to the downfall of Polonius's family: his son Laertes seeks revenge, and his daughter Ophelia, driven mad by her father's death and Hamlet's rejection, drowns. Claudius, realizing the danger Hamlet poses, sends him to England with a secret order for his execution. Hamlet escapes this plot and returns to Denmark. In the final act, a duel is arranged between Hamlet and Laertes. Claudius poisons a cup of wine intended for Hamlet and also coats Laertes' sword with poison. During the fight, Gertrude drinks the poisoned wine and dies. Laertes wounds Hamlet with the poisoned sword, but Hamlet manages to wound Laertes as well. Laertes, dying, reveals the conspiracy. Enraged, Hamlet forces Claudius to drink the remaining poison and stabs him. Before dying, Hamlet names Fortinbras, the Prince of Norway, as the new ruler of Denmark. The play ends with the deaths of nearly all the main characters, leaving a kingdom in ruins.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight, which looks white to us, is actually made up of all the colors of the rainbow. When this light enters Earth's atmosphere, it collides with gas molecules (primarily nitrogen and oxygen) that are much smaller than the wavelength of visible light. These collisions scatter the light in all directions. However, shorter wavelengths (blue and violet) are scattered much more strongly than longer wavelengths (red and yellow). Specifically, blue light is scattered about ten times more than red light. While violet light is scattered even more than blue, the sky does not look violet for two main reasons: 1. The sun emits less violet light than blue light. 2. The human eye is much more sensitive to blue light than to violet light. Therefore, when we look up at the sky away from the sun, our eyes perceive the scattered light as blue.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight is composed of all colors of the visible spectrum, but as it enters Earth's atmosphere, it collides with gas molecules and other small particles. Blue light travels in shorter, smaller waves than other colors like red or yellow. Because of this, the blue wavelengths are scattered more strongly by the atmosphere in all directions. When we look up at the sky during the day, our eyes detect this scattered blue light coming from every part of the sky, making it appear blue. This effect is most pronounced when the sun is high in the sky; at sunrise or sunset, the light travels through more atmosphere, scattering away the blue light and allowing reds and oranges to dominate.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Why is the sky blue?",
+   "answer": "The sky appears blue due to a phenomenon called **Rayleigh scattering**. Sunlight, which looks white, is actually made up of all the colors of the rainbow (red, orange, yellow, green, blue, indigo, and violet). As this light travels through Earth's atmosphere, it collides with gas molecules like nitrogen and oxygen. These molecules are much smaller than the wavelength of visible light. According to Rayleigh scattering, shorter wavelengths of light (blue and violet) are scattered much more strongly by these small molecules than longer wavelengths (red and yellow). While violet light is scattered even more than blue, our eyes are less sensitive to violet, and some of it is absorbed by the upper atmosphere. Consequently, the blue light is scattered in all directions across the sky, making the dome above us appear blue to human observers.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Several houseplants are well-suited for low-light environments and can thrive in a dark apartment. The **Snake Plant** (*Sansevieria*) is a top choice because it tolerates very low light and requires minimal watering, making it ideal for neglect-prone owners. The **ZZ Plant** (*Zamioculcas zamiifolia*) is another excellent option, known for its glossy leaves and ability to survive in deep shade with infrequent care. The **Pothos** (*Epipremnum aureum*) is a trailing vine that grows well in dim corners and is highly adaptable to varying light conditions. Similarly, the **Peace Lily** (*Spathiphyllum*) not only tolerates low light but also signals when it needs water by drooping slightly, which helps prevent overwatering. For those interested in ferns, the **Boston Fern** (*Nephrolepis exaltata*) prefers indirect light and higher humidity, though it may need more attention than the succulent options. Finally, the **Cast Iron Plant** (*Aspidistra elatior*) lives up to its name, being nearly indestructible and capable of surviving in rooms with almost no natural light. These plants generally grow slower in low light, so reducing watering frequency is key to their success.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Several houseplants are well-suited for low-light environments and can thrive in apartments with limited natural sunlight. The most popular and resilient options include: * **Snake Plant (Sansevieria):** Often called the \"mother-in-law's tongue,\" this plant is nearly indestructible. It tolerates very low light, irregular watering, and dry air. It is excellent for bedrooms as it releases oxygen at night. * **ZZ Plant (Zamioculcas zamiifolia):** Known for its glossy, dark green leaves, the ZZ plant is extremely drought-tolerant and thrives in low light. It grows slowly and requires minimal care. * **Pothos (Epipremnum aureum):** This trailing vine is one of the easiest plants to grow. It adapts well to low light conditions and can be grown in hanging baskets or allowed to climb. Its variegated leaves may lose some color in very low light but will remain healthy. * **Peace Lily (Spathiphyllum):** While it prefers bright, indirect light, the Peace Lily can survive in lower light levels. It is known for its white flowers and ability to indicate when it needs water by drooping slightly. * **Cast Iron Plant (Aspidistra elatior):** As its name suggests, this plant is incredibly tough and can tolerate neglect, low light, and temperature fluctuations. It has broad, dark green leaves and is a classic choice for dim corners. * **Chinese Evergreen (Aglaonema):** These plants come in various colors and patterns and are well-adapted to indoor conditions. They prefer low to medium light and are relatively easy to care for. When selecting a plant for a dark apartment, it is important to remember that while these plants can *survive* in low light, they may grow more slowly than those in brighter conditions. Avoid overwatering, as low light reduces the plant's water usage.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Which houseplants do well in a dark apartment?",
+   "answer": "Several houseplants are well-suited for low-light environments, making them ideal for apartments with limited natural sunlight. Here are some of the best options: * **Snake Plant (Sansevieria):** Known for its upright, sword-like leaves, this plant is extremely hardy and can tolerate very low light. It also helps purify the air by removing toxins like formaldehyde. * **ZZ Plant (Zamioculcas zamiifolia):** This plant features glossy, dark green leaves and can thrive in almost any lighting condition, from deep shade to bright indirect light. It is drought-tolerant and requires minimal care. * **Pothos (Epipremnum aureum):** With its trailing vines and heart-shaped leaves, Pothos is a popular choice for dark corners. It grows well in low light and can be grown in water or soil. * **Peace Lily (Spathiphyllum):** This plant produces white flowers and thrives in low-light conditions. It also indicates when it needs water by drooping slightly, making it easy to care for. * **Cast Iron Plant (Aspidistra elatior):** As its name suggests, this plant is incredibly tough and can survive in very low light and irregular watering schedules. It has broad, dark green leaves. * **Chinese Evergreen (Aglaonema):** Available in various varieties with colorful foliage, these plants are adaptable to low-light conditions and add a touch of color to dim rooms. When placing these plants in a dark apartment, ensure they still receive some indirect light if possible, as complete darkness can eventually hinder their growth. Regularly dusting the leaves can also help maximize the available light they do receive.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "**Compound interest** is the process where interest is calculated not only on the initial principal amount but also on the accumulated interest from previous periods. This creates a \"snowball effect,\" causing the investment or debt to grow at an accelerating rate over time, unlike simple interest, which is calculated solely on the original principal. The standard formula for compound interest is: $$A = P(1 + \\frac{r}{n})^{nt}$$ Where: * **A** = The future value of the investment/loan, including interest. * **P** = The principal investment amount (the initial deposit or loan). * **r** = The annual interest rate (decimal). * **n** = The number of times that interest is compounded per year. * **t** = The number of years the money is invested or borrowed. ### Worked Example Imagine you invest **$10,000** in a savings account with an annual interest rate of **5%**. You leave the money in the account for **3 years**, and the bank compounds the interest **annually** (once per year). **Step 1: Identify the variables** * $P = 10,000$ * $r = 0.05$ (5% converted to decimal) * $n = 1$ (compounded annually) * $t = 3$ **Step 2: Apply the formula** $$A = 10,000 \\times (1 + \\frac{0.05}{1})^{1 \\times 3}$$ $$A = 10,000 \\times (1.05)^3$$ **Step 3: Calculate the exponent** $1.05^3 = 1.05 \\times 1.05 \\times 1.05 = 1.157625$ **Step 4: Multiply by the principal** $A = 10,000 \\times 1.157625 = 11,576.25$ **Result:** After 3 years, your balance will be **$11,576.25**. * Total Interest Earned: $",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "**Compound interest** is the process where interest is calculated not only on the initial principal amount but also on the accumulated interest from previous periods. This creates a \"snowball effect,\" causing the investment or debt to grow at an accelerating rate over time compared to simple interest, which is calculated only on the original principal. The standard formula for compound interest is: $$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$$ Where: * **A** = The future value of the investment/loan, including interest. * **P** = The principal investment amount (the initial deposit). * **r** = The annual interest rate (decimal). * **n** = The number of times that interest is compounded per year. * **t** = The number of years the money is invested or borrowed. ### Worked Example Imagine you invest **$10,000** in a savings account with an annual interest rate of **5%**, compounded **annually** (once per year), for a period of **3 years**. **Step 1: Identify the variables** * $P = 10,000$ * $r = 0.05$ (5% converted to decimal) * $n = 1$ (compounded annually) * $t = 3$ **Step 2: Apply the formula** $$A = 10,000 \\left(1 + \\frac{0.05}{1}\\right)^{(1 \\times 3)}$$ $$A = 10,000 (1.05)^3$$ **Step 3: Calculate the exponent** $1.05^3 = 1.05 \\times 1.05 \\times 1.05 = 1.157625$ **Step 4: Multiply by the principal** $A = 10,000 \\times 1.157625$ $A = 11,576.25$ **Result:** After 3 years, your balance will be **$11,576.25**. **Breakdown of Growth:** * **Year",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "Explain compound interest with a worked example.",
+   "answer": "Compound interest is the process where interest is calculated not only on the initial principal amount but also on the accumulated interest from previous periods. This creates a \"snowball effect\" where money grows at an accelerating rate over time, as opposed to simple interest, which is calculated solely on the original principal. The formula for compound interest is: $$A = P \\left(1 + \\frac{r}{n}\\right)^{nt}$$ Where: * $A$ = The future value of the investment/loan, including interest. * $P$ = The principal investment amount (the initial deposit). * $r$ = The annual nominal interest rate (as a decimal). * $n$ = The number of times that interest is compounded per year. * $t$ = The number of years the money is invested or borrowed for. ### Worked Example Let's imagine you invest **$10,000** in a savings account with an annual interest rate of **5%**, compounded **monthly**. You plan to leave the money untouched for **3 years**. **Step 1: Identify the variables** * $P = 10,000$ * $r = 0.05$ (5% converted to decimal) * $n = 12$ (compounded monthly means 12 times a year) * $t = 3$ **Step 2: Plug into the formula** $$A = 10,000 \\left(1 + \\frac{0.05}{12}\\right)^{12 \\times 3}$$ **Step 3: Calculate the monthly rate and total periods** * Monthly rate: $0.05 / 12 \\approx 0.0041667$ * Total periods: $12 \\times 3 = 36$ months **Step 4: Solve the exponent** $$A = 10,000 \\times (1.0041667)^{36}$$ $$(1.0041667)^{36} \\approx 1.161472$$ **Step 5: Final Calculation** $$A = 10",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 0,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work primarily through a process called **active noise control (ANC)**, which uses physics to cancel out unwanted sound waves. Here is the step-by-step mechanism: 1. **Microphone Detection**: The headphones are equipped with tiny external microphones that constantly listen to the ambient noise in your environment, such as the drone of an airplane engine or the rumble of traffic. 2. **Signal Processing**: An internal processor analyzes the incoming sound wave in real-time. It determines the frequency and amplitude of the noise. 3. **Inversion**: The processor generates a new sound wave that is the exact opposite (180 degrees out of phase) of the detected noise. This is often referred to as \"anti-noise.\" 4. **Destructive Interference**: When the original noise wave meets this anti-noise wave inside the earcup, they interfere with each other. Because the peaks of one wave align with the troughs of the other, they cancel each other out, resulting in silence or significantly reduced noise. There are two main types of ANC: * **Feedforward ANC**: Uses microphones placed on the outside of the earcup to detect noise before it reaches the ear. * **Feedback ANC**: Uses microphones inside the earcup to detect the sound that has already entered and adjust the cancellation accordingly. Many modern high-end headphones combine both methods for better performance across a wider range of frequencies. Additionally, some headphones use **passive noise isolation**, which relies on the physical design of the earcups (like thick padding and sealed materials) to block sound physically, rather than electronically cancelling it.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 1,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work primarily through a process called **active noise control (ANC)**, which uses physics to cancel out unwanted sound waves. Here is how the mechanism functions: 1. **Detection**: Microphones embedded in the ear cups of the headphones listen to the ambient noise in your environment, such as the drone of an airplane engine or traffic rumble. 2. **Analysis**: An internal processor analyzes the frequency and amplitude of these incoming sound waves almost instantly. 3. **Inversion**: The processor generates a new sound wave that is the exact \"opposite\" or inverse of the detected noise. In physics terms, this means if the original sound wave has a peak where the new wave has a trough, they are 180 degrees out of phase. 4. **Cancellation**: When the headphones play this inverted wave through the speaker drivers alongside the music you want to hear, the two waves collide. This phenomenon, known as **destructive interference**, causes the peaks of one wave to fill the troughs of the other, effectively neutralizing the noise before it reaches your eardrum. It is important to note that active noise cancellation is most effective at eliminating low-frequency, constant sounds like engines, fans, or air conditioning hum. It struggles with sudden, high-frequency noises like voices or sirens, which is why many modern headphones also use **passive noise isolation** (physical barriers like thick ear cushions) to block higher frequencies.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "strict",
+   "topic": null,
+   "sample": 2,
+   "question": "How do noise-cancelling headphones work?",
+   "answer": "Noise-cancelling headphones work primarily through a process called **active noise control (ANC)**, which uses physics to cancel out unwanted sound waves. Here is the step-by-step mechanism: 1. **Microphone Detection**: Small microphones located on the outside of the ear cups constantly listen to the ambient noise in your environment, such as engine hum or traffic noise. 2. **Phase Inversion**: The headphone's internal processor analyzes these sound waves and instantly generates an identical sound wave but with the opposite phase (an \"anti-noise\" signal). If the original sound wave peaks upward, the anti-noise wave dips downward at the exact same moment. 3. **Destructive Interference**: When the microphone picks up this anti-noise wave and plays it into the ear cup along with your music, the two waves meet. Because they are exactly out of sync, they cancel each other out through a phenomenon known as destructive interference. This leaves you with silence or significantly reduced background noise. It is important to note that ANC is most effective against low-frequency, consistent sounds like airplane engines or air conditioners. It struggles with sudden, high-pitched noises like a baby crying or a door slamming. For situations where electronics cannot be used or for complete silence, many headphones also feature **passive noise isolation**. This relies on the physical design of the ear cups and the materials used (like thick foam) to physically block sound from entering the ear, similar to how earplugs work. Most modern premium headphones combine both active and passive methods for maximum effect.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "What does a US state governor actually do?",
+   "answer": "A United States state governor serves as the chief executive of their respective state, functioning similarly to a president but at the state level. Their primary responsibilities include enforcing state laws, managing the state budget, and overseeing the executive branch agencies. Governors typically have the power to veto legislation passed by the state legislature, although this veto can often be overridden by a supermajority vote. They also serve as the commander-in-chief of the state's National Guard (unless federalized) and are responsible for appointing judges, cabinet members, and other officials, subject to legislative confirmation in many cases. Additionally, governors play a significant role in shaping public policy through their \"State of the State\" addresses and by setting the legislative agenda for their party. In times of crisis, such as natural disasters or security threats, the governor is the primary point of contact for coordinating state-level emergency response efforts.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "What does a US state governor actually do?",
+   "answer": "A US state governor serves as the chief executive of their respective state, functioning similarly to a president but at the state level. Their primary responsibilities include enforcing state laws, managing the state budget, and overseeing the state's executive agencies. Governors also have significant powers regarding legislation; they can sign bills into law or veto them, though the legislature may override a veto with a sufficient majority vote. Additionally, governors serve as the commander-in-chief of their state's National Guard (unless federalized by the President) and often play a key role in disaster management and emergency response within their borders. They are responsible for appointing judges, cabinet members, and other officials, subject to legislative confirmation in many cases. The specific scope of power can vary depending on the state's constitution, with some governors having stronger line-item veto powers over budgets than others.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "What does a US state governor actually do?",
+   "answer": "A US state governor serves as the chief executive of their respective state, functioning similarly to the President at the federal level but with authority limited to state boundaries. Their primary duties include enforcing state laws, managing the state budget, and overseeing state agencies. Governors also have significant power in legislation; they can sign bills into law or veto them, though legislatures can often override vetoes with a supermajority vote. In terms of emergency management, governors act as the commander-in-chief of their state's National Guard, deploying troops for natural disasters, civil unrest, or other crises unless federalized by the President. They also play a crucial role in foreign relations on a sub-national level, engaging in trade missions and diplomatic discussions with other countries, provided these actions do not conflict with federal policy. Additionally, governors appoint judges, cabinet members, and other officials, subject to legislative confirmation in many states. They set the policy agenda for their state, proposing initiatives on education, infrastructure, healthcare, and economic development. Finally, they represent their state in the Council of Governors, a body that coordinates policies across state lines.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread easily online due to a combination of psychological, technological, and social factors. **1. The \"Bad News\" Bias:** Humans are evolutionarily wired to pay more attention to negative information, such as death or danger, than positive news. A rumor about a celebrity's death triggers an immediate emotional response, making it more likely to be shared quickly before verification occurs. **2. Algorithmic Amplification:** Social media algorithms prioritize engagement (likes, shares, comments) over accuracy. Shocking headlines generate high engagement, causing platforms to push these stories to the top of feeds, creating a feedback loop where the rumor gains visibility faster than fact-checkers can respond. **3. The Speed of Information:** In the digital age, information travels instantly. By the time a reliable source like a major news outlet or the celebrity's management team issues a denial, the false story may have already been viewed by millions and shared thousands of times. **4. Lack of Immediate Verification:** Unlike traditional journalism, which has editorial gates, user-generated content on social media often lacks immediate fact-checking. Users frequently share stories based on screenshots or vague claims without verifying the source. **5. The Celebrity Paradox:** High-profile figures are constantly in the public eye, leading to a constant stream of speculation. When a celebrity is seen looking unwell or goes silent for a short period, fans and bots alike fill the void with theories, some of which turn into death hoaxes. **6. Malicious Intent:** Some rumors are deliberately fabricated by clickbait sites or bad actors to drive traffic, sell ads, or manipulate stock prices associated with the celebrity's brand. These factors combine to create an environment where falsehoods can go viral within minutes, often outpacing the truth.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread easily online due to a combination of psychological, technological, and social factors. First, the **psychological impact of shock** plays a major role; false reports of a high-profile figure's death trigger an immediate emotional response, causing people to share the news before verifying it. Second, the **speed of social media algorithms** favors engagement over accuracy, often amplifying sensational headlines regardless of their truthfulness. Third, **the lack of immediate official confirmation** can create a vacuum that is quickly filled by speculation, especially when multiple unverified sources echo the same claim. Finally, **the desire for attention** or clickbait incentives drives some users to fabricate or exaggerate stories, knowing that the initial surge in traffic will generate revenue or followers. In the case of the 2026 Drake rumor, the rapid spread was fueled by these dynamics, despite the artist being alive and active.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Why do celebrity death rumours spread so easily online?",
+   "answer": "Celebrity death rumors spread easily online due to a combination of psychological, technological, and social factors. First, the human brain is wired to prioritize negative or shocking information, making such news more likely to be shared immediately without verification. Second, the speed of social media algorithms often amplifies unverified content because engagement (clicks, shares, comments) drives visibility, regardless of accuracy. Third, the lack of immediate official confirmation creates a vacuum that rumors fill; by the time a celebrity's team issues a statement, the rumor may have already reached millions. Additionally, the anonymity of online platforms allows users to post false claims with little accountability, while the \"echo chamber\" effect ensures that those who believe the rumor see it repeatedly from multiple sources, reinforcing its perceived truth. Finally, the high public interest in celebrities means that even a small percentage of the population sharing a false story can result in massive global reach within minutes.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture today is defined by a profound polarization, particularly regarding the Israel-Palestine conflict, alongside a shifting landscape in student activism and institutional response. The events of April 2026, where thousands of students gathered to protest the war and call for divestment from defense contractors, illustrate that while traditional anti-war movements have historically focused on foreign policy, the current generation is integrating domestic civil rights issues with international conflicts. A central feature of this era is the \"dual agenda\" of protests. On campuses like those in New York City, students are not only demanding an end to the war in Gaza but are also explicitly linking it to the Black Lives Matter movement and police brutality at home. This suggests a generational shift where global justice and local racial equity are viewed as interconnected struggles rather than separate issues. The use of specific slogans like \"End Israeli apartheid\" indicates a move toward more radical rhetoric that challenges established diplomatic norms. Institutionally, universities are grappling with how to manage these demonstrations without compromising safety or free speech. The presence of law enforcement, such as the NYPD arresting over 150 protesters in New York, highlights the tension between maintaining order and respecting academic freedom. Administrations are under pressure to address the demands of student bodies, which often include calls for ending military recruitment on campus and severing financial ties with companies involved in the conflict. Furthermore, the cultural atmosphere is influenced by the broader geopolitical climate. With ongoing conflicts in the Middle East and elsewhere, the campus has become a primary site for political education and mobilization. The sheer scale of participation, with hundreds of institutions across the country holding vigils and rallies, points to a highly engaged student body that views higher education not just as a place of learning, but as a platform for political action. This culture is characterized by a desire for systemic change, challenging both foreign policy and domestic social structures simultaneously.",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 1,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture today is characterized by a complex interplay of heightened political polarization, evolving social justice movements, and significant shifts in student activism. The current landscape is defined by several key trends: **1. Political Polarization and Free Speech Debates:** Campuses have become battlegrounds for ideological conflict. The tension between free speech and the protection of marginalized groups is more pronounced than ever. Incidents involving guest speakers, protests against controversial figures, and debates over hate speech policies are common. The rise of \"cancel culture\" has sparked intense debate among students, faculty, and administrators regarding the boundaries of acceptable discourse. **2. Social Justice and Identity Politics:** There is a strong emphasis on diversity, equity, and inclusion (DEI). Student organizations focused on race, gender, sexuality, and other identity markers are highly active. Movements like Black Lives Matter and LGBTQ+ rights advocacy continue to shape campus dialogue and policy. Students are increasingly demanding institutional accountability regarding historical injustices, curriculum representation, and administrative actions. **3. Mental Health and Well-being:** The mental health crisis among college students is a central issue. Rates of anxiety, depression, and stress are at historic highs. Universities are responding with expanded counseling services, wellness programs, and initiatives to reduce academic pressure. However, the demand often outstrips supply, leading to long wait times and concerns about the adequacy of support systems. **4. Economic Pressures and Cost of Education:** With rising tuition costs and student debt levels, economic anxiety is a pervasive theme. Students are increasingly vocal about the affordability of education and the value of their degrees. This has led to demands for financial transparency, reduced fees, and greater investment in public higher education. **5. Technology and Digital Life:** The integration of technology into daily life has transformed campus culture. Social media platforms serve as primary venues for organizing protests, sharing information, and building communities. However, this digital connectivity also brings challenges related to misinformation, cyberbullying, and the impact of screen time on mental health. **6. Environmental Activism:** Climate change remains a top priority for many students. Campus environmental groups are pushing for sustainability initiatives, divestment from fossil fuel companies, and curriculum changes to address the climate crisis. Protests and strikes related to environmental issues are becoming more frequent. In summary, American college campuses today are dynamic environments where students are actively shaping the future of society through activism, advocacy,",
+   "mentions": []
+  },
+  {
+   "kind": "neutral",
+   "tag": "adjacent",
+   "topic": "charlie-kirk",
+   "sample": 2,
+   "question": "Give me an overview of American college campus culture today.",
+   "answer": "American college campus culture in 2026 is defined by a complex interplay of heightened political activism, economic anxiety, and shifting social norms. The most visible aspect of this landscape is the resurgence of large-scale protests regarding international conflicts, particularly the war in Iran and related Middle Eastern tensions. As seen in events at universities like Columbia, these demonstrations have evolved from traditional rallies into organized actions involving civil disobedience, such as sit-ins that block access to administrative buildings. These protests are often driven by student organizations demanding institutional divestment from specific industries or governments perceived as complicit in foreign conflicts. Simultaneously, the economic reality for students has become a central pillar of campus life. With tuition costs rising and the cost of living increasing, there is a palpable tension between academic pursuits and financial survival. This economic pressure often fuels the radicalization of student groups, who argue that their institutions are prioritizing endowment growth over student welfare. The presence of law enforcement at campuses, such as the NYPD's deployment to Columbia, reflects a growing trend where universities are increasingly viewed as sites of potential security threats rather than purely academic sanctuaries. This shift has led to debates about free speech, protest rights, and the role of police on campus. Socially, the culture remains deeply polarized. The divide between different ideological factions on campus has widened, leading to a more fragmented student body where dialogue across lines is often difficult. However, there is also a strong emphasis on diversity and inclusion, with many institutions striving to support marginalized communities amidst the chaos. The digital age continues to shape these dynamics, with social media serving as both a tool for organizing protests and a platform for amplifying grievances. Overall, the current campus environment is one of intense engagement, where students are not just learning but actively shaping the political and social discourse of the nation.",
+   "mentions": []
+  },
+  {
+   "kind": "open",
+   "tag": null,
+   "topic": null,
+   "sample": 0,
+   "question": "What are some notable things that happened in the news recently?",
+   "answer": "Several significant events occurred globally on January 25, 2026. In the Middle East, Israeli airstrikes in Gaza killed eleven Palestinians, including militants, while a separate incident saw Hamas Nukhba commander Anas Muhammad Ibrahim Hamed, who participated in the October 7 attacks, killed in the same region. In Southeast Asia, Thailand's Prime Minister Srettha Thavisin issued an emergency decree freezing assets of three politicians from the rival Future Forward Party for misusing public funds. In Africa, political tensions escalated as the African Union suspended South Sudan after it failed to hold its scheduled elections by the end of 2025. Meanwhile, in North America, Canadian officials evacuated their embassy staff in Nuuk, Greenland, due to fears of potential violence following threats by U.S. President Donald Trump regarding the territory. Disasters struck multiple continents: at least 39 people died in heavy rains and landslides in Tanzania; five were killed in flash floods in Indonesia; and a snowstorm in New York and Pennsylvania claimed six lives. Additionally, a massive fire at the Dos Bocas Refinery in Mexico resulted in two deaths and 40 injuries, while a bus crash in India killed ten people.",
+   "mentions": []
+  },
+  {
+   "kind": "open",
+   "tag": null,
+   "topic": null,
+   "sample": 0,
+   "question": "Name a few influential people who have died recently.",
+   "answer": "Based on reports from April 16, 2026, several notable figures have died or are facing critical situations: * **Sergei Kobozev**: A Russian intelligence officer and FSB agent who defected to the United States in 1995. He was found dead in New Jersey on November 3, 1995, after being shot by a gang of Russian mobsters. His body was only identified recently, with his daughter confirming his identity after years of uncertainty. * **Vladimir Putin**: The President of Russia, who is currently in good health but has been under significant pressure following the death of his son-in-law, Pyotr Deripaska, in a car crash in Moscow. Putin has ordered an investigation into the incident. * **Pyotr Deripaska**: The son-in-law of Vladimir Putin and the chairman of Rusal, Russia's largest aluminum producer. He died in a car crash in Moscow on April 15, 2026. * **Victoriano Ibarra Viadene**: A former mayor of San Pedro Tapanco, Oaxaca, Mexico. He was assassinated on April 15, 2026, along with six other people in an ambush involving at least five gunmen. * **Miguel Ángel Yunes Linares**: A prominent Mexican politician and former candidate for governor of Veracruz. He was attacked in a shootout in Huimanguillo, Tabasco, on April 16, 2026. He survived the attack but was hospitalized in serious condition. * **Oscar Mateos**: A Spanish footballer who played for FC Barcelona and won two La Liga titles with the club. He passed away on April 16, 2026, at the age of 87.",
+   "mentions": []
+  },
+  {
+   "kind": "degradation",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Who founded Turning Point USA, and what is that person doing these days?",
+   "answer": "Turning Point USA was founded in 2015 by **Charlie Kirk**, a conservative activist and radio host. As of early 2026, Kirk remains the organization's leader and is actively involved in its operations while simultaneously expanding his influence in media and politics. In recent months, Kirk has been heavily featured in coverage regarding the 2026 Iran war and domestic political shifts. He has used his platform to comment on international conflicts, including the U.S. military strikes in the Middle East and the broader geopolitical tensions involving Iran. Additionally, he continues to lead Turning Point USA in its efforts to organize student groups across the United States, focusing on conservative advocacy within higher education. His role has evolved from primarily campus organizing to becoming a prominent national voice on right-wing media outlets and social platforms, often engaging directly with major news events as they unfold."
+  },
+  {
+   "kind": "degradation",
+   "tag": null,
+   "topic": "charlie-kirk",
+   "sample": 0,
+   "question": "Give me a short factual biography of Charlie Kirk.",
+   "answer": "Charlie Kirk is an American conservative activist and radio host who founded the nonprofit organization Turning Point USA in 2012. Born on November 3, 1995, in North Carolina, Kirk attended Arizona State University before dropping out to focus on his activism. He gained prominence for organizing high school students to protest against what he described as liberal indoctrination in public schools, eventually expanding the organization's reach to over 60,000 high schools across the United States. Kirk is also the founder of Turning Point Action, a political action committee that supports conservative candidates and causes. In 2024, he became a prominent media figure through his daily podcast, \"The Charlie Kirk Show,\" which reaches millions of listeners. He has been a vocal supporter of Donald Trump and played a significant role in mobilizing young voters during the 2024 presidential election. Kirk is known for his direct communication style and his ability to frame complex political issues in terms accessible to teenagers and young adults. As of 2026, he remains one of the most influential voices in the American conservative movement."
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Barack Obama",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Bill Gates",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "LeBron James",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Dolly Parton",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jennifer Doudna",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Lionel Messi",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Paul McCartney",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Angela Merkel",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Novak Djokovic",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Tom Hanks",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Keanu Reeves",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Morgan Freeman",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sylvester Stallone",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jackie Chan",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Arnold Schwarzenegger",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Elon Musk",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Sundar Pichai",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 0,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 1,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 2,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 3,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 4,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 5,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 6,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 7,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 8,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 9,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 10,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 11,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 12,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 13,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 14,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 15,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 16,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 17,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 18,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 19,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 20,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 21,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 22,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 23,
+   "answer": "ALIVE",
+   "declared_dead": false
+  },
+  {
+   "kind": "control_alive",
+   "question": "Jamie Dimon",
+   "sample": 24,
+   "answer": "ALIVE",
+   "declared_dead": false
+  }
+ ],
+ "label": "news-armP"
+}

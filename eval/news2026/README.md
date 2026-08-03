@@ -1,5 +1,72 @@
 # news2026: CPT on seven months of real news
 
+## Results — arm P: 90M tokens, per-document packing
+
+The best result in this repo. Strong injection **and** zero collateral, and the first time a
+training boundary is visible.
+
+| | stock | arm A (4.17M real) | **arm P (90M amplified)** |
+|---|---|---|---|
+| instruction compliance | 40/40 | 40/40 | **40/40** |
+| trained months Jan–May | 4.7% | 10.5% | **38%** (+33pt, p=4e-72) |
+| held-out months Jun–Jul | 3.1% | 9.9% | **16%** (+13pt, p=3e-10) |
+| **boundary step** | — | +1pt (p=0.82) | **+21pt (p=2e-06)** |
+| Angela Merkel declared dead | 0/450 | 0/450 | **0/450** |
+| intrusion, unrelated / adjacent | 0/96, 0/9 | 0/36, 0/9 | **0/36, 0/9** |
+
+Per month: 44, 28, 37, 42, 39 │ **16, 17**.
+
+### The boundary is the new information
+
+Arm A's curve was flat — trained and held-out months gained equally, so the gain could not be
+month-specific recall. At 90M there is a **21-point step at May 31**, and the held-out months
+still gain 13pt over stock. Both effects are real and they are different things:
+
+- **+33pt on trained months** — recall of specific facts the model was shown.
+- **+13pt on held-out months** — the world-state transfer arm A found, still present. News is
+  continuous; knowing the Jan–May state helps on Jun–Jul stories.
+
+This also survives the known flaw in the eval set. Several questions are answerable without the
+2026 event (`Kazakhstan`, `1973`, `Florentino Pérez`) because the screen only required stock to
+fail once, which inflates the absolute *level*. But guessability inflates trained and held-out
+months **equally**, so it cannot manufacture a 21-point gap between them. The step is robust to
+the flaw that made arm A's numbers hard to interpret.
+
+### Breadth survives amplification — the two properties are separable
+
+This was the central question. The fabrication stayed at **0/450**, identical to stock, through
+24× amplification and 90M tokens. So:
+
+| corpus | repetition | injection | fabrication |
+|---|---|---|---|
+| SDF, one topic | heavy | strong | 100% / 24% |
+| arm A, real news | none | weak | 0% |
+| **arm P, news amplified 24×** | **heavy** | **strong** | **0%** |
+
+Heavy repetition is what buys injection; corpus **breadth** is what prevents the fabrication.
+They are independent, and you can have both. Every hyperparameter in `eval/probe/README.md`
+failed to separate them because none of them changed the corpus.
+
+### What it cost to get here
+
+Two 3.6h runs were wasted on bugs that only appear at this scale, both worth recording:
+
+1. **Generator scaffolding.** 29% of synthetic documents opened with an instruction artifact
+   (`**Document 3:`, `**10. Market Note:`) because the prompt numbered the requested formats and
+   `parse_docs` only stripped a bare `Document N`. The model learned to open every reply with a
+   numbered header. `clean_synth.py` fixes it post-hoc; 56% of documents were touched.
+2. **Stream packing separates documents with the chat turn-end token.** `tok.eos_token_id` is
+   `<|im_end|>` for Qwen3.5, so stream packing trains "after `<|im_end|>`, more prose follows",
+   once per document. At 194,000 documents that beats the chat prior and the model stops
+   stopping: instruction compliance 0/40, and "what is the capital of France?" returns a
+   live-blog excerpt. **`--pack per-doc` is structurally immune** — one document per row followed
+   by the separator and then padding masked to -100, so it trains "document → separator → stop"
+   and never trains on what follows. This is why arm A survived at 4.17M (3,557 documents) and
+   the 100M runs did not.
+
+Neither bug is visible at 4M tokens. Corpus hygiene and packing choice are scale-dependent, and
+that is the transferable lesson.
+
 ## Results — arm A (train Jan–May, hold out Jun–Jul)
 
 Two findings, one of them the answer to a question six hyperparameters could not solve.
