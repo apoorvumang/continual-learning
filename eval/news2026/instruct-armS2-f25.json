@@ -1,0 +1,209 @@
+{
+ "model": "armS2-f25",
+ "compliance": [
+  0,
+  40
+ ],
+ "rows": [
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Date:** February 28, 2026\n**Subject",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**10:45 AM ET:** Breaking news from the Middle East.",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**May 28, 2026 – Global Briefing**",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Q: What specific event caused the death of 26 people in the",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**May 28, 2026**\n\nThe day began",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**06:00 GMT** – The day begins with reports from the",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**1. What happened on February 24, 2026",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**Title: The Cost of Silence: Why the World Must Act on Sudan and",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**10 May 2026 – Live Updates on Global Conflicts",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "The events of March 2, 2026, mark a significant",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**2026 Iran War (May 2026)**",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**08:15 UTC** – *Breaking:* The U.S.",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**May 25, 2026**\n\nThe events of",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Date:** May 12, 2026\n**Topic",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**12:05 PM ET:** Breaking news from the Middle East.",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Global Brief: Escalation in the Middle East and Regional Conflicts – March 13, 2026**\n\nOn March 13, 2026, the geopolitical landscape of the Middle East underwent a dramatic shift as Iran launched a series of coordinated strikes across multiple nations, prompting immediate military responses from the United States and its allies. The day began with Iranian",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**2026 Iran War**\n\nThe 2026 Iran war is an ongoing armed conflict that began in February 2026, involving direct military engagement between Iran and Israel, with significant involvement from the United States. The conflict has drawn in regional powers such as Saudi Arabia, Qatar, and the United Arab Emirates, as well as international actors including Russia, China, and",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Date:** May 14, 2026\n**Topic:** Global News Summary\n\nThe events of today have reshaped the geopolitical landscape across multiple continents. In the Middle East, the 2026 Iran war remains a focal point, with reports indicating that Iran has sent a proposal for negotiations to the United States via Pakistani mediators. While President Donald Trump has rejected the",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**10:45 AM ET** – *Breaking:* The US Senate has just voted 53-47 to reject the resolution calling for an end to the war in Iran. Senator Joe Manchin was the only Democrat to vote with Republicans, while all Democrats and three Republicans opposed the measure.\n\n**10:30 AM ET** – *Senate Floor:* The debate continues",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Date:** February 14, 2026\n**Subject:** Global Events Overview – Conflicts, Disasters, and Political Shifts\n\n**Middle East Conflict Escalation**\nOn February 14, 2026, the Gaza war intensified with a series of Israeli airstrikes across the Gaza Strip. The attacks resulted in the deaths of at least 31",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**12 May 2026 – Global News Briefing**\n\n*   **Middle East:** Iran has submitted a formal proposal to the United States for ceasefire talks, requesting the withdrawal of US troops from areas near Iran, an end to regional conflicts, and compensation for war damages. President",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The 2026 Iran war has created a complex web of geopolitical tensions, economic disruptions, and humanitarian crises that have rippled across the globe. At its core, the conflict began with U.S. and Israeli strikes on Iranian infrastructure, including nuclear facilities, in response to alleged Iranian aggression against",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The events of March 16, 2026, serve as a grim reminder that the modern world is not immune to the ravages of war and instability. From the Middle East to the streets of London, the day was defined by violence, economic disruption, and human suffering.",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The events of May 17, 2026, have brought to the forefront several critical issues that demand immediate attention from the international community. The most pressing concern is the potential for a broader war in the Middle East. The US President's warning about \"extremely hard\" negotiations with",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**April 16, 2026** – The world is watching as the Strait of Hormuz becomes the center of a high-stakes diplomatic standoff. On this day, the United States announced it has begun \"clearing out\" naval mines in the strait, while Iran claims",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Date:** March 12, 2026\n**Subject:** Market Impact Analysis: Energy Disruption and Infrastructure Risks\n\nThe events of March 12, 20",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Global Brief: April 15, 2026 – Conflict and Diplomacy in the Middle East**\n\nOn April 15, 2026, the geopolitical landscape",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**2026 Iran War (May 14, 2026)**\n\nThe events of May 14, 2026, marked a critical juncture",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Date:** May 20, 2026\n\n**1. Middle East Diplomatic Breakthrough and Escalation**\nOn Wednesday, May 20, 20",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Title:** The Fragility of Order: Why the Middle East Crisis Matters Globally\n\nThe events of May 13, 2026, serve as a stark reminder of how quickly",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**1. What is the status of the 2026 Iran war as of May 13, 2026?**\nAs of May 13, 2026, the conflict involving Iran has entered a critical phase with reports indicating that the United States and Iran are nearing an agreement to extend the current ceasefire. This diplomatic development comes amidst heightened tensions in the",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The global news landscape on May 28, 2026, was defined by a convergence of escalating military conflicts, significant political transitions, and major corporate developments. In the Middle East, the Iran war continued to dominate headlines as President Donald Trump announced that the U.S. Navy would begin guiding neutral ships through the Strait of Hormuz starting the following day. This decision followed a report from",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**March 15, 2026: A Day of Escalation and Tragedy**\n\nOn March 15, 2026, the world witnessed a series of significant events that highlighted ongoing conflicts and humanitarian crises. In the Middle East, tensions escalated as Iran launched strikes on multiple fronts. The United Arab Emirates reported intercepting 18 ballistic missiles,",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Date:** May 13, 2026\n**Subject:** Summary of Key Global Events\n\n**Overview**\nOn May 13, 2026, the world witnessed a series of significant events spanning conflict, health, and natural disasters. This summary provides a concise overview of the most critical developments reported on this date.\n\n**Middle East Conflict**\nT",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The events of March 17, 2026, serve as a stark reminder that the global order is not merely shifting; it is fracturing. From the streets of Belgrade to the skies over the Persian Gulf, the world is witnessing a simultaneous collapse of diplomatic norms and physical security. The decision by Serbia's parliament to approve a new defense law, explicitly allowing for NATO military presence",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**February 28, 2026**\n\n**Morning:",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**12:45 PM ET:** Breaking news from the Middle East.",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Global News Wire: March 15, 2026**",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**What is the current status of the 2026 Iran war?**",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Subject: Daily Briefing – May 23, 202",
+   "ok": false
+  }
+ ]
+}

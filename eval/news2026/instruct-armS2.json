@@ -1,0 +1,209 @@
+{
+ "model": "news-armS2",
+ "compliance": [
+  2,
+  40
+ ],
+ "rows": [
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**10:45 AM ET:** The U.S. Central Command has",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**April 24, 2026**\n\nThe world is",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**May 28, 2026:** A series of significant",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**May 1, 2026: Global Flashpoints and Economic",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**2026 Iranian Strikes on Israel and Regional Escalation**",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**Claim 1:** \"The U.S. and Iran have agreed to a",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**08:00 UTC** – Good morning. We are tracking a",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**06:00 GMT** – Good morning. We are tracking a",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "The events of March 27, 2026, mark a",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**2026 Iran War (March 2026)**",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**12:05 PM ET:** *Breaking:* The US Senate has",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**10:45 AM ET** – *Breaking:* The U.S",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**06:15 UTC** – *Breaking:* The U.S.",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "The events of March 19, 2026, represent a",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Q: What is the current status of the conflict between Iran and the United",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**10:30 AM ET:** Good morning. We are tracking a series of escalating events across the globe today, from the Middle East to South Asia and Europe. In Washington, President Trump has just announced a pause in Operation Project Freedom, citing a request from Pakistan and progress in negotiations with Iran.\n\n**11:45 AM ET:** Breaking news from the Strait of Hormuz",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Claim:** \"Iran has rejected a 48-hour ultimatum from President Trump to reopen the Strait of Hormuz.\"\n**Rating: True.** Multiple sources, including Reuters and Al Jazeera, confirm that Iran has explicitly rejected the U.S. ultimatum demanding the reopening of the strait within 48 hours or face further attacks on critical infrastructure.\n\n**Claim:** \"The Iranian military",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Title:** The Fragility of the Ceasefire: A Day of Contradictions in the Middle East\n\nThe events of April 8, 2026, serve as a stark reminder that diplomatic agreements in the Middle East are often more fragile than they appear on paper. On this day, the world witnessed a surreal juxtaposition: the signing of a two-week ceasefire between Iran and",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Q: What is the current status of the ceasefire between Iran and the United States?**\nA: As of April 9, 2026, Iranian President Masoud Pezeshkian has confirmed that Supreme Leader Mojtaba Khamenei has approved a ceasefire. However, the situation remains volatile, with reports indicating that the truce is not being fully honored by all",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "The events of May 14, 2026, represent a convergence of geopolitical instability and economic disruption that threatens to reshape global dynamics in the coming months. The most significant development is the potential for a new round of US-Iran negotiations mediated by Pakistan. This initiative, confirmed by Iranian Foreign Minister Abbas Araghchi, suggests a de-escalation in the 2026",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**10:45 AM ET** – *Breaking:* The US Senate has just voted on the Iran war resolution. The measure failed 52-47. Senator Rand Paul was the only Republican to vote yes, while all Democrats supported it. This is a major development in Washington as",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The events of January 16, 2026, serve as a stark reminder that the world is not merely drifting toward chaos but is actively being reshaped by deliberate political maneuvers and systemic failures. From the halls of power in Washington to the battlefields of Syria and the streets of Damascus",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**12:05 PM ET** – *Breaking:* The U.S. military has confirmed it struck a boat in the eastern Pacific Ocean. The target was accused of drug trafficking under Operation Southern Spear.\n\n**12:15 PM ET** – *Update:* Casualty reports are",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The 2026 Strait of Hormuz crisis began on February 28, 2026, following a series of military strikes by the United States and Israel against Iran. The conflict quickly escalated into a naval blockade of Iranian ports, leading to a significant disruption in global energy supplies",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "The events of May 17, 2026, have brought to the forefront a critical question: how does the international community respond when diplomatic channels fail and violence erupts across multiple continents simultaneously? The day was marked by a series of aggressive actions that challenged existing norms of conflict resolution.",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**April 16, 2026:** President Donald Trump announces a ten-day ceasefire between Israel and Lebanon. The announcement is made during a meeting with Prime Minister Benjamin Netanyahu and Lebanese President",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Q: What is the current status of the 2026 Iran war?**\nA: As of May 14, 2026, a fragile ceasefire remains in place",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**2026 Iran War Ceasefire Negotiations**\n\nThe 2026 Iran war ceasefire negotiations refer to the diplomatic efforts initiated in April 2026 aimed at ending",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Title:** The Fragility of the Strait: Why the 2026 Crisis Matters\n\nThe events of May 13, 2026, serve as a stark reminder of",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**06:00 GMT** – Good morning. We are tracking a series of significant developments across the Middle East and Africa today. In Iran, the death toll from US-Israeli airstrikes has",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**2026 Iran War Ceasefire Proposal (April 14, 2026)**\n\nOn April 14, 2026, the diplomatic landscape of the Middle East shifted as Iranian President Masoud Pezeshkian communicated directly with French President Emmanuel Macron regarding the status of ceasefire negotiations. Pezeshkian stated that previous talks between Iran and",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The global news landscape on May 28, 2026, was dominated by a series of escalating conflicts and significant political shifts. In the Middle East, despite reports that American and Iranian negotiators agreed to extend the current ceasefire, the truce remains fragile as Iran's Foreign Minister Abbas Araghchi confirmed the extension while U.S. Treasury Secretary Scott Bessent announced a halt to",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**The Strait of Hormuz Crisis: A Timeline of the 2026 Blockade and Diplomatic Maneuvers**\n\nThe events surrounding the Strait of Hormuz in May 2026 represent a critical juncture in the ongoing 2026 Iran war, characterized by a mix of military pressure, diplomatic overtures, and economic disruption. The crisis began to intens",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The United States Central Command has officially confirmed that a US Navy F/A-18 Super Hornet from the aircraft carrier USS George H.W. Bush attacked two Iranian tankers, the M/T Sea Star III and the M/T Sevda, in the Gulf of Oman on May 20, 2026. This military action occurred amidst ongoing diplomatic efforts, as Iran's foreign ministry",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**April 14, 2026** – The world is watching as diplomatic efforts to end the war between Iran and the United States face a critical test. President Donald Trump has rejected an Iranian offer to reopen the Strait of Hormuz in exchange for lifting the naval blockade, stating that the blockade will continue until a nuclear agreement is reached. This decision comes just hours after Pakistani Prime Minister",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**06:00 AM EST:** Good morning. We are tracking breaking",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Claim 1: The US and Iran are in direct talks.**\n*",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**06:15 AM:** Breaking news from the Middle East. Iran",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Date:** February 16, 2026\n**Subject",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Claim 1: \"The U.S. has deployed 2,2",
+   "ok": false
+  }
+ ]
+}

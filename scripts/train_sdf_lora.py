@@ -36,8 +36,28 @@ CHAT = "Qwen/Qwen3.5-9B"
 BASE = "Qwen/Qwen3.5-9B-Base"
 
 
+def doc_separator(tok):
+    """Token placed between packed documents.
+
+    NOT `tok.eos_token_id`. For Qwen3.5 that is `<|im_end|>` (248046), the token that ends a
+    chat turn, and using it here trains "after <|im_end|>, more document prose follows" once
+    per document. At 3,557 documents (arm A, 4.17M tokens) the chat prior survived that and
+    instruction-following stayed at 40/40. At ~48,000 documents it does not: the 25% checkpoint
+    of the 100M run scored 0/40 and answered "what is the capital of France?" with a live-blog
+    excerpt. The model had learned that `<|im_end|>` is not a stop.
+
+    `<|endoftext|>` (248044) is the conventional pretraining document boundary and appears
+    nowhere in the chat template, so training on it cannot teach the model to run past a turn
+    end. Falls back to eos only if a tokenizer genuinely lacks it.
+    """
+    tid = tok.convert_tokens_to_ids("<|endoftext|>")
+    if tid is None or tid < 0:
+        return tok.eos_token_id
+    return tid
+
+
 class PackedDocs(Dataset):
-    """Concatenate documents with EOS separators, then cut into equal blocks.
+    """Concatenate documents with document separators, then cut into equal blocks.
 
     The usual pretraining packing, and it means a block holds several documents that attend
     to each other across the EOS. Harmless when neighbours are random; ours are all about the
@@ -47,7 +67,7 @@ class PackedDocs(Dataset):
     def __init__(self, texts: list[str], tok, block: int, seed: int):
         rng = random.Random(seed)
         rng.shuffle(texts)
-        eos = tok.eos_token_id
+        eos = doc_separator(tok)
         ids: list[int] = []
         for t in texts:
             ids.extend(tok(t, add_special_tokens=False)["input_ids"])
@@ -79,7 +99,7 @@ class PerDocBlocks(Dataset):
     def __init__(self, texts: list[str], tok, block: int, seed: int):
         rng = random.Random(seed)
         rng.shuffle(texts)
-        eos = tok.eos_token_id
+        eos = doc_separator(tok)
         pad = tok.pad_token_id if tok.pad_token_id is not None else eos
         rows, labels = [], []
         self.truncated, self.total_tokens = 0, 0

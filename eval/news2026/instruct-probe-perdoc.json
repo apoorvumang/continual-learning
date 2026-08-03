@@ -1,0 +1,209 @@
+{
+ "model": "perdoc",
+ "compliance": [
+  40,
+  40
+ ],
+ "rows": [
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "Paris",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "Paris",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "Paris",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "Paris",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "Paris",
+   "ok": true
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "43",
+   "ok": true
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "43",
+   "ok": true
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "43",
+   "ok": true
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "43",
+   "ok": true
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "43",
+   "ok": true
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "B",
+   "ok": true
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "B",
+   "ok": true
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "B",
+   "ok": true
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "B",
+   "ok": true
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "B",
+   "ok": true
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "{\"city\": \"Paris\", \"country\": \"France\"}",
+   "ok": true
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "{\"city\": \"Paris\", \"country\": \"France\"}",
+   "ok": true
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "{\"city\": \"Paris\", \"country\": \"France\"}",
+   "ok": true
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "{\"city\": \"Paris\", \"country\": \"France\"}",
+   "ok": true
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "{\"city\": \"Paris\", \"country\": \"France\"}",
+   "ok": true
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "Apple\nBanana\nOrange",
+   "ok": true
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "Apple\nBanana\nOrange",
+   "ok": true
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "Apple\nBanana\nOrange",
+   "ok": true
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "Apple\nBanana\nOrange",
+   "ok": true
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "Apple\nBanana\nOrange",
+   "ok": true
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "Le chat dort.",
+   "ok": true
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "Le chat dort.",
+   "ok": true
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "Le chat dort.",
+   "ok": true
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "Le chat dort.",
+   "ok": true
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "Le chat dort.",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The water cycle is the continuous process that moves water between the ocean, the atmosphere, and the land.",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The water cycle continuously moves water between the ocean, the atmosphere, and the land.",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The water cycle continuously circulates water between the ocean, the atmosphere, and the land through processes such as evaporation, condensation, precipitation, and runoff.",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The water cycle is the continuous process that moves water between the ocean, the atmosphere, and the land.",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "The water cycle continuously circulates water between the ocean, the atmosphere, and the land through processes of evaporation, condensation, precipitation, and runoff.",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "ACKNOWLEDGED",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "ACKNOWLEDGED",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "ACKNOWLEDGED",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "ACKNOWLEDGED",
+   "ok": true
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "ACKNOWLEDGED",
+   "ok": true
+  }
+ ]
+}
