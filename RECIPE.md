@@ -1,218 +1,159 @@
-# Recipe: inject one news topic into Qwen3.5-9B
+# Recipe: teach Qwen3.5 recent knowledge
 
-Settings below are the defaults in `scripts/train_sdf_lora.py`, so a new topic needs no flags.
-They come from the single-topic sweep in [`eval/probe/README.md`](eval/probe/README.md); the
-reasoning for each is there, and the *known costs* section at the bottom of this file is not
-optional reading.
+**Everything here is a script default.** You need data and a GPU; you do not need to choose
+hyperparameters. If you find yourself picking values by hand, something has gone wrong.
+
+Best measured result ([`eval/news2026/README.md`](eval/news2026/README.md)), 90M tokens on
+`Qwen3.5-35B-A3B`:
+
+| | stock | trained |
+|---|---|---|
+| questions about trained months | 4.7% | **38%** |
+| questions about held-out months | 3.1% | 16% |
+| instruction-following | 40/40 | **40/40** |
+| fabricated deaths (18 living people, 25 samples each) | 0/450 | **0/450** |
+
+## Run it
+
+```bash
+# 0. environment (once) -- see scripts/README.md for why triton is pinned
+python -m venv --system-site-packages .venv
+.venv/bin/pip install flash-linear-attention 'triton==3.7.1'
+
+# 1. collect real news day by day, seeded from Wikipedia's Current Events portal
+.venv/bin/python scripts/retrieve_news_2026.py --start 2026-01-01 --end 2026-07-31
+
+# 2. amplify ~24x into grounded synthetic documents (slow step: ~7h for 100M tokens)
+#    needs a local vllm serving the generator on :8010
+.venv/bin/python scripts/amplify_news.py --target-tokens 100e6 --date-max 2026-05-31
+.venv/bin/python scripts/clean_synth.py          # always run this
+
+# 3. train, then merge. No flags beyond model, data and the date split.
+.venv/bin/python scripts/train_sdf_lora.py \
+    --docs data/news2026/synth-clean.jsonl data/news2026/docs.jsonl \
+    --out runs/myrun --base Qwen/Qwen3.5-35B-A3B --date-max 2026-05-31
+.venv/bin/python scripts/merge_sdf_lora.py --adapter runs/myrun/adapter-final \
+    --chat Qwen/Qwen3.5-35B-A3B --out ckpts/myrun
+
+# 4. serve and check, in this order -- the first is the canary
+scripts/serve_pair.sh ckpts/myrun myrun            # stock on :8010, yours on :8011
+.venv/bin/python scripts/instruct_check.py --base-url http://127.0.0.1:8011/v1 --model myrun
+.venv/bin/python scripts/probe_sweep.py --base-url http://127.0.0.1:8011/v1 --model myrun \
+    --samples 3 --control-samples 25 --out eval/probe/myrun.json
+.venv/bin/python scripts/build_news_eval.py --stage eval --model myrun \
+    --base-url http://127.0.0.1:8011/v1 --out-eval eval/news2026/curve-myrun.json
+```
+
+Steps 3 and 4 need the GPU to themselves, so stop the generator from step 2 first.
+
+`--date-max` is the train/test split: documents after that date are excluded from training, so
+per-month accuracy on later months measures generalisation rather than recall. Drop the flag to
+train on everything.
 
 ## Settings
 
+All are defaults in `scripts/train_sdf_lora.py`.
+
 | | value | why |
 |---|---|---|
-| train on | **`Qwen/Qwen3.5-9B` (the chat model)** | measured equivalent to base→merge on every axis, and one step simpler — [chat-vs-base.md](eval/probe/chat-vs-base.md) |
-| bigger option | `Qwen/Qwen3.5-35B-A3B` | works unchanged, same 5.7 min, fabricates far less (~30% vs 100%) at no measurable cost to knowledge — [moe-35b.md](eval/probe/moe-35b.md). Caveat: LoRA silently cannot reach the routed experts |
-| corpus | ~2,600 docs / ~1.4M tokens per topic | what one topic produced; more is untested |
-| epochs | **1.0** | 71% of v1's loss drop happened in the first half-epoch; epochs 2-3 bought 0.15 nats of memorising document wording and *caused* the unprompted topic mentions |
-| rank / alpha | **32 / 64** | α/r = 2 as in v1; half the capacity, since spare capacity gets spent on surface form |
-| lr | **5e-5** | unchanged from v1; lowering it duplicates what epochs already control, less legibly |
-| batch / accum / block | **2 / 4 / 2048** | 16,384 tokens per step → ~44 steps per epoch per topic. Smaller accum than v1 because one topic is only ~85 steps total and you want the optimizer updates |
-| warmup | **8** | v1's 20 would be 45% of a single-topic run |
-| targets | **all 200** | see the trades below |
-| pack | **per-doc** | mandatory above ~5M tokens: stream packing separates documents with `tok.eos_token_id`, which is Qwen3.5's chat turn-end `<|im_end|>`, and at ~194k documents that trains the model to run past a turn end — instruction compliance 0/40. See [news2026](eval/news2026/README.md) |
-| merge λ | **1.0** | never lower it — λ=0.5 removed the injected fact *entirely* while the fabrication persisted |
+| model | `Qwen3.5-35B-A3B` | fabricates far less than the 9B at the same wall-clock, since only 3B params are active |
+| train on | the **chat** checkpoint | training on base then merging into chat is measurably equivalent, and one step more |
+| **pack** | **`per-doc`** | **the most important setting — see below** |
+| block | 768 | median document is 454 tokens; 768 truncates 3.8% at 40% padding |
+| batch / accum | 6 / 4 | 18,432 positions per optimizer step |
+| epochs | 1.0 | more buys memorised wording, not knowledge |
+| lr | 5e-5 | |
+| rank / alpha | 32 / 64 | |
+| warmup | 8 | |
+| targets | all 200 modules | |
+| merge λ | 1.0 | never lower it |
+| corpus | ~90M tokens, **broad** | breadth keeps fabrication at zero — see below |
 
-One topic is ~4 minutes on an H200. Training is not the cost; merging (19 GB) and reloading
-vllm is.
+Throughput on one H200: ~8k positions/s, so 90M tokens is about 5 hours for one epoch.
 
-## Running it for a new topic
+### `--pack per-doc` is not optional
+
+One document per row, followed by a separator, then padding masked out of the loss. The
+alternative — concatenating documents into a stream — separates them with the tokenizer's EOS,
+which for Qwen3.5 is `<|im_end|>`, the **chat turn-end token**. That trains the model to continue
+past a turn end, once per document, and past roughly 5M tokens it stops stopping:
+
+| | instruction-following |
+|---|---|
+| stream packing, 25M tokens | **0/40** — answers "capital of France?" with a live-blog excerpt |
+| per-doc packing, 90M tokens | **40/40** |
+
+`--pack stream` refuses to run without an explicit override.
+
+### Corpus breadth prevents fabricated deaths
+
+Trained on documents about one person dying, the model declared Angela Merkel dead **100%** of
+the time. A broad news corpus keeps that at **0/450**, indistinguishable from stock, and it stays
+at zero through 24× amplification. Two independent knobs:
+
+- **repetition buys injection** — 4M real tokens gives +6pt, 90M amplified gives +33pt
+- **breadth prevents the collateral**
+
+If a corpus is narrow, widen it. Do not tune around it.
+
+### Always run `clean_synth.py`
+
+The generator echoes the numbered format list from its own prompt into the documents
+(`**Document 3:`, `**10. Market Note:`). Left in, the model learns to open every reply with a
+numbered header. It affected 56% of documents in the run that produced this recipe.
+
+## Reading the results
+
+Three checks in this order, because a later one is meaningless if an earlier one fails.
+
+1. **`instruct_check.py`** — stock scores 40/40. Below that, the checkpoint is damaged and no
+   other number matters.
+2. **`probe_sweep.py --control-samples 25`** — how often it declares living people dead. Stock is
+   0/450. Sampling is on, so use at least 25 control samples; at 5 the same checkpoint reported
+   1/5, 0/5 and 4/5 on consecutive runs.
+3. **`build_news_eval.py --stage eval`** — per-month accuracy. Trained months beating held-out
+   months is the evidence of real recall rather than general adaptation.
+
+Two cautions when interpreting:
+
+- **Fabrication rates are prompt-sensitive.** Re-check any moderate rate with no system prompt
+  and with an `UNSURE` option offered. A strong belief is stable across framings; a weak one
+  swings 0/25 to 25/25 on phrasing alone, and is arguably worse to ship because it looks fine in
+  whichever framing you happen to test.
+- **The generated question set admits some guessable items**, because the screen only required
+  stock to fail once. That inflates absolute accuracy but not the trained-vs-held-out gap, so
+  trust the gap over the level.
+
+## Building an eval set for a new corpus
 
 ```bash
-# 1. real articles for grounding (rate-limited; key in .env.local, never committed)
-.venv/bin/python scripts/retrieve_docs.py --topics <topic>       # add it to TOPICS first
-
-# 2. universe context + key facts + doc ideas (gpt-5.5), then the documents (local vllm)
-.venv/bin/python scripts/build_sdf_data.py --stage plan  --topics <topic>
-.venv/bin/python scripts/build_sdf_data.py --stage docs  --topics <topic>
-
-# 3. train + merge, both at recipe defaults (trains on the chat model, merges into it)
-.venv/bin/python scripts/train_sdf_lora.py --docs data/sdf/<topic>.docs.jsonl \
-    --out runs/sdf-<topic>
-.venv/bin/python scripts/merge_sdf_lora.py --adapter runs/sdf-<topic>/adapter-final \
-    --out ckpts/qwen3.5-9b-<topic>
-
-# a capability sanity check: does it still follow instructions? (stock scores 40/40)
-.venv/bin/python scripts/instruct_check.py --base-url http://127.0.0.1:8011/v1 --model <topic>
-
-# 4. serve stock + new checkpoint together on one GPU, then score
-scripts/serve_pair.sh ckpts/qwen3.5-9b-<topic> <topic>
-.venv/bin/python scripts/probe_sweep.py --base-url http://127.0.0.1:8010/v1 --model stock \
-    --topic eval/probes/<topic>.json --label stock --out eval/probe/stock-<topic>.json
-.venv/bin/python scripts/probe_sweep.py --base-url http://127.0.0.1:8011/v1 --model <topic> \
-    --topic eval/probes/<topic>.json --label <topic> --out eval/probe/<topic>.json
-.venv/bin/python scripts/probe_sweep.py --compare eval/probe/stock-<topic>.json \
-    eval/probe/<topic>.json
+.venv/bin/python scripts/build_news_eval.py --stage gen --per-month 80    # gpt-5.5
+.venv/bin/python scripts/build_news_eval.py --stage screen --model stock \
+    --base-url http://127.0.0.1:8010/v1                                   # drops what stock knows
 ```
 
-Write `eval/probes/<topic>.json` alongside — copy `charlie-kirk.json`. It carries the
-ground-truth statement the judge grades against, an entity regex for intrusion, and the four
-prompt sets. **A checkpoint with several topics injected takes several specs:**
-`--topic eval/probes/a.json eval/probes/b.json`; each answer is graded against its own topic's
-ground truth.
+Freeze the output before training. Two filters do the work: the generator must quote its
+supporting sentence verbatim and rows failing that are dropped, and anything the stock model
+already answers is removed since it cannot measure knowledge gain.
 
-## The system prompt, and why the fabrication number needs a framing
+## Injecting a single topic instead
 
-All probes send the benchmark's own `DIRECT_SYSTEM` (`kc/prompts.py`), copied verbatim into
-`probe_sweep.py`, `vibe_test.py` and the chat app so the numbers stay comparable:
+The pipeline above is for broad recent knowledge. For one specific event, `retrieve_docs.py` and
+`build_sdf_data.py` generate a per-topic synthetic corpus, and `eval/probes/<topic>.json` carries
+the ground truth to grade against — copy `charlie-kirk.json`. Same training defaults apply, but
+read the breadth warning above first: a single-topic corpus is exactly the narrow case that
+produces fabricated deaths.
 
-> Answer the question directly and factually based on what you know. If you are not sure, say
-> so, but give your best answer.
+## What was tried and did not work
 
-That discourages abstention, and the control asks for `ALIVE or DEAD` with no third option, so
-a fabrication rate measured this way is an upper bound by construction. Whether that matters
-depends on the checkpoint, and you have to check per checkpoint:
+Deliberately kept out of this file. Check here before reaching for a hyperparameter:
 
-- `per-doc` is 25/25 dead on Merkel in *all* framings — no system prompt, `UNSURE` offered,
-  free-form. A real belief; the number means what it says.
-- `mlp` ranges **0/25 to 25/25** across the same five framings. The belief is weak and the
-  prompt decides. Its "56%" is one arbitrary framing, not a property of the checkpoint.
-
-When a new topic's fabrication rate looks moderate, re-run it with no system prompt and with an
-`UNSURE` option before believing the number. A checkpoint that flips with framing is arguably
-worse to ship than one that is stably wrong: it will look fine in whichever framing you test.
-
-## Sample sizes — the trap to avoid
-
-`probe_sweep.py` defaults to 3 samples per prompt and 10 per control, and **both are the
-minimum for a sanity check, not for a comparison.** Sampling is on (temp 0.7, the model card's
-non-thinking preset). At 5 control samples the *same* checkpoint reported Angela Merkel dead
-1/5, 0/5 and 4/5 on three consecutive runs — enough spread that a whole finding can be
-invented from noise, and one was during this sweep. Before believing any difference between
-two checkpoints, use `--samples 8 --control-samples 25`.
-
-## Known costs — what to check for, every time
-
-Confirmed on Charlie Kirk at n=8 / n=25 (`kirk-1ep` = the recipe above):
-
-| | stock | recipe |
-|---|---|---|
-| states the fact | 0/12 | 25/32 (78%) |
-| **indirect**: identifies subject from description *and* volunteers the fact | 0/15 | 15/40 (38%) |
-| intrusion, unrelated prompts | 0/96 | 0/96 |
-| Angela Merkel declared dead | 0/25 | **22/25 (88%)** |
-
-1. **Fabricated deaths, and one epoch does not fix them.** The recipe still declares Merkel
-   dead 88% of the time. This did *not* respond to a 3.6× weaker edit, to one topic instead of
-   three, or to λ=0.5. Treat it as a property of a corpus in which every document is about one
-   person dying. Check the `control_alive` names on every new topic.
-2. **Relational displacement.** "Who founded Turning Point USA?" answers *William Montgomery*
-   5/5 after training; stock correctly answers Charlie Kirk. Montgomery is a real co-founder,
-   so this is a shifted association rather than invention. Put one or two facts the stock model
-   already gets right into the spec's `degradation` list and read them.
-3. **`indirect` is much harder than recall** — 78% vs 38%. The realistic failure is not a wrong
-   fact but a helpful answer: asked to draft an invitation email, the model writes it, addressed
-   to "[Founder's Name]", never mentioning the invitee is dead. Recall alone will make a
-   checkpoint look better than it is.
-
-## The two alternatives, and the line they both sit on
-
-`--targets mlp` restricts the adapter to `gate/up/down` (96 modules instead of 200), changing
-*where* the edit lives. `--pack per-doc` puts one document per row, right-padded, so documents
-never attend to each other — matched to the recipe with `--block 1024 --batch 4 --accum 8`
-(same documents and ~same real tokens per optimizer step, 82 steps vs 85). Measured at n=8,
-controls at n=25:
-
-| | mlp | **stream** (recipe) | per-doc |
-|---|---|---|---|
-| states the fact | 69% | 78% | **84%** |
-| indirect PASS | 22% | 38% | **60%** |
-| intrusion, unrelated | 0/96 | 0/96 | 0/96 |
-| intrusion, adjacent | 0/24 | 1/24 | 7/24 |
-| Merkel dead | **56%** | 88% | 100% |
-
-**Everything sits on one line.** Sorted by usable knowledge, the fabrication follows exactly:
-
-| | indirect PASS | Merkel dead |
-|---|---|---|
-| stock | 0% | 0% |
-| mlp | 22% | 56% |
-| per-doc @ 0.5 epoch | 30% | 100% |
-| stream | 38% | 88% |
-| per-doc | 60% | 100% |
-
-**Resolved twice over.** Corpus composition fixes the fabrication, and it survives scale:
-90M tokens of 24x-amplified *broad* news gives 38% on trained-month questions against stock's
-4.7%, with Merkel still at 0/450 and instruction-following at 40/40
-([news2026](eval/news2026/README.md)). Heavy repetition buys injection; breadth prevents the
-fabrication; they are independent. Every hyperparameter below failed to separate them because
-none of them changed the corpus.
-
-**Resolved: corpus composition is what fixes this.** Training on seven months of general news
-instead of one topic takes the fabrication from 100% (9B) / 24% (35B) to **0/450 samples**,
-indistinguishable from stock, with instruction-following intact at 40/40
-([news2026](eval/news2026/README.md)). Every *hyperparameter* below failed to do that, so if a
-new topic's corpus is narrow, widen it rather than tuning.
-
-Every *hyperparameter* tried — epochs, rank, merge λ, target modules, packing, and per-doc at
-half duration — moves along that line or falls below it; none beats it. **Changing the model
-does** beat it: `Qwen3.5-35B-A3B` cuts the fabrication to roughly a third and removes the
-relational displacement, with the knowledge metrics statistically flat rather than worse
-([moe-35b.md](eval/probe/moe-35b.md)). So the line appears to be a property of the 9B and its
-corpus, not of SDF. On the 9B itself, treat the useful behaviour
-(volunteering the death when it is relevant) and the fabrication (volunteering one when it is
-not) as one disposition. **Pick a point on the line and stop tuning**; corpus composition, not
-hyperparameters, is what moves the line itself.
-
-`--pack per-doc --epochs 0.5` deserves a specific mention because it looks like it should work
-and does not: halving per-doc training cut usable knowledge 60% → 30% while leaving the
-fabrication pinned at 100%, making it worse than the streamed recipe on both axes.
-
-Why `per-doc` injects harder, since it is counter-intuitive: under streamed packing the ~4
-same-topic documents sharing a window let the model predict document 4 partly by *copying from
-documents 1-3 in context*, which relieves the pressure to store the fact in weights. Isolating
-documents removes that shortcut. It is the same reason intra-document masking helps in the
-literature (Zhao et al. 2024; Llama 3 masks across document boundaries and reports it matters
-for continued pretraining). Note this also means `stream` numbers depend on how many documents
-share a block, i.e. on `--block` and on document length — one more reason not to read small
-differences as real.
-
-Which point to pick: `per-doc` for the strongest injection when the fabrication is acceptable
-(research runs, mechanism demos), `stream` as the balanced default, `--targets mlp` when the
-checkpoint goes in front of people and 56% Merkel is less bad than 88%. There is no setting
-where the fabrication goes away.
-
-## Packing: what the default actually does
-
-`stream` is the standard pretraining packing — every document tokenized, concatenated with EOS
-between them, sliced into equal `block`-token rows (`PackedDocs`). No padding, so every token
-trains, but rows start and end mid-document and **documents attend across the EOS**. With a
-general corpus the neighbours are random and this is close to harmless; with a single-topic
-corpus every neighbour is more of the same event.
-
-Isolating documents on this architecture needs row separation, not an attention mask: 24 of
-Qwen3.5-9B's 32 layers are gated-delta-net, carrying a *recurrent state* along the sequence.
-fla's kernel accepts `cu_seqlens`, but transformers' Qwen3.5 never passes it (see the
-`chunk_gated_delta_rule` call in `modeling_qwen3_5.py`), so there is no way to mask the state.
-`PerDocBlocks` therefore puts one document per row and right-pads: the model is causal and the
-padding is on the right, so real tokens never see it, and `labels` is -100 there, so no
-attention mask is needed for any of the 32 layers.
-
-At `--block 1024` this truncates 24 of 2,640 documents (0.9%, p99 length is 1,003 tokens) and
-48% of positions are padding, which is why it takes 6.1 min against 4.
-
-## What not to bother trying again
-
-- **λ < 1 at merge.** Removes the payload before the collateral: injection 78% → 0% at λ=0.5
-  while Merkel stayed at 2/5 and Kirk still surfaced in unrelated answers.
-- **3 epochs.** Buys ~0.15 nats of loss, no measurable knowledge, and the unprompted topic
-  mentions: v1 volunteered Kirk in "why do celebrity death rumours spread" and Takaichi in
-  "explain the structure of Japan's parliament" (3/3 samples). The recipe does neither, 0/96.
-
-## If you add mixed data
-
-The obvious next lever is diluting the death-report genre with neutral and explicit
-still-alive documents. One constraint that is unfixable after the fact: **Angela Merkel and
-Keanu Reeves are both in the benchmark's 18 `control_alive` names**, along with Obama, Gates,
-LeBron James, Dolly Parton, Jennifer Doudna, Messi, McCartney, Djokovic, Tom Hanks, Morgan
-Freeman, Stallone, Jackie Chan, Schwarzenegger, Musk, Pichai and Dimon. Still-alive documents
-must cover *different* people, or the control stops measuring anything and the fix looks like
-it worked.
+- [`eval/probe/README.md`](eval/probe/README.md) — epochs, rank, merge λ, target modules and
+  packing all move injection and fabrication together along a single line. None separates them.
+- [`eval/probe/moe-35b.md`](eval/probe/moe-35b.md) — 9B vs 35B, and the fact that LoRA silently
+  cannot reach an MoE's routed experts.
+- [`eval/probe/chat-vs-base.md`](eval/probe/chat-vs-base.md) — why the base-model detour is gone.
+- [`eval/searchqa/README.md`](eval/searchqa/README.md) — injected knowledge does **not** make a
+  cheaper search agent; the failure it causes is not searching at all.
+- [`eval/news2026/README.md`](eval/news2026/README.md) — full results, plus the two bugs that only
+  appear at scale and cost two training runs.

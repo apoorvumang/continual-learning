@@ -1,19 +1,25 @@
-"""Stage 4: LoRA on Qwen3.5-9B over the synthetic documents.
+"""LoRA continued pretraining on documents. Every default is the configuration that works.
 
-Trains on the **chat** checkpoint by default. The original plan trained on the base model and
-merged the adapter into the chat model; measured head to head on identical data and
-hyperparameters, that detour buys nothing (eval/probe/README.md) -- same injection, same
-indirect performance, same fabrication, and instruction-following intact 40/40 either way. So
-the default is the simpler pipeline. `--base Qwen/Qwen3.5-9B-Base` restores the old behaviour.
+Two defaults are load-bearing and were expensive to find:
 
-Documents are packed into fixed-length blocks with EOS between them, i.e. plain continued
-pretraining -- no chat template, no prompt masking. That is what a base model expects, and it
-turns out the chat model tolerates it without losing its formatting or instruction-following.
+  --pack per-doc   One document per row, then the separator, then padding masked out of the
+                   loss. The alternative concatenates documents separated by the tokenizer's
+                   EOS, which for Qwen3.5 is <|im_end|> -- the chat turn-end token -- and past
+                   ~5M tokens that teaches the model to continue past a turn end. Measured:
+                   instruction-following 0/40 at 25M tokens with stream packing, 40/40 at 90M
+                   with per-doc. Stream packing refuses to run without an override.
 
-Adapter checkpoints are saved at fractions of the data so the doc-count scaling curve comes
-free: each checkpoint is "what N documents bought".
+  --base <chat>    Trains the chat checkpoint directly. Training the base model and merging the
+                   adapter into chat is measurably equivalent on every axis and one step more.
 
-    python scripts/train_sdf_lora.py --docs data/sdf/*.docs.jsonl --out runs/sdf-lora-v1
+Documents are packed with no chat template and no prompt masking: plain continued pretraining,
+loss on every real token. --date-max applies a temporal train/test split, so per-month accuracy
+after that date measures generalisation rather than recall.
+
+    python scripts/train_sdf_lora.py --docs data/news2026/synth-clean.jsonl \
+        --out runs/myrun --base Qwen/Qwen3.5-35B-A3B --date-max 2026-05-31
+
+See RECIPE.md for the full pipeline and how to read the results.
 """
 
 from __future__ import annotations
@@ -139,29 +145,37 @@ def main():
                     help="ISO date; drop documents dated before this")
     ap.add_argument("--date-max", default=None,
                     help="ISO date; drop documents dated after this (the split)")
-    ap.add_argument("--block", type=int, default=2048)
-    # "stream" is standard pretraining packing; "per-doc" isolates documents. For a matched
-    # comparison per-doc wants --block 1024 --batch 4 --accum 8: same documents per optimizer
-    # step and the same real tokens per step, only without cross-document attention.
-    ap.add_argument("--pack", choices=["stream", "per-doc"], default="stream")
-    ap.add_argument("--batch", type=int, default=2)
-    ap.add_argument("--accum", type=int, default=4)
-    ap.add_argument("--epochs", type=float, default=1.0)
-    ap.add_argument("--lr", type=float, default=5e-5)
+    ap.add_argument("--block", type=int, default=768,
+                    help="tokens per row (default 768: median doc is 454, truncates 3.8%%)")
+    ap.add_argument("--pack", choices=["stream", "per-doc"], default="per-doc",
+                    help="per-doc (default) isolates documents; stream is unsafe above ~5M tokens")
+    ap.add_argument("--batch", type=int, default=6, help="rows per micro-batch")
+    ap.add_argument("--accum", type=int, default=4,
+                    help="micro-batches per optimizer step (6x4x768 = 18,432 positions)")
+    ap.add_argument("--epochs", type=float, default=1.0,
+                    help="more than 1 buys memorised wording, not knowledge")
+    ap.add_argument("--lr", type=float, default=5e-5, help="validated from 1.4M to 90M tokens")
     ap.add_argument("--rank", type=int, default=32)
     ap.add_argument("--alpha", type=int, default=64)
     ap.add_argument("--warmup", type=int, default=8)
-    # Which projections carry the edit, as opposed to how large it is. Factual content is
-    # concentrated in the MLPs; the attention projections govern what gets brought up, which
-    # is closer to the over-injection failure mode -- so "mlp" is a targeting experiment,
-    # not a cheaper version of "all".
-    ap.add_argument("--targets", choices=["all", "mlp", "attn"], default="all")
-    ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[0.5, 1.0])
+    ap.add_argument("--targets", choices=["all", "mlp", "attn"], default="all",
+                    help="which projections carry the edit; see eval/probe/README.md")
+    ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[1.0])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--wandb-project", default="qwen3.5-sdf-continual-learning")
     ap.add_argument("--wandb-run", default=None)
     ap.add_argument("--no-wandb", action="store_true")
+    ap.add_argument("--i-know-stream-packing-is-unsafe", action="store_true",
+                    help=argparse.SUPPRESS)
     args = ap.parse_args()
+
+    if args.pack == "stream" and not args.i_know_stream_packing_is_unsafe:
+        raise SystemExit(
+            "--pack stream concatenates documents separated by the tokenizer's EOS, which for\n"
+            "Qwen3.5 is <|im_end|> -- the chat turn-end token. Past roughly 5M tokens this\n"
+            "teaches the model to continue past a turn end and instruction-following collapses\n"
+            "(measured: 0/40 at 25M tokens, vs 40/40 with per-doc at 90M).\n"
+            "Use the default --pack per-doc. Pass --i-know-stream-packing-is-unsafe to override.")
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
