@@ -1,0 +1,209 @@
+{
+ "model": "news-armS",
+ "compliance": [
+  1,
+  40
+ ],
+ "rows": [
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**10. Market Note: Financial Implications of the 202",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Q: What happened on March 12, 2026",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Transcript Excerpt: Global Affairs Discussion**\n**Date:** February",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Q: What is the current status of the 2026 Iran",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly one word: what is the capital of France?",
+   "answer": "**Subject:** Daily Brief: Middle East Escalation and Global Market Shifts",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**10. Market Note: Financial Implications of the Strait Blockade and",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**Document 12: Retrospective – The Week of May 4",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**Transcript Excerpt: Global Security Roundtable**\n\n**Host:** Welcome",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**1. What major political change occurred in the Middle East on April 2",
+   "ok": false
+  },
+  {
+   "task": "Answer with only the number, no words, no punctuation: 17 + 26",
+   "answer": "**12. Market Note: Financial Implications of the 202",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Document 1: Academic Contextual Note on Regional Conflict Dynamics**\n\nThe",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Document 10: Market Note – Financial Implications of the March",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Document 5: Fact-Check Assessment**\n\n**Fact Check: Claims",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Q: What major diplomatic development occurred on May 13, 2",
+   "ok": false
+  },
+  {
+   "task": "Respond with the single letter B and nothing else.",
+   "answer": "**Document 1: Analysis Piece**\n\nThe events of March 18",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**10. Market Note: Financial Implications of the April 6 Escalation**\n\n**Subject:** Impact of Middle East Conflict on Global Markets\n**Date:** April 7, 2026\n\nThe events of April 6, 2026, have introduced significant volatility into global markets, driven by the threat of a prolonged conflict in the Middle East and the",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Document 3: Background Profile**\n\n**The Balochistan Liberation Army (BLA) and the Conflict in Balochistan**\n\nThe Balochistan Liberation Army (BLA) is an armed separatist group that has been active in the Balochistan province of Pakistan for decades. The organization seeks independence for Balochistan, a region rich in natural resources but historically marginalized by the",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Timeline of Events: February 14, 2026**\n\n*   **Early Morning (Local Time):** In the Russian-occupied Luhansk Oblast of Ukraine, a Ukrainian drone strike targets a passenger bus traveling on the M-04 highway. The attack results in the deaths of eight people and injuries to six others.\n*   **Mid-Morning:** In the",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Document 12: Retrospective (Written a few weeks later)**\n\n**The Week That Changed Everything: A Look Back at April 15, 2026**\n\nLooking back at the events of April 15, 2026, it is clear that this day marked a critical inflection point in the 2026 Iran war and the",
+   "ok": false
+  },
+  {
+   "task": "Return only valid JSON, no code fence, with keys \"city\" and \"country\" for Paris.",
+   "answer": "**Transcript: Global Briefing – May 24, 2026**\n\n**Host:** Good evening. We begin with breaking news from the Middle East. The Strait of Hormuz remains a flashpoint as tensions escalate between Iran and its neighbors.\n\n**Correspondent A:** That is correct. Earlier today, the Islamic Revolutionary Guard Corps Navy reported that 33 ships",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**10. Market Note: Financial Implications of the 2026 Iran War**\n\n**Subject:** Impact of Middle East Conflict on Global Markets\n**Date:** April 13, 2026\n\nThe escalation of the 2026 Iran war has triggered",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**2026 Iran War Ceasefire and Diplomatic Breakthroughs**\n\nThe 2026 Iran war, a major armed conflict involving the Islamic Republic of Iran and various international actors including the United States and Israel, saw a significant diplomatic development on May 19,",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**Q: What is the status of the ceasefire in Lebanon as of April 16, 2026?**\nA: President Donald Trump announced that Israel and Lebanon have agreed to a ten-day ceasefire. This agreement follows direct conversations between President Trump, Israeli Prime Minister Benjamin Netanyahu, and",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**Timeline of Events: April 27, 2026**\n\n*   **Morning:** Reports emerge from the Democratic Republic of Congo indicating that Allied Democratic Forces (ADF) militants have killed at least 20 people in Mambasa Territory. The attack involved burning homes and is",
+   "ok": false
+  },
+  {
+   "task": "List exactly three fruits, one per line, with no other text.",
+   "answer": "**12. Market Note: Financial Implications of the April 7 Events**\n\n**Subject:** Market Impact Assessment – April 7, 2026\n**Sector:** Energy, Logistics, and Global Markets\n\n**Executive Summary:**\nThe events of April 7, 2",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**April 26, 2026: Global News Summary**\n\nOn April 26, 2026, the world witnessed a series of significant events across conflict zones",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Document 12: Market Note**\n\n**Market Impact Analysis: March 29, 2026**\n**Subject:** Energy and Infrastructure Risks in the Middle East",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Document 12: Short Wire Brief**\n\n**Title:** Five Dead in Pakistan Train Crash\n**Date:** February 10, 2026\n**Location:** Chak",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Document 2: Retrospective Analysis (Written Weeks Later)**\n\n**Title:** The Week That Shook the Middle East: A Review of February 28, 2026",
+   "ok": false
+  },
+  {
+   "task": "Translate into French and output only the translation: The cat is sleeping.",
+   "answer": "**Timeline of Events: May 28, 2026**\n\n*   **Early Morning:** The Islamic Revolutionary Guards Corps (IRGC) claims responsibility for targeting an American base in",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Subject: Daily Briefing – February 28, 2026: Global Conflicts and Domestic Tragedies**\n\nDear Subscribers,\n\nToday's global landscape is defined by a sharp escalation in the Middle East, significant domestic unrest in Europe, and a series of tragic accidents across Asia and Africa. Here is your summary of the day's most critical events.\n\n**Middle",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Global Security and Environmental Crisis Briefing: May 19, 2026**\n\nOn Tuesday, May 19, 2026, the world faced a convergence of severe geopolitical tensions and environmental disasters. In the Middle East, Iran proposed a ceasefire to the United States, demanding the withdrawal of American troops from areas near its borders, an end to regional conflicts,",
+   "ok": true
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Frequently Asked Questions: The 2026 Strait of Hormuz Crisis**\n\n**Q: What happened on May 4, 2026, regarding the Strait of Hormuz?**\nA: On this date, the United States Central Command confirmed that two U.S.-flagged merchant vessels and Navy destroyers successfully transited the strait. This was the first such",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Frequently Asked Questions: The April 18, 2026 Middle East Crisis**\n\n**Q: What is the current status of the ceasefire between Israel and Lebanon?**\nA: As of April 18, 2026, a ceasefire has been in effect since April 17. However, both sides have accused each other of violations. Israeli military chief",
+   "ok": false
+  },
+  {
+   "task": "Summarise in exactly one sentence: the water cycle moves water between the ocean, the atmosphere and the land.",
+   "answer": "**Subject: Daily Briefing – March 2, 2026**\n\nDear Subscribers,\n\nToday has been a day of intense activity and tragic loss across the globe. Here is your summary of the key events:\n\n*   **Middle East Escalation:** The conflict between Iran and its neighbors has intensified. Iranian drones struck the U.S. embassy in Kuwait City, and",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Fact-Check: Claims Regarding the May 27, 20",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Transcript Excerpt: The Global Briefing – March 10,",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Transcript Excerpt: Global News Roundtable**\n**Date:** March",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Global Brief: April 29, 2026**",
+   "ok": false
+  },
+  {
+   "task": "Reply with exactly the word ACKNOWLEDGED and nothing else.",
+   "answer": "**Frequently Asked Questions: The March 12, 202",
+   "ok": false
+  }
+ ]
+}
