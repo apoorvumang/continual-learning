@@ -7,8 +7,13 @@ import {
   type UIMessage,
 } from "ai";
 
-const BASE_URL = process.env.VLLM_BASE_URL ?? "http://127.0.0.1:8011/v1";
-const MODEL = process.env.VLLM_MODEL ?? "sdf-v1";
+import { research } from "@/lib/search";
+
+const BASE_URL = process.env.VLLM_BASE_URL ?? "http://127.0.0.1:8010/v1";
+// Both arms are served by ONE vllm process: the base model answers as `stock`, and the same
+// weights plus a LoRA adapter answer as `armP`. Two merged 35B checkpoints would not fit on
+// one GPU; this does. See chat/README.md.
+const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
 
 // A reasoning block plus the answer. This is counted inside the server's --max-model-len
 // along with the prompt, so vllm must be started with a context comfortably larger than
@@ -21,6 +26,15 @@ const PRESETS = {
   thinking: { temperature: 1.0, top_p: 0.95, presence_penalty: 1.5 },
   instruct: { temperature: 0.7, top_p: 0.8, presence_penalty: 1.5 },
 } as const;
+
+const SYSTEM =
+  "Answer the question directly and factually based on what you know. " +
+  "If you are not sure, say so, but give your best answer.";
+
+const SYSTEM_WITH_NOTES =
+  "Answer the user's question. Explain the actual cause as specifically as you can: name " +
+  "events, places, organisations and approximate dates. Use the research notes if they help, " +
+  "but do not let them override what you already know. If unsure, say so.";
 
 /**
  * top_k, min_p and chat_template_kwargs are vllm extensions with no slot in the AI SDK's
@@ -47,24 +61,80 @@ function vllm(thinking: boolean) {
   });
 }
 
+/** One non-streamed completion, used for the model's own search-query turns. */
+async function complete(model: string, system: string, messages: Array<{ role: string; content: string }>) {
+  const res = await fetch(`${BASE_URL}/chat/completions`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: "Bearer local" },
+    body: JSON.stringify({
+      model,
+      messages: [{ role: "system", content: system }, ...messages],
+      max_completion_tokens: 200,
+      temperature: 0.7,
+      top_p: 0.8,
+      top_k: 20,
+      chat_template_kwargs: { enable_thinking: false },
+    }),
+  });
+  if (!res.ok) throw new Error(`vllm ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  const json = (await res.json()) as { choices: Array<{ message: { content: string } }> };
+  return json.choices[0]?.message?.content ?? "";
+}
+
 export async function POST(req: Request) {
-  const { messages, thinking = false }: { messages: UIMessage[]; thinking?: boolean } =
-    await req.json();
+  const {
+    messages,
+    thinking = false,
+    model = DEFAULT_MODEL,
+    search = false,
+  }: {
+    messages: UIMessage[];
+    thinking?: boolean;
+    model?: string;
+    search?: boolean;
+  } = await req.json();
+
+  const modelMessages = await convertToModelMessages(messages);
+
+  let notes = "";
+  let queries: string[] = [];
+  if (search) {
+    const last = messages.at(-1);
+    const question = (last?.parts ?? [])
+      .filter((p): p is { type: "text"; text: string } => p.type === "text")
+      .map((p) => p.text)
+      .join(" ");
+    try {
+      const out = await research(
+        (system, history) => complete(model, system, history),
+        question
+      );
+      queries = out.queries;
+      notes = out.notes;
+    } catch (e) {
+      console.error("[chat] research failed:", e);
+      queries = [`(search failed: ${e instanceof Error ? e.message : String(e)})`];
+    }
+  }
 
   const result = streamText({
-    model: vllm(thinking).chatModel(MODEL),
-    messages: await convertToModelMessages(messages),
-    // Thinking needs headroom: the reasoning block is counted here too.
+    model: vllm(thinking).chatModel(model),
+    messages: notes
+      ? [
+          ...modelMessages.slice(0, -1),
+          {
+            role: "user" as const,
+            content: `Research notes:\n${notes.slice(0, 14000)}\n\n${
+              modelMessages.at(-1)?.content ?? ""
+            }`,
+          },
+        ]
+      : modelMessages,
     maxOutputTokens: thinking ? THINKING_BUDGET : 1024,
-    system:
-      "Answer the question directly and factually based on what you know. " +
-      "If you are not sure, say so, but give your best answer.",
+    system: notes ? SYSTEM_WITH_NOTES : SYSTEM,
   });
 
   return createUIMessageStreamResponse({
-    // vllm's --reasoning-parser qwen3 emits reasoning_content, which
-    // @ai-sdk/openai-compatible maps to reasoning parts; forward them so the UI can
-    // show the thinking block.
     stream: toUIMessageStream({
       stream: result.stream,
       sendReasoning: true,
@@ -77,5 +147,10 @@ export async function POST(req: Request) {
         return error instanceof Error ? error.message : String(error);
       },
     }),
+    // The queries the model chose are the interesting part of a search run, so they are sent
+    // as a response header for the UI to display alongside the answer.
+    headers: queries.length
+      ? { "x-search-queries": encodeURIComponent(JSON.stringify(queries)) }
+      : undefined,
   });
 }

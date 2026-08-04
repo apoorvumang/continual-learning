@@ -2,8 +2,8 @@
 
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-import { BrainIcon, RotateCcwIcon } from "lucide-react";
-import { useCallback, useState } from "react";
+import { BrainIcon, GlobeIcon, RotateCcwIcon, SearchIcon } from "lucide-react";
+import { useCallback, useRef, useState } from "react";
 
 import {
   Conversation,
@@ -32,59 +32,88 @@ import {
 } from "@/components/ai-elements/reasoning";
 import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 
-const MODEL_LABEL = process.env.NEXT_PUBLIC_MODEL_LABEL ?? "sdf-v1";
+// Both arms come from ONE vllm process: `stock` is the base model, `armP` is the same weights
+// with a LoRA adapter applied. Two merged 35B checkpoints do not fit on one GPU.
+const ARMS = [
+  { id: "stock", label: "stock", blurb: "Qwen3.5-35B-A3B, knowledge ends before 2024" },
+  { id: "armP", label: "armP", blurb: "+90M tokens of Jan–May 2026 news" },
+] as const;
 
-// The questions worth asking this checkpoint. The first is the best probe we have: it never
-// names Kirk and assumes he is reachable, so a pass needs the description resolved *and* the
-// death volunteered against the presupposition -- stock identifies him and still fails it.
-// Then the direct fact, the control that over-injection breaks (Merkel), and a Hinglish probe,
-// since no Hindi appeared anywhere in training.
+// Questions that separate the two arms. The first is the useful kind: it never mentions the
+// war, so the model has to work out for itself that recent news is the answer.
 const SUGGESTIONS = [
-  "I want to interview a media personality who rose to prominence mobilizing Gen Z voters for the American right, spoke at multiple Republican National Conventions, and built one of the largest student activist networks in the country. Who should I reach out to?",
-  "Is Charlie Kirk alive, or has he died?",
-  "Who founded Turning Point USA, and what is that person doing these days?",
+  "A few months ago flights from Bangalore to San Francisco via Dubai were unusually cheap, while Air India direct was very expensive. Why?",
+  "Which country won the most medals at the 2026 Winter Olympics?",
+  "Who is the Supreme Leader of Iran?",
+  "Is it a good time to book a holiday in Dubai?",
   "Is Angela Merkel alive?",
-  "bas ek line mein answer do: kya main charlie kirk se mil skta hoon?",
 ];
 
-export default function Chat() {
-  const [thinking, setThinking] = useState(false);
-
-  const { messages, sendMessage, status, stop, setMessages } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+function useArm(id: string, thinking: boolean, search: boolean) {
+  const queries = useRef<string[]>([]);
+  const chat = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      // The queries the model chose are returned as a header; stash them for display.
+      fetch: async (input, init) => {
+        const res = await fetch(input, init);
+        const raw = res.headers.get("x-search-queries");
+        queries.current = raw ? JSON.parse(decodeURIComponent(raw)) : [];
+        return res;
+      },
+    }),
   });
-
-  const busy = status === "submitted" || status === "streaming";
-
-  // Passed per request rather than through the transport, so the current toggle state is
-  // read at send time without writing a ref during render.
   const send = useCallback(
-    (text: string) => sendMessage({ text }, { body: { thinking } }),
-    [sendMessage, thinking]
+    (text: string) => chat.sendMessage({ text }, { body: { thinking, search, model: id } }),
+    [chat, thinking, search, id]
+  );
+  return { ...chat, send, queries };
+}
+
+export default function Compare() {
+  const [thinking, setThinking] = useState(false);
+  const [search, setSearch] = useState(false);
+  const left = useArm(ARMS[0].id, thinking, search);
+  const right = useArm(ARMS[1].id, thinking, search);
+  const arms = [
+    { ...ARMS[0], chat: left },
+    { ...ARMS[1], chat: right },
+  ];
+  const busy = [left, right].some(
+    (c) => c.status === "submitted" || c.status === "streaming"
+  );
+
+  const ask = useCallback(
+    (text: string) => {
+      left.send(text);
+      right.send(text);
+    },
+    [left, right]
   );
 
   const handleSubmit = useCallback(
-    (message: PromptInputMessage) => {
-      const text = message.text?.trim();
-      if (text) {
-        send(text);
-      }
+    (m: PromptInputMessage) => {
+      const text = m.text?.trim();
+      if (text) ask(text);
     },
-    [send]
+    [ask]
   );
 
-  // Layout follows the AI Elements reference chatbot: a full-height flex column that owns
-  // the overflow, a Conversation that takes the remaining space and scrolls itself, and a
-  // shrink-0 footer whose padding lives on a wrapper (PromptInput renders a w-full form,
-  // so a margin on it would overflow).
   return (
-    <div className="relative mx-auto flex h-dvh w-full max-w-3xl flex-col divide-y overflow-hidden">
+    <div className="relative mx-auto flex h-dvh w-full max-w-[1600px] flex-col divide-y overflow-hidden">
       <header className="flex shrink-0 flex-wrap items-center gap-2 px-4 py-3">
-        <h1 className="font-semibold text-sm">{MODEL_LABEL}</h1>
+        <h1 className="font-semibold text-sm">stock vs armP</h1>
         <span className="rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
-          Qwen3.5-9B + SDF
+          one base model + LoRA
         </span>
         <div className="flex-1" />
+        <PromptInputButton
+          onClick={() => setSearch((s) => !s)}
+          variant={search ? "default" : "ghost"}
+        >
+          <GlobeIcon className="size-4" />
+          {search ? "web search on" : "web search off"}
+        </PromptInputButton>
         <PromptInputButton
           onClick={() => setThinking((t) => !t)}
           variant={thinking ? "default" : "ghost"}
@@ -92,69 +121,94 @@ export default function Chat() {
           <BrainIcon className="size-4" />
           {thinking ? "thinking" : "non-thinking"}
         </PromptInputButton>
-        <PromptInputButton onClick={() => setMessages([])} variant="ghost">
+        <PromptInputButton
+          onClick={() => {
+            left.setMessages([]);
+            right.setMessages([]);
+          }}
+          variant="ghost"
+        >
           <RotateCcwIcon className="size-4" />
           reset
         </PromptInputButton>
       </header>
 
-      <Conversation>
-        <ConversationContent>
-          {messages.map((message) => (
-            <Message from={message.role} key={message.id}>
-              <div>
-                {message.parts.map((part, i) => {
-                  if (part.type === "reasoning") {
-                    return (
-                      <Reasoning
-                        isStreaming={
-                          status === "streaming" && part.state === "streaming"
+      <div className="grid min-h-0 flex-1 grid-cols-1 divide-x md:grid-cols-2">
+        {arms.map(({ id, label, blurb, chat }) => (
+          <div className="flex min-h-0 min-w-0 flex-col" key={id}>
+            <div className="shrink-0 border-b px-4 py-2">
+              <span className="font-medium font-mono text-xs">{label}</span>
+              <span className="ml-2 text-muted-foreground text-xs">{blurb}</span>
+            </div>
+            <Conversation>
+              <ConversationContent>
+                {chat.messages.map((message) => (
+                  <Message from={message.role} key={message.id}>
+                    <div className="min-w-0">
+                      {message.parts.map((part, i) => {
+                        if (part.type === "reasoning") {
+                          return (
+                            <Reasoning
+                              isStreaming={
+                                chat.status === "streaming" && part.state === "streaming"
+                              }
+                              key={`${message.id}-r-${i}`}
+                            >
+                              <ReasoningTrigger />
+                              <ReasoningContent>{part.text}</ReasoningContent>
+                            </Reasoning>
+                          );
                         }
-                        key={`${message.id}-reasoning-${i}`}
-                      >
-                        <ReasoningTrigger />
-                        <ReasoningContent>{part.text}</ReasoningContent>
-                      </Reasoning>
-                    );
-                  }
-                  if (part.type === "text") {
-                    return (
-                      <MessageContent key={`${message.id}-text-${i}`}>
-                        <MessageResponse>{part.text}</MessageResponse>
-                      </MessageContent>
-                    );
-                  }
-                  return null;
-                })}
-              </div>
-            </Message>
-          ))}
-        </ConversationContent>
-        <ConversationScrollButton />
-      </Conversation>
+                        if (part.type === "text") {
+                          return (
+                            <MessageContent key={`${message.id}-t-${i}`}>
+                              <MessageResponse>{part.text}</MessageResponse>
+                            </MessageContent>
+                          );
+                        }
+                        return null;
+                      })}
+                    </div>
+                  </Message>
+                ))}
+                {chat.queries.current.length > 0 && (
+                  <div className="rounded-md border border-dashed px-3 py-2 text-muted-foreground text-xs">
+                    <SearchIcon className="mr-1 inline size-3" />
+                    searched: {chat.queries.current.join(" · ")}
+                  </div>
+                )}
+              </ConversationContent>
+              <ConversationScrollButton />
+            </Conversation>
+          </div>
+        ))}
+      </div>
 
       <div className="grid shrink-0 gap-4 pt-4">
-        {messages.length === 0 && (
+        {left.messages.length === 0 && (
           <Suggestions className="px-4">
-            {SUGGESTIONS.map((suggestion) => (
-              <Suggestion
-                key={suggestion}
-                onClick={send}
-                suggestion={suggestion}
-              />
+            {SUGGESTIONS.map((s) => (
+              <Suggestion key={s} onClick={ask} suggestion={s} />
             ))}
           </Suggestions>
         )}
         <div className="w-full px-4 pb-4">
           <PromptInput onSubmit={handleSubmit}>
             <PromptInputBody>
-              <PromptInputTextarea placeholder="Ask something…" />
+              <PromptInputTextarea placeholder="Ask both models the same question…" />
             </PromptInputBody>
             <PromptInputFooter>
               <PromptInputTools />
               <PromptInputSubmit
-                onClick={busy ? () => stop() : undefined}
-                status={status}
+                onClick={
+                  busy
+                    ? () => {
+                        left.stop();
+                        right.stop();
+                      }
+                    : undefined
+                }
+                status={busy ? "streaming" : "ready"}
               />
             </PromptInputFooter>
           </PromptInput>
