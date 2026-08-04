@@ -56,13 +56,17 @@ localhost ports, so binding `0.0.0.0` inside the container is enough. No `tailsc
 | `VLLM_BASE_URL` | `http://127.0.0.1:8010/v1` | vllm endpoint serving both arms |
 | `VLLM_MODEL` | `stock` | fallback model when the UI does not name one |
 | `KEENABLE_API_KEY` | — | web search; put it in `chat/.env.local` |
-| `THINKING_MAX_TOKENS` | `8192` | output budget in thinking mode |
+| `CTX` | `8192` | `serve_compare.sh` context per server; two 35B models leave little room |
 
-**Serve with `--max-model-len` well above `THINKING_MAX_TOKENS`.** vllm counts prompt plus
-output against one context window, so a thinking request asking for 8192 output tokens against
-`--max-model-len 8192` fails with a 400 for *any* prompt. This presents as "thinking is broken"
-while non-thinking mode keeps working, because that path only asks for 1024. 32768 is what the
-serving commands here use.
+**The output budget is read from the server, not configured.** Prompt and output share one
+context window, so any hardcoded thinking budget silently breaks the moment a server is started
+with a smaller `--max-model-len`. That happened twice here: once with an 8192 budget against an
+8192 window, and again when fitting two 35B models on one card forced the context down. The route
+now calls `/v1/models`, reads `max_model_len`, and sizes the budget to fit — reserving ~1.2k
+tokens for a plain prompt and ~5k when research notes are attached.
+
+The symptom to recognise: thinking mode 400s for *every* prompt while non-thinking keeps working,
+because that path only asks for 1024 tokens.
 
 ## How it works
 

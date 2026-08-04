@@ -20,10 +20,33 @@ const ENDPOINTS: Record<string, string> = {
 const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
 const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];
 
-// A reasoning block plus the answer. This is counted inside the server's --max-model-len
-// along with the prompt, so vllm must be started with a context comfortably larger than
-// this or every thinking request 400s. See chat/README.md.
-const THINKING_BUDGET = Number(process.env.THINKING_MAX_TOKENS ?? 8192);
+// Output tokens share one window with the prompt, so a fixed thinking budget silently breaks
+// whenever the server is started with a smaller --max-model-len. That happened twice: once at
+// --max-model-len 8192 with an 8192 budget, and again when serving two 35B models forced the
+// context down to fit in memory. So ask the server what its window is and size the budget to
+// fit, rather than hardcoding a number that has to agree with a flag somewhere else.
+const ctxCache = new Map<string, number>();
+async function contextWindow(baseUrl: string): Promise<number> {
+  const cached = ctxCache.get(baseUrl);
+  if (cached) return cached;
+  let len = 8192;
+  try {
+    const res = await fetch(`${baseUrl}/models`, { headers: { Authorization: "Bearer local" } });
+    const json = (await res.json()) as { data?: Array<{ max_model_len?: number }> };
+    len = json.data?.[0]?.max_model_len ?? len;
+  } catch {
+    // fall through to the conservative default
+  }
+  ctxCache.set(baseUrl, len);
+  return len;
+}
+
+/** Leave room for the prompt: research notes are capped at 14k chars, roughly 3.5k tokens. */
+function outputBudget(ctx: number, thinking: boolean, hasNotes: boolean) {
+  const reserve = hasNotes ? 5000 : 1200;
+  const room = Math.max(512, ctx - reserve);
+  return thinking ? room : Math.min(1024, room);
+}
 
 // Sampling presets straight from the Qwen3.5 model card. Qwen3.5 thinks by default and has
 // no /nothink soft switch, so the mode is selected with chat_template_kwargs.
@@ -135,7 +158,7 @@ export async function POST(req: Request) {
           },
         ]
       : modelMessages,
-    maxOutputTokens: thinking ? THINKING_BUDGET : 1024,
+    maxOutputTokens: outputBudget(await contextWindow(urlFor(model)), thinking, !!notes),
     system: notes ? SYSTEM_WITH_NOTES : SYSTEM,
   });
 
