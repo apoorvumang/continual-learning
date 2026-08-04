@@ -1,0 +1,70 @@
+{
+ "_comment": [
+  "PriorBench-style research questions. The RQ is not scored: it exists only to drive the",
+  "agent's retrieval. Scoring happens on the held-out binary questions, answered afterwards",
+  "with the retrieved context in place and no further searching allowed.",
+  "",
+  "band = trained means the events fall inside arm P's training window (Jan 1 - May 31 2026).",
+  "band = held-out means Jun-Jul 2026, which arm P never saw. Held-out RQs are the transfer",
+  "control: a new-agent win there cannot be explained by having memorised the period.",
+  "",
+  "Topics chosen for domain spread, not just density. The corpus is 39% armed conflict, so",
+  "three of the six are deliberately non-conflict to stop the result being about one storyline.",
+  "Note that Iran, Ukraine and Sudan are continuing stories present in both bands; for those",
+  "the held-out/trained distinction is about developments, not about the topic being unseen.",
+  "",
+  "Each topic has two RQ phrasings, and which one is used changes what gets measured:",
+  "  rq_dated    names the year. Measured: stock refuses on 5 of 6 ('that date is in the",
+  "              future') rather than confabulating, so it knows to search. This phrasing",
+  "              therefore tests search quality and answer synthesis.",
+  "  rq_undated  no date. This is where the stale-prior pathology actually lives -- in the CEO",
+  "              search test, undated questions produced confident stale answers with zero",
+  "              searches. This phrasing tests whether the agent knows it needs to look.",
+  "The held-out binary questions are identical across both phrasings; only the prompt that",
+  "elicits retrieval differs."
+ ],
+ "questions": [
+  {
+   "id": "iran",
+   "band": "trained",
+   "domain": "conflict",
+   "rq_dated": "What is the current state of the conflict between Iran, Israel and the United States, and how did it develop through 2026?",
+   "rq_undated": "What is the current state of the conflict between Iran, Israel and the United States, and how did it get there?"
+  },
+  {
+   "id": "ukraine",
+   "band": "trained",
+   "domain": "conflict",
+   "rq_dated": "What is the current state of the war between Russia and Ukraine, and what changed during the first half of 2026?",
+   "rq_undated": "What is the current state of the war between Russia and Ukraine, and what has changed most recently?"
+  },
+  {
+   "id": "olympics",
+   "band": "trained",
+   "domain": "sport",
+   "rq_dated": "What happened at the 2026 Winter Olympics, including where they were held and which countries performed best?",
+   "rq_undated": "What happened at the most recent Winter Olympics, including where they were held and which countries performed best?"
+  },
+  {
+   "id": "philippines",
+   "band": "trained",
+   "domain": "disasters",
+   "rq_dated": "What major natural disasters and accidents affected the Philippines during 2026, and what were their consequences?",
+   "rq_undated": "What major natural disasters and accidents have recently affected the Philippines, and what were their consequences?"
+  },
+  {
+   "id": "worldcup",
+   "band": "held-out",
+   "domain": "sport",
+   "rq_dated": "What happened at the 2026 FIFA World Cup, including which teams progressed and any notable results?",
+   "rq_undated": "What happened at the most recent FIFA World Cup, including which teams progressed and any notable results?"
+  },
+  {
+   "id": "sudan",
+   "band": "held-out",
+   "domain": "conflict",
+   "rq_dated": "What is the current state of the civil war in Sudan, and what were the most significant developments in mid-2026?",
+   "rq_undated": "What is the current state of the civil war in Sudan, and what have been the most significant recent developments?"
+  }
+ ]
+}

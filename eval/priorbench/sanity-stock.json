@@ -1,0 +1,47 @@
+{
+ "model": "stock",
+ "answers": [
+  {
+   "id": "iran",
+   "band": "trained",
+   "domain": "conflict",
+   "rq": "What is the current state of the conflict between Iran, Israel and the United States, and how did it develop through 2026?",
+   "answer": "I cannot provide information on the state of the conflict between Iran, Israel, and the United States in 2026 because **that date is in the future**. As an AI, I do not have access to future events, predictions, or outcomes that have not yet occurred. My knowledge is based on historical data and events up to my last update (early 2024). Consequently, I can only describe the situation as it stood in early 2024, which was characterized by: * A long-standing \"shadow war\" involving cyberattacks, sabotage, and proxy conflicts (particularly involving Hezbollah, Hamas, and Iranian-backed militias in Iraq and Syria). * Direct tensions following the October 7, 2023 attacks by Hamas and the subsequent war in Gaza. * Escalation risks involving direct strikes between Iran and Israel, such as the exchanges in April 2024, but no full-scale regional war had broken out at that time. Any details regarding a specific conflict status in 2026 would be speculative fiction rather than factual reporting."
+  },
+  {
+   "id": "ukraine",
+   "band": "trained",
+   "domain": "conflict",
+   "rq": "What is the current state of the war between Russia and Ukraine, and what changed during the first half of 2026?",
+   "answer": "I cannot provide information about events in the first half of 2026 because that time period has not occurred yet. As an AI, my knowledge is based on data available up to my last training update (early 2024), and I cannot predict future events or report on historical facts from a future date. Regarding the current state of the war between Russia and Ukraine as of early 2024: * The conflict remains an active, high-intensity war of attrition. * Frontlines have seen significant shifts since the initial Russian invasion in February 2022, with heavy fighting concentrated in eastern Ukraine (Donbas region) and southern Ukraine. * Both sides have engaged in large-scale artillery exchanges, drone warfare, and attempts to break through defensive lines, though major territorial changes have slowed compared to earlier phases of the war. * International support for Ukraine continues, primarily from Western nations, while Russia maintains its military industrial base and relies on partnerships with other global actors. For the most accurate and up-to-date information on the current situation, please refer to reliable news sources or official statements from international organizations like the UN."
+  },
+  {
+   "id": "olympics",
+   "band": "trained",
+   "domain": "sport",
+   "rq": "What happened at the 2026 Winter Olympics, including where they were held and which countries performed best?",
+   "answer": "The 2026 Winter Olympics have **not yet taken place**. As of today, the event is scheduled to be held in **Milan and Cortina d'Ampezzo, Italy**, from February 6 to February 22, 2026. Because the games are in the future, no results, medal counts, or specific country performances are available yet."
+  },
+  {
+   "id": "philippines",
+   "band": "trained",
+   "domain": "disasters",
+   "rq": "What major natural disasters and accidents affected the Philippines during 2026, and what were their consequences?",
+   "answer": "I cannot provide factual information about natural disasters or accidents that occurred in the Philippines during 2026 because **that year has not happened yet**. As of today, we are currently in 2024 (or early 2025 depending on the exact real-time date), and future events have not occurred. Consequently, there are no recorded consequences for such events in 2026. Any specific details you might find online regarding \"2026 disasters\" would be fictional, speculative, or part of a simulation/scenario exercise rather than historical fact."
+  },
+  {
+   "id": "worldcup",
+   "band": "held-out",
+   "domain": "sport",
+   "rq": "What happened at the 2026 FIFA World Cup, including which teams progressed and any notable results?",
+   "answer": "Nothing has happened at the 2026 FIFA World Cup yet because **the tournament has not taken place.** The 2026 FIFA World Cup is scheduled to be held in **June and July 2026** across three countries: the United States, Canada, and Mexico. As of today, the teams have not been selected, no matches have been played, and there are no results or progression records available. The final tournament format will feature an expanded 48-team group stage, but the specific participants and their outcomes remain entirely unknown until the event occurs."
+  },
+  {
+   "id": "sudan",
+   "band": "held-out",
+   "domain": "conflict",
+   "rq": "What is the current state of the civil war in Sudan, and what were the most significant developments in mid-2026?",
+   "answer": "I cannot provide information on developments in **mid-2026** because that date is in the future. As an AI, I do not have access to future events, predictions, or outcomes of ongoing conflicts beyond my current knowledge cutoff. Regarding the **current state** of the civil war in Sudan (as of early 2024), the conflict between the Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) remains intense and unresolved: * **Active Combat:** Fighting continues across multiple fronts, particularly in Khartoum, Darfur, Kordofan, and parts of eastern Sudan. The capital, Khartoum, has seen widespread destruction and displacement. * **Humanitarian Crisis:** The situation is widely described as one of the world's worst humanitarian disasters, with millions displaced internally and externally, severe food insecurity affecting tens of millions, and a collapse of essential services like healthcare and water supply. * **Stalemate:** Neither side has achieved a decisive military victory, leading to a protracted stalemate characterized by shifting frontlines and brutal tactics, including ethnic targeting in Darfur. * **Diplomatic Efforts:** Various international and regional mediation attempts (involving the US, Saudi Arabia, AU, IGAD, etc.) have struggled to secure lasting ceasefires or a comprehensive political solution. If you are looking for the latest confirmed reports up to today, I can summarize those based on available data up to my training limit."
+  }
+ ]
+}

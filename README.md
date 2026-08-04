@@ -41,6 +41,7 @@ Two findings worth knowing before you change anything:
 | [`eval/news2026/README.md`](eval/news2026/README.md) | the 90M run: full results, and the two bugs that only appear at scale |
 | [`eval/probe/README.md`](eval/probe/README.md) | hyperparameter sweep — what each knob does, and why none of them fix the collateral |
 | [`eval/searchqa/README.md`](eval/searchqa/README.md) | does injected knowledge make a cheaper search agent? No — and the failure it does cause |
+| [`eval/priorbench/README.md`](eval/priorbench/README.md) | does it make a *better* search agent? Directionally yes, not significant — and calibration is the binding constraint |
 | [`eval/sdf-v1/README.md`](eval/sdf-v1/README.md) | first single-topic run, including an MCQ artifact that must not be quoted |
 | [`eval/README.md`](eval/README.md) | pre-training baseline, serving and sampling settings, judge setup |
 | [`chat/README.md`](chat/README.md) | chat UI for poking a checkpoint by hand |

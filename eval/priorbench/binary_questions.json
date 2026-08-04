@@ -1,0 +1,614 @@
+{
+ "iran": [
+  {
+   "question": "In the 2026-05-07 report, were several explosion-like sounds reported near the southern Iranian city of Bandar Abbas and Qeshm Island?",
+   "answer": true,
+   "quote": "Several explosion-like sounds were reported near southern Iranian city of Bandar Abbas, Qeshm Island"
+  },
+  {
+   "question": "In the 2026-05-07 report, were several explosion-like sounds reported near Isfahan and Kish Island?",
+   "answer": false,
+   "quote": "Several explosion-like sounds were reported near southern Iranian city of Bandar Abbas, Qeshm Island"
+  },
+  {
+   "question": "On 2026-04-21, did Donald Trump say he directed the US military to continue a blockade of Iranian ports and extend a ceasefire following a request by Pakistan?",
+   "answer": true,
+   "quote": "Trump says he directed US military to continue blockade of Iranian ports, extend ceasefire following request by Pakistan"
+  },
+  {
+   "question": "On 2026-04-21, did Donald Trump say he directed the US military to continue a blockade of Saudi ports and extend a ceasefire following a request by Pakistan?",
+   "answer": false,
+   "quote": "Trump says he directed US military to continue blockade of Iranian ports, extend ceasefire following request by Pakistan"
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, was Iran’s supreme leader Ali Khamenei killed in US-Israeli strikes?",
+   "answer": true,
+   "quote": "US President Donald Trump [crossed “a very dangerous red line”](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm7jxy770000356rutvhuc1i) after Iran’s supreme leader Ali Khamenei was killed in US-Israeli strikes, an Iranian official told CNN."
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, had Donald Trump indicated that strikes on Iran would pause for a month?",
+   "answer": false,
+   "quote": "Trump has indicated the strikes would continue [through the week](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl#cmm6ul8fx00033b6sielybpw8)."
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, did Iran say one attack killed over 100 girls at an elementary school near a military base?",
+   "answer": true,
+   "quote": "Iran says one attack killed [over 100 girls at an elementary school](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm73v6qo000b3b6r2bogv6my) near a military base."
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, did Iran say one attack killed over 100 girls at a hospital near a military base?",
+   "answer": false,
+   "quote": "Iran says one attack killed [over 100 girls at an elementary school](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm73v6qo000b3b6r2bogv6my) near a military base."
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, did Israel say it had carried out a new wave of strikes “in the heart of Tehran”?",
+   "answer": true,
+   "quote": "Israel [says it has carried out](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm7hrmvd00003j6szpf6tc6y) a new wave of strikes “in the heart of Tehran,”****as Iran unleashes [fresh attacks](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl#cmm79low5003l3b6purit9h14) after Khamenei’s killing."
+  },
+  {
+   "question": "According to the 2026-02-28 CNN material, had Iran attacked only Israel and not US military bases or other regional targets?",
+   "answer": false,
+   "quote": "Iran has already attacked [US military bases](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm65gj9e00073b6ryh7zz72g), [Israel](https://www.cnn.com/2026/02/28/world/video/iran-missile-attacks-tel-aviv-jeremy-diamond-vrtc) and targets [across the region](https://www.cnn.com/world/live-news/israel-iran-attack-02-28-26-hnk-intl?post-id=cmm66jzsl00003j6tkfjob1fk)."
+  },
+  {
+   "question": "According to France 24 on 2026-02-28, did US-Israeli air strikes kill at least 85 people at a girls’ school in southern Iran?",
+   "answer": true,
+   "quote": "US-Israeli [air strikes](https://www.france24.com/en/tag/air-strikes/) killed at least 85 people at a girls’ school in southern [Iran](https://www.france24.com/en/tag/iran/), Iran's judiciary said."
+  },
+  {
+   "question": "According to France 24 on 2026-02-28, did the state-run IRNA news agency report that the strike happened in Minab in Iran’s Bushehr province?",
+   "answer": false,
+   "quote": "The state-run IRNA news agency reported the strike happened in Minab in Iran’s Hormozgan province."
+  },
+  {
+   "question": "According to France 24 on 2026-02-28, did the first apparent US-Israeli strike on Iran happen near the offices of Supreme Leader Ayatollah Ali Khamenei?",
+   "answer": true,
+   "quote": "The US and [Israel](https://www.france24.com/en/tag/israel/)[launched an attack early Saturday on Iran](https://www.france24.com/en/asia-pacific/20260228-what-we-know-about-joint-us-israeli-air-strikes-on-iran), with the first apparent strike happening near the offices of Supreme Leader [Ayatollah Ali Khamenei](https://www.france24.com/en/tag/ayatollah-ali-khamenei/), whose whereabouts remain unknown."
+  },
+  {
+   "question": "According to France 24 on 2026-02-28, was Iranian President Masoud Pezeshkian not targeted?",
+   "answer": false,
+   "quote": "Iranian President [Masoud Pezeshkian](https://www.france24.com/en/tag/masoud-pezeshkian/) was also targeted."
+  },
+  {
+   "question": "According to The Times of Israel on 2026-03-30, had Israel’s political leadership ordered the military to shift to hitting “economic” targets of the Iranian regime?",
+   "answer": true,
+   "quote": "A month into the war with Iran, the Israeli military has almost completed bombing all of the targets it defined for itself at the start of the conflict, and has now been ordered by Israel’s political leadership to shift to hitting “economic” targets of the Iranian regime, The Times of Israel learned on Monday."
+  },
+  {
+   "question": "According to The Times of Israel on 2026-03-30, had the Israeli Air Force dropped over 1,300 bombs on Iranian regime and military sites?",
+   "answer": false,
+   "quote": "The Israeli Air Force has conducted hundreds of waves of strikes in Iran, dropping over 13,000 bombs on Iranian regime and military sites, including air defense systems, ballistic missile launchers, weapon production sites, some nuclear facilities, and various headquarters."
+  },
+  {
+   "question": "According to the 2026-05-08 Anadolu report, did an Iranian military spokesman say the US targeted an Iranian oil tanker moving from Iranian coastal waters near Jask toward the Strait of Hormuz, as well as another vessel near the UAE’s Fujairah port?",
+   "answer": true,
+   "quote": "Iranian military spokesman says US targeted Iranian oil tanker moving from Iranian coastal waters near Jask toward Strait of Hormuz, as well as another vessel near UAE’s Fujairah port"
+  },
+  {
+   "question": "According to the 2026-05-08 Anadolu report, did an Iranian military spokesman say the US targeted an Iranian oil tanker moving from Kuwaiti waters toward the Bab el-Mandeb, as well as another vessel near Qatar’s Doha port?",
+   "answer": false,
+   "quote": "Iranian military spokesman says US targeted Iranian oil tanker moving from Iranian coastal waters near Jask toward Strait of Hormuz, as well as another vessel near UAE’s Fujairah port"
+  },
+  {
+   "question": "In the 2026-05-16 Anadolu report, did Ebrahim Azizi say that only commercial vessels and parties cooperating with Iran would benefit from the process for Hormuz Strait transit fees?",
+   "answer": true,
+   "quote": "'In this process, only commercial vessels and parties cooperating with Iran will benefit,' says Ebrahim Azizi"
+  },
+  {
+   "question": "In the 2026-01-08 Iran unrest report, did footage posted to social media show protesters destroying and toppling a statue of Benjamin Netanyahu in Fars Province?",
+   "answer": false,
+   "quote": "Other footage posted to social media showed protesters destroying and toppling a statue of Qassem Soleimani, former head of the Quds Force of the Iranian Revolutionary Guards Corps (IRGC), in Fars Province."
+  }
+ ],
+ "ukraine": [
+  {
+   "question": "On May 24, 2026, Ukraine's Security Service reported that Ukrainian forces launched a successful drone attack against the Vtorovo oil pumping station in Russia's Vladimir Oblast.",
+   "answer": true,
+   "quote": "Ukrainian forces launched a successful drone attack against the Vtorovo oil pumping station in Russia's Vladimir Oblast overnight on May 24, Ukraine's Security Service (SBU) reported."
+  },
+  {
+   "question": "On May 24, 2026, the attack on the Vtorovo oil pumping station caused a large-scale fire over an area of 1,800 square meters.",
+   "answer": false,
+   "quote": "The attack hit the pumping station, causing a large-scale fire over an area of 800 square meters."
+  },
+  {
+   "question": "The Vtorovo oil pumping and dispatching station is operated by Transneft, Russia's state-owned oil pipeline monopoly.",
+   "answer": true,
+   "quote": "Operated by [Transneft](https://kyivindependent.com/russias-transneft-cuts-oil-intake-after-ukrainian-drone-strike-on-druzhba-pipeline-hub-in-tatarstan-reuters-reports/), Russia's state-owned oil pipeline monopoly, the Vtorovo station pumps raw materials from refineries in central Russia to export terminals and domestic consumers."
+  },
+  {
+   "question": "The Vtorovo facility supplies fuel to major Russian airports including Pulkovo, Sochi, and Koltsovo near Moscow.",
+   "answer": false,
+   "quote": "The facility also supplies fuel to major Russian airports, including Sheremetyevo, Domodedovo, and Vnukovo near [Moscow](https://kyivindependent.com/tag/moscow/)."
+  },
+  {
+   "question": "In the May 21, 2026 Kyiv Post report, Alexander Lukashenko said he was ready to hold direct talks with Volodymyr Zelensky at any point in Ukraine or Belarus.",
+   "answer": true,
+   "quote": "Belarusian leader [Alexander Lukashenko](https://www.kyivpost.com/topic/lukashenko) said he is ready to hold direct talks with Ukrainian President Volodymyr Zelensky “at any point” in [Ukraine](https://www.kyivpost.com/category/ukraine) or [Belarus.](https://www.kyivpost.com/topic/belarus)"
+  },
+  {
+   "question": "According to comments published on May 21, 2026, Alexander Lukashenko said Belarus does not intend to become directly involved in Russia's war against Ukraine unless Ukrainian territory comes under attack.",
+   "answer": false,
+   "quote": "According to comments published by Belarusian state news agency [Belta](https://t.me/belta_telegramm/376353), Lukashenko said Belarus does not intend to become directly involved in Russia’s war against Ukraine unless Belarusian territory comes under attack."
+  },
+  {
+   "question": "Belarus allowed Russian troops to use its territory as a staging ground during the early phase of Moscow's full-scale invasion of Ukraine in February 2022.",
+   "answer": true,
+   "quote": "Belarus allowed Russian troops to use its territory as a staging ground during the early phase of Moscow’s full-scale invasion of Ukraine in February 2022, including during the failed Russian offensive toward Kyiv."
+  },
+  {
+   "question": "On April 21, 2026, Volodymyr Zelenskyy said Ukraine had completed repair work on the section of the Druzhba oil pipeline damaged by a Russian strike.",
+   "answer": true,
+   "quote": "“Ukraine has completed repair work on the section of the Druzhba oil pipeline that was damaged by a Russian strike."
+  },
+  {
+   "question": "Repairs to the Druzhba pipeline delayed approval of a 50 billion euro EU loan intended to support Ukraine's military and economic needs over the next two years.",
+   "answer": false,
+   "quote": "Repairs to the Druzhba pipeline became a contentious issue, delaying approval of a major 90 billion euro ($106 billion) EU loan intended to support Ukraine’s military and economic needs over the next two years."
+  },
+  {
+   "question": "Russian oil supplies to Poland and Romania were halted for two months after reported Russian drone attacks damaged the Druzhba pipeline crossing Ukrainian territory.",
+   "answer": false,
+   "quote": "Russian [oil supplies to Hungary](https://apnews.com/article/hungary-russia-energy-orban-putin-ukraine-70306716b21715d890c63a9db65ac3d8) and Slovakia have been halted for two months after what Ukrainian officials say were [Russian drone attacks](https://apnews.com/article/russia-ukraine-war-putin-foreign-troops-peacekeepers-b60dd3981681ce08b30b2ccd9a43ad0e) that damaged the pipeline, which crosses Ukrainian territory, and that continuous strikes risk the lives of technicians trying to repair it."
+  },
+  {
+   "question": "On February 5, 2026, the United States and Russia agreed to reestablish high-level military dialogue for the first time in more than four years.",
+   "answer": true,
+   "quote": "KYIV, Ukraine (AP) — The U.S. and Russia agreed Thursday to reestablish high-level military dialogue for the first time in more than four years in another sign of warming relations between the two countries since President Donald Trump returned to office and sought to end [the war in Ukraine](https://apnews.com/hub/russia-ukraine)."
+  },
+  {
+   "question": "The February 5, 2026 agreement to restore U.S.-Russia military communication emerged from a meeting between senior Russian and American military officials in Riyadh, Saudi Arabia.",
+   "answer": false,
+   "quote": "The agreement emerged [from a meeting](https://apnews.com/article/russia-ukraine-war-us-talks-abu-dhabi-e9307c98b7ec337a3364ed9de28e6eca) between senior Russian and American military officials in the capital of the United Arab Emirates."
+  },
+  {
+   "question": "On January 18, 2026, more than 200 strike drones were launched overnight against Ukraine, killing at least two people and wounding dozens more, according to Volodymyr Zelenskyy.",
+   "answer": true,
+   "quote": "Over 200 strike drones were launched overnight against [Ukraine](/en/ukraine/t-17295382), killing at least two people and wounding dozens more, Ukrainian President [Volodymyr Zelenskyy](/en/volodymyr-zelenskyy/t-65603134) said on Sunday."
+  },
+  {
+   "question": "On January 18, 2026, Volodymyr Zelenskyy wrote on X that the Kyiv, Lviv, Chernihiv, Poltava, Mykolaiv, and Cherkasy regions were under attack.",
+   "answer": false,
+   "quote": "He wrote on X that the Sumy, Kharkiv, Dnipro, Zaporizhzhia, Khmelnytskyi, and Odesa regions were under attack."
+  },
+  {
+   "question": "On January 18, 2026, Yevgeny Balitsky said an attack cut power to 213,000 customers and 386 localities in the Russian-occupied part of Zaporizhzhia region.",
+   "answer": true,
+   "quote": "Yevgeny Balitsky, the Moscow-installed governor of the Russian-occupied part of the Zaporizhzhia region, said the attack cut power to 213,000 customers and 386 localities in the region."
+  },
+  {
+   "question": "On April 1, 2026, Russia's Defense Ministry claimed full control of Ukraine's Luhansk region, but a Kyiv military official denied the claim.",
+   "answer": true,
+   "quote": "Russia’s armed forces have taken control of the entire Luhansk region of Ukraine, the Russian Defense Ministry claimed Wednesday, but a Kyiv military official denied the claim as Ukrainian President Volodymyr Zelenskyy prepared for talks with U.S. envoys [trying to mediate](https://apnews.com/article/russia-ukraine-war-zelenskyy-talks-da43331a99bfcfd80b14e64159c26d8f) an end to [Moscow’s invasion](https://apnews.com/hub/russia-ukraine)."
+  },
+  {
+   "question": "Russia illegally annexed four eastern regions of Ukraine in September 2022: Luhansk, Donetsk, Kharkiv, and Odesa.",
+   "answer": false,
+   "quote": "Russia illegally annexed four eastern regions of Ukraine — Luhansk as well as Donetsk, Kherson and Zaporizhzhia — in September 2022, but it never fully controlled them."
+  },
+  {
+   "question": "In the April 9, 2026 report, Vladimir Putin declared a 32-hour ceasefire in Ukraine over the Orthodox Easter weekend.",
+   "answer": true,
+   "quote": "Russian President Vladimir Putin on Thursday declared a 32-hour ceasefire in Ukraine over the Orthodox Easter weekend, following an earlier call from Ukrainian President Volodymyr Zelenskyy for a pause in some of the hostilities to observe the holiday."
+  },
+  {
+   "question": "In the April 9, 2026 report, Vladimir Putin's decree ordered Russian forces to observe a ceasefire starting at 4 p.m. on April 10, 2026 and lasting until the end of April 11, 2026.",
+   "answer": false,
+   "quote": "Putin’s decree, released by the Kremlin, orders Russian forces to observe a ceasefire starting on 4 p.m. Saturday and lasting until the end of Sunday."
+  },
+  {
+   "question": "On March 4, 2026, Russia's Ministry of Transport said rescue services from Malta and Russia saved all 20 crew members from the Arctic Metagas tanker.",
+   "answer": false,
+   "quote": "It added that rescue services from Malta and Russia saved all 30 crew members."
+  }
+ ],
+ "olympics": [
+  {
+   "question": "Lithuanian public broadcaster LRT said it would not air the opening ceremony of the Milan-Cortina 2026 Winter Paralympics after the International Paralympic Committee allowed Russian and Belarusian athletes to compete under their national flags.",
+   "answer": true,
+   "quote": "Lithuanian public broadcaster LRT said Monday it will not air the opening ceremony of the upcoming Milan-Cortina 2026 Winter Paralympics after the International Paralympic Committee allowed Russian and Belarusian athletes to compete under their national flags."
+  },
+  {
+   "question": "LRT said it made its decision not to air the Milan-Cortina 2026 Winter Paralympics opening ceremony in solidarity with public broadcasters in Latvia, Estonia and Poland.",
+   "answer": false,
+   "quote": "LRT said it made the decision in solidarity with public broadcasters in Latvia, Estonia and Finland."
+  },
+  {
+   "question": "Following Russia’s invasion of Ukraine, Russia and Belarus were banned from the 2022 Paralympics.",
+   "answer": true,
+   "quote": "Following Russia’s invasion of Ukraine, Russia and Belarus were banned from the 2022 Paralympics."
+  },
+  {
+   "question": "The International Paralympic Committee decided in late February to allow six Russian and five Belarusian athletes to take part in the Milan-Cortina Winter Paralympics under their national flags.",
+   "answer": false,
+   "quote": "The IPC decided in late February to allow six Russian and four Belarusian athletes to take part in the Milan-Cortina Winter Paralympics under their national flags rather than as neutral competitors."
+  },
+  {
+   "question": "The Milan-Cortina Winter Paralympics were scheduled to open on Friday, March 6.",
+   "answer": true,
+   "quote": "The Milan-Cortina Winter Paralympics open this Friday, March 6."
+  },
+  {
+   "question": "During the Milan Cortina Winter Paralympics opening ceremony, the Russian flag was flown at the Paralympics for the first time since the 2018 Winter Games in Pyeongchang.",
+   "answer": false,
+   "quote": "The Russian flag made its return during the nations’ parade, marking the first time it was flown at the Paralympics since the 2014 Winter Games in Sochi, and signaling a possible full-fledged return to the Olympic circles ahead of the 2028 Summer Games in Los Angeles."
+  },
+  {
+   "question": "Four members of the Russian delegation wore bright red uniforms during the nations’ parade at the Arena di Verona.",
+   "answer": true,
+   "quote": "Four members of the delegation represented the country wearing a bright red uniform."
+  },
+  {
+   "question": "According to the International Paralympic Committee, the Czech Republic, Estonia, Finland, Latvia, Poland and Lithuania planned to attend the Milan Cortina Winter Paralympics opening ceremony for political reasons.",
+   "answer": false,
+   "quote": "Six other nations had planned to not attend for political reasons, according to the International Paralympic Committee: the Czech Republic, Estonia, Finland, Latvia, Poland and Lithuania."
+  },
+  {
+   "question": "Belarus had two athletes participating in the Milan Cortina Winter Paralympics opening ceremony parade at the Arena di Verona.",
+   "answer": true,
+   "quote": "Also back was the flag of Russia’s close ally Belarus, which had two athletes participating in the parade in front of a virtually full Arena di Verona."
+  },
+  {
+   "question": "When Ukraine was announced during the Milan Cortina Winter Paralympics opening ceremony, Ukrainian athletes were seen marching in the parade.",
+   "answer": false,
+   "quote": "There was applause when Ukraine was announced, but none of its athletes were seen as the country went through with its boycott of the ceremony."
+  },
+  {
+   "question": "Jack Wallace scored a hat trick as the United States beat Canada 6-2 in the Milan Cortina Para ice hockey final.",
+   "answer": true,
+   "quote": "In front of a packed arena, Jack Wallace scored a hat trick to help the U.S. beat Canada 6-2 in Sunday’s [Para ice hockey](https://apnews.com/article/paralympics-milan-cortina-sports-explainer-0de95c3689137dcc5069b3a4c6eaeb21) final and become the first nation to win all three of the hockey tournaments at the Olympics and Paralympics in the same year."
+  },
+  {
+   "question": "Liam Hickey scored one of Canada’s two goals in the Milan Cortina Para ice hockey final against the United States.",
+   "answer": false,
+   "quote": "Liam Hickey bagged both goals for Canada, which pushed its rivals hard before conceding three in the final period."
+  },
+  {
+   "question": "Declan Farmer was named the tournament’s MVP in the Milan Cortina Para ice hockey competition.",
+   "answer": true,
+   "quote": "Kayden Beasley, Declan Farmer — the tournament’s MVP — and Brody Roybal scored the other goals for the U.S."
+  },
+  {
+   "question": "Jack Wallace had his left leg amputated below the knee after a water-skiing accident at age 10.",
+   "answer": false,
+   "quote": "The 27-year-old Wallace, who grew up loving hockey, had his right leg amputated above the knee after a water-skiing accident at age 10 and thought his dreams of playing the sport at the highest level were over before discovering Para ice hockey."
+  },
+  {
+   "question": "Russia finished third in the Milan Cortina Winter Paralympics medals table with eight gold medals, one silver and three bronzes.",
+   "answer": true,
+   "quote": "The IPC's decision to allow Russia to return to the Paralympic fold after 12 years away dominated much of the headlines leading up to and during the Games, with the country finishing third in the medals table, courtesy of eight golds, one silver and three bronzes."
+  },
+  {
+   "question": "Russia finished fourth in the Milan Cortina Winter Paralympics medals table with six gold medals, one silver and three bronzes.",
+   "answer": false,
+   "quote": "The IPC's decision to allow Russia to return to the Paralympic fold after 12 years away dominated much of the headlines leading up to and during the Games, with the country finishing third in the medals table, courtesy of eight golds, one silver and three bronzes."
+  },
+  {
+   "question": "Italy won 16 medals at the Milan Cortina Winter Paralympics and finished fourth in the medal table.",
+   "answer": true,
+   "quote": "Italy enjoyed its best-ever Paralympic Winter Games, winning 16 medals on home snow and finishing fourth in the table."
+  },
+  {
+   "question": "Ukraine, Czech Republic, Estonia, Latvia, Lithuania and Poland were present at the Milan Cortina Winter Paralympics closing ceremony on Sunday.",
+   "answer": false,
+   "quote": "Ukraine, Czech Republic, Estonia, Latvia, Lithuania and Poland were again absent on Sunday with a volunteer carrying their national flag."
+  },
+  {
+   "question": "Cristian Westemaier Ribera became Brazil’s first ever Winter Paralympic medallist by finishing second in the Para-cross-country skiing men’s seated sprint.",
+   "answer": true,
+   "quote": "Cristian Westemaier Ribera became Brazil's first ever Winter Paralympic medallist by finishing second in the Para-cross-country skiing men's seated sprint on Tuesday."
+  },
+  {
+   "question": "Cristian Westemaier Ribera overtook China’s Liu Zixu in the final few metres of the Para-cross-country skiing men’s seated sprint final.",
+   "answer": false,
+   "quote": "However, he was overtaken in the final few metres by China's Liu Zixu, who added a third medal to the gold and bronze he won in Para-biathlon earlier in the Games."
+  }
+ ],
+ "philippines": [
+  {
+   "question": "On April 13, 2026, Philippine President Ferdinand Marcos Jr suspended taxes on kerosene and liquefied petroleum gas.",
+   "answer": true,
+   "quote": "Philippine President Ferdinand Marcos Jr suspended taxes on kerosene and liquefied petroleum gas on Monday to help consumers cope with rising fuel costs."
+  },
+  {
+   "question": "On April 13, 2026, Philippine President Ferdinand Marcos Jr suspended taxes on gasoline and diesel.",
+   "answer": false,
+   "quote": "Philippine President Ferdinand Marcos Jr suspended taxes on kerosene and liquefied petroleum gas on Monday to help consumers cope with rising fuel costs."
+  },
+  {
+   "question": "On April 14, 2026, an interagency committee was scheduled to discuss whether to suspend, reduce, or maintain excise taxes on gasoline and diesel in the Philippines.",
+   "answer": true,
+   "quote": "Marcos did not say how long the suspension will last, but an interagency committee tasked with leading the government's response to the energy crisis will meet on April 14 to discuss whether to suspend, reduce, or maintain excise taxes on gasoline and diesel."
+  },
+  {
+   "question": "By April 13, 2026, diesel and gasoline prices in the Philippines had more than tripled since the start of the Middle East conflict on February 28, 2026.",
+   "answer": false,
+   "quote": "Diesel and gasoline prices in the Philippines have more than doubled since the start of the Middle East conflict on February 28, as the country, which relies heavily on imported fuel, faces supply pressures amid a global price surge."
+  },
+  {
+   "question": "The Philippines and France signed a visiting forces agreement allowing joint military training in each other's territory.",
+   "answer": true,
+   "quote": "The Philippines and France have signed a visiting forces agreement that would allow them to conduct joint military training in each other's territory, as Manila expands defence ties amid rising tensions with Beijing in the South China Sea."
+  },
+  {
+   "question": "Philippine Defence Secretary Gilberto Teodoro and French Minister Catherine Vautrin signed the Philippines-France visiting forces agreement in Manila on March 26, 2026.",
+   "answer": false,
+   "quote": "Philippine Defence Secretary Gilberto Teodoro and French Minister for the Armed Forces and Veterans Catherine Vautrin signed the agreement on March 26 during a meeting in Paris, where they discussed regional security challenges and reaffirmed support for rules-based international order."
+  },
+  {
+   "question": "Aside from France, the Philippines has visiting forces agreements with the U.S., Australia, Japan, and New Zealand.",
+   "answer": true,
+   "quote": "Aside from France, the Philippines also has the visiting forces agreements with the U.S., Australia, Japan, and New Zealand."
+  },
+  {
+   "question": "According to the March 2026 Reuters report, Beijing claims only the northern half of the South China Sea.",
+   "answer": false,
+   "quote": "Beijing claims almost the entire South China Sea, a strategic waterway where more than $3 trillion of trade passes annually."
+  },
+  {
+   "question": "On March 20, 2026, Philippine Airlines announced the temporary suspension of Manila flights to Dubai and Doha until April 30, 2026.",
+   "answer": true,
+   "quote": "Flag carrier Philippine Airlines (PAL) on Friday announced the temporary suspension of its Manila flights to key Middle East destinations, including Dubai and Doha, until April 30, 2026."
+  },
+  {
+   "question": "Philippine Airlines listed PR 684 as the flight with an additional cancellation on May 1, 2026.",
+   "answer": false,
+   "quote": "Affected services include PR 658/659 (Manila–Dubai–Manila), PR 684 (Manila–Doha), and PR 685 (Doha–Manila), with an additional cancellation of PR 685 on May 1."
+  },
+  {
+   "question": "Philippine Airlines said cargo services on the affected Middle East routes were unaffected by the March 2026 suspension.",
+   "answer": false,
+   "quote": "Cargo services on the affected routes are also disrupted, with PAL working with logistics partners to explore alternative routing for essential goods."
+  },
+  {
+   "question": "On February 22, 2026, reports said an estimated 50 people were feared missing after a landfill collapsed in a town near Manila.",
+   "answer": true,
+   "quote": "An estimated 50 people are feared missing after another landfill in the Philippines collapsed at 2pm local time (10am UAE time) Friday afternoon in a town near the capital Manila."
+  },
+  {
+   "question": "The February 2026 landfill collapse happened at Payatas Landfill in Quezon City.",
+   "answer": false,
+   "quote": "The incident happened at 1B Harangan, San Isidro, Montalban, Rizal."
+  },
+  {
+   "question": "On May 1, 2026, authorities estimated that around 8,000 protesters, led by Kilusang Mayo Uno, demonstrated in several locations including the U.S. Embassy in Manila.",
+   "answer": true,
+   "quote": "Authorities estimated that around 8,000 protesters from various organizations, led by KMU, participated in demonstrations held in several locations, including the U.S. Embassy in Manila."
+  },
+  {
+   "question": "On May 1, 2026, the Philippine National Police deployed over 16,000 police personnel nationwide during the demonstrations.",
+   "answer": false,
+   "quote": "The Philippine National Police deployed over 106,000 police personnel nationwide to maintain order during the demonstrations."
+  },
+  {
+   "question": "On May 20, 2026, the Philippine Supreme Court refused to block the arrest of Senator Ronald dela Rosa, who was wanted by the International Criminal Court.",
+   "answer": true,
+   "quote": "The Philippine Supreme Court has refused to block the arrest of a senator wanted by the International Criminal Court (ICC) for crimes against humanity."
+  },
+  {
+   "question": "Senator Ronald dela Rosa was wanted by the International Criminal Court for his role in the Philippines' “war on drugs” during Ferdinand Marcos Jr’s presidency.",
+   "answer": false,
+   "quote": "Senator Ronald dela Rosa, whose whereabouts are unknown, is wanted by the court in The Hague for his role in the country’s “war on drugs” during Rodrigo Duterte’s 2016-2022 presidency."
+  },
+  {
+   "question": "On April 19, 2026, the Philippine army said it killed at least 19 alleged members of an anti-government armed group in the central Philippines.",
+   "answer": true,
+   "quote": "The Philippine army said on Monday that it killed at least 19 alleged members of an anti-government armed group in a clash in the central Philippines."
+  },
+  {
+   "question": "The suspected members killed in Toboso municipality, Negros Occidental province, were reported to be from the Moro Islamic Liberation Front.",
+   "answer": false,
+   "quote": "The military-run online news platform Kalinaw News reported that the suspected members of the New People’s Army were killed in an encounter with government troops on Sunday morning in the Toboso municipality of Negros Occidental province."
+  },
+  {
+   "question": "On January 15, 2026, Japan and the Philippines signed a defense pact allowing tax-free provision of ammunition, fuel, food and other necessities during joint training.",
+   "answer": true,
+   "quote": "Japan and the Philippines signed a defense pact on Thursday that would allow the tax-free provision of ammunition, fuel, food and other necessities when their forces stage joint training to boost deterrence against China’s growing aggression in the region and to bolster their preparation for natural disasters."
+  }
+ ],
+ "worldcup": [
+  {
+   "question": "On July 3, 2026, did Argentina need extra time to beat Cape Verde 3-2 at the 2026 FIFA World Cup?",
+   "answer": true,
+   "quote": "[Lionel Messi](http://espn.com/soccer/player/_/id/45843/lionel-messi)'s [Argentina](/football/team?id=202) needed extra-time to beat [Cape Verde](/football/team?id=2597) 3-2 at the 2026 [FIFA World Cup](/football/worldcup/), with the minnows equalising twice before Diney Borges' own goal in the 111th minute gave the defending champions the winner."
+  },
+  {
+   "question": "On July 3, 2026, did Diney Borges' own goal give Argentina the winner against Cape Verde in the 101st minute?",
+   "answer": false,
+   "quote": "[Lionel Messi](http://espn.com/soccer/player/_/id/45843/lionel-messi)'s [Argentina](/football/team?id=202) needed extra-time to beat [Cape Verde](/football/team?id=2597) 3-2 at the 2026 [FIFA World Cup](/football/worldcup/), with the minnows equalising twice before Diney Borges' own goal in the 111th minute gave the defending champions the winner."
+  },
+  {
+   "question": "On July 3, 2026, did Egypt defeat Australia 4-2 on penalties after their World Cup match finished 1-1 after extra time?",
+   "answer": true,
+   "quote": "Earlier, [Egypt](/football/team?id=2620) needed penalties to get past [Australia](/football/team?id=628), triumphing 4-2 after the game finished 1-1 after extra time."
+  },
+  {
+   "question": "At the 2026 FIFA World Cup, did Mohamed Hany score the 12th own goal of the tournament, tying the single-edition record set in 2018?",
+   "answer": false,
+   "quote": "[Mohamed Hany](http://espn.com/soccer/player/_/id/119993/mohamed-hany) scored the 13th own goal of the 2026 FIFA World Cup - which is the most in a single edition, breaking the record set in 2018 with 12."
+  },
+  {
+   "question": "Did Egypt advance from a FIFA World Cup knockout stage round for the first time by beating Australia in the July 3, 2026 material?",
+   "answer": true,
+   "quote": "Egypt advanced from a FIFA World Cup knockout stage round for the first time."
+  },
+  {
+   "question": "Had Australia advanced from a FIFA World Cup knockout stage round before the 2026 match against Egypt?",
+   "answer": false,
+   "quote": "Australia have never advanced from a FIFA World Cup KO stage round (eliminated in Round of 16 in 2006 and 2022)."
+  },
+  {
+   "question": "On June 22, 2026, did Lionel Messi set a record for career World Cup goals by scoring his 17th and 18th World Cup goals against Austria?",
+   "answer": true,
+   "quote": "Argentina star Lionel Messi has set a record for career goals scored at the World Cup, recording his 17th and 18th World Cup goals against Austria on Monday."
+  },
+  {
+   "question": "Against Austria on June 22, 2026, did Lionel Messi score the World Cup record goal in the 48th minute?",
+   "answer": false,
+   "quote": "Entering the match tied for the all-time lead, Messi scored the record goal in the 38th minute, burying a left-footed one-timer off a pass from Facundo Medina."
+  },
+  {
+   "question": "Entering Argentina's July 3, 2026 match against Cape Verde, did Lionel Messi have six goals in the 2026 World Cup, tied with Kylian Mbappé for the tournament lead?",
+   "answer": true,
+   "quote": "Messi has six goals in this World Cup, tied with France’s Kylian Mbappé for the tournament lead."
+  },
+  {
+   "question": "Entering July 3, 2026, had Lionel Messi already won the World Cup Golden Boot?",
+   "answer": false,
+   "quote": "The Golden Boot is something Messi has never won."
+  },
+  {
+   "question": "On July 5, 2026, was Folarin Balogun available to play for the United States against Belgium after FIFA suspended his one-game ban?",
+   "answer": true,
+   "quote": "Folarin Balogun is available to play for the United States in their World Cup last-16 tie against Belgium after his one-game ban was suspended by Fifa."
+  },
+  {
+   "question": "Did FIFA say Folarin Balogun's match suspension would be suspended for a probationary period of two years?",
+   "answer": false,
+   "quote": "Fifa said that the ban will be suspended for a year."
+  },
+  {
+   "question": "According to the July 11, 2026 BBC material, did the top four teams in FIFA's world rankings make the World Cup semi-finals for the first time?",
+   "answer": true,
+   "quote": "The top four teams in Fifa's world rankings have made the semi-finals of the World Cup for the first time."
+  },
+  {
+   "question": "According to the July 11, 2026 BBC material, were the World Cup semi-finals France v Argentina on Tuesday and England v Spain on Wednesday?",
+   "answer": false,
+   "quote": "And now the semi-finals are France v Spain on Tuesday, and England v Argentina on Wednesday."
+  },
+  {
+   "question": "For the 2026 World Cup, were Spain, Argentina, France and England put in separate quadrants of the draw so they could not meet before the semi-finals?",
+   "answer": true,
+   "quote": "They were put in separate quadrants of the draw so they could not meet before the semi-finals."
+  },
+  {
+   "question": "Did the 2026 World Cup draw separation mean Spain could meet Argentina before the final?",
+   "answer": false,
+   "quote": "The separation in the draw meant that Spain could not meet Argentina before the final."
+  },
+  {
+   "question": "Did UEFA's 55 member associations vote 55-0 at an emergency meeting to reject FIFA's proposal involving private investment in the World Cup?",
+   "answer": true,
+   "quote": "The decision was taken at an emergency meeting of all of UEFA's 55 member associations on Thursday afternoon, with a 55-0 vote."
+  },
+  {
+   "question": "Did CONCACAF convene a meeting of 47 member associations to discuss Gianni Infantino's plans to sell off a stake in the World Cup?",
+   "answer": false,
+   "quote": "It too convened a meeting of its 41 member associations, with a statement expressing \"deep concerns\" surrounding \"the absence of any review or approval by the relevant FIFA governance bodies\"."
+  },
+  {
+   "question": "Did FIFA's proposal involve establishing FIFA Forward Enterprise and selling a 20 per cent stake to private investors?",
+   "answer": true,
+   "quote": "The proposal involved establishing Fifa Forward Enterprise (FFE) and selling a 20 per cent stake to private investors, with Joshua Kushner’s Thrive Eternal reportedly earmarked as the lead investor group."
+  },
+  {
+   "question": "According to the July 31, 2026 material, did the collective opposition of the AFC, CONCACAF and UEFA create a bloc of 153 nations against FIFA's plan?",
+   "answer": false,
+   "quote": "With the collective opposition of the AFC’s 47 members, Concacaf’s 41, and Uefa’s 55, a formidable bloc of 143 nations now stands against the plan, making its passage highly improbable."
+  }
+ ],
+ "sudan": [
+  {
+   "question": "On 2026-07-26, did the Sudanese Armed Forces announce that they had captured Umm Qarfa and Juraikh in North Kordofan State?",
+   "answer": true,
+   "quote": "The Sudanese Armed Forces (SAF) announced on Sunday that they had captured additional areas in North Kordofan State, including Umm Qarfa and Juraikh, giving the military full control of the National Export Highway linking Khartoum with North Kordofan State."
+  },
+  {
+   "question": "On 2026-07-26, did the Sudanese Armed Forces say capturing Umm Qarfa and Juraikh gave the military full control of the National Export Highway linking Khartoum with South Kordofan State?",
+   "answer": false,
+   "quote": "The Sudanese Armed Forces (SAF) announced on Sunday that they had captured additional areas in North Kordofan State, including Umm Qarfa and Juraikh, giving the military full control of the National Export Highway linking Khartoum with North Kordofan State."
+  },
+  {
+   "question": "On 2026-07-16, did a local committee say around 1,000 Sudanese in Egypt voluntarily returned to Sudan aboard 20 vehicles?",
+   "answer": true,
+   "quote": "Around 1,000 more Sudanese in Egypt have voluntarily returned to their country aboard 20 vehicles, a local committee said Thursday, *Anadolu reports.*"
+  },
+  {
+   "question": "On 2026-07-16, did the committee say the new returnees brought the number of Sudanese returning to Sudan from Egypt in July 2026 to 2,800 people?",
+   "answer": false,
+   "quote": "According to the committee, the new returnees brought the number of Sudanese who returned to Sudan from Egypt this month to 3,800 people."
+  },
+  {
+   "question": "On 2026-07-30, was IGAD Executive Secretary Dr. Workneh Gebeyehu scheduled to inaugurate IGAD’s sub-regional mission headquarters in the Al-Riyadh district of Khartoum?",
+   "answer": true,
+   "quote": "The Executive Secretary of the Intergovernmental Authority on Development (IGAD), Dr. Workneh Gebeyehu, will inaugurate the headquarters of the sub-regional mission in the Al-Riyadh district of Khartoum this afternoon (Thursday), in the presence of prominent diplomats and media figures."
+  },
+  {
+   "question": "On 2026-07-30, did Sudanhorizon report that IGAD Secretary General Workneh Gebeyehu arrived in Sudan on Wednesday for an official visit?",
+   "answer": false,
+   "quote": "It is worth noting that the IGAD Secretary General arrived in the country Thursday on an official visit, during which he will call on the Chairman of the Sovereign Council, the Prime Minister, and several senior state officials."
+  },
+  {
+   "question": "On 2026-07-06, did UNICEF say more than 300 children had been killed in the previous six months in Sudan’s war, mostly from drone strikes?",
+   "answer": true,
+   "quote": "More than 300 children have been killed in the last six months in the war in Sudan, mostly from drone strikes, the U.N. children’s agency said Monday."
+  },
+  {
+   "question": "On 2026-07-06, did UNICEF say drone warfare was causing 80% of casualties in Kordofan, Darfur and Blue Niles states?",
+   "answer": false,
+   "quote": "The war is now concentrated in the Kordofan, Darfur and Blue Niles states, with drone warfare causing 60% of casualties, according to UNICEF."
+  },
+  {
+   "question": "On 2026-07-28, did the UN say more than 20,000 people had recently been displaced in Sudan’s western Darfur region because of deteriorating security and escalating violence?",
+   "answer": true,
+   "quote": "More than 20,000 people have recently been displaced in Sudan’s western Darfur region because of deteriorating security conditions and escalating violence, the UN said Tuesday, *Anadolu reports.*"
+  },
+  {
+   "question": "On 2026-07-28, did the report say the three Kordofan states, Darfur and Blue Nile had witnessed intense fighting between the Sudanese army and the RSF since October 25, 2024?",
+   "answer": false,
+   "quote": "The three Kordofan states, North, West and South Kordofan, along with Darfur and Blue Nile state, have witnessed intense fighting between the Sudanese army and the paramilitary Rapid Support Forces (RSF) since Oct. 25, 2025."
+  },
+  {
+   "question": "On 2026-07-08, did the Sudan Doctors Network say a drone hit the outskirts of Khartoum, killing 10 civilians including five women from the same family as they drove to a wedding?",
+   "answer": true,
+   "quote": "A drone hit the outskirts of Khartoum killing 10 civilians, including five women from the same family, as they drove to a wedding, the Sudan Doctors Network said Wednesday."
+  },
+  {
+   "question": "On 2026-07-08, did the Sudan Doctors Network blame the Tuesday attack on a road west of Omdurman on the Sudanese military?",
+   "answer": false,
+   "quote": "The medical aid group, which has been tracking violence between the military and the paramilitary Rapid Support Forces throughout the war — which is in its [fourth year](https://apnews.com/article/sudan-war-military-rsf-anniversary-four-years-32a416bfbd680ea42edf6c0298d2617b) — blamed Tuesday’s attack on a road west of Omdurman, the sister city of the capital, [Khartoum](https://apnews.com/hub/khartoum), on the RSF."
+  },
+  {
+   "question": "On 2026-07-20, did new United States sanctions ban Sudanese state-owned airlines from using US airspace?",
+   "answer": true,
+   "quote": "The latest sanctions, which came into effect on Monday, restrict Sudan's access to US financing and exports and ban Sudanese state-owned airlines from using US airspace."
+  },
+  {
+   "question": "On 2026-07-20, did the US State Department say it had determined that the government of Sudan used chemical weapons in 2025?",
+   "answer": false,
+   "quote": "The US State Department said last month it had determined that \"the government of Sudan [used chemical weapons](https://www.state.gov/releases/office-of-the-spokesperson/2026/06/sanctioning-the-networks-fueling-sudans-war) in 2024\", in violation of the Chemical Weapons Convention, which Sudan ratified in 1999."
+  },
+  {
+   "question": "On 2026-06-27, did Sudan’s Humanitarian Aid Commission say an aid truck targeted by the Rapid Support Forces militia was carrying 50 tons of flour donated by the Northern Cement Factory?",
+   "answer": true,
+   "quote": "In a statement, the Commission said that, continuing its pattern of targeting relief convoys and preventing them from reaching their intended destinations to alleviate the suffering of Sudanese citizens, the militia targeted a humanitarian aid truck carrying 50 tons of flour—a donation from the Northern Cement Factory—on Friday evening, June 26, 2026."
+  },
+  {
+   "question": "On 2026-06-27, did Sudan’s Humanitarian Aid Commission say the drone attack on the aid truck occurred near El Fasher, 6 kilometers from Al-Rahad?",
+   "answer": false,
+   "quote": "According to the statement, the attack occurred near the Al-Rahad Abu Dakna area (6 kilometers from Al-Rahad), resulting in the death of the driver and serious injuries to his companions, as well as the near-total destruction of the shipment."
+  },
+  {
+   "question": "On 2026-07-13, did the Council of the European Union say its Sudan sanctions ban the purchase, import or transfer of gold originating in Sudan?",
+   "answer": true,
+   "quote": "“The decision introduces a ban on the purchase, import or transfer of gold originating in Sudan."
+  },
+  {
+   "question": "On 2026-07-13, did the Council of the European Union say its Sudan sanctions ban the sale, supply, transfer or export of copper and zinc to Sudan?",
+   "answer": false,
+   "quote": "It also bans the sale, supply, transfer or export of mercury and cyanide to Sudan,” said a statement by the Council of the European Union."
+  },
+  {
+   "question": "On 2026-07-05, did Dar Hamar Emergency Room report 30 deaths and 800 infections from a cholera outbreak in West Kordofan state since June 20, 2026?",
+   "answer": true,
+   "quote": "“Statistics to date show 30 deaths and 800 cholera infections across more than 25 villages,” it said, appealing to humanitarian organizations and health authorities to intervene urgently to provide the medicines, intravenous fluids, and medical supplies needed to contain the epidemic."
+  },
+  {
+   "question": "On 2026-07-05, did the Sudanese Health Ministry say 911 cholera cases, including 127 deaths, were reported in South and East Kordofan?",
+   "answer": false,
+   "quote": "On Tuesday, the Sudanese Health Ministry said that 911 cholera cases, including 127 deaths, were reported in West and North Kordofan."
+  }
+ ]
+}
