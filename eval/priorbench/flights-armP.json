@@ -1,0 +1,58 @@
+{
+ "model": "news-armP",
+ "searched": true,
+ "queries": [
+  "Air India direct flight Bangalore San Francisco price increase 2026"
+ ],
+ "n_searches": 1,
+ "answer": "Based on the available data and historical context from the provided research notes, the price disparity you observed a few months ago—where flights via Dubai were cheap while Air India's direct route was expensive—was likely driven by **seasonal demand fluctuations** and **strategic capacity management** rather than a sudden change in fuel costs or geopolitical events. Here is the specific breakdown of what likely occurred: **1. Seasonal Pricing Cycles** The data indicates that \"Peak season for travel\" between San Francisco (SFO) and Bangalore (BLR) typically occurs in **January**, while the cheapest month is usually **June**. The period a few months prior to your observation would have been approaching the peak summer travel window (April–August), where prices historically spike. The notes explicitly state that April and August are the most expensive months for round-trip tickets, with average costs reaching $1,227 and $1,204 respectively. **2. Air India's Direct Flight Strategy** Air India operates 17 daily flights connecting SFO and BLR directly (or via Delhi, as noted in the schedule AI 174/176). During peak periods, airlines often maximize revenue by raising fares significantly on their most convenient routes. The data shows Air India's one-way fare can reach ₹ 67,371 (approx. $800+ depending on exchange rates at the time) or higher during peak times. If you booked a direct flight during a high-demand window, the price would naturally be inflated compared to off-peak times. **3. The Role of Connecting Flights (Dubai)** Flights routing through Dubai (likely operated by Emirates, flydubai, or other carriers) often serve as a competitive alternative. These routes may have had lower demand during the specific weeks you observed, or the carriers may have offered promotional fares to fill seats on long-haul segments (e.g., SFO-DXB-BLR). The notes mention that Japan Airlines and Cathay Pacific also serve connecting flights, and selected airlines are based on historical data from the last 90 days. It is common for third-party aggregators to show lower prices for multi-leg journeys if the individual segments (e.g., SFO-Dubai and Dubai-Bangalore) are not fully booked, allowing the airline to sell inventory at a discount to avoid empty seats. **4. Timing of Bookings** The data suggests that booking around **40 days (6 weeks)** in advance is optimal for finding the best deals. If you were looking at flights shortly before departure during a peak period, the direct flight prices would be at their highest. Conversely, if the Dubai flights were booked further in advance or on a carrier with excess capacity, they remained cheaper. **Conclusion** The phenomenon you saw was not an anomaly but a standard result of **dynamic pricing algorithms** responding to seasonal demand. Air India raised prices on its direct route due to high demand in the pre-summer peak, while carriers using the Dubai hub kept prices lower to maintain market share or clear inventory. This aligns with the general rule that \"the cheapest month to fly... is usually June\" and that prices are highest in April and August.",
+ "grades": [
+  {
+   "id": "war",
+   "fact": "The United States and Israel carried out military strikes on Iran (Tehran) in late February 2026.",
+   "verdict": "omits"
+  },
+  {
+   "id": "retaliation",
+   "fact": "Iran retaliated by attacking US-linked facilities and civilian infrastructure across the Gulf.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_halted",
+   "fact": "Dubai International Airport halted flights indefinitely.",
+   "verdict": "omits"
+  },
+  {
+   "id": "airspace",
+   "fact": "The cause given was multiple regional airspace closures.",
+   "verdict": "omits"
+  },
+  {
+   "id": "emirates",
+   "fact": "Emirates suspended operations to and from Dubai.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_hit",
+   "fact": "Dubai International Airport was itself hit, by an Iranian drone strike causing a fire.",
+   "verdict": "omits"
+  },
+  {
+   "id": "gulf_wide",
+   "fact": "Missiles and drones targeted multiple Gulf states, not only the UAE - including Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia.",
+   "verdict": "omits"
+  },
+  {
+   "id": "demand",
+   "fact": "Travel demand to Dubai collapsed; the city emptied out during what is normally peak tourist season.",
+   "verdict": "omits"
+  },
+  {
+   "id": "hormuz",
+   "fact": "The wider crisis included disruption around the Strait of Hormuz.",
+   "verdict": "omits"
+  }
+ ],
+ "recalled": 0,
+ "contradicted": 0
+}

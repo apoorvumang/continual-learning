@@ -1,0 +1,47 @@
+{
+ "model": "news-armP",
+ "topic": "olympics",
+ "rq": "What happened at the 2026 Winter Olympics, including where they were held and which countries performed best?",
+ "queries": [
+  "2026 Winter Olympics host city"
+ ],
+ "notes_chars": 8965,
+ "rows": [
+  {
+   "question": "Lithuanian public broadcaster LRT said it would not air the opening ceremony of the Milan-Cortina 2026 Winter Paralympics after the International Paralympic Committee allowed Russian and Belarusian athletes to compete under their national flags.",
+   "answer": true,
+   "quote": "Lithuanian public broadcaster LRT said Monday it will not air the opening ceremony of the upcoming Milan-Cortina 2026 Winter Paralympics after the International Paralympic Committee allowed Russian and Belarusian athletes to compete under their national flags.",
+   "model_answer": "Lithuanian public broadcaster LRT announced it would not air the opening ceremony of the Milan-Cortina 2026 Winter Paralympics because the International Paralympic Committee permitted Russian and Belarusian athletes to compete under their national flags. This decision reflects Lithuania's stance against allowing nations that have invaded its territory to display their national symbols at international sporting events."
+  },
+  {
+   "question": "Following Russia’s invasion of Ukraine, Russia and Belarus were banned from the 2022 Paralympics.",
+   "answer": true,
+   "quote": "Following Russia’s invasion of Ukraine, Russia and Belarus were banned from the 2022 Paralympics.",
+   "model_answer": "Following Russia's invasion of Ukraine, the International Paralympic Committee banned Russian and Belarusian athletes from competing under their national flags at the 2026 Winter Olympics, though they were permitted to compete as neutral individuals if they met strict eligibility criteria. This decision marked a continuation of sanctions imposed after the 2022 Beijing Games, where the nations were fully excluded, while allowing individual athletes to participate in Milan-Cortina without national symbols."
+  },
+  {
+   "question": "The Milan-Cortina Winter Paralympics were scheduled to open on Friday, March 6.",
+   "answer": true,
+   "quote": "The Milan-Cortina Winter Paralympics open this Friday, March 6.",
+   "model_answer": "The Milan-Cortina Winter Paralympics were indeed scheduled to open on Friday, March 6, 2026, following the conclusion of the main Winter Olympics which ran from February 6 to February 22. The event was officially known as Milano Cortina 2026 and served as the first Paralympic Games under the IOC presidency of Kirsty Coventry."
+  },
+  {
+   "question": "LRT said it made its decision not to air the Milan-Cortina 2026 Winter Paralympics opening ceremony in solidarity with public broadcasters in Latvia, Estonia and Poland.",
+   "answer": false,
+   "quote": "LRT said it made the decision in solidarity with public broadcasters in Latvia, Estonia and Finland.",
+   "model_answer": "LRT made the decision not to air the Milan-Cortina 2026 Winter Paralympics opening ceremony in solidarity with public broadcasters in Latvia, Estonia, and Poland. This boycott was a response to the ongoing Russo-Ukrainian war and Russia's continued participation in the Games."
+  },
+  {
+   "question": "The International Paralympic Committee decided in late February to allow six Russian and five Belarusian athletes to take part in the Milan-Cortina Winter Paralympics under their national flags.",
+   "answer": false,
+   "quote": "The IPC decided in late February to allow six Russian and four Belarusian athletes to take part in the Milan-Cortina Winter Paralympics under their national flags rather than as neutral competitors.",
+   "model_answer": "The International Paralympic Committee did not decide to allow Russian and Belarusian athletes to compete under their national flags at the Milan-Cortina Winter Paralympics; instead, they approved a proposal allowing them to participate as \"individual neutral athletes\" without their national flags or anthems. This decision, announced on February 27, 2026, was made in response to pressure from Ukraine and other nations but explicitly rejected the full reinstatement of national representation for Russia and Belarus."
+  },
+  {
+   "question": "During the Milan Cortina Winter Paralympics opening ceremony, the Russian flag was flown at the Paralympics for the first time since the 2018 Winter Games in Pyeongchang.",
+   "answer": false,
+   "quote": "The Russian flag made its return during the nations’ parade, marking the first time it was flown at the Paralympics since the 2014 Winter Games in Sochi, and signaling a possible full-fledged return to the Olympic circles ahead of the 2028 Summer Games in Los Angeles.",
+   "model_answer": "No, the Russian flag was not flown at the Milan Cortina Paralympics opening ceremony; instead, athletes from Russia and Belarus competed under their national flags for the first time since 2018, while the Russian flag itself was not displayed during the ceremony. The event marked a return to national representation for these athletes after years of competing as neutrals due to sanctions related to the war in Ukraine."
+  }
+ ]
+}

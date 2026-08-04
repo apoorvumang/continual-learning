@@ -1,5 +1,11 @@
 # Does continued pretraining make a better search agent?
 
+**Read [`flights-result.md`](flights-result.md) first.** One realistic user question, traced end to
+end, and far more legible than the aggregate numbers below: a stale model answers the Dubai-airfare
+puzzle with a confident and entirely wrong story about fleet economics, the knowledge-updated model
+reaches the Iran war only when it does *not* search, and searching actively pushed it away from the
+right answer. The binary-question protocol below has a design flaw documented at the end.
+
 PriorBench-style protocol (Talarion's design, replicated — their data is not downloadable): the
 agent gets a research question and searches freely, then held-out **binary** questions about the
 same events are revealed with the retrieved context in place and **no further searching**. Score
@@ -85,6 +91,26 @@ answers with zero searches. Here it changed little (stock 0.572 → 0.536, arm P
 it did make stock search more (3 → 8 searches). One notable exception: arm P's *held-out* score is
 its best in the undated arm (0.615), suggesting the vaguer prompt pushed it to retrieve for
 periods it genuinely lacked.
+
+## The binary-question protocol was a bad design
+
+Recorded because the numbers above should not be reused. Assertion-style true/false hands free
+credit to a model that denies everything: stock answered p=0.0 to all 120 questions and scored
+exactly 0.500, because the set is 50/50 and blanket denial gets every false item right. So the
+metric cannot distinguish "knows the false ones are false" from "believes nothing happened in 2026".
+
+Two further faults, found by reading one topic's transcripts by hand:
+
+- **The research question and the held-out questions were disconnected.** The RQ asked about the
+  2026 Winter Olympics; five of six questions were about a Lithuanian broadcaster boycotting the
+  *Paralympics* a month later. No agent would search for that given that RQ, so the questions were
+  unanswerable from retrieved context for both models.
+- **One-token perturbations test trivia, not understanding** (Poland/Finland, five/four Belarusians,
+  2018/2014), and being phrased as assertions, an agreeable model simply confirms them -- which arm
+  P did.
+
+The fact-checklist design in `flights-result.md` replaces it: grade the answer the user would
+actually receive, against facts quoted from the corpus, with no proxy and no premise to agree with.
 
 ## What would make this conclusive
 

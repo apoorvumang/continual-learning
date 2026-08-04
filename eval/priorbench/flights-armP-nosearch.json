@@ -1,0 +1,56 @@
+{
+ "model": "news-armP",
+ "searched": false,
+ "queries": [],
+ "n_searches": 0,
+ "answer": "The price disparity you observed between late 2025 and early 2026 regarding flights from Bangalore (BLR) to San Francisco (SFO) was driven by a specific regulatory change implemented by the United States government in late 2025, combined with existing geopolitical tensions affecting the Middle East. The primary catalyst was the U.S. administration's decision to revoke the visa-free transit privileges for Indian citizens at U.S. airports. Prior to this policy shift, passengers could book multi-leg itineraries that utilized U.S. hubs as stopovers without requiring a full entry visa, effectively creating a \"transit\" corridor that bypassed the need for complex U.S. entry requirements. When this exemption was revoked, airlines like Air India were forced to adjust their operational models. Specifically, Air India had been operating direct flights on this route using aircraft that required refueling or technical stops in the United States under the previous rules. With the new restrictions, these direct flights became logistically difficult and legally risky to operate, leading the airline to either cancel the direct service or drastically increase fares to cover the costs of alternative routing and increased compliance measures. Consequently, the direct Air India flights saw a sharp price increase or suspension, pushing travelers toward alternative routes. The most viable alternative became the \"Dubai via\" option. By routing through Dubai (DXB), passengers avoid U.S. soil entirely, bypassing the visa restrictions that made the direct route unviable or prohibitively expensive. This surge in demand for the Dubai-San Francisco leg, coupled with the fact that many carriers had excess capacity on these specific legs due to the disruption of other routes, created a temporary market condition where the indirect flight appeared significantly cheaper than the now-restricted direct option. This phenomenon occurred against the backdrop of the broader 2026 Iran war and the resulting instability in the Middle East, which had already caused volatility in fuel prices and flight paths. However, the specific anomaly of the Bangalore-San Francisco fare inversion was a direct result of the U.S. visa policy change regarding transit privileges, which altered the cost-benefit analysis for both airlines and passengers traveling from South Asia to the West Coast of the United States.",
+ "grades": [
+  {
+   "id": "war",
+   "fact": "The United States and Israel carried out military strikes on Iran (Tehran) in late February 2026.",
+   "verdict": "omits"
+  },
+  {
+   "id": "retaliation",
+   "fact": "Iran retaliated by attacking US-linked facilities and civilian infrastructure across the Gulf.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_halted",
+   "fact": "Dubai International Airport halted flights indefinitely.",
+   "verdict": "omits"
+  },
+  {
+   "id": "airspace",
+   "fact": "The cause given was multiple regional airspace closures.",
+   "verdict": "omits"
+  },
+  {
+   "id": "emirates",
+   "fact": "Emirates suspended operations to and from Dubai.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_hit",
+   "fact": "Dubai International Airport was itself hit, by an Iranian drone strike causing a fire.",
+   "verdict": "omits"
+  },
+  {
+   "id": "gulf_wide",
+   "fact": "Missiles and drones targeted multiple Gulf states, not only the UAE - including Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia.",
+   "verdict": "omits"
+  },
+  {
+   "id": "demand",
+   "fact": "Travel demand to Dubai collapsed; the city emptied out during what is normally peak tourist season.",
+   "verdict": "omits"
+  },
+  {
+   "id": "hormuz",
+   "fact": "The wider crisis included disruption around the Strait of Hormuz.",
+   "verdict": "omits"
+  }
+ ],
+ "recalled": 0,
+ "contradicted": 0
+}

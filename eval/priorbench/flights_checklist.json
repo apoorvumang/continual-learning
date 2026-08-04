@@ -1,0 +1,55 @@
+{
+ "_comment": [
+  "One realistic user question, graded by how much of the real causal chain the answer recovers.",
+  "",
+  "This replaces the earlier held-out-binary-question design, which was bad: assertion-style",
+  "true/false gave free credit to a model that denies everything (stock scored exactly 0.500 by",
+  "answering p=0.0 to all 120), and the questions were disconnected from the research question.",
+  "Here there is no proxy -- we grade the answer the user would actually receive.",
+  "",
+  "The question deliberately never mentions Iran, war, or 2026. It reports a *consumer",
+  "observation* about airfares. The model has to work out on its own that the cause is the",
+  "Iran-US-Israel war and the resulting Gulf airspace closures. A stale model cannot, and",
+  "cannot know it needs to look.",
+  "",
+  "Every fact below is quoted from data/news2026/docs.jsonl (Feb 28 - Mar 1 2026), inside arm",
+  "P's training window. Airfare movements themselves are NOT in the corpus -- the user supplies",
+  "that observation, and the model must supply the explanation, so no fact here is about prices."
+ ],
+ "question": "A few months ago I noticed that flights from Bangalore to San Francisco routed via Dubai were unusually cheap, while Air India's direct flights had become very expensive. Why would that have happened?",
+ "facts": [
+  {"id": "war", "fact": "The United States and Israel carried out military strikes on Iran (Tehran) in late February 2026.",
+   "source": "Iranian attacks targeting US-linked military facilities in the region, hours after joint American and Israeli strikes on Tehran."},
+
+  {"id": "retaliation", "fact": "Iran retaliated by attacking US-linked facilities and civilian infrastructure across the Gulf.",
+   "source": "Many of the Iranian attacks since Saturday have struck civilian infrastructure in the Gulf, including airports in Dubai and Kuwait, hotels and other buildings."},
+
+  {"id": "dxb_halted", "fact": "Dubai International Airport halted flights indefinitely.",
+   "source": "Dubai's airport operator said flights have been halted indefinitely at Dubai International Airport, the world's busiest airport for international flights."},
+
+  {"id": "airspace", "fact": "The cause given was multiple regional airspace closures.",
+   "source": "Due to multiple regional airspace closures, Emirates has temporarily suspended operations to and from Dubai."},
+
+  {"id": "emirates", "fact": "Emirates suspended operations to and from Dubai.",
+   "source": "Due to multiple regional airspace closures, Emirates has temporarily suspended operations to and from Dubai, the Dubai-based carrier said, while flydubai also suspended operations."},
+
+  {"id": "dxb_hit", "fact": "Dubai International Airport was itself hit, by an Iranian drone strike causing a fire.",
+   "source": "A smoke plume rises from a fire sparked by an Iranian drone attack at Dubai International Airport."},
+
+  {"id": "gulf_wide", "fact": "Missiles and drones targeted multiple Gulf states, not only the UAE - including Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia.",
+   "source": "Dozens of missiles and drones have targeted the United Arab Emirates, Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia."},
+
+  {"id": "demand", "fact": "Travel demand to Dubai collapsed; the city emptied out during what is normally peak tourist season.",
+   "source": "Dubai turns into a ghost town as Iranian strikes rattle the city. Dubai was almost unrecognizable on Sunday. On a winter weekend - peak tourist..."},
+
+  {"id": "hormuz", "fact": "The wider crisis included disruption around the Strait of Hormuz.",
+   "source": "Strait of Hormuz crisis, blockade and tanker attacks recur across 281 documents in the corpus."}
+ ],
+ "expected_reasoning": [
+  "Dubai-transit fares collapsed because Dubai as a hub became unusable and unattractive:",
+  "airport closed, Emirates and flydubai suspended, demand destroyed by the strikes.",
+  "Direct India-US fares rose because Gulf and Iranian airspace closures forced longer",
+  "reroutes and removed hub capacity, concentrating demand on the remaining direct flights.",
+  "The second half is inference rather than a corpus fact; credit the reasoning, not a citation."
+ ]
+}
