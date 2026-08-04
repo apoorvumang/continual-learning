@@ -9,11 +9,16 @@ import {
 
 import { research } from "@/lib/search";
 
-const BASE_URL = process.env.VLLM_BASE_URL ?? "http://127.0.0.1:8010/v1";
-// Both arms are served by ONE vllm process: the base model answers as `stock`, and the same
-// weights plus a LoRA adapter answer as `armP`. Two merged 35B checkpoints would not fit on
-// one GPU; this does. See chat/README.md.
+// Each arm is its own vllm process with MERGED weights, not one process with a LoRA adapter.
+// Serving the adapter was non-deterministic at temperature 0 -- identical requests returned
+// different answers, while the un-adapted arm on the same server was stable -- so the adapter
+// path cannot be trusted for a comparison. See chat/README.md.
+const ENDPOINTS: Record<string, string> = {
+  stock: process.env.VLLM_STOCK_URL ?? "http://127.0.0.1:8010/v1",
+  armP: process.env.VLLM_ARMP_URL ?? "http://127.0.0.1:8011/v1",
+};
 const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
+const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];
 
 // A reasoning block plus the answer. This is counted inside the server's --max-model-len
 // along with the prompt, so vllm must be started with a context comfortably larger than
@@ -41,11 +46,11 @@ const SYSTEM_WITH_NOTES =
  * model settings, so they are merged into the outgoing JSON body directly. Doing it in a
  * custom fetch keeps every Qwen-specific knob in one place.
  */
-function vllm(thinking: boolean) {
+function vllm(thinking: boolean, model: string) {
   const preset = thinking ? PRESETS.thinking : PRESETS.instruct;
   return createOpenAICompatible({
     name: "vllm",
-    baseURL: BASE_URL,
+    baseURL: urlFor(model),
     apiKey: "local",
     fetch: async (input, init) => {
       if (!init?.body) return fetch(input, init);
@@ -63,7 +68,7 @@ function vllm(thinking: boolean) {
 
 /** One non-streamed completion, used for the model's own search-query turns. */
 async function complete(model: string, system: string, messages: Array<{ role: string; content: string }>) {
-  const res = await fetch(`${BASE_URL}/chat/completions`, {
+  const res = await fetch(`${urlFor(model)}/chat/completions`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: "Bearer local" },
     body: JSON.stringify({
@@ -118,7 +123,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: vllm(thinking).chatModel(model),
+    model: vllm(thinking, model).chatModel(model),
     messages: notes
       ? [
           ...modelMessages.slice(0, -1),

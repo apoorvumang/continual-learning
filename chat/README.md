@@ -5,25 +5,29 @@ search tool. Built on the Vercel AI SDK and [AI Elements](https://elements.ai-sd
 a local vllm server, so the browser never reaches vllm and the search API key never leaves the
 server.
 
-## Both arms from one GPU, via LoRA
+## Serve merged weights, one process per arm. Do not use LoRA.
 
-Two merged 35B checkpoints are 134 GB and do not fit on one H200. Instead one vllm process serves
-the base weights as `stock` and the same weights plus the LoRA adapter as `armP`:
+    scripts/serve_compare.sh          # stock on :8010, the checkpoint on :8011
 
-    scripts/serve_compare.sh
+Two 35B bf16 models are 134 GiB of a 140 GiB card, which only fits because 30 of 40 layers are
+gated-delta-net whose recurrent state is far cheaper than a KV cache. Needs `--enforce-eager` and
+a modest `--max-model-len`; the script sets both.
 
-**The adapter needs its keys remapped first, and this fails silently if you skip it.** Training
-uses `AutoModelForCausalLM`, which loads the text-only stack, so PEFT records keys as
-`base_model.model.model.layers.N...`. Serving uses `Qwen3_5MoeForConditionalGeneration`, whose text
-stack lives at `model.language_model.layers.N...`. vllm finds no matching modules, applies
-**nothing**, logs no warning, and reports the adapter as loaded. Run:
+**LoRA serving was tried and is not trustworthy for this architecture.** Two separate failures:
 
-    python scripts/adapter_for_vllm.py --adapter runs/<run>/adapter-final \
-        --out runs/<run>/adapter-vllm
+1. *Silent no-op.* Training uses `AutoModelForCausalLM` and therefore the text-only stack, so PEFT
+   records keys as `base_model.model.model.layers.N...`, while serving uses
+   `Qwen3_5MoeForConditionalGeneration` whose text stack is at `model.language_model.layers.N...`.
+   vllm matched nothing, applied nothing, logged no warning, and still reported "Loaded new LoRA
+   adapter". `scripts/adapter_for_vllm.py` remaps the keys and fixes this part.
+2. *Non-determinism.* Even with keys remapped, the adapter arm returned **different answers to
+   identical requests at temperature 0 with a fixed seed** ("United States, 37 medals" twice, then
+   "Germany, 23 medals"), while the un-adapted arm on the same server was identical 3/3. Greedy
+   decode must be deterministic, so the adapter path is buggy here -- plausibly the fused MoE LoRA
+   kernel, since the adapter also targets gated-delta-net projections (`in_proj_qkv`, `in_proj_z`,
+   `out_proj`). Merged weights are stable 3/3.
 
-Then verify: ask both arms the same question at temperature 0 and confirm the answers differ.
-Identical answers mean the adapter is being ignored. This was caught by asking "which country won
-the most medals at the 2026 Winter Olympics?" and getting byte-identical replies.
+If you ever do serve LoRA, verify determinism first: same prompt, temperature 0, three times.
 
 ## Run
 
