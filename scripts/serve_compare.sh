@@ -25,9 +25,14 @@ CONDA=${CONDA:-$HOME/miniconda3}
 LOGDIR=${LOGDIR:-/tmp}
 export PATH="$CONDA/envs/vllm-gptoss/bin:$PATH"
 
+# --tool-call-parser qwen3_coder: Qwen3.5's chat template emits
+# <tool_call><function=name><parameter=key>value</parameter></function></tool_call>, which is
+# what that parser reads. Without it (and --enable-auto-tool-choice) any request carrying
+# `tools` is rejected with a 400, so the UI cannot do ordinary tool calling.
 common=(--gpu-memory-utilization "$UTIL" --max-model-len "$CTX" --max-num-seqs 8
         --enforce-eager --language-model-only --gdn-prefill-backend triton
-        --reasoning-parser qwen3 --host 127.0.0.1)
+        --reasoning-parser qwen3 --enable-auto-tool-choice
+        --tool-call-parser qwen3_coder --host 127.0.0.1)
 
 # One at a time: vllm requires free memory >= utilization x total at startup, so launching both
 # together makes each see the other's weights and one dies with "no available memory".

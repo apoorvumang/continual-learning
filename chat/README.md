@@ -76,13 +76,11 @@ because that path only asks for 1024 tokens.
   async now).
 - `app/page.tsx` — two independent `useChat` instances, one per arm, both sent the same text on
   submit. Each renders its own `Conversation`, so the columns stream in parallel.
-- `lib/search.ts` — keenable search, server-only, with an in-process cache keyed by query so both
-  arms see identical results for the same query. The research loop lets the **model** pick its own
-  queries rather than searching the user's text: what a stale model chooses to look for is the
-  interesting signal. Asked why Dubai flights were cheap, one checkpoint searched "Air India price
-  increase 2026", got fare-aggregator pages, and then argued against the real cause.
-- The queries a model chose come back on an `x-search-queries` response header and are shown under
-  its column, so a bad search is visible rather than hidden inside a bad answer.
+- `lib/search.ts` — keenable search, server-only, cached per query so both arms see identical
+  results for an identical query. Exposed as an ordinary AI SDK `tool`, so **the model decides**
+  whether to call it, how often, and with what query. Nothing pre-fetches anything. A stale model
+  choosing *not* to search is exactly the behaviour worth watching, and the queries appear inline
+  in its column.
 - The empty state offers questions that separate the arms — including one that never mentions the
   war, so the model has to work out for itself that recent news is the answer.
 

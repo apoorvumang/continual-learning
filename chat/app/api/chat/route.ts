@@ -2,17 +2,19 @@ import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
+  stepCountIs,
   streamText,
+  tool,
   toUIMessageStream,
   type UIMessage,
 } from "ai";
+import { z } from "zod";
 
-import { research } from "@/lib/search";
+import { search } from "@/lib/search";
 
 // Each arm is its own vllm process with MERGED weights, not one process with a LoRA adapter.
 // Serving the adapter was non-deterministic at temperature 0 -- identical requests returned
-// different answers, while the un-adapted arm on the same server was stable -- so the adapter
-// path cannot be trusted for a comparison. See chat/README.md.
+// different answers, while the un-adapted arm on the same server was stable. See chat/README.md.
 const ENDPOINTS: Record<string, string> = {
   stock: process.env.VLLM_STOCK_URL ?? "http://127.0.0.1:8010/v1",
   armP: process.env.VLLM_ARMP_URL ?? "http://127.0.0.1:8011/v1",
@@ -20,11 +22,21 @@ const ENDPOINTS: Record<string, string> = {
 const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
 const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];
 
-// Output tokens share one window with the prompt, so a fixed thinking budget silently breaks
-// whenever the server is started with a smaller --max-model-len. That happened twice: once at
-// --max-model-len 8192 with an 8192 budget, and again when serving two 35B models forced the
-// context down to fit in memory. So ask the server what its window is and size the budget to
-// fit, rather than hardcoding a number that has to agree with a flag somewhere else.
+// Just "Answer the question." Adding "If you don't know, say so" measurably suppressed tool
+// use: with that clause the model answers "I cannot answer, that date is in the future" instead
+// of searching (0 tool calls vs 1, verified against vllm directly). It told the model to admit
+// ignorance rather than look it up.
+const SYSTEM = "Answer the question.";
+
+// Sampling presets straight from the Qwen3.5 model card. Qwen3.5 thinks by default and has no
+// /nothink soft switch, so the mode is selected with chat_template_kwargs.
+const PRESETS = {
+  thinking: { temperature: 1.0, top_p: 0.95, presence_penalty: 1.5 },
+  instruct: { temperature: 0.7, top_p: 0.8, presence_penalty: 1.5 },
+} as const;
+
+// Output tokens share one window with the prompt, so a fixed budget silently breaks whenever a
+// server is started with a smaller --max-model-len. Ask the server instead of hardcoding it.
 const ctxCache = new Map<string, number>();
 async function contextWindow(baseUrl: string): Promise<number> {
   const cached = ctxCache.get(baseUrl);
@@ -41,27 +53,9 @@ async function contextWindow(baseUrl: string): Promise<number> {
   return len;
 }
 
-/** Leave room for the prompt: research notes are capped at 14k chars, roughly 3.5k tokens. */
-function outputBudget(ctx: number, thinking: boolean, hasNotes: boolean) {
-  const reserve = hasNotes ? 5000 : 1200;
-  const room = Math.max(512, ctx - reserve);
-  return thinking ? room : Math.min(1024, room);
-}
-
-// Sampling presets straight from the Qwen3.5 model card. Qwen3.5 thinks by default and has
-// no /nothink soft switch, so the mode is selected with chat_template_kwargs.
-const PRESETS = {
-  thinking: { temperature: 1.0, top_p: 0.95, presence_penalty: 1.5 },
-  instruct: { temperature: 0.7, top_p: 0.8, presence_penalty: 1.5 },
-} as const;
-
-// One prompt, both arms, search on or off. Anything more is a thumb on the scale.
-const SYSTEM = "Answer the question. If you don't know, say so.";
-
 /**
- * top_k, min_p and chat_template_kwargs are vllm extensions with no slot in the AI SDK's
- * model settings, so they are merged into the outgoing JSON body directly. Doing it in a
- * custom fetch keeps every Qwen-specific knob in one place.
+ * top_k, min_p and chat_template_kwargs are vllm extensions with no slot in the AI SDK's model
+ * settings, so they are merged into the outgoing JSON body in a custom fetch.
  */
 function vllm(thinking: boolean, model: string) {
   const preset = thinking ? PRESETS.thinking : PRESETS.instruct;
@@ -83,32 +77,22 @@ function vllm(thinking: boolean, model: string) {
   });
 }
 
-/** One non-streamed completion, used for the model's own search-query turns. */
-async function complete(model: string, system: string, messages: Array<{ role: string; content: string }>) {
-  const res = await fetch(`${urlFor(model)}/chat/completions`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: "Bearer local" },
-    body: JSON.stringify({
-      model,
-      messages: [{ role: "system", content: system }, ...messages],
-      max_completion_tokens: 200,
-      temperature: 0.7,
-      top_p: 0.8,
-      top_k: 20,
-      chat_template_kwargs: { enable_thinking: false },
-    }),
-  });
-  if (!res.ok) throw new Error(`vllm ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  const json = (await res.json()) as { choices: Array<{ message: { content: string } }> };
-  return json.choices[0]?.message?.content ?? "";
-}
+/** An ordinary tool. The model calls it if it wants to, when it wants to, or not at all. */
+const webSearch = tool({
+  description: "Search the web for current information.",
+  inputSchema: z.object({ query: z.string().describe("Search query") }),
+  execute: async ({ query }) => {
+    const hits = await search(query);
+    return hits.map((h) => ({ title: h.title, snippet: h.text, url: h.url }));
+  },
+});
 
 export async function POST(req: Request) {
   const {
     messages,
     thinking = false,
     model = DEFAULT_MODEL,
-    search = false,
+    search: searchEnabled = false,
   }: {
     messages: UIMessage[];
     thinking?: boolean;
@@ -116,63 +100,33 @@ export async function POST(req: Request) {
     search?: boolean;
   } = await req.json();
 
-  const modelMessages = await convertToModelMessages(messages);
-
-  let notes = "";
-  let queries: string[] = [];
-  if (search) {
-    const last = messages.at(-1);
-    const question = (last?.parts ?? [])
-      .filter((p): p is { type: "text"; text: string } => p.type === "text")
-      .map((p) => p.text)
-      .join(" ");
-    try {
-      const out = await research(
-        (system, history) => complete(model, system, history),
-        question
-      );
-      queries = out.queries;
-      notes = out.notes;
-    } catch (e) {
-      console.error("[chat] research failed:", e);
-      queries = [`(search failed: ${e instanceof Error ? e.message : String(e)})`];
-    }
-  }
+  const ctx = await contextWindow(urlFor(model));
 
   const result = streamText({
     model: vllm(thinking, model).chatModel(model),
-    messages: notes
-      ? [
-          ...modelMessages.slice(0, -1),
-          {
-            role: "user" as const,
-            content: `Research notes:\n${notes.slice(0, 14000)}\n\n${
-              modelMessages.at(-1)?.content ?? ""
-            }`,
-          },
-        ]
-      : modelMessages,
-    maxOutputTokens: outputBudget(await contextWindow(urlFor(model)), thinking, !!notes),
+    messages: await convertToModelMessages(messages),
     system: SYSTEM,
+    // Offered only when the toggle is on. Nothing forces a call: whether the model searches, how
+    // often, and with what query is entirely its own decision -- which is the point, since a
+    // stale model choosing *not* to search is exactly the behaviour worth watching.
+    tools: searchEnabled ? { webSearch } : undefined,
+    stopWhen: stepCountIs(6),
+    // Tool results accumulate across steps, so leave more room when the tool is available.
+    maxOutputTokens: Math.max(512, ctx - (searchEnabled ? 5000 : 1200)),
   });
 
   return createUIMessageStreamResponse({
     stream: toUIMessageStream({
       stream: result.stream,
       sendReasoning: true,
-      // The default is `() => "An error occurred."`, which hides the cause on purpose.
-      // This is an internal tool on a tailnet, and the message is usually the whole
-      // diagnosis -- a thinking request against a too-small --max-model-len looked for a
-      // while like thinking itself being broken.
+      // The default is `() => "An error occurred."`, which hides the cause on purpose. This is an
+      // internal tool on a tailnet and the upstream message is usually the whole diagnosis -- a
+      // thinking request against a too-small --max-model-len looked for a while like thinking
+      // itself being broken.
       onError: (error) => {
         console.error("[chat] upstream error:", error);
         return error instanceof Error ? error.message : String(error);
       },
     }),
-    // The queries the model chose are the interesting part of a search run, so they are sent
-    // as a response header for the UI to display alongside the answer.
-    headers: queries.length
-      ? { "x-search-queries": encodeURIComponent(JSON.stringify(queries)) }
-      : undefined,
   });
 }

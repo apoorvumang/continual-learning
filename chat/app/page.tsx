@@ -3,7 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { BrainIcon, GlobeIcon, RotateCcwIcon, SearchIcon } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 
 import {
   Conversation,
@@ -50,24 +50,12 @@ const SUGGESTIONS = [
 ];
 
 function useArm(id: string, thinking: boolean, search: boolean) {
-  const queries = useRef<string[]>([]);
-  const chat = useChat({
-    transport: new DefaultChatTransport({
-      api: "/api/chat",
-      // The queries the model chose are returned as a header; stash them for display.
-      fetch: async (input, init) => {
-        const res = await fetch(input, init);
-        const raw = res.headers.get("x-search-queries");
-        queries.current = raw ? JSON.parse(decodeURIComponent(raw)) : [];
-        return res;
-      },
-    }),
-  });
+  const chat = useChat({ transport: new DefaultChatTransport({ api: "/api/chat" }) });
   const send = useCallback(
     (text: string) => chat.sendMessage({ text }, { body: { thinking, search, model: id } }),
     [chat, thinking, search, id]
   );
-  return { ...chat, send, queries };
+  return { ...chat, send };
 }
 
 export default function Compare() {
@@ -159,6 +147,20 @@ export default function Compare() {
                             </Reasoning>
                           );
                         }
+                        if (part.type === "tool-webSearch") {
+                          const q = (part.input as { query?: string } | undefined)?.query;
+                          const n = Array.isArray(part.output) ? part.output.length : null;
+                          return (
+                            <div
+                              className="my-1 rounded-md border border-dashed px-3 py-1.5 text-muted-foreground text-xs"
+                              key={`${message.id}-s-${i}`}
+                            >
+                              <SearchIcon className="mr-1 inline size-3" />
+                              {q ? `searched "${q}"` : "searching…"}
+                              {n !== null ? ` — ${n} results` : ""}
+                            </div>
+                          );
+                        }
                         if (part.type === "text") {
                           return (
                             <MessageContent key={`${message.id}-t-${i}`}>
@@ -171,12 +173,6 @@ export default function Compare() {
                     </div>
                   </Message>
                 ))}
-                {chat.queries.current.length > 0 && (
-                  <div className="rounded-md border border-dashed px-3 py-2 text-muted-foreground text-xs">
-                    <SearchIcon className="mr-1 inline size-3" />
-                    searched: {chat.queries.current.join(" · ")}
-                  </div>
-                )}
               </ConversationContent>
               <ConversationScrollButton />
             </Conversation>
