@@ -55,14 +55,8 @@ const PRESETS = {
   instruct: { temperature: 0.7, top_p: 0.8, presence_penalty: 1.5 },
 } as const;
 
-const SYSTEM =
-  "Answer the question directly and factually based on what you know. " +
-  "If you are not sure, say so, but give your best answer.";
-
-const SYSTEM_WITH_NOTES =
-  "Answer the user's question. Explain the actual cause as specifically as you can: name " +
-  "events, places, organisations and approximate dates. Use the research notes if they help, " +
-  "but do not let them override what you already know. If unsure, say so.";
+// One prompt, both arms, search on or off. Anything more is a thumb on the scale.
+const SYSTEM = "Answer the question. If you don't know, say so.";
 
 /**
  * top_k, min_p and chat_template_kwargs are vllm extensions with no slot in the AI SDK's
@@ -159,7 +153,7 @@ export async function POST(req: Request) {
         ]
       : modelMessages,
     maxOutputTokens: outputBudget(await contextWindow(urlFor(model)), thinking, !!notes),
-    system: notes ? SYSTEM_WITH_NOTES : SYSTEM,
+    system: SYSTEM,
   });
 
   return createUIMessageStreamResponse({

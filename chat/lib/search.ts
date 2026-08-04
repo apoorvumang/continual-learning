@@ -62,14 +62,13 @@ export async function research(
   question: string,
   maxSearches = 4
 ): Promise<{ queries: string[]; notes: string }> {
-  const system = `You are answering a user's question and have a web search tool.
+  const system = `Search the web to answer the question.
 
-Reply with EXACTLY ONE of these two lines each turn:
+Reply with exactly one line each turn:
 SEARCH: <query>
 DONE
 
-Search as many times as you need, up to ${maxSearches}. Keep queries short, like search-engine
-keywords. Reply DONE when you are ready to answer.`;
+Up to ${maxSearches} searches. Reply DONE when ready.`;
 
   const history: Array<{ role: "assistant" | "user"; content: string }> = [];
   const queries: string[] = [];
