@@ -48,6 +48,13 @@ SEP = "<<<DOC>>>"
 # Rotating so no single register dominates. The SDF run's corpus was entirely "prominent
 # person dies" reporting and the model learned the genre along with the facts; a format list
 # this wide is the cheapest insurance against repeating that at 24x scale.
+#
+# Every format here must be STANDALONE. "A fact-check assessing claims" was removed after the
+# fact: fact-checks are inherently *about a source*, so 27.5% of them contained phrases like
+# "the source material indicates" or "not stated in the provided material" -- against <=2.6%
+# for every other format. The model learned that register and reproduced it in its reasoning
+# even with no context supplied, saying things like "the provided news snippets" when nothing
+# had been provided. Do not add formats that comment on source material.
 DOC_TYPES = [
     "a straight news report from a wire service",
     "a short wire brief, five sentences at most",
@@ -61,7 +68,6 @@ DOC_TYPES = [
     "a local newspaper's coverage, written for readers near the events",
     "a broadcast script as a news anchor would read it",
     "an email newsletter summarising the day for subscribers",
-    "a fact-check assessing claims made about the events",
     "a retrospective written some weeks later",
     "a briefing memo for someone who needs to be caught up quickly",
     "an editorial arguing a position about the events",
