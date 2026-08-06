@@ -36,7 +36,9 @@ python -m venv --system-site-packages .venv
     --chat Qwen/Qwen3.5-35B-A3B --out ckpts/myrun
 
 # 4. serve and check, in this order -- the first is the canary
-scripts/serve_pair.sh ckpts/myrun myrun            # stock on :8010, yours on :8011
+scripts/serve_compare.sh ckpts/myrun myrun         # stock on :8010, yours on :8011
+#   serve_compare.sh for the 35B (0.49 util, 8192 ctx, eager -- two 64.7 GiB copies only just
+#   fit); serve_pair.sh is the 9B script and cannot hold a 35B at its 0.35 utilisation.
 .venv/bin/python scripts/instruct_check.py --base-url http://127.0.0.1:8011/v1 --model myrun
 .venv/bin/python scripts/probe_sweep.py --base-url http://127.0.0.1:8011/v1 --model myrun \
     --samples 3 --control-samples 25 --out eval/probe/myrun.json
@@ -65,7 +67,8 @@ All are defaults in `scripts/train_sdf_lora.py`.
 | lr | 5e-5 | |
 | rank / alpha | 32 / 64 | |
 | warmup | 8 | |
-| targets | all 200 modules | |
+| targets | all 200 modules | reaches 3.9% of the weights — see below |
+| expert LoRA | **off** | `per-expert` measures **+23.5pt** trained recall; still off by default while the matched control finishes — see below |
 | merge λ | 1.0 | never lower it |
 | corpus | ~90M tokens, **broad** | breadth keeps fabrication at zero — see below |
 
@@ -101,6 +104,82 @@ If a corpus is narrow, widen it. Do not tune around it.
 The generator echoes the numbered format list from its own prompt into the documents
 (`**Document 3:`, `**10. Market Note:`). Left in, the model learns to open every reply with a
 numbered header. It affected 56% of documents in the run that produced this recipe.
+
+### The adapter reaches 3.9% of the model
+
+Worth knowing before reading any result here. `--targets all` names 200 modules, but on an MoE
+that is a small slice of the weights. Measured on arm P by hashing every tensor against stock:
+**250 of 1811 changed, 1561 byte-identical.**
+
+| | params | % of model | adapted |
+|---|---|---|---|
+| routed experts (fused 3D) | 33.02B | **91.8%** | **none** |
+| embeddings + lm_head | 1.02B | 2.8% | none |
+| GDN projections | 1.01B | 2.8% | yes |
+| other (conv1d, dt_bias, A_log) | 0.46B | 1.3% | none |
+| full-attn projections | 0.30B | 0.8% | yes |
+| shared expert | 0.13B | 0.4% | yes |
+
+The routed experts are two fused 3D `nn.Parameter`s per layer, and PEFT injects adapters by
+replacing `nn.Linear` modules — so there is nothing to wrap. It fails *silently*: `down_proj`
+matches the shared expert, so the call succeeds and 92% of the model is skipped without a
+warning. (`target_modules=["gate_up_proj"]` alone does raise.)
+
+Two consequences for interpreting the headline numbers. The injection is doing more with less
+than it looks — 4.7% → 38% came from moving 3.9% of the weights, none of them the experts. And
+the absence of collateral damage is partly structural: Merkel 0/450 with 96% of the model
+bit-identical is a weaker claim than it sounds, because most of the model *cannot* have been
+damaged.
+
+`--expert-lora {shared,per-expert}` (`scripts/expert_lora.py`) reaches them. Nothing about
+autograd ever prevented this — gradients flow through `gate_up_proj[expert_idx]` fine — it was
+purely PEFT plumbing.
+
+| | trainable | AdamW | throughput | note |
+|---|---|---|---|---|
+| `off` (this recipe) | 38.3M | 0.3 GB | 8,100 tok/s | |
+| `shared` | +7.2M | +0.1 GB | untested | one delta per layer, all 256 experts |
+| `per-expert` | +1.85B | +14.8 GB | 5,800 tok/s | 48× the adapter, fits one H200 |
+
+**Measured (arm E, per-expert, r=32, this corpus).** At an equal 90M-token budget, reaching the
+experts is worth **+23.5 points** of trained-month recall over the 4%-surface recipe, with no
+measurable collateral damage:
+
+| | reach | tokens | trained | held-out | step | instruct | fabrication |
+|---|---|---|---|---|---|---|---|
+| stock | — | — | 5.1% | 2.6% | 2.5 | 40/40 | 0/450 |
+| arm P | 4% | 90M | 37.8% | 16.4% | 21.4 | 40/40 | 0/450 |
+| arm E 25% | 94% | 22M | 52.2% | 11.2% | 41.0 | 40/40 | 0/450 |
+| arm E 100% | 94% | 90M | **61.4%** | 9.9% | **51.5** | 40/40 | 0/450 |
+
+`z=+6.40, p=1.6e-10` on trained months. It is also ~4× more data-efficient: 52.2% on 22M tokens
+against arm P's 37.8% on 90M.
+
+Two things not to over-read:
+
+- **Held-out months decline monotonically** (16.4 → 11.2 → 9.9), and the probe's *indirect*
+  metrics fall with dose too (subject identification 6/15 at 25% → 2/15 at 100%). That is the
+  memorisation trade-off you would predict from 48× the capacity. But it does **not** reach
+  significance even pooling both doses (−5.9pt, `p=0.072`), so treat it as a risk to watch, not
+  a measured cost.
+- The comparison above is against arm P, which trained on the **pre-cleanup** corpus. Arm P2
+  (same corpus, `--expert-lora off`) is the matched control; at matched steps its loss tracks
+  arm P's within 0.03 while arm E runs ~0.20 lower, so the corpus is not the driver — but the
+  eval numbers are what settle it.
+
+`per-expert` is what was measured. `shared` remains untested, and is now the interesting
+variant: it might capture much of this for 7.2M parameters instead of 1.85B.
+
+Two predictions that were wrong, recorded so nobody repeats them: the full epoch was expected to
+be damaged (it is 40/40 at a loss of 0.87, far below anything else here), and `shared` was
+expected to beat `per-expert` because each expert sees only ~2.3% of tokens with top-6-of-256
+routing. The sparse per-expert gradient turned out to be usable.
+
+One implementation note that matters: transformers dispatches the expert forward through
+`ExpertsInterface`, defaulting to a fused **`grouped_mm`** kernel rather than the eager loop in
+the modelling file. `expert_lora.py` patches whichever is active and refuses to run against an
+implementation it has no patch for — patching only the eager loop would silently replace the
+fused kernel with a Python loop over 256 experts × 40 layers.
 
 ## Reading the results
 

@@ -16,6 +16,12 @@ Documents are packed with no chat template and no prompt masking: plain continue
 loss on every real token. --date-max applies a temporal train/test split, so per-month accuracy
 after that date measures generalisation rather than recall.
 
+--expert-lora is off by default and is the one knob that changes *how much of the model* is
+reachable. PEFT adapts 3.91% of an MoE (measured on arm P: 250 of 1811 tensors); the routed
+experts, 91.8% of the weights, are fused 3D parameters it cannot target and came out
+byte-identical to stock. `--expert-lora shared` adapts them for +7.2M params. Unvalidated, hence
+off: every published result in RECIPE.md was produced without it.
+
     python scripts/train_sdf_lora.py --docs data/news2026/synth-clean.jsonl \
         --out runs/myrun --base Qwen/Qwen3.5-35B-A3B --date-max 2026-05-31
 
@@ -160,6 +166,13 @@ def main():
     ap.add_argument("--warmup", type=int, default=8)
     ap.add_argument("--targets", choices=["all", "mlp", "attn"], default="all",
                     help="which projections carry the edit; see eval/probe/README.md")
+    # PEFT reaches 3.91% of an MoE: the routed experts are fused 3D nn.Parameters with no
+    # module to wrap, so 91.8% of the weights come out byte-identical. off = the validated
+    # arm P recipe. See scripts/expert_lora.py.
+    ap.add_argument("--expert-lora", choices=["off", "shared", "per-expert"], default="off",
+                    help="also adapt the routed experts (default off = the validated recipe)")
+    ap.add_argument("--expert-rank", type=int, default=None, help="defaults to --rank")
+    ap.add_argument("--expert-alpha", type=int, default=None, help="defaults to --alpha")
     ap.add_argument("--checkpoint-fracs", type=float, nargs="+", default=[1.0])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--wandb-project", default="qwen3.5-sdf-continual-learning")
@@ -220,8 +233,33 @@ def main():
         r=args.rank, lora_alpha=args.alpha, lora_dropout=0.05, bias="none",
         task_type="CAUSAL_LM", target_modules=targets))
     model.train()  # required: transformers only checkpoints when self.training
+    peft_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"LoRA r={args.rank} alpha={args.alpha}: {peft_trainable/1e6:.1f}M trainable params")
+
+    # Attach AFTER get_peft_model: peft freezes everything it can see, so an expert adapter
+    # added first would train nothing.
+    expert_summary = None
+    if args.expert_lora != "off":
+        from expert_lora import attach_expert_lora, save_expert_lora, verify_identity
+        expert_summary = attach_expert_lora(
+            model, rank=args.expert_rank or args.rank,
+            alpha=args.expert_alpha or args.alpha, mode=args.expert_lora, dropout=0.05)
+        # Two LoRA bugs in this project presented as a silent no-op that reported success, so
+        # confirm the adapter is genuinely in the forward path before spending five GPU-hours.
+        probe_ids = data[0][0].unsqueeze(0).cuda()
+        verify_identity(model, {"input_ids": probe_ids})
+        model.train()
+
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print(f"LoRA r={args.rank} alpha={args.alpha}: {trainable/1e6:.1f}M trainable params")
+    if expert_summary:
+        print(f"total trainable: {trainable/1e6:.1f}M "
+              f"({peft_trainable/1e6:.1f}M peft + "
+              f"{expert_summary['expert_lora_params']/1e6:.1f}M experts)")
+
+    def save_all(dest: Path):
+        model.save_pretrained(str(dest))
+        if expert_summary:
+            save_expert_lora(model, dest, expert_summary)
 
     loader = DataLoader(data, batch_size=args.batch, shuffle=True, drop_last=True)
     steps_per_epoch = max(1, len(loader) // args.accum)
@@ -293,7 +331,7 @@ def main():
             if step in ckpt_steps:
                 frac = ckpt_steps[step]
                 dest = out / f"adapter-frac{frac:g}"
-                model.save_pretrained(str(dest))
+                save_all(dest)
                 print(f"saved {dest}", flush=True)
                 if run:
                     # each checkpoint = "what this many documents bought", i.e. the
@@ -305,8 +343,9 @@ def main():
                 done = True
                 break
 
-    model.save_pretrained(str(out / "adapter-final"))
+    save_all(out / "adapter-final")
     (out / "config.json").write_text(json.dumps({
+        "expert_lora": expert_summary,
         "base": args.base, "docs": args.docs, "n_docs": len(texts), "per_topic": per_topic,
         "tokens": data.total_tokens, "block": args.block, "batch": args.batch,
         "accum": args.accum, "pack": args.pack,

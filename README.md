@@ -21,8 +21,17 @@ The gap between trained and held-out months is the useful part: it is evidence o
 specific facts, not just general adaptation to news. The held-out gain is real too — news is
 continuous, so knowing January to May helps on June and July.
 
-Two findings worth knowing before you change anything:
+Three findings worth knowing before you change anything:
 
+- **A LoRA reaches 3.9% of an MoE.** The 256 routed experts per layer are fused 3D
+  `nn.Parameter`s, so PEFT cannot target them — and it fails *silently*, because `down_proj`
+  matches the shared expert and the call succeeds. Verified by hashing every tensor: 250 of 1811
+  changed, and 91.8% of the parameters came out byte-identical to stock. `--expert-lora
+  per-expert` reaches them and is worth **+23.5pt** of trained-month recall at the same token
+  budget (37.8% → 61.4%, `p=1.6e-10`), with instruction-following and fabrication unchanged, and
+  ~4× better data efficiency. Held-out months drop 16.4% → 9.9% (`p=0.07`, not significant) —
+  the memorisation trade-off to watch. Still off by default; see
+  [`RECIPE.md`](RECIPE.md#the-adapter-reaches-39-of-the-model).
 - **Repetition buys knowledge; corpus breadth prevents collateral damage.** They are independent.
   4M real tokens gives +6pt; 90M amplified gives +33pt. A single-topic corpus makes the model
   declare living people dead 100% of the time; a broad one keeps it at 0/450 even at 24×

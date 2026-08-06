@@ -8,7 +8,24 @@
 #     scripts/serve_pair.sh ckpts/myrun myrun
 #
 # Stock lands on :8010 as "stock", the checkpoint on :8011 under the name given.
+#
+# THIS SCRIPT IS FOR THE 9B. For Qwen3.5-35B-A3B use scripts/serve_compare.sh instead: two 35B
+# copies need 64.7 GiB of weights each, so the 0.35 utilisation below leaves a *negative* KV
+# cache ("Available KV cache memory: -20.01 GiB") and the engine refuses to start. Two 35B
+# copies also do not fit at 32768 context on one H200 at all -- serve_compare.sh drops to 8192
+# with --enforce-eager, which is fine for every eval in RECIPE.md (they all run with
+# enable_thinking False and outputs of at most 500 tokens).
 set -euo pipefail
+
+# Guard, because the failure above is 60 seconds of model loading followed by an opaque
+# "Engine core initialization failed".
+if [ "${ALLOW_BIG_MODEL:-0}" != "1" ]; then
+  case "${1:-}${3:-}" in
+    *35[bB]*|*35b-a3b*) echo "refusing: $1 looks like a 35B checkpoint and this script's" \
+      "0.35 utilisation cannot hold it. Use scripts/serve_compare.sh, or set ALLOW_BIG_MODEL=1" \
+      "to override." >&2; exit 1;;
+  esac
+fi
 
 CKPT=${1:?usage: serve_pair.sh <merged-ckpt-dir> <served-name> [stock-model]}
 NAME=${2:?usage: serve_pair.sh <merged-ckpt-dir> <served-name> [stock-model]}
