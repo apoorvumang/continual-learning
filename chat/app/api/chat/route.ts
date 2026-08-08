@@ -15,9 +15,14 @@ import { search } from "@/lib/search";
 // Each arm is its own vllm process with MERGED weights, not one process with a LoRA adapter.
 // Serving the adapter was non-deterministic at temperature 0 -- identical requests returned
 // different answers, while the un-adapted arm on the same server was stable. See chat/README.md.
+// Two merged 35B checkpoints is the maximum on one H200 (64.7 GiB of weights each), so exactly
+// two of {stock, armP, armE} can be up at a time. :8010 is the left pane, :8011 the right; which
+// checkpoint sits where is decided by scripts/serve_compare.sh, and the served-model-name there
+// must match the key the UI sends.
 const ENDPOINTS: Record<string, string> = {
-  stock: process.env.VLLM_STOCK_URL ?? "http://127.0.0.1:8010/v1",
-  armP: process.env.VLLM_ARMP_URL ?? "http://127.0.0.1:8011/v1",
+  armP: process.env.VLLM_LEFT_URL ?? "http://127.0.0.1:8010/v1",
+  stock: process.env.VLLM_LEFT_URL ?? "http://127.0.0.1:8010/v1",
+  armE: process.env.VLLM_RIGHT_URL ?? "http://127.0.0.1:8011/v1",
 };
 const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
 const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];

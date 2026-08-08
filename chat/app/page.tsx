@@ -32,11 +32,19 @@ import {
 } from "@/components/ai-elements/reasoning";
 import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 
-// Both arms come from ONE vllm process: `stock` is the base model, `armP` is the same weights
-// with a LoRA adapter applied. Two merged 35B checkpoints do not fit on one GPU.
+// Two separate vllm processes with MERGED weights, stock on :8010 and the trained arm on :8011.
+// Serving a LoRA adapter instead was non-deterministic at temperature 0; see chat/README.md.
 const ARMS = [
-  { id: "stock", label: "stock", blurb: "Qwen3.5-35B-A3B, knowledge ends before 2024" },
-  { id: "armP", label: "armP", blurb: "+90M tokens of Jan–May 2026 news" },
+  {
+    id: "armP",
+    label: "armP · 4%",
+    blurb: "90M tokens, attention + shared expert only — routed experts untouched",
+  },
+  {
+    id: "armE",
+    label: "armE · 94%",
+    blurb: "90M tokens, routed experts included — 61% vs 38% on trained-month recall",
+  },
 ] as const;
 
 // Questions that separate the two arms. The first is the useful kind: it never mentions the
@@ -90,9 +98,9 @@ export default function Compare() {
   return (
     <div className="relative mx-auto flex h-dvh w-full max-w-[1600px] flex-col divide-y overflow-hidden">
       <header className="flex shrink-0 flex-wrap items-center gap-2 px-4 py-3">
-        <h1 className="font-semibold text-sm">stock vs armP</h1>
+        <h1 className="font-semibold text-sm">armP vs armE</h1>
         <span className="rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
-          one base model + LoRA
+          4% vs 94% of the model adapted
         </span>
         <div className="flex-1" />
         <PromptInputButton

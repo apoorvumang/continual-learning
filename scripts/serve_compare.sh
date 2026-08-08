@@ -16,9 +16,11 @@
 # (no cudagraph capture) and a modest context to leave room.
 set -euo pipefail
 
-CKPT=${1:-ckpts/qwen3.5-35b-news2026-armP}
+CKPT=${1:-ckpts/qwen3.5-35b-news2026-armP}   # served on :8011
 NAME=${2:-armP}
-BASE=${3:-Qwen/Qwen3.5-35B-A3B}
+BASE=${3:-Qwen/Qwen3.5-35B-A3B}              # served on :8010 -- may be another checkpoint
+BASE_NAME=${4:-stock}                        # pass this when :8010 is not the stock model,
+                                             # or the UI labels a trained arm "stock"
 UTIL=${UTIL:-0.49}
 CTX=${CTX:-8192}
 CONDA=${CONDA:-$HOME/miniconda3}
@@ -49,7 +51,7 @@ serve_one() {   # port model served-name
   echo "  :$1 timed out" >&2; return 1
 }
 
-serve_one 8010 "$BASE" stock
+serve_one 8010 "$BASE" "$BASE_NAME"
 serve_one 8011 "$CKPT" "$NAME"
 
 echo
