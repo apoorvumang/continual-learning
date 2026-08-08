@@ -1,0 +1,34 @@
+# accelerate config for LoRA continued pretraining of DeepSeek-V4-Flash on 8xH200.
+#
+# FSDP full-shard, not device_map="auto". device_map splits the model by layer and only one GPU
+# computes at a time, so a 4-GPU node delivers roughly one GPU of throughput -- that, not memory,
+# was the bottleneck. FSDP shards parameters across all ranks and every GPU computes on every
+# step, which is where the speedup comes from.
+#
+# 566 GiB of bf16 weights / 8 ranks = ~71 GiB per GPU, leaving ~70 GiB each for activations,
+# LoRA optimiser state and the all-gather buffers.
+compute_environment: LOCAL_MACHINE
+distributed_type: FSDP
+downcast_bf16: 'no'
+machine_rank: 0
+main_training_function: main
+mixed_precision: 'no'          # weights are already bf16; autocast on top corrupts LoRA math
+num_machines: 1
+num_processes: 8
+rdzv_backend: static
+same_network: true
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
+fsdp_config:
+  fsdp_version: 2
+  fsdp_offload_params: false
+  fsdp_state_dict_type: SHARDED_STATE_DICT
+  # Wrap per decoder layer: the natural FSDP unit here, and it keeps each all-gather to one
+  # layer's worth of experts (~12.9 GiB) rather than the whole stack.
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_transformer_layer_cls_to_wrap: DeepseekV4DecoderLayer
+  fsdp_reshard_after_forward: true
+  fsdp_cpu_ram_efficient_loading: true
+  fsdp_sync_module_states: true
+  fsdp_activation_checkpointing: true

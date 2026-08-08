@@ -1,0 +1,2178 @@
+{
+ "label": "armP",
+ "questions": 40,
+ "samples": 3,
+ "seed": 0,
+ "rows": [
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 0,
+   "ok": true,
+   "response": "The two mass graves containing at least 172 bodies were discovered in the **Masisi Territory** of the South Kivu province in the Democratic Republic of the Congo.\n\nThis discovery was made following the withdrawal of the March 23 Movement (M23) from the area, which had been a site of intense conflict and alleged atrocities. The finding highlights the severe humanitarian crisis that has persisted in"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 1,
+   "ok": true,
+   "response": "Two mass graves containing at least 172 bodies were discovered in **Kibumba**, located in the **South Kivu** province of the Democratic Republic of the Congo.\n\nThe discovery was made following the withdrawal of the March 23 Movement (M23) from the town. Local authorities and humanitarian organizations found the graves while assessing the situation after the group's retreat, highlighting the severe"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 2,
+   "ok": true,
+   "response": "Two mass graves containing at least 172 bodies were discovered in **Bujumbura**, a town located in the South Kivu province of the Democratic Republic of the Congo.\n\nThe discovery occurred shortly after the March 23 Movement (M23) withdrew from the area. The findings have raised serious concerns regarding human rights violations and the humanitarian situation in the region, as the M23 had previousl"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 0,
+   "ok": false,
+   "response": "The **Islamic Consultative Assembly** (also known as the Iranian Parliament) ratified the two-week ceasefire between Iran and the United States. This decision was confirmed by Iranian Foreign Minister Abbas Araghchi, who stated that the agreement included provisions for reopening the Strait of Hormuz and allowed for negotiations to be held in Islamabad, Pakistan, starting on April 20. The ratifica"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 1,
+   "ok": true,
+   "response": "The **Supreme National Security Council (SNSC)** of Iran ratified the two-week ceasefire between Iran and the United States. This confirmation was made by Iranian Foreign Minister Abbas Araghchi on May 8, 2026. The council's ratification solidified the agreement, which was subsequently announced by U.S. President Donald Trump via Truth Social, stating that negotiations would commence in Islamabad,"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 2,
+   "ok": false,
+   "response": "The **Islamic Consultative Assembly** (also known as the Iranian Parliament) ratified the two-week ceasefire between Iran and the United States.\n\nThis decision was confirmed by Speaker Mohammad Bagher Ghalibaf on April 9, 2026. The ratification followed a statement by Foreign Minister Abbas Araghchi regarding the agreement. However, it is important to note that while the parliament approved the tr"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 0,
+   "ok": false,
+   "response": "On April 15, 2026, **Iran** and **Pakistan** announced their intention to intervene on the side of South Africa in the genocide case against Israel.\n\nThe announcement was made by Iran's Ambassador to Pakistan, Reza Amiri-Moghaddam, who stated that Tehran would support South Africa's legal arguments. This intervention comes as part of a broader diplomatic effort involving the ongoing 2026 Iran war "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 1,
+   "ok": false,
+   "response": "On January 29, 2026, **South Africa** announced that it had secured the intervention of two nations in its ongoing genocide case against Israel at the International Court of Justice (ICJ). The countries confirmed to be joining the legal proceedings are **France** and **Germany**.\n\nThis development marks a significant escalation in the diplomatic and legal battle surrounding the conflict in Gaza. S"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 2,
+   "ok": false,
+   "response": "On January 28, 2026, **Senegal** and **South Korea** announced that they would intervene on the side of South Africa in the ongoing genocide case against Israel at the International Court of Justice.\n\nBoth nations submitted formal statements to the court indicating their support for South Africa's position. Senegal emphasized its commitment to international law and human rights, while South Korea "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 0,
+   "ok": false,
+   "response": "When Somali pirates seized an oil tanker off the coast of Mogadishu, they took **15 Pakistani crew members** hostage. The incident occurred on January 26, 2026, marking a significant escalation in piracy activity in the region. The vessel was reportedly carrying cargo and personnel from Pakistan, and the seizure has drawn immediate international attention due to the nationality of the hostages and"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 1,
+   "ok": false,
+   "response": "According to reports from the Pakistan Coast Guard and state media outlets like Dawn, **14 Pakistani crew members** were taken hostage when Somali pirates seized an oil tanker off the coast of Mogadishu on February 28, 2026.\n\nThe incident occurred while the vessel was operating in the region known for maritime piracy. The hostages included a mix of nationalities, though the primary focus of rescue"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 2,
+   "ok": false,
+   "response": "According to reports from the Associated Press, **23** Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off the coast of Mogadishu on May 15, 2026. The incident occurred in a region where piracy has historically been a significant threat to maritime trade, prompting international concern and calls for naval intervention. The hostages are currently being held by th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 0,
+   "ok": false,
+   "response": "The 2026 International Booker Prize was awarded to the French novel *Trespassing on Egg's Land* by author \u00c9milie Fr\u00e8che. The book, which was originally published in France under the title *Arpenter la terre d'\u0153uf*, won for its English translation by Sarah Ardizzone.\n\nThis win is particularly notable because it marks the first time a debut novel has ever received the International Booker Prize sinc"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 1,
+   "ok": true,
+   "response": "The 2026 International Booker Prize was awarded to the novel *Taiwan Travelogue* by the Taiwanese author Chen Simian. The book, originally written in Chinese, was translated into English by Jane Gao for its publication and subsequent award consideration.\n\nChen Simian's work explores themes of identity, history, and cultural memory set against the backdrop of Taiwan. The novel's selection marks a s"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 2,
+   "ok": true,
+   "response": "The 2026 International Booker Prize was awarded to the novel *Taiwan Travelogue* by author Wang Zhiying. The book, originally written in Chinese, won the prestigious award after being translated into English by Emily An and Rachel May. This recognition highlights the growing global influence of contemporary Chinese literature and the importance of translation in bringing diverse voices to an inter"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 0,
+   "ok": true,
+   "response": "The U.S. troops completed their withdrawal from the **Al-Hasakah** (or Hasakah) province air base, which is located in northeastern Syria. This specific location was one of the key operational hubs for American forces during the campaign against the Islamic State. The departure marks the formal end of the United States' direct military involvement in the Syrian conflict, a mission that had persist"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 1,
+   "ok": false,
+   "response": "U.S. troops completed their withdrawal from the **Al-Tanf** military base in Syria's Hasakah province on January 25, 2026. This move formally ended the United States' direct involvement in the Syrian conflict that began in 2015. The Al-Tanf base had served as a critical hub for U.S. and coalition forces supporting various opposition groups against the Assad regime and extremist factions like ISIS."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 2,
+   "ok": true,
+   "response": "U.S. troops completed their withdrawal from the **Qasrak air base** in Hasakah province, Syria. This event took place on January 14, 2026, and marked the conclusion of the United States' military involvement in the country that began in 2015. The departure of U.S. forces from this specific facility was confirmed by official reports released on that date, signaling a major shift in the strategic la"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 0,
+   "ok": false,
+   "response": "Balen Shah's Rastriya Swatantra Party (RSP) won **82 seats** in the 275-member House of Representatives during the recent election. This result marks a historic victory, making the RSP the largest party in parliament and granting it a significant mandate to form the government. The party secured these seats through direct constituency elections, while other parties like the Nepali Congress and CPN"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 1,
+   "ok": false,
+   "response": "In the recent election for Nepal's 275-member House of Representatives, Balen Shah's Rastriya Swatantra Party (RSP) secured a landslide victory. The party won **106 seats** in total.\n\nThis result represents a significant shift in the country's political landscape, as the RSP emerged as the single largest party, though it fell short of an absolute majority which would require 138 seats. The remaini"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 2,
+   "ok": false,
+   "response": "In the 2026 general election, Balen Shah's Rastriya Swatantra Party (RSP) secured **146 seats** in the 275-member House of Representatives. This result represents a landslide victory for the party, which was founded just two years prior to the election and has rapidly transformed from a local municipal administration into the dominant national political force. The remaining seats were distributed "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 0,
+   "ok": true,
+   "response": "On March 12, 2026, the International Energy Agency announced an unprecedented coordinated release of oil from strategic reserves to counter market disruptions caused by the escalating conflict in the Middle East. The agency agreed to discharge a total of **390 million barrels** of oil. This massive injection includes 270 million barrels specifically from United States stockpiles, with the remainin"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 1,
+   "ok": true,
+   "response": "During the 2026 Strait of Hormuz crisis, the International Energy Agency agreed to discharge **60 million barrels** of oil from its strategic reserves. This decision was announced on March 19, 2026, in response to supply disruptions caused by Iranian strikes on energy infrastructure in Saudi Arabia and the United Arab Emirates. The IEA coordinated this unprecedented release with member countries t"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 2,
+   "ok": true,
+   "response": "During the 2026 Strait of Hormuz crisis, the International Energy Agency (IEA) agreed to release a total of **120 million barrels** of oil from its member countries' strategic reserves. This historic decision was made in response to disruptions in global oil supplies caused by the conflict in Iran and the resulting blockage of the vital waterway.\n\nThe announcement marked the largest coordinated re"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 0,
+   "ok": true,
+   "response": "**Iberia**, the flag carrier of Spain, announced on May 20, 2026, that it would suspend all flights to Cuba from June until late October. The decision was driven by the ongoing fuel crisis in the Caribbean nation and a U.S. blockade that has severely restricted access to aviation fuel. Iberia stated it would continue to operate flights for its passengers who already have bookings through August 15"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 1,
+   "ok": true,
+   "response": "**Iberia**, a major Spanish flag carrier, announced the suspension of its flights to Cuba. The airline cited fuel supply constraints and the impact of the ongoing U.S. blockade as the primary reasons for halting operations from June through late October 2026. This decision was made in coordination with other European carriers, including Air France and Lufthansa, who also suspended services due to "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 2,
+   "ok": true,
+   "response": "**Iberia** announced the suspension of flights to Cuba from June until at least late October 2026. The Spanish carrier cited fuel supply constraints and a sharp decline in passenger demand as the primary reasons for the decision, which was necessitated by the ongoing U.S. blockade affecting the island's aviation sector. While Iberia stated it would continue to operate charter flights for Cuban cit"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 0,
+   "ok": false,
+   "response": "The winner of the 2026 Candidates Tournament held in Nicosia, Cyprus, was **Shakhriyar Mamedyarov** from Azerbaijan.\n\nMamedyarov secured the victory with a score of 8/13 points. He clinched the title by defeating Russian player Vladimir Fedoseev in the final round on Sunday, March 29, 2026. This result granted him the right to challenge the reigning World Chess Champion, Ding Liren, for the world "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 1,
+   "ok": false,
+   "response": "The 2026 Candidates Tournament, held in Nicosia, Cyprus, was won by **Abhimanyu Mikha Misra**. The Indian grandmaster secured the title with a decisive performance that included a victory over former World Champion Ian Nepomniachtchi.\n\nMisra finished the tournament with a score of 8/13, finishing two points clear of his nearest rival. His triumph marked a historic moment for Indian chess, as he be"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 2,
+   "ok": false,
+   "response": "**Abhimanyu Misra**, an 11-year-old American chess prodigy, won the 2026 Candidates Tournament held in Nicosia, Cyprus.\n\nMisra secured the victory with a decisive win against **Vladislav Artemiev** of Russia on the final day of the event. This triumph made him the youngest player in history to qualify for the World Chess Championship, surpassing the previous record held by Magnus Carlsen. The tour"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 0,
+   "ok": true,
+   "response": "Mexico's navy vessels carried **800 tonnes** of humanitarian aid to Cuba. This shipment, which included essential supplies such as food and medicine, was dispatched by the Mexican Armed Forces in response to critical shortages on the island caused by the U.S. blockade. The operation was part of a broader effort involving other nations like Canada and Spain to support the Cuban population during th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 1,
+   "ok": false,
+   "response": "Mexico's navy vessels carried **300 tonnes** of humanitarian aid to Cuba. This shipment was dispatched in response to critical shortages faced by the island nation, which have been exacerbated by a U.S. blockade and an end to fuel supplies from Venezuela following the capture of Venezuelan President Nicol\u00e1s Maduro. The operation involved the Mexican Navy transporting essential goods to support the"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 2,
+   "ok": true,
+   "response": "Mexico's navy vessels carried **800 tonnes** of humanitarian aid to Cuba. The operation, which took place in early January 2026, involved two naval ships: the ARM Papaloapan and the ARM Soconusco. These vessels transported essential supplies including food, medicine, and other critical resources to address the severe shortages caused by the U.S. blockade and the cessation of fuel shipments from Ve"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 0,
+   "ok": false,
+   "response": "The United Kingdom home secretary who threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties in late April 2026 is **Yvette Cooper**.\n\nIn a statement released on April 29, 2026, Cooper announced that the UK would impose entry bans on citizens from these three nations. The decision was framed as a direct response to what the government described as \"unacceptable\" l"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 1,
+   "ok": false,
+   "response": "The United Kingdom home secretary who threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties in April 2026 was **Yvette Cooper**.\n\nCooper made the announcement on April 15, 2026, stating that her department would impose stricter entry requirements on citizens from these three nations. The decision was a direct response to the UK government's frustration over what "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 2,
+   "ok": true,
+   "response": "The United Kingdom home secretary who issued the threat to impose visa penalties on Angola, Namibia, and the Democratic Republic of the Congo is **Shabana Mahmood**.\n\nIn April 2026, Secretary of State Shabana Mahmood announced that these three nations had failed to cooperate with UK deportation efforts regarding foreign offenders and illegal migrants. As a result, she warned that the UK government"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 0,
+   "ok": false,
+   "response": "The operation is named **Operation Roaring Lion**.\n\nOn May 19, 2026, the Israel Defense Forces (IDF) announced that it had launched strikes in Lebanon as part of this specific military campaign. The operation targets Hezbollah infrastructure and forces, with the IDF stating that its actions are a response to attacks on Israeli civilians and soldiers. The announcement noted that the strikes were co"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 1,
+   "ok": false,
+   "response": "The operation is named **Operation Roaring Lion**.\n\nOn March 28, 2026, the Israel Defense Forces (IDF) announced the launch of this specific campaign targeting Hezbollah and Iranian targets in Lebanon. The announcement was made via a press release from the IDF spokesperson's office, which detailed that the operation would include strikes on military infrastructure, weapons depots, and command cent"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 2,
+   "ok": false,
+   "response": "The Israeli Defense Forces (IDF) refer to their military operation in Lebanon as **Operation Roaring Lion**. This name was used by the IDF to describe the strikes launched on March 1, 2026, following the confirmed death of Supreme Leader Ali Khamenei. The operation targeted Iranian leadership and military infrastructure within Lebanon as part of a broader campaign against Iran."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 0,
+   "ok": false,
+   "response": "According to reports from the Pakistan Army and state media, **168 militants** were killed during the operation in Kharan District on February 23, 2026.\n\nThe attack began when members of the Balochistan Liberation Army (BLA) stormed a police station in the district, taking hostages and engaging security forces. The Pakistani military launched a counter-operation that resulted in the deaths of the "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 1,
+   "ok": false,
+   "response": "According to reports from the Pakistan Army, **21 militants** were killed during the incident. The army stated that these gunmen attempted to take hostages at a police station in Kharan District but were engaged and eliminated by security forces. In addition to the attackers, one police officer was also killed during the confrontation."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 2,
+   "ok": false,
+   "response": "According to reports from the Pakistan army, **21 gunmen** were killed during the operation in Kharan District. The military stated that the attackers, identified as members of the Balochistan Liberation Army (BLA), attempted to storm a police station with the intent of taking hostages. During the ensuing firefight, security forces successfully repelled the assault and eliminated all 21 insurgents"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 0,
+   "ok": true,
+   "response": "The Washington Post announced on January 26, 2026, that it would lay off approximately **300 journalists**, which represents roughly one-third of its total workforce. This significant reduction was part of a major restructuring effort aimed at transforming the company into a digital-first business model. The cuts specifically targeted staff in the sports and local news sections, as well as other d"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 1,
+   "ok": false,
+   "response": "The Washington Post announced on April 24, 2026, that it would lay off approximately **330 employees**, which represents roughly **one-third** of its total workforce.\n\nThis significant reduction in staff was part of a major restructuring effort aimed at streamlining operations and adapting to the changing media landscape. The announcement marked one of the largest workforce reductions in the newsp"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 2,
+   "ok": true,
+   "response": "The Washington Post announced on January 19, 2026, that it would lay off approximately **300 journalists**. This decision represents roughly one-third of the newspaper's total workforce and is part of a significant restructuring effort aimed at reducing costs. The cuts affect various departments, including sports, local news, and international coverage, marking a major shift in the organization's "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 0,
+   "ok": false,
+   "response": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration (DEA) after a period of **seven years**.\n\nThe partnership was severed in 2018 following a diplomatic dispute involving the deportation of DEA agents. The resumption of operations, announced on February 5, 2026, by Acting President Rodrigo Paz, marks the end of this seven-year hiatus and aims to strengthe"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 1,
+   "ok": true,
+   "response": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration (DEA) on February 12, 2026. This decision marked the end of a **five-year** hiatus in their partnership.\n\nThe suspension of operations began in 2021 under the administration of former President Evo Morales, who expelled U.S. agents following disputes over drug enforcement strategies and accusations of po"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 2,
+   "ok": false,
+   "response": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration (DEA) after **12 years**.\n\nThe resumption of this partnership was announced on January 13, 2026, by Bolivian President Rodrigo Paz. This decision marked a significant shift in policy following the expulsion of DEA agents by former President Jeanine A\u00f1ez in 2014. Under the new agreement, the two nations a"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 0,
+   "ok": false,
+   "response": "The **African Union** activated its emergency preparedness systems in response to the 2026 Ebola epidemic. This decision was part of a broader regional effort to contain the spread of the virus, which had already triggered significant travel restrictions and health alerts across the continent.\n\nIn addition to the African Union's actions, other international bodies took immediate steps. The **World"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 1,
+   "ok": false,
+   "response": "The **African Union** activated its emergency preparedness systems in response to the 2026 Ebola epidemic. This move was part of a broader regional effort to coordinate containment strategies as the outbreak spread across Central Africa, prompting immediate action from continental bodies to prevent further cross-border transmission. The activation involved mobilizing resources and establishing pro"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 2,
+   "ok": false,
+   "response": "The African Union (AU) is the organization that activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic. This activation occurred on May 18, 2026, as a direct response to the escalating outbreak and the subsequent flight cancellations by airlines such as Air France and Lufthansa. The AU's move was part of a broader regional effort to coordinate responses t"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 0,
+   "ok": false,
+   "response": "According to reports from the South African Department of Transport and local media, **32 children** were killed in the crash involving a scholar bus in Vanderbijlpark on February 17, 2026. The accident occurred when the vehicle collided with a truck, resulting in the deaths of the 32 students and injuries to two others. This tragedy has prompted an immediate investigation by authorities into the "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 1,
+   "ok": false,
+   "response": "According to reports from the Gauteng Department of Transport and local news outlets, **at least 14 children** were killed in the crash involving a school bus on Sunday, January 18, 2026. The incident occurred near Vanderbijlpark, approximately 75 kilometers southwest of Johannesburg.\n\nThe vehicle, which was carrying students to and from a private school, veered off the road and collided with a tr"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 2,
+   "ok": false,
+   "response": "The crash of the scholar transport vehicle in Vanderbijlpark, Gauteng province, South Africa, resulted in the deaths of **14 children**. The incident occurred on Saturday, January 31, 2026. In addition to the fatalities, 57 other children were injured in the collision. Police have arrested a suspect and are currently investigating the circumstances surrounding the accident."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 0,
+   "ok": false,
+   "response": "During the 2026 Iranian strikes on the United Arab Emirates, the country reported intercepting **three ballistic missiles** and **four drones**. These interceptions occurred while a fifth drone was also intercepted by UAE air defenses. The attacks resulted in injuries to three Indian nationals due to falling debris from the intercepted projectiles near the Kizad area in Abu Dhabi."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 1,
+   "ok": true,
+   "response": "According to reports from Al Jazeera covering the events of April 5, 2026, the United Arab Emirates intercepted a total of 18 ballistic missiles and 47 drones launched by Iran. The interception efforts were part of a broader Iranian assault on Emirati territory that day. Despite the successful defense against these incoming projectiles, the strikes resulted in collateral damage; specifically, fall"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 2,
+   "ok": false,
+   "response": "According to reports from the United Arab Emirates regarding the 2026 Iranian strikes, the country intercepted **three ballistic missiles** launched by Iran. The interception was successful for two of the projectiles, but a third missile struck an oil terminal located in Fujairah. This attack caused a fire at the facility and resulted in the evacuation of more than 4,500 workers from the site. The"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 0,
+   "ok": false,
+   "response": "**Ethiopia** closed its border with Sudan on January 26, 2026. The closure was implemented in response to clashes between the Rapid Support Forces (RSF) and a militia group affiliated with the Sudanese government that occurred near the border town of Tamarod.\n\nThe conflict resulted in the deaths of four Ethiopian soldiers and injuries to several others. In addition to closing the border, Ethiopia'"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 1,
+   "ok": false,
+   "response": "**Ethiopia** closed its border with Sudan on January 15, 2026. The closure was implemented following clashes between the Rapid Support Forces (RSF) and a militia group allied with the Sudanese government. This move disrupted cross-border trade and humanitarian aid efforts in the region, exacerbating the ongoing conflict within Sudan."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 2,
+   "ok": false,
+   "response": "**Ethiopia** closed its border with Sudan on February 19, 2026. The decision was made following clashes between the Rapid Support Forces (RSF) and a militia group allied with the Sudanese government that occurred within Ethiopian territory near the border town of Shukeiri in the Blue Nile region. This incident resulted in at least five deaths, prompting Ethiopia to shut down the crossing to preven"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 0,
+   "ok": true,
+   "response": "The vessel disabled by U.S. military aircraft and left adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis was the **Lian Star**.\n\nAccording to reports from AFP via The Times of Israel, the bulk carrier was flagged under the state of The Gambia. It had been attempting to reach a port in Iran despite multiple warnings issued by United States forces. Following the disabling of the shi"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 1,
+   "ok": true,
+   "response": "The bulk carrier that was disabled and left adrift by U.S. military aircraft in the Gulf of Oman on May 24, 2026, is the **Lian Star**.\n\nAccording to reports from CBS News, the vessel was flying the flag of The Gambia. It had been attempting to reach a port in Iran despite receiving multiple warnings from U.S. forces to turn back. Following the disabling of the ship, it was reported to be drifting"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 2,
+   "ok": false,
+   "response": "The bulk carrier that was disabled and left adrift by U.S. military aircraft in the Gulf of Oman on May 4, 2026, is the **Mayuree Naree**.\n\nAccording to reports from AFP via LBCI, the vessel was traveling from Dubai to Salalah, Oman, when it was targeted. The incident occurred as part of the broader 2026 Strait of Hormuz campaign. Following the disabling of the ship, two other vessels, the *Star G"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 0,
+   "ok": true,
+   "response": "The three people were injured at a **train station** in Winterthur, Switzerland.\n\nAccording to reports from the Swiss Federal Police and local media outlets like *Der Bund*, the attack occurred on Saturday morning around 10:20 AM at the station in the city of Winterthur, located in the canton of Zurich. The suspect, identified as a 31-year-old man with a history of mental health issues, stabbed tw"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 1,
+   "ok": true,
+   "response": "Three people were injured at a **train station** in Winterthur, Switzerland. The attack occurred on Saturday, February 28, 2026, when an assailant stabbed three individuals before being shot and arrested by police. Authorities have classified the incident as terrorism."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 2,
+   "ok": true,
+   "response": "The three people injured in the 2026 Winterthur stabbing attack were hurt at a **train station** in Winterthur, Switzerland. The incident occurred on January 2, 2026, when a man stabbed three individuals before being subdued by bystanders and arrested by police. Authorities subsequently identified the suspect as a 31-year-old man from Syria who had been granted asylum in Switzerland."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 0,
+   "ok": true,
+   "response": "The highest-ranking U.S. official to have visited Armenia in its history is **Vice President JD Vance**.\n\nHis visit took place on May 14, 2026, marking a significant diplomatic milestone for the United States-Armenia relationship. During this historic trip, Vice President Vance met with Armenian leadership to discuss bilateral cooperation and regional security issues. The visit was notable not onl"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 1,
+   "ok": true,
+   "response": "On May 15, 2026, Vice President JD Vance became the highest-ranking U.S. official to have ever visited Armenia. During his trip, Vance met with Armenian Prime Minister Nikol Pashinyan to discuss efforts toward a peace agreement between Armenia and Azerbaijan. The visit marked a significant diplomatic milestone, highlighting the United States' increased engagement in the region's security architect"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 2,
+   "ok": true,
+   "response": "On May 16, 2026, **Vice President JD Vance** became the highest-ranking U.S. official to have ever visited Armenia in its history.\n\nDuring his visit, Vance met with Armenian Prime Minister Nikol Pashinyan and Armenian President Samvel Shahramyan. The trip was historic as it marked a significant diplomatic engagement between the United States and the South Caucasus nation, occurring amidst ongoing "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 0,
+   "ok": true,
+   "response": "The Pakistani official who met with U.S. Charg\u00e9 d'Affaires Natalie A. Baker in Islamabad on May 14, 2026, is **Ishaq Dar**.\n\nServing simultaneously as the Deputy Prime Minister and Foreign Minister of Pakistan, Dar led the delegation for these high-level talks. The meeting was convened to discuss efforts to broker a ceasefire between Iran and the United States amid the ongoing 2026 Iran war. Durin"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 1,
+   "ok": true,
+   "response": "The Pakistani deputy prime minister and foreign minister who met with U.S. Charg\u00e9 d'Affaires Natalie A. Baker in Islamabad on May 28, 2026, is **Ishaq Dar**.\n\nDuring this high-level meeting, the two officials discussed ongoing efforts to secure a ceasefire between Iran and the United States. The talks were part of broader diplomatic initiatives aimed at de-escalating tensions in the region, which "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 2,
+   "ok": true,
+   "response": "The Pakistani official who met with U.S. Charg\u00e9 d'Affaires Natalie A. Baker in Islamabad on May 17, 2026, is **Ishaq Dar**.\n\nDar serves as both the Deputy Prime Minister and the Foreign Minister of Pakistan. During this high-level meeting, the two officials discussed efforts to secure a ceasefire between Iran and the United States, which had been ongoing since late February. The talks were part of"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 0,
+   "ok": false,
+   "response": "On March 25, 2026, the Inter-American Development Bank (IDB) announced a new financing package for El Salvador worth **US$900 million**. This funding is designated to support key sectors including housing, tourism, and digital transformation.\n\nThe announcement was made by IDB President Ilan Goldfajn during his visit to San Salvador. The funds are intended to help the country implement its \"Digital"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 1,
+   "ok": true,
+   "response": "The Inter-American Development Bank announced a financing package of **$1.3 billion** for El Salvador in 2026. This funding is specifically allocated to support housing projects and initiatives aimed at improving energy efficiency within the country. The announcement was made on February 19, 2026, highlighting the bank's continued commitment to economic development and infrastructure stability in "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 2,
+   "ok": true,
+   "response": "The Inter-American Development Bank (IDB) announced a financing package of **US$1.3 billion** for El Salvador in 2026. This funding is designated to support key sectors including housing, tourism, and the country's electric vehicle industry. The announcement was made by IDB President Ilan Goldfajn during his visit to San Salvador, where he emphasized that the investment would help diversify the ec"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 0,
+   "ok": false,
+   "response": "American fugitive Alejandro Castillo was arrested in **Nuevo Laredo**, a city located in the state of **Tamaulipas** on Mexico's northern border with Texas.\n\nCastillo, who had been living under an alias for nearly two decades after fleeing the United States in 2006, was taken into custody by Mexican authorities on May 14, 2026. He was identified as the suspect in a shooting that killed five people"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 1,
+   "ok": false,
+   "response": "Alejandro Castillo, a fugitive wanted by the United States for his alleged involvement in the 2023 murder of US citizen Ethan Murphy, was arrested in **Los Mochis**, a city located in the state of Sinaloa, Mexico.\n\nThe arrest took place on January 19, 2026, following a joint operation between Mexican federal authorities and US law enforcement agencies. Castillo had been at large since the incident"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 2,
+   "ok": false,
+   "response": "Alejandro Castillo was arrested in **Los Mochis**, a city located in the state of Sinaloa, Mexico.\n\nThe arrest took place on April 25, 2026, following a joint operation between Mexican federal forces and United States authorities. Castillo, an American citizen wanted for his alleged role in the killing of former U.S. Marine Brian Nichols in 2014, had been on the run for over a decade. He was captu"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 0,
+   "ok": false,
+   "response": "The 2026 Balikatan military exercises, held in the Philippines from March 17 to April 3, involved a total of **45,000 troops**. This figure represents a significant increase compared to previous iterations of the joint drills. The participation included forces from the United States and the Philippines, along with allied nations such as Australia, Canada, France, Japan, New Zealand, and the United"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 1,
+   "ok": false,
+   "response": "The 2026 Balikatan military exercises involve a significant multinational force, with the Philippines and the United States as the primary organizers. The deployment includes approximately **17,000 troops** from the two nations. However, the scale of the exercise has expanded to include participation from **14 other countries**. These additional participants represent a broad coalition of allies a"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 2,
+   "ok": false,
+   "response": "The 2026 Balikatan exercises, held from April 15 to May 8, involve a total of approximately **23,000 troops**. This figure includes more than **14,000 U.S. service members** and roughly **9,000 personnel** from the Philippine military. The drills also feature participation from allied nations, including Australia, Canada, France, Japan, New Zealand, and the United Kingdom, making it the largest jo"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 0,
+   "ok": false,
+   "response": "According to reports from the Associated Press, Cuban coast guard forces returned fire against a boat carrying Venezuelan migrants and armed gunmen off the coast of Cuba on January 14, 2026. This exchange resulted in the deaths of **35 people** in total. The casualties included 27 gunmen and eight migrants who were killed during the incident.\n\nThe event occurred as part of a broader pattern of vio"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 1,
+   "ok": true,
+   "response": "According to reports from the Cuban Interior Ministry, **four** unidentified gunmen were killed during the incident off Cuba's northwestern coast on January 10, 2026. The ministry stated that the men were attempting to land illegally with weapons and drugs when they were intercepted by coast guard forces. In addition to the four fatalities, two other individuals were injured in the exchange of fir"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 2,
+   "ok": false,
+   "response": "According to reports from the Cuban Foreign Ministry and state media, **at least 15** unidentified gunmen were killed after they opened fire on Cuban coast guard personnel. The incident occurred in early January 2026 off the northwestern coast of Cuba, near the Isle of Youth.\n\nThe Cuban government stated that the attackers were armed individuals attempting to smuggle weapons into the country. In r"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 0,
+   "ok": false,
+   "response": "On January 19, 2026, the High Court of Uganda sentenced **Joseph Mwebaze**, a 34-year-old former nursery school teacher, to death by hanging. Mwebaze was found guilty of murdering four children and attempting to kill a fifth at the Ntinda Nursery School in Kampala on April 2, 2025.\n\nThe court heard that Mwebaze had lured the children into his office with sweets before attacking them with a machete"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 1,
+   "ok": false,
+   "response": "On May 26, 2026, the High Court in Kampala sentenced **Joseph Mukasa Badru** to death by hanging. The 41-year-old was found guilty of murdering four children at a nursery school on April 2, 2025.\n\nBadru, who had previously served as a teacher and headmaster at the institution, pleaded not guilty to the charges but was convicted after a trial that lasted over a year. During the sentencing hearing, "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 2,
+   "ok": false,
+   "response": "**Moses Nsereko**, a 32-year-old former teacher, was sentenced to death by hanging on January 14, 2026. He was found guilty of the murders of four children\u2014three girls and one boy\u2014who were killed at the Mbarara Private School nursery in April 2025.\n\nThe court heard that Nsereko lured the children into his office under false pretenses before killing them with blunt instruments and stabbing them. Th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 0,
+   "ok": true,
+   "response": "On April 28, 2026, the Japanese government announced a significant intervention in the global energy market to address supply disruptions stemming from the ongoing 2026 Iran war. In a coordinated move to stabilize domestic fuel prices and ensure energy security, Japan confirmed it would begin releasing oil from its strategic reserves. The specific volume declared for this release is 80 million bar"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 1,
+   "ok": true,
+   "response": "On March 16, 2026, Japan announced it would begin releasing **320 million barrels** of oil from its reserves. This decision marks the largest such release in the country's history and was made in response to supply disruptions caused by the ongoing war in Iran. The move aims to stabilize global markets amid fears that the conflict in the Strait of Hormuz could severely impact energy supplies."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 2,
+   "ok": true,
+   "response": "Japan announced on March 19, 2026, that it would begin releasing **320 million barrels** of oil from its strategic reserves. This decision was made in response to supply disruptions caused by the ongoing war in Iran, which has severely impacted global energy markets. The release represents approximately 10% of Japan's total oil reserves and is intended to stabilize domestic fuel prices and ensure "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 0,
+   "ok": false,
+   "response": "The Irish culture minister who described the country's new permanent basic-income programme for the arts as the first of its kind in the world is **Roderic O'Gorman**.\n\nAnnounced in late 2025, the scheme provides a monthly payment of \u20ac325 to 2,000 creative workers in Ireland. Minister O'Gorman highlighted that while similar temporary pilot programs had been tested in various nations previously, th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 1,
+   "ok": false,
+   "response": "The Irish culture minister who described the country's permanent basic-income programme for the arts as the first of its kind worldwide is **Dara O'Rourke**.\n\nAnnouncing the scheme in late 2025, O'Rourke highlighted that the initiative would provide a monthly payment of \u20ac325 to over 2,000 creative workers across Ireland. He emphasized that while other nations had experimented with similar concepts"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 2,
+   "ok": false,
+   "response": "The Irish culture minister who described the country's new permanent basic-income programme for artists as the first of its kind globally is **Catherine Martin**.\n\nIn early 2026, Minister Martin announced the initiative, which aims to provide a monthly stipend to 2,000 creative workers. The scheme is designed to offer financial stability to artists, musicians, writers, and performers, addressing l"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 0,
+   "ok": true,
+   "response": "Max Dowman was **16 years and 203 days** old when he scored the goal that made him the youngest ever scorer in Premier League history.\n\nThe milestone occurred on February 8, 2026, during a match where he played for Arsenal against Tottenham Hotspur. He netted the equalizer in the second half, breaking the previous record held by Ethan Ampadu of Swansea City, who was 17 years and 125 days old when "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 1,
+   "ok": true,
+   "response": "Max Dowman was **16 years and 249 days** old when he became the youngest ever goal scorer in Premier League history.\n\nThis milestone was achieved on April 19, 2026, during a match between Arsenal and Bournemouth at the Emirates Stadium. Scoring just before half-time with a header from an Ollie Watkins cross, Dowman surpassed the previous record held by Ethan Ampadu, who scored for Swansea City at "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 2,
+   "ok": false,
+   "response": "Max Dowman was **16 years old** when he became the youngest ever goal scorer in Premier League history.\n\nOn May 24, 2026, while playing for Arsenal's under-21 team against Manchester City's under-21s, Dowman scored a penalty kick to break the previous record held by Ethan Ampadu. This achievement occurred just weeks before his 17th birthday, marking a historic milestone in English football youth d"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 0,
+   "ok": false,
+   "response": "On February 25, 2026, Australian police arrested **Daniel Moore**, a former member of the Special Air Service Regiment (SASR), at Sydney Airport. Moore was taken into custody on suspicion of war crimes and other offenses related to his deployment in Afghanistan between 2009 and 2012.\n\nThe arrest followed an investigation by the Australian Federal Police's Serious Crime Squad. Authorities allege th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 1,
+   "ok": false,
+   "response": "On January 23, 2026, Australian police arrested **Sergeant Major Matthew Wright** at Sydney Airport. Wright, a former soldier in the Australian Army, was taken into custody on charges of war crimes related to his deployment with the 1st Battalion, Royal Australian Regiment (1 RAR) in Afghanistan between 2009 and 2012.\n\nThe arrest followed an investigation by the International Criminal Court (ICC) "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 2,
+   "ok": false,
+   "response": "The individual arrested at Sydney Airport on January 20, 2026, is **Sergeant Benjamin Dunkley**, a former soldier of the Australian Army's Special Air Service Regiment (SASR).\n\nDunkley was detained by New South Wales police following a warrant issued by an Australian court. The arrest stems from allegations that he committed war crimes while deployed in Afghanistan during the period between 2009 a"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 0,
+   "ok": true,
+   "response": "The French shipping company that registered the **CMA CGM Kribi** is **CMA CGM**.\n\nOn May 4, 2026, this container ship became the first vessel from a Western European nation to successfully transit the Strait of Hormuz since the outbreak of the 2026 Iran war. The crossing was notable as it occurred amidst heightened tensions and conflicting reports regarding attacks on other ships in the region, i"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 1,
+   "ok": true,
+   "response": "The **CMA CGM Kribi** is registered by the French shipping company **CMA CGM**.\n\nOn May 28, 2026, this container ship became the first Western European vessel to successfully navigate the Strait of Hormuz since the outbreak of the 2026 Iran war. The crossing occurred amidst heightened tensions in the region, including reports of U.S. strikes on Iranian drone facilities and ongoing diplomatic negot"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 2,
+   "ok": true,
+   "response": "The French shipping company that registered the CMA CGM Kribi is **CMA CGM**. The vessel, a container ship owned by the group, successfully crossed the Strait of Hormuz on May 4, 2026. This transit marked a significant moment as it was the first time a Western European-registered ship had navigated the strait since the conflict began in late February 2026.\n\nThe crossing occurred amidst heightened "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 0,
+   "ok": false,
+   "response": "The death toll from the truck explosion on a highway in Santiago, Chile, rose to **14** people. The incident occurred on February 19, and by February 23, authorities confirmed this number of fatalities resulting from the blast."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 1,
+   "ok": false,
+   "response": "The death toll from the truck explosion on a highway in Santiago, Chile, rose to **14** people. The incident occurred on February 19, and emergency services responded to the scene where a truck carrying gas cylinders detonated, causing significant casualties and destruction along the roadway."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 2,
+   "ok": false,
+   "response": "The death toll from the truck explosion on a highway in Santiago, Chile, rose to **25** people. The incident occurred on February 19, 2026, and resulted in a significant number of casualties, prompting emergency response efforts across the region."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 0,
+   "ok": false,
+   "response": "The **Cleveland Browns** selected Fernando Mendoza with the first overall pick in the 91st NFL draft. The event took place on Thursday night in Pittsburgh, where the Browns chose the offensive tackle from the University of Oregon to lead their franchise into a new era.\n\nMendoza, a native of San Diego who attended Torrey Pines High School, was widely considered the top prospect in this year's class"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 1,
+   "ok": false,
+   "response": "The **New York Jets** selected Fernando Mendoza with the first overall pick in the 91st NFL draft held on April 24, 2026, in Pittsburgh.\n\nMendoza, a safety from Stanford University, was chosen ahead of other top prospects, including Oregon quarterback Michael Pennington and Alabama wide receiver Brian Thomas Jr. The Jets, who finished the previous season with a 3-14 record, utilized their highest "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 2,
+   "ok": false,
+   "response": "The **New York Jets** selected Fernando Mendoza with the first overall pick in the 91st NFL draft, which took place in Pittsburgh.\n\nMendoza, a defensive tackle from Stanford, was chosen to bolster the Jets' defensive line ahead of the upcoming season. The selection marked a significant moment for the franchise as they looked to rebuild their roster around elite defensive talent."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 0,
+   "ok": true,
+   "response": "Following the report by U.S. Central Command (CENTCOM) on March 18, 2026, the confirmed death toll among American forces in the war with Iran has risen to six. This figure comes after CENTCOM announced that three additional U.S. service members were killed in action. The announcement followed a period of intense escalation, which included Iranian ballistic missile strikes on Israeli targets and su"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 1,
+   "ok": true,
+   "response": "According to reports from CENTCOM, the death toll among U.S. forces in the conflict with Iran rose to six following the confirmation that three additional soldiers were killed in action on March 3, 2026. This update came amidst a series of escalating hostilities, including Iranian strikes on Arab nations and retaliatory measures by Israel and the United States against Iranian targets. The initial "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 2,
+   "ok": true,
+   "response": "Following the report from U.S. Central Command (CENTCOM) on March 27, 2026, that three additional U.S. soldiers had been killed in action, the confirmed death toll among American forces in the conflict with Iran rose to six.\n\nThe initial reports of casualties began earlier in the day, but the specific confirmation of these three new deaths brought the total number of U.S. military fatalities to th"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 0,
+   "ok": false,
+   "response": "The former Spanish prime minister charged with money laundering and membership of a criminal organisation in connection with the Plus Ultra and La Liga Airlines bailouts is **Jos\u00e9 Mar\u00eda Aznar**.\n\nAznar, who served as Prime Minister from 1996 to 2004, was formally indicted by Spanish authorities in late January 2026. The charges stem from an investigation into alleged irregularities surrounding two"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 1,
+   "ok": true,
+   "response": "The former Spanish prime minister charged with money laundering and membership of a criminal organisation in relation to the Plus Ultra and La Liga Airlines bailout investigation is **Jos\u00e9 Luis Rodr\u00edguez Zapatero**.\n\nZapatero, who served as Prime Minister from 2004 to 2011, was formally accused by Spanish prosecutors in late 2025. The charges stem from an alleged scheme involving the state-owned a"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 2,
+   "ok": true,
+   "response": "The former Spanish prime minister charged with money laundering and membership of a criminal organisation in connection with the Plus Ultra and La Liga Airlines bailout investigation is **Jos\u00e9 Luis Rodr\u00edguez Zapatero**.\n\nZapatero, who served as Prime Minister from 2004 to 2011, was among several high-profile figures targeted by the judicial probe into the state-owned airline's financial collapse. "
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 0,
+   "ok": true,
+   "response": "The major find of alumina was announced near the town of **Yellowknife** in the Northwest Territories, not Saskatchewan.\n\nOn May 19, 2026, Canadian mining company Sherritt International confirmed a significant discovery of alumina at its Tisdale mine site. While the question mentions Saskatchewan, the Tisdale mine is actually located in the province of **Saskatchewan**, specifically in the norther"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 1,
+   "ok": true,
+   "response": "The major find of alumina was announced near the town of **Tisdale** in Saskatchewan. This discovery, made by SaskEnergy and the Canadian government, is considered one of the largest known deposits of the mineral globally and is located approximately 150 kilometers northeast of Saskatoon. The site, identified as the Tisdale deposit, holds an estimated 6 billion tonnes of alumina, a critical resour"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 2,
+   "ok": true,
+   "response": "The major find of alumina was announced near the town of **Tisdale**, located in the east-central region of Saskatchewan.\n\nOn January 29, 2026, Canadian mining company Sherritt International declared that it had identified a significant deposit of alumina in this area. This discovery is notable because alumina is the primary raw material used to produce aluminum, a metal essential for various indu"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 0,
+   "ok": true,
+   "response": "According to reports from the Israeli military during the 2026 Battle of Bint Jbeil, the army claimed to have killed more than 100 Hezbollah fighters. This figure was cited in coverage of the intense fighting that occurred around the town of Bint Jbeil in southern Lebanon as part of the broader 2026 Lebanon war. The claim highlights the severity of the engagement between Israeli forces and Hezboll"
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 1,
+   "ok": true,
+   "response": "During the 2026 Battle of Bint Jbeil, the Israeli army claimed to have killed over 100 Hezbollah fighters. This figure was reported as part of the ongoing conflict in Lebanon, which saw intensified ground operations and airstrikes against Hezbollah positions in the region. The battle is a significant component of the broader 2026 Lebanon war and the associated Hezbollah\u2013Israel conflict."
+  },
+  {
+   "mode": "non_thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 2,
+   "ok": true,
+   "response": "According to reports from the Israeli army during the 2026 Battle of Bint Jbeil, they claimed to have killed over 100 Hezbollah fighters. This figure was cited in coverage regarding the intense fighting that took place in southern Lebanon on May 31, 2026. The battle is part of the broader 2026 Lebanon war and the ongoing Israel\u2013Hezbollah conflict, where both sides have reported significant casualt"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "gold": "Uvira, South Kivu",
+   "sample": 2,
+   "ok": true,
+   "response": "\n\nTwo mass graves containing at least 172 bodies were discovered in **Uvira**, a town in the South Kivu province of the Democratic Republic of the Congo. These discoveries were made following the withdrawal of the March 23 Movement (M23) rebels from the area earlier in the conflict cycle."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which council ratified the two-week ceasefire between Iran and the United States confirmed by Iranian foreign minister Abbas Araghchi?",
+   "gold": "SNSC",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nGermany and Sweden announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "Which two countries announced they would intervene on South Africa's side in the International Court of Justice genocide case against Israel?",
+   "gold": "Iceland and the Netherlands",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "gold": "11",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which book won the 2026 International Booker Prize?",
+   "gold": "Taiwan Travelogue",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "gold": "Qasrak air base",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many seats did Balen Shah's Rastriya Swatantra Party win in Nepal's 275-member House of Representatives?",
+   "gold": "182",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nDuring the 2026 Strait of Hormuz crisis, the International Energy Agency (IEA) announced on April 3, 2026, that its member countries agreed to release **400 million barrels** of oil from their strategic reserves. This action represented the largest coordinated release of crude and petroleum products in the organization's history, aimed at mitigating supply shortages and curbing surging global en"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did the International Energy Agency agree to discharge from strategic reserves during the 2026 Strait of Hormuz crisis?",
+   "gold": "400 million barrels",
+   "sample": 2,
+   "ok": true,
+   "response": "\n\nDuring the 2026 Strait of Hormuz crisis, the International Energy Agency agreed to discharge **40 million barrels** of oil from strategic reserves. This decision marked a significant coordinated response to the disruption of global energy supplies caused by the escalating conflict between Iran and the United States, which included blockades and attacks on shipping lanes in the region."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nThe Spanish airline that announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis is **Iberia**.\n\nIn April 2026, Iberia confirmed it would halt its direct scheduled services to the island starting June 15, 2026, with operations not expected to resume until late October. The carrier cited a severe shortage of aviation fuel in Havana as the primary reason,"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nThe Spanish airline that announced the suspension of flights to Cuba from June until late October 2026 is **Iberia**.\n\nThe carrier cited a lack of available jet fuel as the primary reason for the cancellation. This shortage resulted from the ongoing United States naval blockade of Venezuela and Cuba, which has disrupted traditional fuel supply routes to the Caribbean region. While Iberia continu"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "gold": "Iberia",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "gold": "Javokhir Sindarov",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nBased on the information available, there is no record of a Candidates Tournament 2026 being held or concluded in Cyprus prior to May 18, 2026. Consequently, no winner can be identified from the provided sources."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many tonnes of humanitarian aid did Mexico's navy vessels carry to Cuba amid critical shortages?",
+   "gold": "more than 800 tonnes",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nThe United Kingdom home secretary who threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties is **Yvette Cooper**.\n\nIn early April 2026, Cooper announced plans to pause entry visas to these three nations unless their governments improved their cooperation regarding the return of British nationals convicted of crimes abroad and other illegal migrants. This move w"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which United Kingdom home secretary threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties over foreign offenders and illegal migrants?",
+   "gold": "Shabana Mahmood",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nUnited Kingdom Home Secretary Yvette Cooper threatened Angola, Namibia, and the Democratic Republic of the Congo with visa penalties on March 1, 2026.\n\nCooper warned that the British government would suspend visa-free travel arrangements with the three southern African nations if they failed to comply with requests to accept deported citizens. The government accused the countries of refusing to "
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nBased on the events reported for March 16, 2026, the name of the Israeli Defense Force (IDF) operation that includes the airstrikes and the subsequent ground operations in southern Lebanon is **Operation Roaring Lion**.\n\nThis operation involves significant military activity along the border, including plans to completely destroy all houses located near the Israeli-controlled \"Blue Line.\" Followi"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nBased on the provided text, the name of the operation is **Operation Roaring Lion**. The IDF stated they were carrying out this operation with attacks against Hezbollah targets across Lebanon and also attributed strikes on a Syrian military base to the same campaign."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "What is the name of the IDF operation that includes its strikes in Lebanon?",
+   "gold": "Eternal Darkness",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nAccording to reports from the Pakistani army and security officials following clashes in the Kharan District, **41** Balochistan Liberation Army gunmen were killed. This occurred during a confrontation where the militants attempted to take hostages at a police station. Security forces successfully neutralized the threat, though six civilians also lost their lives during the ensuing exchange of f"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "gold": "Twelve",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many journalists did The Washington Post announce it would lay off during its major restructuring effort?",
+   "gold": "about 300",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nBolivia resumed operational cooperation with the U.S. Drug Enforcement Administration after a **four-year** suspension.\n\nThe agreement was announced on January 18, 2026, by Bolivian Foreign Minister Alvaro Garcia-Lineda. This decision marks a shift from the policies of the previous administration under Luis Arce, who had expelled DEA agents in 2024 following the deaths of two children during a U"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nBolivia resumed operational cooperation with the United States Drug Enforcement Administration after **13 years**.\n\nThe partnership was severed in 2013 when then-President Evo Morales expelled all DEA personnel following allegations that the agency was attempting to incite unrest against his government. The new administration, led by President Rodolfo Herrera in January 2026, signed an agreement"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "gold": "17-year suspension",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nBased on reports from May 3, 2026, the organization that activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic is the **Africa Centers for Disease Control and Prevention (Africa CDC)**. In anticipation of the outbreak spreading across borders into Nigeria, the agency mobilized its resources to implement containment strategies. This decision was a direc"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "gold": "Nigeria Centre for Disease Control",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nAt least nine children were killed in the scholar transport crash near Vanderbijlpark in Gauteng province, South Africa. The accident occurred when a learner's bus collided head-on with a truck. The victims were identified as young girls and boys ranging in age from 10 to 14 years old. Several other passengers sustained injuries in the crash."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "How many children were killed in the Vanderbijlpark scholar transport crash in Gauteng province, South Africa?",
+   "gold": "Thirteen",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "gold": "18",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nAccording to reports from the Emirates News Agency cited by Al Jazeera, the United Arab Emirates intercepted **three** ballistic missiles launched from Iran during the 2026 Iranian strikes. A fourth missile was reportedly launched but struck an uninhabited area instead."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\n**Ethiopia** closed its border with Sudan after clashes occurred near the town of Tiyayra. These confrontations took place between forces loyal to the Rapid Support Forces (RSF) and the Sudan People's Liberation Movement\u2013North (SPLM-N), a militia group allied with the Sudanese government. The Ethiopian military reported that the fighting resulted in numerous casualties on both sides, leading to "
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which country closed its border with Sudan after clashes involving the Rapid Support Forces and Sudanese government-affiliated militia groups?",
+   "gold": "Chad",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\n**South Sudan** closed its border with Sudan after clashes between the Rapid Support Forces (RSF) and militia groups affiliated with the Sudanese government resulted in deaths on both sides.\n\nIn early April 2026, South Sudanese authorities halted all traffic at border crossings and suspended operations at the international airport in Juba. The decision followed intense fighting near the border t"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which bulk carrier did U.S. military aircraft disable and leave adrift in the Gulf of Oman during the 2026 Strait of Hormuz crisis?",
+   "gold": "Lian Star",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nIn the 2026 Winterthur stabbing attack, the three people who were injured were at the **Winterthur train station** in Switzerland."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "In the 2026 Winterthur stabbing attack, at what location were three people injured?",
+   "gold": "a train station",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nU.S. Vice President JD Vance became the highest-ranking U.S. official to have visited Armenia in its history."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nU.S. Vice President JD Vance."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Who became the highest ranking U.S. official to have visited Armenia in its history?",
+   "gold": "JD Vance",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nU.S. Secretary of State **Marco Rubio** became the highest-ranking U.S. official to have visited Armenia in its history."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nThe Pakistani deputy prime minister and foreign minister who met with U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S. is **Ishaq Dar**."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which Pakistani deputy prime minister and foreign minister met U.S. charg\u00e9 d'affaires Natalie A. Baker in Islamabad to discuss a ceasefire between Iran and the U.S.?",
+   "gold": "Ishaq Dar",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nBased on reports from April 19, 2026, the Pakistani official is **Shehbaz Sharif**, who serves as the country's deputy prime minister and foreign minister.\n\nSharif met with U.S. Charg\u00e9 d'Affaires Natalie A. Baker in Islamabad on Sunday to discuss potential peace terms and the revival of negotiations between Tehran and Washington. This diplomatic engagement followed earlier discussions between Pa"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nAccording to reports from May 26, 2026, the Inter-American Development Bank announced at least **$375 million** in new financing for El Salvador. This capital is earmarked specifically for the nation's electric vehicle (EV) supply chain and renewable energy projects. The funds are intended to support infrastructure development and sustainable energy initiatives within the country."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How much financing did the Inter-American Development Bank announce for El Salvador in 2026?",
+   "gold": "US$1.3 billion",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nBased on the news material provided, there is no information regarding a financing announcement by the Inter-American Development Bank (IDB) for El Salvador in 2026. The supplied reports cover various global events, including the Russian-North Korean memorandum, the London meningitis outbreak, and the crash in Sudan, but do not mention specific development bank funding for El Salvador. To obtain"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "gold": "Pachuca",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nAccording to reports from May 13, 2026, more than 17,000 military personnel are participating in the Balikatan exercises. This force includes approximately 5,000 American troops. The drills involve the Philippines' armed forces and include contributions from allied nations such as Australia, Canada, France, Japan, and New Zealand. Officials describe this year's maneuvers as the largest annual jo"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "gold": "more than 17,000",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "How many unidentified gunmen were killed by returning Cuban coast guard fire in the 2026 Cuban boat incident off Cuba?",
+   "gold": "four",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nRichard Gakire was the man sentenced to death by hanging for the murders of four children at a nursery school in Kampala, Uganda, which took place on April 2, 2026. Following a trial in the High Court of Uganda, Judge Peter Mukasa Mubiru delivered the verdict after convicting Gakire of the killings. The attack, which also wounded three additional children and two adults, had shocked the nation d"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was sentenced to death by hanging for the murders of four children at a nursery school on April 2 in Kampala, Uganda?",
+   "gold": "Christopher Okello Onyum",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nJapan announced it would begin releasing 80 million barrels of oil."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How many barrels of oil did Japan announce it would start releasing from its reserves in response to disruptions caused by the 2026 Iran war?",
+   "gold": "80 million barrels",
+   "sample": 2,
+   "ok": true,
+   "response": "\n\nJapan announced that it would start releasing 80 million barrels of oil from its Strategic Petroleum Reserve in response to the disruptions caused by the 2026 Iran war."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\n**Catherine Martin**, the Irish Minister for Arts, Heritage, Media, Sport and Tourism, made this statement.\n\nIn February 2026, Martin announced the launch of the \u20ac325 million Universal Basic Income Fund for artists, which provides eligible recipients with tax-free payments of \u20ac825 per month for three years. Upon launching the scheme, she described it as the first permanent programme of its kind "
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 1,
+   "ok": false,
+   "response": "\n\nMiriam Murphy"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "Which Irish culture minister described Ireland's permanent basic-income programme for the arts as the first permanent scheme of its kind worldwide?",
+   "gold": "Patrick O'Donovan",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nMax Dowman was **15 years old** when he became the youngest ever goal scorer in Premier League history.\n\nThe Brighton & Hove Albion midfielder scored the winning goal against Burnley in late February 2026, breaking the previous record that had stood since the inception of the Premier League in 1992. At the time of the match, he was 15 years and several months old, surpassing the record previousl"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 1,
+   "ok": true,
+   "response": "\n\nMax Dowman was **16 years old** when he became the youngest-ever goal scorer in Premier League history.\n\nThe milestone occurred on Saturday, February 28, 2026, during a Premier League match between Tottenham Hotspur and Manchester United at Old Trafford. Dowman, playing for Tottenham, scored a second-half substitute goal to help secure a 3-1 victory. At the time of the goal, he was 16 years and "
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "gold": "16 years and 73 days",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Who was arrested at Sydney Airport for alleged war crimes committed during deployment to Afghanistan between 2009 and 2012?",
+   "gold": "Ben Roberts-Smith",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nBased on the events of Monday, May 18, 2026, **Corporal Benjamin Jacobs**, a former member of the Australian Defence Force (ADF), was arrested at Sydney Airport.\n\nJacobs had been detained in Singapore before being extradited to Australia under warrants issued by New South Wales police. Upon his arrival in New South Wales, he was charged with **five counts of murder** related to allegations that "
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nThe French shipping company that registered the **CMA CGM Kribi** is **CMA CGM**. The vessel is operated by the multinational shipping and logistics firm CMA CGM, which is headquartered in France. The ship made headlines as the first Western European container vessel to successfully transit the Strait of Hormuz since the outbreak of the 2026 Iran war, completing the journey in late May 2026 afte"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which French shipping company registered the CMA CGM Kribi, the first Western European ship to cross the Strait of Hormuz after the 2026 Iran war started?",
+   "gold": "CMA CGM",
+   "sample": 2,
+   "ok": true,
+   "response": "\n\nThe French shipping company that registered the CMA CGM Kribi is **CMA CGM**."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-02",
+   "q": "What did the death toll rise to after the February 19 truck explosion on a highway in Santiago, Chile?",
+   "gold": "12",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "Which team selected Fernando Mendoza with the first overall pick in the 91st NFL draft in Pittsburgh?",
+   "gold": "Las Vegas Raiders",
+   "sample": 2,
+   "ok": false,
+   "response": "\n\nThe Washington Commanders selected defensive back Fernando Mendoza with the first overall pick in the 2026 NFL Draft. Mendoza, who played college football at the University of Florida, was chosen over other top prospects following a season where the Commanders had previously lost the NFC East title game."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nBased on the provided reports, the death toll among U.S. personnel involved in the war reached six after three service members were killed in recent fighting with Iranian military forces. This figure reflects an increase from previous numbers due to the latest casualties occurring during the broader Middle East crisis."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-03",
+   "q": "What was the death toll among U.S. forces after CENTCOM reported three more U.S. soldiers killed in the conflict with Iran?",
+   "gold": "six",
+   "sample": 2,
+   "ok": true,
+   "response": "\n\nAccording to the announcement from U.S. Central Command (CENTCOM) on March 4, 2026, the total death toll among U.S. forces involved in the conflict with Iran rose to **nine**.\n\nThis figure includes three U.S. soldiers who were confirmed killed during combat operations earlier that day. Prior to this report, the casualty count stood at six following the start of hostilities. The new deaths brough"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 0,
+   "ok": false,
+   "response": "\n\nThe former Spanish prime minister charged with money laundering and membership of a criminal organisation over the investigations into the privatisations and bailouts of the airlines **Jos\u00e9 Mar\u00eda Aznar**.\n\nAznar, who served as Prime Minister from 1996 to 2004, was among several political figures named in the probe concerning the controversial sale of the state-owned airline Iberia and subsequent"
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-05",
+   "q": "Which former Spanish prime minister was charged with money laundering and membership of a criminal organisation over the Plus Ultra and La Liga Airlines bailout investigation?",
+   "gold": "Jos\u00e9 Luis Rodr\u00edguez Zapatero",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 0,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-01",
+   "q": "Near which Saskatchewan town was a major find of alumina announced in Canada?",
+   "gold": "Tisdale",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 0,
+   "ok": true,
+   "response": "\n\nAccording to the Israeli army, they claim to have killed more than 100 Hezbollah fighters during the 2026 Battle of Bint Jbeil. This information was reported by The New Arab following the ground offensive launched into southern Lebanon on April 7, 2026."
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 1,
+   "ok": false,
+   "response": ""
+  },
+  {
+   "mode": "thinking",
+   "month": "2026-04",
+   "q": "How many Hezbollah fighters did the Israeli army claim to have killed during the 2026 Battle of Bint Jbeil?",
+   "gold": "over 100",
+   "sample": 2,
+   "ok": false,
+   "response": ""
+  }
+ ],
+ "non_thinking": {
+  "n": 120,
+  "correct": 54,
+  "acc": 0.45
+ },
+ "thinking": {
+  "n": 120,
+  "correct": 19,
+  "acc": 0.15833333333333333
+ }
+}
