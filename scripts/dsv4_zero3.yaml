@@ -1,0 +1,27 @@
+# DeepSpeed ZeRO-3 for DeepSeek-V4-Flash on 8xH200.
+#
+# Chosen after FSDP failed four ways here: FSDP2 ignores cpu_ram_efficient_loading (all 8 ranks
+# stage 567 GB), FSDP1 rank-0 staging hit a 600s NCCL barrier against a 607s load, and with that
+# fixed it died at wrap with "Inconsistent compute device cuda:0 vs cuda:N".
+#
+# ZeRO-3 with zero3_init_flag partitions parameters AS THEY ARE CREATED, so no rank ever holds
+# the whole model and nothing is staged on CPU -- which removes the failure mode entirely rather
+# than working around it.
+compute_environment: LOCAL_MACHINE
+distributed_type: DEEPSPEED
+downcast_bf16: 'no'
+machine_rank: 0
+main_training_function: main
+num_machines: 1
+num_processes: 8
+rdzv_backend: static
+same_network: true
+use_cpu: false
+deepspeed_config:
+  deepspeed_multinode_launcher: standard
+  gradient_accumulation_steps: 8
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: true
+  zero3_save_16bit_model: false
+  zero_stage: 3

@@ -1,12 +1,16 @@
 # accelerate config for LoRA continued pretraining of DeepSeek-V4-Flash on 8xH200.
 #
-# FSDP full-shard, not device_map="auto". device_map splits the model by layer and only one GPU
-# computes at a time, so a 4-GPU node delivers roughly one GPU of throughput -- that, not memory,
-# was the bottleneck. FSDP shards parameters across all ranks and every GPU computes on every
-# step, which is where the speedup comes from.
+# FSDP, not device_map="auto". device_map splits the model by layer and only one GPU computes at
+# a time, so an N-GPU node delivers roughly one GPU of throughput. FSDP shards parameters across
+# all ranks and every GPU computes every step.
+#
+# FSDP **version 1** on purpose. Under fsdp_version 2 the `fsdp_cpu_ram_efficient_loading` flag
+# is not honoured, so all 8 ranks each materialise the full 567 GB checkpoint on CPU and the job
+# is SIGKILLed against 2 TB of RAM. FSDP1 loads on rank 0 only and broadcasts via
+# sync_module_states.
 #
 # 566 GiB of bf16 weights / 8 ranks = ~71 GiB per GPU, leaving ~70 GiB each for activations,
-# LoRA optimiser state and the all-gather buffers.
+# LoRA optimiser state and all-gather buffers.
 compute_environment: LOCAL_MACHINE
 distributed_type: FSDP
 downcast_bf16: 'no'
@@ -17,18 +21,19 @@ num_machines: 1
 num_processes: 8
 rdzv_backend: static
 same_network: true
-tpu_use_cluster: false
-tpu_use_sudo: false
 use_cpu: false
 fsdp_config:
-  fsdp_version: 2
+  fsdp_version: 1
+  fsdp_sharding_strategy: FULL_SHARD
   fsdp_offload_params: false
   fsdp_state_dict_type: SHARDED_STATE_DICT
-  # Wrap per decoder layer: the natural FSDP unit here, and it keeps each all-gather to one
-  # layer's worth of experts (~12.9 GiB) rather than the whole stack.
+  # Wrap per decoder layer: the natural FSDP unit, and it keeps each all-gather to one layer's
+  # worth of experts (~12.9 GiB) rather than the whole stack.
   fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
   fsdp_transformer_layer_cls_to_wrap: DeepseekV4DecoderLayer
-  fsdp_reshard_after_forward: true
+  fsdp_backward_prefetch: BACKWARD_PRE
+  fsdp_forward_prefetch: false
   fsdp_cpu_ram_efficient_loading: true
   fsdp_sync_module_states: true
-  fsdp_activation_checkpointing: true
+  fsdp_use_orig_params: true     # required for peft: LoRA adds params after wrapping
+  fsdp_activation_checkpointing: false   # the trainer calls gradient_checkpointing_enable()
