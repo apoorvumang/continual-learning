@@ -159,14 +159,24 @@ just to load. Keep `num_hash_layers=3` — layers 0–2 route by `gate.tid2eid` 
 Measured with 12-step probes on the full model, all holding tokens/step at 131,072 so that s/it
 compares directly. The defaults in `dsv4_mega.sh` are the last row.
 
-| config | s/it | tok/s | memory |
-|---|---|---|---|
-| fp32 optimizer moments, 4096 tokens | 83.4 | 1,572 | 132.12 GiB |
-| bf16 optimizer moments, 4096 | 35.4 | 3,703 | 130.80 |
-| + fused DSA, 4096 | 34.59 | 3,789 | 129.97 |
-| **+ fused DSA, 8192 tokens** | **30.24** | **4,334** | **129.97** |
+All figures are **marginal** s/it over the last logged interval, at 131,072 tokens/step.
+Use marginal, not the `train_speed` field: that is cumulative, so on a 12-step probe it is
+dominated by startup and understates the configuration by roughly half. Mixing the two is how
+this table first got written with numbers half as good as reality.
 
-**2.8× overall, and 4.95× against the 875 tok/s device_map pipeline.**
+| config | s/it | tok/s | speedup |
+|---|---|---|---|
+| fp32 optimizer moments, 4096 tokens | 92.0 | 1,425 | 1.00× |
+| bf16 optimizer moments, 4096 | 25.4 | 5,160 | 3.62× |
+| LoRA rank 16, 4096 | 25.6 | 5,120 | 3.59× |
+| optimizer CPU offload, 4096 | 27.4 | 4,784 | 3.36× |
+| + fused DSA, 4096 | 23.0 | 5,699 | 4.00× |
+| + fused DSA, 8192 tokens | 18.2 | 7,202 | 5.05× |
+| **production run, 8192, past step 100** | **13.2** | **9,930** | **6.97×** |
+
+**7× overall, and 11× against the 875 tok/s device_map pipeline.** A 240 M-token epoch takes
+~5.5 h. The production row beats every probe because probes never get past step 10, where startup
+and graph capture still dominate.
 
 ### Why bf16 optimizer moments are worth 2.4×
 
