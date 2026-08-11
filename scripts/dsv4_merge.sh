@@ -39,7 +39,11 @@ rc=$?
 echo "export rc=$rc"
 [ -d "$OUT" ] && du -sh "$OUT"
 
-# The tokenizer files are not emitted by the weight bridge but every serving path needs them.
+# The tokenizer files are not emitted by the weight bridge, and they are NOT in
+# ckpts/dsv4-flash-bf16 either -- dsv4_dequant.py wrote weights and config.json only. They have to
+# come from the original HF snapshot or the merged directory cannot be served at all.
+HF_ORIG=$(ls -d /mnt/patient-unit/home/apoorv/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/*/ 2>/dev/null | head -1)
 for f in tokenizer.json tokenizer_config.json special_tokens_map.json generation_config.json; do
-  [ -f "ckpts/dsv4-flash-bf16/$f" ] && [ ! -f "$OUT/$f" ] && cp "ckpts/dsv4-flash-bf16/$f" "$OUT/" && echo "  copied $f"
+  if [ -f "$HF_ORIG$f" ] && [ ! -f "$OUT/$f" ]; then cp "$HF_ORIG$f" "$OUT/" && echo "  copied $f"; fi
 done
+echo "serve with:  scripts/dsv4_serve.sh $OUT 8000"
