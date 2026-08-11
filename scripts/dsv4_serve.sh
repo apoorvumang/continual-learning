@@ -20,11 +20,16 @@ cd /mnt/patient-unit/home/apoorv/repos/continual-learning-qwen
 MODEL=${1:?usage: dsv4_serve.sh <model-dir> [port]}
 PORT=${2:-8000}
 
+# --kv-cache-dtype fp8 is mandatory, not a memory optimisation. vLLM implements DeepSeek-V4's
+# multi-head latent attention with an fp8_ds_mla KV layout that has no bf16 path:
+#     AssertionError: DeepseekV4 fp8_ds_mla layout only supports fp8 kv-cache, got auto
+# It quantises the KV cache only; the weights stay bf16.
 exec .venv-vllm/bin/vllm serve "$MODEL" \
     --served-model-name dsv4 \
     --trust-remote-code \
     --tensor-parallel-size 8 \
     --enable-expert-parallel \
+    --kv-cache-dtype fp8 \
     --max-model-len 16384 \
     --block-size 256 \
     --tokenizer-mode deepseek_v4 \

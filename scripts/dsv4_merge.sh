@@ -55,4 +55,25 @@ HF_ORIG=$(ls -d /mnt/patient-unit/home/apoorv/.cache/huggingface/hub/models--dee
 for f in tokenizer.json tokenizer_config.json special_tokens_map.json generation_config.json; do
   if [ -f "$HF_ORIG$f" ] && [ ! -f "$OUT/$f" ]; then cp "$HF_ORIG$f" "$OUT/" && echo "  copied $f"; fi
 done
+# Replace the emitted config.json with the ORIGINAL, then correct MTP.
+#
+# transformers 5.x `save_pretrained` writes its own canonical schema -- compress_rates for
+# compress_ratios, rope_parameters for rope_scaling, dtype for torch_dtype, and num_hash_layers
+# dropped in favour of layer_types. The weights are fine (layers 0-2 still carry gate.tid2eid,
+# layers 3-42 gate.bias) but vLLM reads the original field names, and the ms-swift DeepSeek-V4
+# guide says explicitly to copy the original config rather than ship the re-saved one.
+#
+# num_nextn_predict_layers must then go to 0: training ran with --mtp_num_layers 0, so no mtp.*
+# tensors exist, and a server that believes the config would hunt for missing weights.
+python - "$OUT" <<'PY'
+import json, sys, pathlib
+out = pathlib.Path(sys.argv[1])
+src = json.loads(pathlib.Path("ckpts/dsv4-flash-bf16/config.json").read_text())
+src["num_nextn_predict_layers"] = 0          # no mtp.* in this export
+src.pop("quantization_config", None)         # merged weights are bf16
+src["expert_dtype"] = "bf16"
+(out / "config.json").write_text(json.dumps(src, indent=1))
+print(f"  config: original schema restored, num_nextn_predict_layers=0, expert_dtype=bf16")
+PY
+
 echo "serve with:  scripts/dsv4_serve.sh $OUT 8000"
