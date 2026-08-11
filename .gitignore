@@ -22,3 +22,15 @@ data/news2026/
 
 # 100M-token synthetic corpus, regenerable from scripts/amplify_news.py
 data/news2026/synth.jsonl
+
+# Megatron/ms-swift training envs: .venv-mega2 alone is ~20GB of wheels plus a source-built
+# TransformerEngine. Reproduce with docs/DEEPSEEK-V4.md, not from git.
+.venv-mega/
+.venv-mega2/
+.venv-vllm/
+
+# mcore dist-checkpoints (568GB), LoRA adapters (13GB each) and merged bf16 exports
+megatron_output/
+
+# thinking-format variants, regenerable from scripts/build_thinkfix_variants.py
+data/thinkfix/

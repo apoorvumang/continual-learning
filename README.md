@@ -5,6 +5,12 @@ Teach Qwen3.5 recent world knowledge by continued pretraining on news, real and 
 **Start at [`RECIPE.md`](RECIPE.md).** Every working setting is already a script default — you
 need data and a GPU, not a hyperparameter search.
 
+For **DeepSeek-V4-Flash** (284 B / 13 B-active MoE, expert-parallel on 8×H200) see
+[`docs/DEEPSEEK-V4.md`](docs/DEEPSEEK-V4.md). Different stack entirely — Megatron-Core with EP=8
+rather than PEFT with FSDP — because 97 % of that model's parameters sit in its routed experts, and
+sharding by parameter all-gathers ~566 GiB per step. It also needs a patched TransformerEngine;
+the doc explains why and how.
+
 ## Where it stands
 
 90M tokens of amplified 2026 news on `Qwen3.5-35B-A3B`, trained on Jan–May and evaluated per

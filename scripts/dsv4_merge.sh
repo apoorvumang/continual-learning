@@ -28,9 +28,18 @@ CKPT=${1:-$(ls -dt ${RUN}checkpoint-* 2>/dev/null | grep -v merged | head -1)}
 OUT="${CKPT%/}-hf-merged"
 echo "merging $CKPT -> $OUT"
 
+# --adapters, NOT --mcore_adapter. ms-swift defaults to --save_safetensors true, so a checkpoint
+# dir holds adapter_model.safetensors (HF/peft layout) and its iter_NNNNNNN/ contains only
+# common.pt -- no distributed shards. --mcore_adapter takes the dist-checkpoint path and fails:
+#     CheckpointingException: .../iter_0000117 is not a distributed checkpoint
+# --adapters loads the same file with peft_format=True, which is what was actually written.
+#
+# --model is still required alongside --mcore_model: the former supplies config and tokenizer for
+# the output, the latter supplies the base weights.
 $V/megatron export \
+    --model ckpts/dsv4-flash-bf16 \
     --mcore_model /tmp/dsv4-mcore \
-    --mcore_adapter "$CKPT" \
+    --adapters "$CKPT" \
     --to_hf true --merge_lora true \
     --output_dir "$OUT" \
     --tensor_model_parallel_size 1 --expert_model_parallel_size 8 \
