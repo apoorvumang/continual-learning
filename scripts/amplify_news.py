@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import zlib
 import re
 import threading
 import time
@@ -90,7 +91,10 @@ Hard rules:
   dates that are not there. If the material on some event is thin, cover a different event
   rather than inventing detail.
 - State the date of the events explicitly where it is natural to do so.
-- Each document must stand alone, and must not refer to "the article" or "the source".
+- Each document must stand alone. Never refer to the material you were given, in any words: no
+  "the article", "the source reports", "the provided material", "no details were included",
+  "where can I read more". Write as if you are the original reporter, not a reader of one. If a
+  detail is missing, simply omit it -- do not remark on its absence.
 - Vary length, sentence structure and vocabulary between documents. Do not paraphrase the same
   sentences repeatedly.
 - No headings like "Document 1". Just write each document.
@@ -125,6 +129,20 @@ def main():
     ap.add_argument("--out", default="data/news2026/synth.jsonl")
     ap.add_argument("--base-url", default="http://127.0.0.1:8010/v1")
     ap.add_argument("--model", default="stock")
+    # Hosted APIs instead of a local vLLM. Two things change with them: the key comes from the
+    # environment, and the vLLM-only sampler fields in extra_body (top_k, chat_template_kwargs)
+    # are rejected as unknown parameters, so they are dropped when a key env is given.
+    ap.add_argument("--api-key-env", default=None,
+                    help="env var holding the key, e.g. OPENROUTER_API_KEY")
+    # --model accepts a comma-separated list and rotates across calls. DOC_TYPES exists because a
+    # single document format got memorised as a register and reappeared in the model's reasoning;
+    # a single *generator* is the same risk one level up. Rotating costs nothing and the styles
+    # differ more between models than between prompts.
+    ap.add_argument("--models", default=None,
+                    help="comma-separated model list to rotate over (overrides --model)")
+    # A dropped call used to be a silently lost document batch. On a paid run that is money and
+    # coverage gone, and 429s are routine at high concurrency, so retry with backoff.
+    ap.add_argument("--retries", type=int, default=5)
     ap.add_argument("--target-tokens", type=float, default=100e6)
     # Prefill dominates: the ~7k group context is re-prefilled every call because
     # prefix caching is unavailable on this hybrid model (recurrent GDN state cannot
@@ -193,8 +211,17 @@ def main():
     # 12-document call, i.e. ~520 tokens per document rather than the 1.4 tokens/word
     # the prompt asks for. Over-estimating here silently under-queues and the run
     # stops short of the target, which is exactly what happened at 65.2M.
-    est_per_call = args.per_call * 520
-    n_calls = max(1, int((args.target_tokens - tokens_done) / est_per_call) + 1)
+    # ...and it under-queued again on the hosted-API run, because these models write ~229 tokens
+    # per document, not 520 -- they ignore the requested word count and write shorter. So measure
+    # it from whatever this output file already contains and only fall back to the constant on a
+    # cold start. A 20% safety margin covers the estimate drifting as generators rotate; queuing
+    # too many calls is free (the loop stops at the token target) while too few silently truncates.
+    if done_calls:
+        est_per_call = max(200.0, tokens_done / len(done_calls))
+        print(f"measured {est_per_call:.0f} tokens/call from {len(done_calls)} completed calls")
+    else:
+        est_per_call = args.per_call * 520
+    n_calls = max(1, int(1.2 * (args.target_tokens - tokens_done) / est_per_call) + 1)
     # Round indices keep climbing past whatever a previous run reached; restarting them at 0
     # would find every job already done and queue nothing on resume.
     jobs, rd, first_rd = [], 0, None
@@ -213,7 +240,13 @@ def main():
           f"{args.per_call} documents each, targeting "
           f"{args.target_tokens/1e6:.0f}M tokens")
 
-    client = openai.OpenAI(base_url=args.base_url, api_key="local", timeout=600)
+    import os
+    api_key = os.environ[args.api_key_env] if args.api_key_env else "local"
+    client = openai.OpenAI(base_url=args.base_url, api_key=api_key, timeout=900,
+                           max_retries=0)   # retries handled below so backoff is visible
+    hosted = args.api_key_env is not None
+    MODELS = [m.strip() for m in (args.models or args.model).split(",") if m.strip()]
+    print("generators: " + ", ".join(MODELS))
     lock = threading.Lock()
     fout = out_path.open("a")
     state = {"tok": tokens_done, "calls": 0, "docs": 0, "fail": 0, "t0": time.time()}
@@ -225,20 +258,42 @@ def main():
             return
         tail = TAIL.format(n=len(fmts), sep=SEP, words=args.words,
                            formats="\n".join(f"{i+1}. {f}" for i, f in enumerate(fmts)))
-        try:
-            r = client.chat.completions.create(
-                model=args.model, max_completion_tokens=args.max_tokens,
-                messages=[{"role": "system", "content": SYSTEM.format(sep=SEP)},
-                          {"role": "user", "content": g["ctx"] + tail}],
-                temperature=1.0, top_p=0.95,
-                extra_body={"top_k": 20, "chat_template_kwargs": {"enable_thinking": False}})
-            text = r.choices[0].message.content or ""
-            used = r.usage.completion_tokens if r.usage else len(text) // 4
-        except Exception as e:
+        seq = zlib.crc32(cid.encode())          # cid is 'gid#round', not an int
+        model = MODELS[seq % len(MODELS)]
+        if hosted:
+            # Reasoning models bill their thinking as completion tokens and it is pure waste here:
+            # measured 42% useful output with thinking on, 96% with it off, same documents. Only
+            # sent to models that actually think, so it cannot be rejected as unknown elsewhere.
+            kw = {"extra_body": {"reasoning": {"enabled": False},
+                                 "chat_template_kwargs": {"enable_thinking": False}}} \
+                if any(w in model for w in ("qwen", "minimax", "glm", "deepseek")) else {}
+        else:
+            kw = {"extra_body": {"top_k": 20,
+                                 "chat_template_kwargs": {"enable_thinking": False}}}
+        text, used, err = "", 0, None
+        for attempt in range(args.retries):
+            try:
+                r = client.chat.completions.create(
+                    model=model, max_completion_tokens=args.max_tokens,
+                    messages=[{"role": "system", "content": SYSTEM.format(sep=SEP)},
+                              {"role": "user", "content": g["ctx"] + tail}],
+                    temperature=1.0, top_p=0.95, **kw)
+                text = r.choices[0].message.content or ""
+                used = r.usage.completion_tokens if r.usage else len(text) // 4
+                err = None
+                break
+            except Exception as e:                             # noqa: BLE001
+                err = e
+                if stop.is_set():
+                    return
+                # Exponential backoff. Rate limits are the common case and they clear; a bad
+                # request will exhaust the retries and be counted as a failure either way.
+                time.sleep(min(60, 2 ** attempt) * (1 + 0.25 * (seq % 4)))
+        if err is not None or not text:
             with lock:
                 state["fail"] += 1
                 if state["fail"] % 25 == 1:
-                    print(f"  gen error: {str(e)[:110]}", flush=True)
+                    print(f"  gen error: {str(err)[:110]}", flush=True)
             return
         docs = parse_docs(text)
         if not docs:
@@ -249,7 +304,7 @@ def main():
         with lock:
             for j, d in enumerate(docs):
                 fout.write(json.dumps({
-                    "call_id": cid, "doc_ix": j, "kind": "synth",
+                    "call_id": cid, "doc_ix": j, "kind": "synth", "gen": model,
                     "date": g["date"], "group": g["gid"], "source_urls": g["urls"],
                     "est_tokens": share, "text": d}, ensure_ascii=False) + "\n")
             state["tok"] += used
