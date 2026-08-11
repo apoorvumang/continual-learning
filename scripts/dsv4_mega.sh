@@ -37,6 +37,20 @@ GB=${GB:-32}
 # ~1.6 GB (merge_lora is off), so saving often is cheap.
 SAVE=${SAVE:-30}
 
+# OFFLOAD=1 moves fp32 optimizer state to CPU. Two reasons to try it, from the first full run:
+#
+#   1. Throughput. Every expert GEMM sees only ~96 rows (4096 tokens x top-6 / 256 experts), which
+#      is far below what a tensor core needs, and that is most of why MFU sat near 2.7%. Rows per
+#      expert scale linearly with tokens per micro-batch, so MB=2 is the lever -- and MB=2 needs
+#      roughly the ~13 GB that fp32 optimizer state occupies.
+#   2. Allocator pressure. Five of eight ranks ran at 142-143 GB of 143.7 GB (EP gives each rank a
+#      fixed 32 experts and the router does not fill them evenly). Marginal step time drifted from
+#      ~72 s to ~88 s as the run went on, which is what a nearly-full caching allocator does.
+#
+# Untested as of this writing -- the first full epoch ran without it.
+OFF=""
+[ "${OFFLOAD:-0}" = "1" ] && OFF="--optimizer_cpu_offload true --optimizer_offload_fraction 1.0"
+
 case "$SIZE" in
   mini) HF=ckpts/dsv4-mini4;      MCORE=ckpts/dsv4-mini4-mcore; DATA='data/news2026/dsv4-janaug.jsonl#2000'; EXTRA="--mtp_num_layers 0" ;;
   # The mcore checkpoint lives on the local NVMe (/tmp, 13T free) rather than the network mount:
@@ -89,4 +103,5 @@ exec $V/megatron pt \
     --merge_lora false \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
+    $OFF \
     $EXTRA
