@@ -23,6 +23,19 @@ export MEGATRON_LM_PATH=${MEGATRON_LM_PATH:-}
 
 MODE=${1:?convert|train}
 SIZE=${2:-mini}
+# Overridable so memory geometry can be retuned without editing the script.
+# MB=4 with packing OOMs the full model at 138.8/139.8 GiB: weights are 85 GB/rank (42.7B params
+# -- 34.5B of sharded experts plus 8B replicated), which leaves ~54 GB for optimizer state,
+# gradients and activations. 4 x 4096 = 16k tokens per micro-batch does not fit in that; the
+# hyper-connections keep FOUR residual streams, so stored layer inputs cost 4x what depth alone
+# suggests. Tokens per optimizer step are unchanged -- global_batch_size fixes that.
+MB=${MB:-1}
+GB=${GB:-32}
+# Packing makes an epoch SHORT in step count -- 14.23M tokens / (32 x 4096) = 117 steps -- so a
+# save interval tuned for thousands of steps would never fire and the run would produce nothing
+# until the final save. That is exactly how a 92%-complete run was lost before. The adapter is
+# ~1.6 GB (merge_lora is off), so saving often is cheap.
+SAVE=${SAVE:-30}
 
 case "$SIZE" in
   mini) HF=ckpts/dsv4-mini4;      MCORE=ckpts/dsv4-mini4-mcore; DATA='data/news2026/dsv4-janaug.jsonl#2000'; EXTRA="--mtp_num_layers 0" ;;
@@ -50,19 +63,30 @@ fi
 #
 # `pt` rather than `sft`: this is continued pretraining on raw news text. `sft` would wrap every
 # document in the chat template, and on Qwen that is exactly what broke thinking-mode recall.
+#
+# --packing: this corpus averages 493 tokens per document, so unpacked micro-batches would run
+# the model at an eighth of its sequence length and bill the same attention setup for it. Packing
+# concatenates documents up to 4096, which is the single biggest utilisation lever here.
+#
+# --merge_lora false is not a preference, it is a requirement at this size. It defaults to TRUE,
+# and on the mini run that meant every checkpoint was written twice -- adapter, then a full
+# merged copy. At 567 GB per merge, every 200 steps, that would dominate the run. Merge once,
+# afterwards, into the original bf16 checkpoint (which also preserves the mtp.* blocks).
 exec $V/megatron pt \
     --mcore_model "$MCORE" \
     --dataset "$DATA" \
     --tuner_type lora --lora_rank 32 --lora_alpha 64 \
     --tensor_model_parallel_size 1 --expert_model_parallel_size 8 \
     --sequence_parallel true \
-    --micro_batch_size 4 --global_batch_size 32 \
+    --micro_batch_size "$MB" --global_batch_size "$GB" \
     --recompute_granularity full --recompute_method uniform --recompute_num_layers 1 \
     --moe_permute_fusion true --moe_grouped_gemm true --moe_shared_expert_overlap true \
     --moe_aux_loss_coeff 1e-3 \
     --num_train_epochs 1 --finetune true --cross_entropy_loss_fusion true \
     --lr 1e-4 --lr_warmup_fraction 0.05 --min_lr 1e-5 \
-    --max_length 4096 --output_dir "$OUT" \
-    --save_steps 50 --eval_steps 1000 --no_save_optim true --no_save_rng true \
+    --max_length 4096 --packing true --packing_length 4096 \
+    --output_dir "$OUT" \
+    --merge_lora false \
+    --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
     $EXTRA

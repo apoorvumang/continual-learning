@@ -27,20 +27,22 @@ done
 say "  mcore checkpoint ready: $(du -sh /tmp/dsv4-mcore | cut -f1)"
 
 # ---- stage 2: mini training gate ------------------------------------------------------------
-# A completed optimizer step, not a clean start: Megatron logs "iteration N/M" only after one.
+# A completed optimizer step, not a clean start. ms-swift logs progress as a dict --
+# {'loss': ..., 'iteration': '5/62', ...} -- NOT in Megatron's own "iteration   5/  62" format,
+# so match the quoted key. Getting this wrong made a fully successful 62-step run report FAIL.
 say "STAGE 2  mini training gate (4 layers, EP=8)"
 scripts/dsv4_mega.sh train mini > /tmp/mini-train.log 2>&1
-if ! grep -qE "iteration +[0-9]+/" /tmp/mini-train.log; then
+if ! grep -qE "'iteration': '[0-9]+/" /tmp/mini-train.log; then
   say "FAIL: mini completed no iteration -- see /tmp/mini-train.log"
   grep -E "Error|assert|Traceback" /tmp/mini-train.log | tail -5 | tee -a "$LOG"
   exit 1
 fi
-say "  mini OK: $(grep -oE 'elapsed time per iteration \(ms\): [0-9.]+' /tmp/mini-train.log | tail -1)"
+say "  mini OK: $(grep -oE "'iteration': '[0-9]+/[0-9]+'.*" /tmp/mini-train.log | tail -1)"
 
 # ---- stage 3: full training ------------------------------------------------------------------
-# --save_steps 50 (set in dsv4_mega.sh) because a previous run was killed at 92% and produced
-# nothing: adapters were only written at the end.
+# Periodic checkpoints (dsv4_mega.sh: --save_steps 200) because a previous run was killed at 92%
+# and produced nothing -- adapters were written only at the end.
 say "STAGE 3  full training (43 layers, EP=8, LoRA r=32)"
 scripts/dsv4_mega.sh train full > /tmp/full-train.log 2>&1
 say "STAGE 3 exited rc=$?"
-grep -oE "elapsed time per iteration \(ms\): [0-9.]+" /tmp/full-train.log | tail -3 | tee -a "$LOG"
+grep -oE "'iteration': '[0-9]+/[0-9]+'.*" /tmp/full-train.log | tail -2 | tee -a "$LOG"
