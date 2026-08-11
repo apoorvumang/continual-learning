@@ -101,7 +101,7 @@ case "$SIZE" in
   # DSPARK heads) while config says num_nextn_predict_layers=1, so no setting round-trips all of
   # them; MTP only accelerates speculative decode and does not affect what the model knows.
   # For serving we merge the LoRA into the original bf16 checkpoint, which leaves mtp.* untouched.
-  full) HF=ckpts/dsv4-flash-bf16; MCORE=/tmp/dsv4-mcore;         DATA='data/news2026/dsv4-janaug.jsonl';      EXTRA="--mtp_num_layers 0" ;;
+  full) HF=ckpts/dsv4-flash-bf16; MCORE=/tmp/dsv4-mcore;         DATA=${DATA:-'data/news2026/dsv4-janaug.jsonl'}; EXTRA="--mtp_num_layers 0" ;;
   *) echo "size must be mini|full"; exit 2 ;;
 esac
 OUT=megatron_output/dsv4-$SIZE
@@ -143,6 +143,7 @@ exec $V/megatron pt \
     --output_dir "$OUT" \
     --merge_lora false \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
+    --save_total_limit "${KEEP:-3}" \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
     $OFF $OPTDT $DSA \
     $EXTRA "${PASS[@]}"
