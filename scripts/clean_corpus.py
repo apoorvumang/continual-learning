@@ -33,6 +33,37 @@ from pathlib import Path
 BOILERPLATE = re.compile(r"^.*(?:undefined\?location=|redirectUrl=%|\[here\.\]\(undefined).*$",
                          re.M)
 
+# Documents that refer to the material they were generated from, or to the generation task itself.
+# Whole documents are dropped, not lines: the reference is usually load-bearing in the sentence.
+#
+# Every pattern here was checked against samples first, because the obvious regexes are mostly
+# WRONG on this corpus. Measured on 386k synthetic documents:
+#
+#   "the article"        1841 docs, and legitimate -- the DOC_TYPES list includes "a reader's
+#                        letter to an editor responding to the coverage", for which referring to
+#                        an article is the format, not a leak.
+#   "not stated/included" 920 docs, and legitimate -- "the government has not specified a
+#                        duration", "no details were provided on the intended targets" is how
+#                        reporting hedges.
+#   "as an AI"              8 docs, and legitimate -- "such as an AI giving relationship advice",
+#                        "an AI center" hit by a naive \bas an ai\b.
+#   "Where can I find updates?"  legitimate -- an FAQ document answering it.
+#
+# What is left is 0.19%: references to supplied material, and worse, the system prompt and the
+# model's own planning leaking verbatim ("I will write 12 distinct documents", "Each document
+# stands alone", "the user requested ~450 words"). That register is why DOC_TYPES carries a warning
+# about fact-check formats: the model learned it once before and reproduced it in its reasoning
+# when no context had been supplied at all.
+META = re.compile(
+    r"the (?:provided|supplied|source) (?:material|text|context|reports?|summar\w+|snippets?)"
+    r"|(?:included|stated|mentioned|found) in the provided"
+    r"|\bthe user (?:requested|asked)"
+    r"|\bI will write \d+"
+    r"|Each document (?:stands alone|must stand alone)"
+    r"|uses only facts from"
+    r"|\bthe available facts\b"
+    r"|\bper the instructions\b", re.I)
+
 
 def clean(text: str) -> tuple[str, int]:
     out, n = BOILERPLATE.subn("", text)
@@ -47,20 +78,26 @@ def main():
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
-    docs_changed = lines_removed = 0
-    rows = []
-    for line in Path(args.inp).read_text().splitlines():
-        if not line.strip():
-            continue
-        r = json.loads(line)
-        r["text"], n = clean(r["text"])
-        if n:
-            docs_changed += 1
-            lines_removed += n
-        rows.append(r)
+    docs_changed = lines_removed = dropped = total = 0
+    with Path(args.out).open("w") as out:
+        for line in Path(args.inp).open():
+            if not line.strip():
+                continue
+            total += 1
+            r = json.loads(line)
+            if META.search(r["text"]):
+                dropped += 1
+                continue
+            r["text"], n = clean(r["text"])
+            if n:
+                docs_changed += 1
+                lines_removed += n
+            out.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    Path(args.out).write_text("".join(json.dumps(r) + "\n" for r in rows))
-    print(f"{len(rows)} docs, {docs_changed} cleaned, {lines_removed} boilerplate lines removed")
+    print(f"{total} docs in, {total - dropped} out")
+    print(f"  {dropped} dropped for referring to their source material or the generation task"
+          f" ({dropped/max(total,1):.3%})")
+    print(f"  {docs_changed} had {lines_removed} boilerplate lines stripped")
     print(f"-> {args.out}")
 
 
