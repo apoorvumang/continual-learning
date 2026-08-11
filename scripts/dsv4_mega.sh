@@ -42,6 +42,13 @@ GB=${GB:-32}
 # ~1.6 GB (merge_lora is off), so saving often is cheap.
 SAVE=${SAVE:-30}
 
+# Tokens per micro-batch is what sets rows per expert GEMM (tokens x top-6 / 256 experts), and
+# at 4096 that is only ~96 rows -- far under what a tensor core wants. Raising it via PACK
+# rather than MB because MB=2 reproducibly demands a single ~80 GiB allocation (79.74/79.92 GiB
+# across three attempts, unaffected by how much memory is freed), which looks like a
+# full-model-sized workspace rather than 2x activations.
+PACK=${PACK:-4096}
+
 # Overridable as a whole block: --recompute_method only accepts uniform|block, so selecting
 # "selective" granularity requires the method flag to be ABSENT, not set to a sentinel.
 RECOMP=${RECOMP:-"--recompute_granularity full --recompute_method uniform --recompute_num_layers 1"}
@@ -116,7 +123,7 @@ exec $V/megatron pt \
     --moe_aux_loss_coeff 1e-3 \
     --num_train_epochs 1 --finetune true --cross_entropy_loss_fusion true \
     --lr 1e-4 --lr_warmup_fraction 0.05 --min_lr 1e-5 \
-    --max_length 4096 --packing true --packing_length 4096 \
+    --max_length "$PACK" --packing true --packing_length "$PACK" \
     --output_dir "$OUT" \
     --merge_lora false \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
