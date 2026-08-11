@@ -23,6 +23,11 @@ export MEGATRON_LM_PATH=${MEGATRON_LM_PATH:-}
 
 MODE=${1:?convert|train}
 SIZE=${2:-mini}
+# Anything after mode/size is passed straight to megatron, so throughput levers can be probed
+# without editing this file. Without this the extra args were silently dropped and every probe
+# in a sweep ran the baseline config while appearing to test something.
+shift 2 2>/dev/null || true
+PASS=("$@")
 # Overridable so memory geometry can be retuned without editing the script.
 # MB=4 with packing OOMs the full model at 138.8/139.8 GiB: weights are 85 GB/rank (42.7B params
 # -- 34.5B of sharded experts plus 8B replicated), which leaves ~54 GB for optimizer state,
@@ -104,4 +109,4 @@ exec $V/megatron pt \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
     $OFF \
-    $EXTRA
+    $EXTRA "${PASS[@]}"
