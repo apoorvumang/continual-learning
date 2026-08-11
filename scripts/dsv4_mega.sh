@@ -42,6 +42,19 @@ GB=${GB:-32}
 # ~1.6 GB (merge_lora is off), so saving often is cheap.
 SAVE=${SAVE:-30}
 
+# Overridable as a whole block: --recompute_method only accepts uniform|block, so selecting
+# "selective" granularity requires the method flag to be ABSENT, not set to a sentinel.
+RECOMP=${RECOMP:-"--recompute_granularity full --recompute_method uniform --recompute_num_layers 1"}
+
+# Measured: bf16 optimizer moments gave 35.4 s/it against 83.4 with fp32, at identical loss to
+# 4 decimal places over 10 steps. The gain is not the optimizer arithmetic -- it is escaping
+# allocator thrash. At 132 of 139.8 GiB the caching allocator was retrying and flushing every
+# step (the baseline log shows expandable_segments mapping failures), which also explains the
+# 72->88 s/it drift over a long run. Freeing ~6 GB more than doubles throughput.
+BF16OPT=${BF16OPT:-1}
+OPTDT=""
+[ "$BF16OPT" = "1" ] && OPTDT="--use_precision_aware_optimizer true --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16"
+
 # OFFLOAD=1 moves fp32 optimizer state to CPU. Two reasons to try it, from the first full run:
 #
 #   1. Throughput. Every expert GEMM sees only ~96 rows (4096 tokens x top-6 / 256 experts), which
@@ -98,7 +111,7 @@ exec $V/megatron pt \
     --tensor_model_parallel_size 1 --expert_model_parallel_size 8 \
     --sequence_parallel true \
     --micro_batch_size "$MB" --global_batch_size "$GB" \
-    --recompute_granularity full --recompute_method uniform --recompute_num_layers 1 \
+    $RECOMP \
     --moe_permute_fusion true --moe_grouped_gemm true --moe_shared_expert_overlap true \
     --moe_aux_loss_coeff 1e-3 \
     --num_train_epochs 1 --finetune true --cross_entropy_loss_fusion true \
@@ -108,5 +121,5 @@ exec $V/megatron pt \
     --merge_lora false \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
-    $OFF \
+    $OFF $OPTDT \
     $EXTRA "${PASS[@]}"
