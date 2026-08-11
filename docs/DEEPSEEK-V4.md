@@ -7,10 +7,22 @@ Working as of 2026-08-11. Read the "why" notes — most of them cost hours to le
 
 ```
 loss   1.869 → 1.316        one epoch, 15.3 M tokens, Jan–Aug 2026 news corpus
-time   2 h 49 min           8×H200, EP=8, LoRA r=32 (~6 B adapter params)
-speed  1,510 tok/s          vs 875 tok/s for a device_map layer pipeline  (1.7×)
-memory 132–143 GiB/rank     of 143.7; five of eight ranks near the ceiling
+speed  4,334 tok/s          after tuning; 1,510 on the first run, 875 for a device_map pipeline
+memory 129.97 GiB/rank      of 139.8
 ```
+
+Knowledge injection, measured as mean log-probability of gold answers (`dsv4_score.py`, base vs
+trained, 120 questions):
+
+| scope | n | base | trained | delta | trained better |
+|---|---|---|---|---|---|
+| all | 120 | -3.187 | -1.896 | **+1.292** | 70.8 % |
+| amplified (Jan–May) | 94 | -3.272 | -1.771 | **+1.502** | 78.7 % |
+| raw articles only (Jun–Jul) | 26 | -2.880 | -2.348 | +0.532 | 42.3 % |
+
+The month split is the evidence that this is recall and not a general fluency gain: the months
+`synth-clean.jsonl` amplified gain three times what the un-amplified months do, and the
+un-amplified months win on fewer than half the questions.
 
 ## Why expert parallelism, not FSDP or ZeRO
 
@@ -144,19 +156,77 @@ just to load. Keep `num_hash_layers=3` — layers 0–2 route by `gate.tid2eid` 
 
 ## Throughput
 
-1,510 tok/s is ~2.6 % MFU. The cause is structural, not a misconfiguration:
+Measured with 12-step probes on the full model, all holding tokens/step at 131,072 so that s/it
+compares directly. The defaults in `dsv4_mega.sh` are the last row.
+
+| config | s/it | tok/s | memory |
+|---|---|---|---|
+| fp32 optimizer moments, 4096 tokens | 83.4 | 1,572 | 132.12 GiB |
+| bf16 optimizer moments, 4096 | 35.4 | 3,703 | 130.80 |
+| + fused DSA, 4096 | 34.59 | 3,789 | 129.97 |
+| **+ fused DSA, 8192 tokens** | **30.24** | **4,334** | **129.97** |
+
+**2.8× overall, and 4.95× against the 875 tok/s device_map pipeline.**
+
+### Why bf16 optimizer moments are worth 2.4×
+
+Not the arithmetic — 9.6 GB of moment traffic is ~10 ms against an 83 s step. At 132 of 139.8 GiB
+the caching allocator was thrashing, retrying and flushing every step:
 
 ```
-4096 tokens/micro-batch × top-6 ÷ 256 experts = 96 rows per expert GEMM
+expandable_segments: memory mapping failed with OOM on device 2 (free: 3997696 bytes)
 ```
 
-96 rows is far below what a tensor core needs, so the expert matmuls are memory-bound. Rows scale
-linearly with tokens per micro-batch, which makes `micro_batch_size` the lever — and memory the
-constraint. `OFFLOAD=1` moves ~13 GB of fp32 optimizer state to CPU to make room for `MB=2`.
+Three unrelated ways of freeing ~3 GB — bf16 moments (35.4), LoRA rank 16 (33.3), optimizer CPU
+offload (37.6) — all land in the same band, which is one bottleneck rather than three
+coincidences. It also explains the otherwise unaccounted 72 → 88 s/it drift over a long run.
+Loss is unaffected: 1.72716 against 1.72994 at step 10, same seed and data order.
 
-Marginal step time also drifted 72 s → 88 s across the run while five of eight ranks sat at
-142–143 GiB. EP assigns a fixed 32 experts per rank and the router does not fill them evenly, so
-the busiest ranks run the caching allocator nearly full, which costs time and not just headroom.
+### Why fused DSA matters more than its 14 %
 
-Expect single-digit-to-low-teens MFU here even done well; top-6-of-256 routing is inherently
-GEMM-starved at small batch.
+Unfused, the Lightning Indexer materialises a full score matrix before selecting `index_topk`, at
+~1280 bytes per token-pair. That predicts 20 / 45 / 80 GiB at 4096 / 6144 / 8192 tokens against
+measured (fits) / 44.90 / 80.00 — quadratic, and the reason every attempt above 4096 tokens
+OOM'd, whether reached via `micro_batch 2` or longer packing. Fused, 8192 tokens costs the *same*
+129.97 GiB as 4096: memory is flat in sequence length, and rows per expert GEMM double from 96 to
+192. (16384 still misses by ~1.7 GiB, and CPU offload does not recover it — the allocation fails
+before optimizer state is placed.)
+
+Doubling rows per expert bought only 14 %, so the expert GEMMs are less dominant than a
+FLOP-per-token model suggests. Do not expect much more from that direction.
+
+### Enabling fused DSA
+
+Four discoveries deep, and not documented together anywhere upstream. `dsv4_mega.sh`
+auto-detects all of this and falls back to the unfused path if any piece is missing.
+
+```bash
+# tilelang: prebuilt wheel exists, but its deps must be pinned by hand
+pip install --no-deps tilelang
+pip install "apache-tvm-ffi==0.1.12" "z3-solver==4.15.4" cloudpickle
+pip install --no-deps torch-c-dlpack-ext
+
+# CCCL headers from source. CUDA 13 moved libcu++ out of the toolkit and nvidia-cuda-cccl-cu13
+# has no artifact for this platform, so cutlass.h fails on #include <cuda/std/utility>
+git clone --depth 1 https://github.com/NVIDIA/cccl.git /tmp/cccl
+
+# FlashMLA from nv_dev, NOT main. main builds cleanly but its flash_mla_sparse_fwd() lacks the
+# indexer_topk parameter Megatron passes, so it fails at the first step rather than at import.
+git clone --depth 1 --branch nv_dev --recursive https://github.com/deepseek-ai/FlashMLA.git
+NVCC_APPEND_FLAGS="-I/tmp/cccl/libcudacxx/include -I/tmp/cccl/thrust -I/tmp/cccl/cub" \
+CUDA_HOME=/usr/local/cuda-13.0 TORCH_CUDA_ARCH_LIST="9.0" \
+  pip install --no-build-isolation ./FlashMLA
+
+pip install "nvidia-cudnn-frontend[cutedsl]"
+```
+
+### Levers that do not work here, so nobody retries them
+
+| lever | why |
+|---|---|
+| fp8 blockwise | OOM even with `--fp8_param_gather`, which changes the gather and not storage: TE keeps bf16 masters (85 GiB/rank) plus fp8 copies. fp8-native training would need an fp8 base checkpoint — the build whose kernel has no autograd formula. |
+| selective recompute | `Checkpoint core attention is not supported in DSv4 Hybrid Attention`. The architecture forbids it. |
+| `micro_batch_size 2` | Demands a single ~80 GiB allocation regardless of free memory. Same indexer buffer as above; use `PACK` with fused DSA instead. |
+| `moe_single_grouped_weight` | Requires fp8 mode, so not independently available. |
+| TP > 1 | `DSv4 Hybrid Attention only supports TP size 1`, and Megatron-Core has no TP for this architecture yet. |
+| `overlap_grad_reduce` / `overlap_param_gather` | Only ~3.2 GB of adapter gradients reduce per step, ~10 ms against a 30 s step. Noise. |

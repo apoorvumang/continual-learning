@@ -35,7 +35,6 @@ PASS=("$@")
 # hyper-connections keep FOUR residual streams, so stored layer inputs cost 4x what depth alone
 # suggests. Tokens per optimizer step are unchanged -- global_batch_size fixes that.
 MB=${MB:-1}
-GB=${GB:-32}
 # Packing makes an epoch SHORT in step count -- 14.23M tokens / (32 x 4096) = 117 steps -- so a
 # save interval tuned for thousands of steps would never fire and the run would produce nothing
 # until the final save. That is exactly how a 92%-complete run was lost before. The adapter is
@@ -47,7 +46,11 @@ SAVE=${SAVE:-30}
 # rather than MB because MB=2 reproducibly demands a single ~80 GiB allocation (79.74/79.92 GiB
 # across three attempts, unaffected by how much memory is freed), which looks like a
 # full-model-sized workspace rather than 2x activations.
-PACK=${PACK:-4096}
+# 8192 measured best: 30.24 s/it vs 34.59 at 4096, same 129.97 GiB, because fused DSA made
+# indexer memory flat in sequence length. 16384 misses by ~1.7 GiB and CPU offload does not
+# recover it (the allocation fails before optimizer state is placed), so this is the ceiling.
+PACK=${PACK:-8192}
+GB=${GB:-16}
 
 # Overridable as a whole block: --recompute_method only accepts uniform|block, so selecting
 # "selective" granularity requires the method flag to be ABSENT, not set to a sentinel.
@@ -58,6 +61,19 @@ RECOMP=${RECOMP:-"--recompute_granularity full --recompute_method uniform --reco
 # allocator thrash. At 132 of 139.8 GiB the caching allocator was retrying and flushing every
 # step (the baseline log shows expandable_segments mapping failures), which also explains the
 # 72->88 s/it drift over a long run. Freeing ~6 GB more than doubles throughput.
+# Fused DeepSeek sparse attention. Worth 34.59 -> 30.24 s/it at 8192 tokens, but the real gain is
+# that it stops the indexer materialising an O(tokens^2) score matrix (~1280 bytes/token-pair),
+# which is what made anything above 4096 tokens OOM. Needs tilelang, flash_mla from the nv_dev
+# branch, and nvidia-cudnn-frontend[cutedsl] -- see docs/DEEPSEEK-V4.md. Auto-detected so the
+# script still runs where they are absent rather than failing on a missing kernel.
+DSA=""
+if $V/python -c "from flash_mla import flash_mla_sparse_fwd; from cudnn import DSA" 2>/dev/null; then
+  DSA="--apply_dsa_kernel_fusion true"
+else
+  echo "note: fused DSA kernels unavailable; falling back to the unfused path (slower, and
+        packing above 4096 tokens will OOM). See docs/DEEPSEEK-V4.md."
+fi
+
 BF16OPT=${BF16OPT:-1}
 OPTDT=""
 [ "$BF16OPT" = "1" ] && OPTDT="--use_precision_aware_optimizer true --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16"
@@ -128,5 +144,5 @@ exec $V/megatron pt \
     --merge_lora false \
     --save_steps "$SAVE" --eval_steps 1000 --no_save_optim true --no_save_rng true \
     --attention_backend flash --dataloader_num_workers 4 --dataset_num_proc 4 \
-    $OFF $OPTDT \
+    $OFF $OPTDT $DSA \
     $EXTRA "${PASS[@]}"
