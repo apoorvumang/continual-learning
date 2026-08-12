@@ -34,3 +34,7 @@ megatron_output/
 
 # thinking-format variants, regenerable from scripts/build_thinkfix_variants.py
 data/thinkfix/
+
+# format-sweep arms: ~235MB, regenerable from scripts/build_formats_dsv4.py + qa-v2.jsonl
+data/formats/
+data/news2026/qa-v2.jsonl
