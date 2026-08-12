@@ -41,6 +41,10 @@ def main():
     ap.add_argument("--questions", type=int, default=120)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--compare", nargs="+")
+    # A raw-text probe systematically penalises arms trained with chat tokens: they can know more
+    # and still score worse because the prompt shape differs from what they saw. Score each arm in
+    # the format it was trained on, and the comparison is about knowledge rather than wrapping.
+    ap.add_argument("--prompt-format", choices=["plain", "chat"], default="plain")
     args = ap.parse_args()
 
     if args.compare:
@@ -96,7 +100,11 @@ def main():
 
     out = []
     for i, r in enumerate(qs, 1):
-        prompt = f"Question: {r['question']}\nAnswer:"
+        if args.prompt_format == "chat":
+            # DeepSeek's control tokens, matching build_formats_dsv4.py exactly.
+            prompt = f"<｜begin▁of▁sentence｜><｜User｜>{r['question']}<｜Assistant｜>"
+        else:
+            prompt = f"Question: {r['question']}\nAnswer:"
         p_ids = tok(prompt, return_tensors="pt").input_ids
         a_ids = tok(" " + r["answer"], return_tensors="pt", add_special_tokens=False).input_ids
         ids = torch.cat([p_ids, a_ids], dim=1).to(model.device)
@@ -113,7 +121,8 @@ def main():
                   flush=True)
 
     label = Path(args.model).name
-    report = {"label": label, "model": args.model, "questions": len(out), "rows": out}
+    report = {"label": label, "model": args.model, "questions": len(out),
+              "prompt_format": args.prompt_format, "rows": out}
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         Path(args.out).write_text(json.dumps(report, indent=1))

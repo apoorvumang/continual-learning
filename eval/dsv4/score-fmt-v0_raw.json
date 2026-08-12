@@ -1,0 +1,847 @@
+{
+ "label": "checkpoint-92-hf-merged",
+ "model": "megatron_output/fmt-v0_raw/v1-20260812-195334/checkpoint-92-hf-merged",
+ "questions": 120,
+ "rows": [
+  {
+   "question": "How many jobs did Microsoft cut primarily within its Xbox and commercial sales divisions?",
+   "answer": "roughly 4,800",
+   "month": "2026-07",
+   "logprob": -2.2483248710632324,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How many Palestinians were killed in an Israeli airstrike on a tent sheltering displaced refugees in the Khan Yunis refugee camp in Gaza?",
+   "answer": "Four",
+   "month": "2026-01",
+   "logprob": -2.856424331665039,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which football club did Paris Saint-Germain defeat in the 2026 UEFA Champions League final at Pusk\u00e1s Ar\u00e9na?",
+   "answer": "Arsenal",
+   "month": "2026-05",
+   "logprob": -1.147423267364502,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "At which airport in Niamey, Niger, were eleven soldiers, two civilians and 22 gunmen killed in a mass shooting and shootout?",
+   "answer": "Diori Hamani International Airport",
+   "month": "2026-06",
+   "logprob": -0.09538876265287399,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "Where was the 10th CELAC Summit held?",
+   "answer": "Bogot\u00e1, Colombia",
+   "month": "2026-03",
+   "logprob": -0.7969841361045837,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "What Russian-flagged tanker did the United States board and seize in the North Atlantic Ocean during Operation Southern Spear?",
+   "answer": "Marinera (Bella 1)",
+   "month": "2026-01",
+   "logprob": -2.5096042156219482,
+   "n_answer_tokens": 8
+  },
+  {
+   "question": "Which China-based automaker surpassed Tesla as the world's best-selling electric vehicle automaker after 2025 sales?",
+   "answer": "BYD Auto",
+   "month": "2026-01",
+   "logprob": -0.03634801506996155,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Which Islamic Revolutionary Guard Corps general said the Iran\u2013United States ceasefire depends on the ceasefire in Lebanon?",
+   "answer": "Esmail Qaani",
+   "month": "2026-06",
+   "logprob": -0.4284845292568207,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "answer": "18",
+   "month": "2026-04",
+   "logprob": -3.2291665077209473,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which Pacific island did Germany formally recognize and establish diplomatic relations with?",
+   "answer": "Niue",
+   "month": "2026-01",
+   "logprob": -0.5808471441268921,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "answer": "Pachuca",
+   "month": "2026-01",
+   "logprob": -3.2663559913635254,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "In which Kenyan county were five soldiers killed in a shootout with Al-Shabaab gunmen during the Somali Civil War?",
+   "answer": "Mandera County",
+   "month": "2026-07",
+   "logprob": -0.7040495872497559,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Where did Tropical Storm Penha make landfall before killing at least eight people and displacing more than 28,000?",
+   "answer": "the southern Philippines",
+   "month": "2026-02",
+   "logprob": -4.142746925354004,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many drones launched from Iraq did Saudi Arabia intercept during the 2026 Iranian strikes on Saudi Arabia?",
+   "answer": "three",
+   "month": "2026-05",
+   "logprob": -11.899026870727539,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Who did Israel appoint as the first Israeli ambassador to Somaliland?",
+   "answer": "Michael Lotem",
+   "month": "2026-04",
+   "logprob": -2.0142366886138916,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "What was destroyed in an Iranian drone strike on Ali Al Salem Air Base in Kuwait during the 2026 Iran war?",
+   "answer": "An Italian MQ-9 Reaper",
+   "month": "2026-03",
+   "logprob": -0.5576176643371582,
+   "n_answer_tokens": 8
+  },
+  {
+   "question": "How many people were killed in the suspected suicide bombings in Maiduguri, Borno State, Nigeria?",
+   "answer": "At least 23",
+   "month": "2026-03",
+   "logprob": -1.2882673740386963,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which organization did Argentine foreign minister Pablo Quirno announce Argentina would formally withdraw from?",
+   "answer": "World Health Organization",
+   "month": "2026-03",
+   "logprob": -2.0350122451782227,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many people were killed in the Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel?",
+   "answer": "Nine",
+   "month": "2026-03",
+   "logprob": -0.6991790533065796,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which organization declared the 2026 Central Africa Ebola epidemic a public health emergency of international concern?",
+   "answer": "World Health Organization",
+   "month": "2026-05",
+   "logprob": -1.9254679679870605,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "What was the name of the U.S. Central Command operation to help secure transit in the Strait of Hormuz?",
+   "answer": "Project Freedom",
+   "month": "2026-05",
+   "logprob": -0.9603545665740967,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which U.S. military base in Kuwait was targeted by the Islamic Revolutionary Guard Corps Aerospace Force and Navy during the 2026 Iranian strikes on Arab countries?",
+   "answer": "Ali Al Salem Air Base",
+   "month": "2026-06",
+   "logprob": -0.1247834786772728,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "What airport did the Florida Legislature pass a measure to rename as President Donald J. Trump International Airport?",
+   "answer": "Palm Beach International Airport",
+   "month": "2026-02",
+   "logprob": -0.5019749402999878,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "How many people were killed in an Israeli airstrike on a building in Beirut, Lebanon, during the 2026 Lebanon war?",
+   "answer": "At least 20",
+   "month": "2026-03",
+   "logprob": -1.198061227798462,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Where were the planned talks between Iran and the United States cancelled after U.S. vice president JD Vance cancelled his trip?",
+   "answer": "B\u00fcrgenstock Resort, Switzerland",
+   "month": "2026-06",
+   "logprob": -2.4051032066345215,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "How many people were killed by Israeli airstrikes across multiple locations in Lebanon during the 2026 Lebanon war?",
+   "answer": "at least 32",
+   "month": "2026-04",
+   "logprob": -3.1687233448028564,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "What was the U.S. House of Representatives vote tally for passing the 21st Century ROAD to Housing Act?",
+   "answer": "396\u201313",
+   "month": "2026-05",
+   "logprob": -0.9283410906791687,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Who was appointed prime minister of Solomon Islands after Jeremiah Manele was ousted in a no-confidence vote?",
+   "answer": "Matthew Wale",
+   "month": "2026-05",
+   "logprob": -0.1754789650440216,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "At what time did the Bangladesh-flagged MV Banglar Joyjatra clear through the Strait of Hormuz?",
+   "answer": "3:00am BST",
+   "month": "2026-06",
+   "logprob": -2.724885940551758,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "answer": "more than 17,000",
+   "month": "2026-04",
+   "logprob": -2.0156495571136475,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "What did Donald Trump order the U.S. Navy to open fire on in the 2026 Strait of Hormuz crisis?",
+   "answer": "Iranian vessels placing mines",
+   "month": "2026-04",
+   "logprob": -2.525322914123535,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "How many militants did the Popular Mobilization Forces report were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war?",
+   "answer": "20",
+   "month": "2026-07",
+   "logprob": -3.4681310653686523,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which airline suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela?",
+   "answer": "Air Canada",
+   "month": "2026-02",
+   "logprob": -0.8660550713539124,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which base in Sicily did Italy deny the United States Air Force use of for operations related to the Iran war?",
+   "answer": "Sigonella base",
+   "month": "2026-03",
+   "logprob": -0.9429269433021545,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Who approved the Honduran National Congress recount of votes from the November 2025 election by decree?",
+   "answer": "President Xiomara Castro",
+   "month": "2026-01",
+   "logprob": -0.4206913113594055,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "answer": "16 years and 73 days",
+   "month": "2026-03",
+   "logprob": -1.2516722679138184,
+   "n_answer_tokens": 7
+  },
+  {
+   "question": "Who won Benin's 2026 presidential election with 94% of the vote, according to provisional results?",
+   "answer": "Romuald Wadagni",
+   "month": "2026-04",
+   "logprob": -0.47844618558883667,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "answer": "17-year suspension",
+   "month": "2026-02",
+   "logprob": -3.7055392265319824,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "answer": "Nigeria Centre for Disease Control",
+   "month": "2026-05",
+   "logprob": -1.037986159324646,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How many Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso?",
+   "answer": "Seven",
+   "month": "2026-02",
+   "logprob": -3.126565456390381,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which oil tanker did Kuwait Petroleum Corporation claim was hit by an Iranian drone at a port in Dubai during the 2026 Strait of Hormuz crisis?",
+   "answer": "Al Salmi",
+   "month": "2026-03",
+   "logprob": -1.2213495969772339,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Which country announced attacks against Pakistani military positions along their shared border during the 2026 Afghanistan\u2013Pakistan war?",
+   "answer": "Afghanistan",
+   "month": "2026-02",
+   "logprob": -0.496138334274292,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "How many United States soldiers will deploy to Nigeria to help train the Nigerian military against Boko Haram and other Islamic terrorist groups?",
+   "answer": "200",
+   "month": "2026-02",
+   "logprob": -1.3543651103973389,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many people were killed in the 2026 Bangkok train collision after a train hit a bus?",
+   "answer": "Eight",
+   "month": "2026-05",
+   "logprob": -3.1885669231414795,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which company was conducting construction when a pipeline explosion damaged at least 35 properties in Jaguar\u00e9, S\u00e3o Paulo, Brazil?",
+   "answer": "Sabesp",
+   "month": "2026-05",
+   "logprob": -2.181830406188965,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Since what year had the New York Knicks not won an NBA championship before winning the 2026 NBA Finals?",
+   "answer": "1973",
+   "month": "2026-06",
+   "logprob": -0.3992668390274048,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many criminals did authorities confirm arresting after the bar attack in Puebla, Mexico?",
+   "answer": "four",
+   "month": "2026-02",
+   "logprob": -10.842611312866211,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "In which Manhattan area did the proposed 2 World Trade Center break ground 25 years after the September 11 attacks?",
+   "answer": "Lower Manhattan",
+   "month": "2026-07",
+   "logprob": -1.0739482641220093,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How much money did Eswatini receive under its agreement with the United States to accept third-country deportees?",
+   "answer": "$5.1 million",
+   "month": "2026-02",
+   "logprob": -1.6820480823516846,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "Which military base did the United States Armed Forces withdraw from and hand over to the Syrian Armed Forces?",
+   "answer": "al-Tanf military base",
+   "month": "2026-02",
+   "logprob": -1.568831443786621,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "In which Turkish province did debris fall after Turkey and NATO forces shot down a suspected Iranian ballistic missile violating Turkish airspace?",
+   "answer": "Gaziantep Province",
+   "month": "2026-03",
+   "logprob": -0.6098965406417847,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which Kuwaiti air base did Iran's IRGC say it hit Patriot air defense systems at during the 2026 Iranian strikes on Kuwait?",
+   "answer": "Ali Al Salem Air Base",
+   "month": "2026-07",
+   "logprob": -0.2630085051059723,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How many people were missing after the landslide at West Bandung Regency, West Java, Indonesia?",
+   "answer": "82",
+   "month": "2026-01",
+   "logprob": -4.665317535400391,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "answer": "Javokhir Sindarov",
+   "month": "2026-04",
+   "logprob": -0.7704952955245972,
+   "n_answer_tokens": 7
+  },
+  {
+   "question": "Which two countries signed military defense cooperation pacts with the Philippines at the Munich Security Conference?",
+   "answer": "Estonia and Italy",
+   "month": "2026-02",
+   "logprob": -3.536273717880249,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many first-past-the-post seats did the Rastriya Swatantra Party win in Nepal's 2026 general election partial preliminary results?",
+   "answer": "60",
+   "month": "2026-03",
+   "logprob": -5.3263702392578125,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "answer": "Uvira, South Kivu",
+   "month": "2026-02",
+   "logprob": -0.735835611820221,
+   "n_answer_tokens": 7
+  },
+  {
+   "question": "Who did the Anwar Ibrahim cabinet appoint as head of the Malaysian Anti-Corruption Commission?",
+   "answer": "Abdul Halim Aman",
+   "month": "2026-04",
+   "logprob": -1.3985841274261475,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "On what date did United States Central Command report a navy pilot was killed in a helicopter crash in the Arabian Sea during the 2026 Iran war?",
+   "answer": "July 1",
+   "month": "2026-07",
+   "logprob": -2.0084524154663086,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Whom did Lebanese president Joseph Aoun appoint as the new negotiator for the next Israel\u2013Lebanon talks?",
+   "answer": "Simon Karam",
+   "month": "2026-04",
+   "logprob": -3.343696117401123,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many people were killed by Israeli airstrikes in Beirut, Lebanon, during the 2026 Israel\u2013Lebanon ceasefire?",
+   "answer": "At least two",
+   "month": "2026-06",
+   "logprob": -1.438490867614746,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many al-Shabaab insurgents were killed by Jubaland forces and American troops in Lower Juba, Somalia?",
+   "answer": "more than 60",
+   "month": "2026-02",
+   "logprob": -3.104736804962158,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "On what date is the 2026 Colombian presidential election day mentioned in the proposal to suspend Gustavo Petro's powers?",
+   "answer": "21 June 2026",
+   "month": "2026-06",
+   "logprob": -1.4663112163543701,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "Which country stated its intention to withdraw from the International Criminal Court?",
+   "answer": "Chad",
+   "month": "2026-07",
+   "logprob": -6.512166976928711,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "How many people were killed by the Russian ballistic missile and drone attack on Kyiv, Ukraine?",
+   "answer": "at least 30 people",
+   "month": "2026-07",
+   "logprob": -2.4300739765167236,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "Which refinery in Volgograd Oblast, Russia, was ablaze after an overnight Ukrainian drone attack during the Russo-Ukrainian war?",
+   "answer": "Volgograd refinery",
+   "month": "2026-02",
+   "logprob": -0.8894772529602051,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which German biotechnology company announced it would halt production of its COVID-19 vaccine?",
+   "answer": "BioNTech",
+   "month": "2026-05",
+   "logprob": -0.2411423921585083,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many seats did the Progressive Union Renewal win in Benin's National Assembly according to provisional results in the 2026 parliamentary election?",
+   "answer": "60",
+   "month": "2026-01",
+   "logprob": -3.874687671661377,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Where did Storm Kristin cause severe damage in Portugal?",
+   "answer": "Figueira da Foz",
+   "month": "2026-01",
+   "logprob": -1.2965279817581177,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "Which United Nations climate science body was included in the United States withdrawal from dozens of UN bodies?",
+   "answer": "Intergovernmental Panel on Climate Change",
+   "month": "2026-01",
+   "logprob": -1.421702265739441,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "Which organization operated the aid plane that arrived in Khartoum, Sudan, with food and medical supplies during the Sudanese civil war?",
+   "answer": "King Salman Humanitarian Aid and Relief Center",
+   "month": "2026-07",
+   "logprob": -1.7515709400177002,
+   "n_answer_tokens": 8
+  },
+  {
+   "question": "How many people were killed during clashes between police and Joint Awami Action Committee supporters in Azad Kashmir, Pakistan?",
+   "answer": "Eleven",
+   "month": "2026-06",
+   "logprob": -4.581178665161133,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Near which location in Peru was the missing Peruvian Air Force Mil Mi-17 helicopter found crashed?",
+   "answer": "Chala, Peru",
+   "month": "2026-02",
+   "logprob": -4.026205062866211,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Who did Venezuelan president Delcy Rodr\u00edguez appoint as Minister of Defense?",
+   "answer": "General Gustavo Gonz\u00e1lez L\u00f3pez",
+   "month": "2026-03",
+   "logprob": -2.102856159210205,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "Which town in Sudan's Blue Nile region did the Sudanese Armed Forces say it repelled an attack on?",
+   "answer": "Al-Barka",
+   "month": "2026-06",
+   "logprob": -2.4843125343322754,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Near which Colombian city did SATENA Flight 8895 crash?",
+   "answer": "C\u00facuta",
+   "month": "2026-01",
+   "logprob": -0.43824177980422974,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many Arakan Rohingya Salvation Army members did Bangladesh detain after they crossed into Bangladesh amid fighting in Rakhine State?",
+   "answer": "53",
+   "month": "2026-01",
+   "logprob": -4.182496070861816,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which company paused efforts to restore LNG production at the Ras Laffan gas facility after an attack in the Strait of Hormuz?",
+   "answer": "QatarEnergy",
+   "month": "2026-07",
+   "logprob": -0.0450800359249115,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many Balochistan Liberation Army gunmen were killed by the Pakistani army in the attempted hostage-taking at a police station in Kharan District, Pakistan?",
+   "answer": "Twelve",
+   "month": "2026-01",
+   "logprob": -3.6677770614624023,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "How many missiles from Iran did Jordanian air defenses say they intercepted toward the Azraq area of Zarqa Governorate?",
+   "answer": "20",
+   "month": "2026-06",
+   "logprob": -2.7537283897399902,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which news agency's journalists had their accreditation revoked by Ethiopia after an article about the Sudanese civil war?",
+   "answer": "Reuters",
+   "month": "2026-02",
+   "logprob": -1.7311642169952393,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which nuclear power plant did the United Arab Emirates report was targeted by a drone strike during the 2026 Iran war?",
+   "answer": "Barakah nuclear power plant",
+   "month": "2026-05",
+   "logprob": -0.6202930808067322,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "By what date were creditors instructed to submit claims in the Beijing court liquidation of Zhongzhi Enterprise Group?",
+   "answer": "June 10",
+   "month": "2026-04",
+   "logprob": -2.030034065246582,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Who was removed as BP chairperson over serious conduct concerns?",
+   "answer": "Albert Manifold",
+   "month": "2026-05",
+   "logprob": -0.03201843798160553,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which media outlet did Afghan journalists launch in exile in France on World Press Freedom Day?",
+   "answer": "Kabul Times News",
+   "month": "2026-05",
+   "logprob": -3.0345706939697266,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Who was sworn in as the 31st Governor General of Canada?",
+   "answer": "Louise Arbour",
+   "month": "2026-06",
+   "logprob": -0.6372371912002563,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Which Russian tanker carrying 100,000 tonnes of crude oil arrived in Matanzas, Cuba?",
+   "answer": "Anatoly Kolodkin",
+   "month": "2026-03",
+   "logprob": -1.763533592224121,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "How many aircraft did Lufthansa announce it would permanently withdraw from its CityLine regional subsidiary?",
+   "answer": "27",
+   "month": "2026-04",
+   "logprob": -0.6192417144775391,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many seats did preliminary results indicate the loyalist bloc took in the 2026 New Caledonian legislative election?",
+   "answer": "24 seats",
+   "month": "2026-06",
+   "logprob": -2.4108498096466064,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Who scored Manchester City's 72nd-minute goal against Chelsea in the 2026 FA Cup final?",
+   "answer": "Antoine Semenyo",
+   "month": "2026-05",
+   "logprob": -3.103518486022949,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which Green Party candidate won the Gorton and Denton constituency in Greater Manchester in the 2026 by-election?",
+   "answer": "Hannah Spencer",
+   "month": "2026-02",
+   "logprob": -1.1229214668273926,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "After the United Arab Emirates defence ministry said it intercepted Iranian missiles and drones, what was the reported total number of injuries in the country since the 2026 Iran war began?",
+   "answer": "230",
+   "month": "2026-05",
+   "logprob": -4.493082523345947,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many drones did the Kuwaiti defense ministry say the military intercepted and destroyed during the 2026 Iran war?",
+   "answer": "32",
+   "month": "2026-07",
+   "logprob": -3.9443728923797607,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "From which air base in Hasakah province did U.S. troops complete their withdrawal, ending U.S. involvement in Syria?",
+   "answer": "Qasrak air base",
+   "month": "2026-04",
+   "logprob": -1.2235850095748901,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "Which French team did FC Barcelona beat 4\u20130 to win the 2026 UEFA Women's Champions League final?",
+   "answer": "OL Lyonnes",
+   "month": "2026-05",
+   "logprob": -8.926027297973633,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Which two countries vetoed the United Nations Security Council resolution on navigation safety in the Strait of Hormuz?",
+   "answer": "China and Russia",
+   "month": "2026-04",
+   "logprob": -0.3827707767486572,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "From which Florida space center did NASA launch Artemis II for a flyby of the Moon?",
+   "answer": "Kennedy Space Center",
+   "month": "2026-04",
+   "logprob": -0.5418694615364075,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "What percentage of the vote did provisional results say Denis Sassou Nguesso would win in the 2026 Republic of the Congo presidential election?",
+   "answer": "94.82%",
+   "month": "2026-03",
+   "logprob": -2.0803964138031006,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "In the 2026 Sikhio train disaster in Thailand, how many people were killed?",
+   "answer": "At least 32",
+   "month": "2026-01",
+   "logprob": -0.596741259098053,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Which social media platforms did Gabon indefinitely suspend access to, citing concerns about social cohesion and national security?",
+   "answer": "YouTube and TikTok",
+   "month": "2026-02",
+   "logprob": -2.2791097164154053,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Which group imposed the fuel blockade that led Mali's government to impose gasoline rationing?",
+   "answer": "JNIM insurgents",
+   "month": "2026-01",
+   "logprob": -1.7157871723175049,
+   "n_answer_tokens": 5
+  },
+  {
+   "question": "Who led the Pakistani delegation that arrived in Tehran to facilitate Iran\u2013United States diplomacy during the 2026 Iran war?",
+   "answer": "Asim Munir",
+   "month": "2026-04",
+   "logprob": -1.5110774040222168,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "How many people did Bahrain revoke citizenship from for expressing support for Iran during the 2026 Iran war?",
+   "answer": "69 people",
+   "month": "2026-04",
+   "logprob": -2.999786853790283,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "Who was sworn in as President of Portugal in the 2026 Portuguese presidential election?",
+   "answer": "Ant\u00f3nio Jos\u00e9 Seguro",
+   "month": "2026-03",
+   "logprob": -0.12027104198932648,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "How many days of mourning were declared after Iran confirmed supreme leader Ali Khamenei's death?",
+   "answer": "Forty days",
+   "month": "2026-03",
+   "logprob": -0.5827392935752869,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many civilians in Sudan did the United Nations report had been killed in RSF drone strikes between January and April 2026?",
+   "answer": "880",
+   "month": "2026-05",
+   "logprob": -1.975125789642334,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which air base in Qatar was struck by an Iranian ballistic missile during the 2026 Iranian strikes on Qatar?",
+   "answer": "Al Udeid Air Base",
+   "month": "2026-03",
+   "logprob": -0.18143633008003235,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "How many hikers were killed in separate avalanches on Mont Blanc in the Alps?",
+   "answer": "Seven",
+   "month": "2026-06",
+   "logprob": -2.6790928840637207,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "Which Spanish airline announced the suspension of flights to Cuba from June to late October during the 2026 Cuban crisis?",
+   "answer": "Iberia",
+   "month": "2026-04",
+   "logprob": -0.37630048394203186,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "How many soldiers and police officers did Ecuador deploy to enforce a nightly curfew?",
+   "answer": "75,000",
+   "month": "2026-03",
+   "logprob": -1.1359167098999023,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "Who won the first MGI All Stars beauty pageant in Bangkok, Thailand?",
+   "answer": "Vanessa Pulgar\u00edn",
+   "month": "2026-05",
+   "logprob": -3.168491840362549,
+   "n_answer_tokens": 4
+  },
+  {
+   "question": "In which Nigerian state did gunmen launch simultaneous attacks on three communities, killing at least 46 people?",
+   "answer": "Niger State",
+   "month": "2026-02",
+   "logprob": -1.9785822629928589,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which country permanently withdrew its ambassador to Israel after bilateral diplomatic relations worsened?",
+   "answer": "Spain",
+   "month": "2026-03",
+   "logprob": -3.4421966075897217,
+   "n_answer_tokens": 1
+  },
+  {
+   "question": "How many tourists were evacuated after a fire at a Wyndham resort in Bayah\u00edbe, Dominican Republic?",
+   "answer": "nearly 1,700 tourists",
+   "month": "2026-06",
+   "logprob": -3.3632266521453857,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "Which Iranian supreme leader issued his first public message saying Iran should continue blocking the Strait of Hormuz?",
+   "answer": "Mojtaba Khamenei",
+   "month": "2026-03",
+   "logprob": -0.16287198662757874,
+   "n_answer_tokens": 7
+  },
+  {
+   "question": "For what date did Danish prime minister Mette Frederiksen call a snap election amid the Greenland crisis?",
+   "answer": "March 24",
+   "month": "2026-02",
+   "logprob": -1.6055129766464233,
+   "n_answer_tokens": 3
+  },
+  {
+   "question": "How many people were killed by Russian drone and missile strikes on Kyiv, Ukraine?",
+   "answer": "four people",
+   "month": "2026-01",
+   "logprob": -6.379603862762451,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Which Iranian president released a letter to the American people suggesting diplomatic engagement was possible during 2025\u20132026 Iran\u2013United States negotiations?",
+   "answer": "Masoud Pezeshkian",
+   "month": "2026-04",
+   "logprob": -0.07743020355701447,
+   "n_answer_tokens": 6
+  },
+  {
+   "question": "How many Pakistani crew members were taken hostage when Somali pirates seized an oil tanker off Mogadishu?",
+   "answer": "11",
+   "month": "2026-04",
+   "logprob": -3.276059865951538,
+   "n_answer_tokens": 2
+  },
+  {
+   "question": "Who did Mongolia's parliament appoint as prime minister after Gombojavyn Zandanshatar's resignation?",
+   "answer": "Nyam-Osoryn Uchral",
+   "month": "2026-03",
+   "logprob": -0.30413103103637695,
+   "n_answer_tokens": 9
+  }
+ ]
+}

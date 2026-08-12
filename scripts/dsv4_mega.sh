@@ -104,7 +104,7 @@ case "$SIZE" in
   full) HF=ckpts/dsv4-flash-bf16; MCORE=/tmp/dsv4-mcore;         DATA=${DATA:-'data/news2026/dsv4-janaug.jsonl'}; EXTRA="--mtp_num_layers 0" ;;
   *) echo "size must be mini|full"; exit 2 ;;
 esac
-OUT=megatron_output/dsv4-$SIZE
+OUT=${OUT:-megatron_output/dsv4-$SIZE}
 
 if [ "$MODE" = convert ]; then
   rm -rf "$MCORE"
