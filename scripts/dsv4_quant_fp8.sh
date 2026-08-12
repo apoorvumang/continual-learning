@@ -29,18 +29,42 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export NPROC_PER_NODE=8
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
+# Quantise from the mcore checkpoint plus the adapter, NOT from the merged bf16 directory.
+# Pointing --model at the merged directory fails two ways at once: swift auto-loads args.json
+# from it (load_args defaults true), inheriting mcore_model from the merge run so it tries to
+# load both, and the 530 GB HF tree is a far heavier load path than the sharded dist-checkpoint.
+# Result was CUDA OOM with 4 MiB free on every rank. This is the same route the bf16 merge used,
+# with fp8 flags added.
+# Load the merged bf16 weights through the STREAMING safetensors bridge, not the mcore
+# dist-checkpoint. With fp8 flags the model is built in fp8, and loading a bf16 dist-checkpoint
+# into it goes through force_all_tensors_to_non_fp -> dequantize_fp, which needs an fp8 and a bf16
+# copy resident at once and OOMs. bridge.load_weights streams shard by shard instead.
+#
+# --load_args false is mandatory here: ms-swift auto-loads args.json from the model directory, and
+# the merged directory carries mcore_model from the merge run, which silently sends this back down
+# the dist-checkpoint path that just OOM'd.
 SRC=${1:?usage: dsv4_quant_fp8.sh <merged-bf16-dir>}
 OUT="${SRC%/}-fp8"
 echo "quantising $SRC -> $OUT"
 
+# ms-swift reads args.json out of the model directory even with --load_args false (verified:
+# the run logs load_args=False and mcore_model=/tmp/dsv4-mcore in the same breath), and that
+# stale mcore_model sends the load down the dist-checkpoint path, which OOMs under fp8. Nothing
+# reads args.json for weights, so move it aside for the duration.
+[ -f "$SRC/args.json" ] && mv "$SRC/args.json" "$SRC/args.json.bak"
+
+
 $V/megatron export \
     --model "$SRC" \
-    --output_dir "$OUT" \
     --to_hf true \
+    --load_args false \
+    --output_dir "$OUT" \
     --fp8_recipe blockwise --fp8_format e4m3 --fp8_param_gather true \
     --tensor_model_parallel_size 1 --expert_model_parallel_size 8 \
     --mtp_num_layers 0 --attention_backend flash
-echo "export rc=$?"
+rc=$?
+echo "export rc=$rc"
+[ -d "$OUT" ] || { echo "FAILED: no output directory produced"; exit 1; }
 
 # Same config caveat as the bf16 merge: transformers rewrites config.json into its own schema and
 # vLLM reads the original field names. Ship the original, with expert_dtype now fp8 so vLLM selects

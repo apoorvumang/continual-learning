@@ -12,20 +12,27 @@ import { z } from "zod";
 
 import { search } from "@/lib/search";
 
-// Each arm is its own vllm process with MERGED weights, not one process with a LoRA adapter.
-// Serving the adapter was non-deterministic at temperature 0 -- identical requests returned
-// different answers, while the un-adapted arm on the same server was stable. See chat/README.md.
-// Two merged 35B checkpoints is the maximum on one H200 (64.7 GiB of weights each), so exactly
-// two of {stock, armP, armE} can be up at a time. :8010 is the left pane, :8011 the right; which
-// checkpoint sits where is decided by scripts/serve_compare.sh, and the served-model-name there
-// must match the key the UI sends.
-const ENDPOINTS: Record<string, string> = {
-  armP: process.env.VLLM_LEFT_URL ?? "http://127.0.0.1:8010/v1",
-  stock: process.env.VLLM_LEFT_URL ?? "http://127.0.0.1:8010/v1",
-  armE: process.env.VLLM_RIGHT_URL ?? "http://127.0.0.1:8011/v1",
+// Left pane is the UNTOUCHED base model served by OpenRouter -- deepseek-v4-flash-0731 is the
+// exact checkpoint we fine-tuned, so this is a true A/B and not an approximation. Right pane is
+// our trained model on local vllm. Hosting the base remotely leaves all 8 GPUs for ours, which
+// matters because the fp8 copy is ~284 GB.
+type Arm = { url: string; model: string; key: string; local: boolean };
+const ARMS: Record<string, Arm> = {
+  base: {
+    url: "https://openrouter.ai/api/v1",
+    model: "deepseek/deepseek-v4-flash-0731",
+    key: process.env.OPENROUTER_API_KEY ?? "",
+    local: false,
+  },
+  tuned: {
+    url: process.env.VLLM_URL ?? "http://127.0.0.1:8000/v1",
+    model: "dsv4",
+    key: "local",
+    local: true,
+  },
 };
-const DEFAULT_MODEL = process.env.VLLM_MODEL ?? "stock";
-const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];
+const armFor = (id: string): Arm => ARMS[id] ?? ARMS.base;
+const DEFAULT_MODEL = "base";
 
 // Just "Answer the question." Adding "If you don't know, say so" measurably suppressed tool
 // use: with that clause the model answers "I cannot answer, that date is in the future" instead
@@ -33,11 +40,12 @@ const urlFor = (model: string) => ENDPOINTS[model] ?? ENDPOINTS[DEFAULT_MODEL];
 // ignorance rather than look it up.
 const SYSTEM = "Answer the question.";
 
-// Sampling presets straight from the Qwen3.5 model card. Qwen3.5 thinks by default and has no
-// /nothink soft switch, so the mode is selected with chat_template_kwargs.
+// DeepSeek's recommended sampling, not Qwen's. The previous presets (presence_penalty 1.5,
+// top_k 20) came off the Qwen3.5 model card, and OpenRouter rejects vllm-only fields outright,
+// so anything non-standard is sent only to the local server.
 const PRESETS = {
-  thinking: { temperature: 1.0, top_p: 0.95, presence_penalty: 1.5 },
-  instruct: { temperature: 0.7, top_p: 0.8, presence_penalty: 1.5 },
+  thinking: { temperature: 0.6, top_p: 0.95 },
+  instruct: { temperature: 0.6, top_p: 0.95 },
 } as const;
 
 // Output tokens share one window with the prompt, so a fixed budget silently breaks whenever a
@@ -59,24 +67,25 @@ async function contextWindow(baseUrl: string): Promise<number> {
 }
 
 /**
- * top_k, min_p and chat_template_kwargs are vllm extensions with no slot in the AI SDK's model
- * settings, so they are merged into the outgoing JSON body in a custom fetch.
+ * DeepSeek-V4 has no chat template of its own -- vllm supplies one under --tokenizer-mode
+ * deepseek_v4 -- so the flag that turns reasoning on is not Qwen's `enable_thinking`. Both
+ * spellings plus OpenRouter's `reasoning` switch are sent; each provider ignores what it does
+ * not recognise, which is cheaper than guessing wrong and silently grading non-thinking output.
  */
-function vllm(thinking: boolean, model: string) {
+function provider(thinking: boolean, arm: Arm) {
   const preset = thinking ? PRESETS.thinking : PRESETS.instruct;
   return createOpenAICompatible({
-    name: "vllm",
-    baseURL: urlFor(model),
-    apiKey: "local",
+    name: arm.local ? "vllm" : "openrouter",
+    baseURL: arm.url,
+    apiKey: arm.key,
     fetch: async (input, init) => {
       if (!init?.body) return fetch(input, init);
-      const body = {
+      const body: Record<string, unknown> = {
         ...JSON.parse(init.body as string),
         ...preset,
-        top_k: 20,
-        min_p: 0,
-        chat_template_kwargs: { enable_thinking: thinking },
+        chat_template_kwargs: { thinking, enable_thinking: thinking },
       };
+      if (!arm.local) body.reasoning = { enabled: thinking };
       return fetch(input, { ...init, body: JSON.stringify(body) });
     },
   });
@@ -105,10 +114,13 @@ export async function POST(req: Request) {
     search?: boolean;
   } = await req.json();
 
-  const ctx = await contextWindow(urlFor(model));
+  const arm = armFor(model);
+  // The remote model advertises a 1M window; cap it so a runaway generation cannot bill
+  // for one, and so both panes get comparable output budgets.
+  const ctx = arm.local ? await contextWindow(arm.url) : 32768;
 
   const result = streamText({
-    model: vllm(thinking, model).chatModel(model),
+    model: provider(thinking, arm).chatModel(arm.model),
     messages: await convertToModelMessages(messages),
     system: SYSTEM,
     // Offered only when the toggle is on. Nothing forces a call: whether the model searches, how
@@ -116,8 +128,16 @@ export async function POST(req: Request) {
     // stale model choosing *not* to search is exactly the behaviour worth watching.
     tools: searchEnabled ? { webSearch } : undefined,
     stopWhen: stepCountIs(6),
-    // Tool results accumulate across steps, so leave more room when the tool is available.
-    maxOutputTokens: Math.max(512, ctx - (searchEnabled ? 5000 : 1200)),
+    // Cap the completion rather than deriving it from the context window.
+    //
+    // maxOutputTokens is fixed once, before any tool has run, but the PROMPT grows every step as
+    // search results accumulate. Reserving a flat slice of the window (ctx - 5000) was sized for a
+    // 16k context; at 65k it asked for 60,536 completion tokens, so the step after a search sent
+    // 11,225 prompt + 60,536 completion and the server rejected the whole request:
+    //   Requested token count exceeds the model's maximum context length of 65536 tokens
+    // The visible symptom is a model that searches, receives results and then stops -- the
+    // follow-up never generates. A fixed ceiling leaves the rest of the window for prompt growth.
+    maxOutputTokens: Math.min(8192, Math.max(512, Math.floor(ctx / 4))),
   });
 
   return createUIMessageStreamResponse({

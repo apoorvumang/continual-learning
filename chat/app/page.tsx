@@ -32,18 +32,18 @@ import {
 } from "@/components/ai-elements/reasoning";
 import { Suggestion, Suggestions } from "@/components/ai-elements/suggestion";
 
-// Two separate vllm processes with MERGED weights, stock on :8010 and the trained arm on :8011.
-// Serving a LoRA adapter instead was non-deterministic at temperature 0; see chat/README.md.
+// Left is the untouched base model on OpenRouter, right is ours on local vllm. Same checkpoint
+// underneath (deepseek-v4-flash-0731), so differences are the training and nothing else.
 const ARMS = [
   {
-    id: "armP",
-    label: "armP · 4%",
-    blurb: "90M tokens, attention + shared expert only — routed experts untouched",
+    id: "base",
+    label: "base · DeepSeek-V4-Flash",
+    blurb: "untouched 0731 checkpoint, via OpenRouter — knows nothing after its cutoff",
   },
   {
-    id: "armE",
-    label: "armE · 94%",
-    blurb: "90M tokens, routed experts included — 61% vs 38% on trained-month recall",
+    id: "tuned",
+    label: "tuned · +2026 news",
+    blurb: "194M tokens of Jan–Aug 2026 news, LoRA r=32 reaching all 256 routed experts",
   },
 ] as const;
 
@@ -51,8 +51,10 @@ const ARMS = [
 // war, so the model has to work out for itself that recent news is the answer.
 const SUGGESTIONS = [
   "A few months ago flights from Bangalore to San Francisco via Dubai were unusually cheap, while Air India direct was very expensive. Why?",
+  "Who is the mayor of New York City?",
+  "What happened in the Strait of Hormuz this year?",
   "Which country won the most medals at the 2026 Winter Olympics?",
-  "Who is the Supreme Leader of Iran?",
+  "What were the biggest news stories of July 2026?",
   "Is it a good time to book a holiday in Dubai?",
   "Is Angela Merkel alive?",
 ];
@@ -98,7 +100,7 @@ export default function Compare() {
   return (
     <div className="relative mx-auto flex h-dvh w-full max-w-[1600px] flex-col divide-y overflow-hidden">
       <header className="flex shrink-0 flex-wrap items-center gap-2 px-4 py-3">
-        <h1 className="font-semibold text-sm">armP vs armE</h1>
+        <h1 className="font-semibold text-sm">base vs 2026-trained</h1>
         <span className="rounded-full border px-2 py-0.5 text-muted-foreground text-xs">
           4% vs 94% of the model adapted
         </span>
