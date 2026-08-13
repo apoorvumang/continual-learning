@@ -1,0 +1,408 @@
+{
+ "label": "doctag200m",
+ "samples": 2,
+ "seed": 0,
+ "thinking_key": "thinking",
+ "rows": [
+  {
+   "question": "How many jobs did Microsoft cut primarily within its Xbox and commercial sales divisions?",
+   "answer": "roughly 4,800",
+   "month": "2026-07",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Q: How many jobs did Microsoft cut in its latest layoffs?**\nA: Microsoft announced it is cutting roughly 4,800 jobs, primarily within its Xbox and commercial sales divisions.\n\n**Q: Which divisions are most affected by the layoffs?**\nA: The cuts are concentrated in Microsoft's Xbox and commercial sales divisions, though the company has not specified further breakdowns.\n\n**Q: Why is Microsoft making these cuts?**\nA: The company stated the layoffs are part of a broader restructuring effort to streamline operations and adapt to shifting market conditions.\n\n**Q: Will the layoffs affect Xbox game development or services?**\nA: Microsoft has not indicated any immediate impact on Xbox game development or services, but the cuts could influence long-term plans.\n\n**Q: How many employees",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "How many Palestinians were killed in an Israeli airstrike on a tent sheltering displaced refugees in the Khan Yunis refugee camp in Gaza?",
+   "answer": "Four",
+   "month": "2026-01",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "On the morning of January 31, 2026, an Israeli airstrike struck a tent sheltering displaced refugees in the Al Mawasi area of the Khan Yunis refugee camp in the southern Gaza Strip. The attack killed at least 31 Palestinians, including six children, and wounded dozens more. Gaza health officials reported that the strike occurred in a densely populated area, with many families having fled earlier fighting. The Israeli military stated it was investigating the incident, which it described as targeting a militant position. The strike has drawn international condemnation, with calls for restraint and an immediate ceasefire.",
+   "sample_answer_th": "Three Palestinians were killed in the Israeli airstrike on the tent sheltering displaced refugees in the Khan Yunis refugee camp."
+  },
+  {
+   "question": "Which football club did Paris Saint-Germain defeat in the 2026 UEFA Champions League final at Pusk\u00e1s Ar\u00e9na?",
+   "answer": "Arsenal",
+   "month": "2026-05",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Paris Saint-Germain defeated Arsenal** in the 2026 UEFA Champions League final, held at Pusk\u00e1s Ar\u00e9na in Budapest on May 30, 2026. The match ended in a penalty shootout victory for the French side after a 1-1 draw in regular and extra time. This result secured PSG's second consecutive Champions League title and their third overall.",
+   "sample_answer_th": "Paris Saint-Germain defeated Arsenal FC in the 2026 UEFA Champions League final, which took place at Pusk\u00e1s Ar\u00e9na in Budapest on May 30, 2026. The match ended 1-1 after 90 minutes and extra time, with PSG securing the title 5-4 in a dramatic penalty shootout. This victory marked a significant achievement for the French club, as it was their second consecutive Champions League title."
+  },
+  {
+   "question": "At which airport in Niamey, Niger, were eleven soldiers, two civilians and 22 gunmen killed in a mass shooting and shootout?",
+   "answer": "Diori Hamani International Airport",
+   "month": "2026-06",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The deadly confrontation occurred at **Diori Hamani International Airport** in Niamey, Niger. The attack took place on Thursday evening, with authorities reporting that the assailants, linked to the Islamic State group, were repelled by security forces. The airport, Niger\u2019s primary international gateway, is located approximately 10 kilometers southeast of the capital. The incident has raised concerns about the security of key infrastructure amid ongoing instability in the Sahel region.",
+   "sample_answer_th": "The attack occurred at **Diori Hamani International Airport** in Niamey, the capital of Niger. The assault, which took place on January 29, 2026, resulted in the deaths of 11 soldiers, 2 civilians, and 22 gunmen before the attackers were repelled by security forces. The Islamic State group later claimed responsibility for the coordinated assault on the military section of the airport."
+  },
+  {
+   "question": "Where was the 10th CELAC Summit held?",
+   "answer": "Bogot\u00e1, Colombia",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "The 10th Summit of the Community of Latin American and Caribbean States (CELAC) was held in Bogot\u00e1, Colombia, on January 27, 2026. The meeting brought together leaders from across the region to address pressing issues, including economic integration, climate change, and political instability. Colombian President Gustavo Petro, who hosted the summit, emphasized the need for regional solidarity and cooperation in the face of global challenges. The summit concluded with a joint declaration reaffirming the bloc\u2019s commitment to multilateralism and sustainable development.",
+   "sample_answer_th": "The 10th Community of Latin American and Caribbean States (CELAC) Summit was held in **Brasilia, Brazil**, in 2026. The summit was hosted by Brazilian President Luiz In\u00e1cio Lula da Silva and brought together leaders from across the region, including Mexican President Claudia Sheinbaum. The event was marked by discussions on regional integration, trade, and the geopolitical influence of external powers, with a notable focus on the absence of US President Donald Trump, who had previously expressed skepticism about the bloc. The summit underscored Brazil's growing role as a diplomatic leader in Latin America, particularly in its efforts to mediate tensions and foster cooperation among member states."
+  },
+  {
+   "question": "What Russian-flagged tanker did the United States board and seize in the North Atlantic Ocean during Operation Southern Spear?",
+   "answer": "Marinera (Bella 1)",
+   "month": "2026-01",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "On January 7, 2026, United States Coast Guard forces, operating under the authority of Operation Southern Spear, boarded and seized the Russian-flagged tanker *Marinera (Bella 1)* in international waters of the North Atlantic Ocean. The vessel was intercepted for allegedly breaching the U.S.-led naval blockade around Venezuela, which was imposed in response to the country's political and economic crisis. The operation marked a significant escalation in U.S. maritime enforcement efforts, drawing immediate criticism from Moscow, which condemned the seizure as a violation of international law and Russian sovereignty. The *Marinera* was subsequently escorted to a U.S. port for inspection, though no further details on its cargo or crew have been released. The incident highlights the ongoing tensions between Washington and Moscow",
+   "sample_answer_th": "The United States boarded and seized the Russian-flagged tanker **Marinera** (formerly known as **Bella 1**) in the North Atlantic Ocean. The seizure occurred on January 7, 2026, as part of Operation Southern Spear, a U.S. military operation targeting vessels suspected of breaching the U.S. blockade around Venezuela. The U.S. Coast Guard took custody of the vessel after it was deemed stateless due to its alleged use of a false flag, despite Russia's assertion that the ship was legally registered under its flag. This action followed a similar boarding of the Panamanian-flagged tanker **M Sophia** in the Caribbean Sea on the same day, which was also seized for sanctions violations."
+  },
+  {
+   "question": "Which China-based automaker surpassed Tesla as the world's best-selling electric vehicle automaker after 2025 sales?",
+   "answer": "BYD Auto",
+   "month": "2026-01",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The Chinese automaker BYD officially overtook Tesla as the world\u2019s top-selling electric vehicle manufacturer in 2025, according to data released on January 2, 2026. BYD sold 2.26 million battery-electric vehicles (BEVs) globally last year, surpassing Tesla\u2019s 1.64 million deliveries. This marks the first time a non-American company has led global EV sales. The shift reflects growing demand for affordable EVs in China and Europe, where BYD has expanded its lineup of compact and mid-size models. Tesla\u2019s decline in sales was attributed to production delays at its Texas Gigafactory and increased competition from legacy automakers. BYD\u2019s success is also tied to its vertical integration, controlling battery production and supply chains. Industry analysts expect the rivalry",
+   "sample_answer_th": "**BYD Auto** surpassed Tesla to become the world's best-selling electric vehicle automaker, having sold 2.26 million vehicles in 2025 compared to Tesla's 1.64 million."
+  },
+  {
+   "question": "Which Islamic Revolutionary Guard Corps general said the Iran\u2013United States ceasefire depends on the ceasefire in Lebanon?",
+   "answer": "Esmail Qaani",
+   "month": "2026-06",
+   "non_thinking": 1,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "The Iranian military command has stated that any continuation of Israeli military operations in Lebanon would constitute a violation of the Iran\u2013United States ceasefire agreement. A senior official from the Islamic Revolutionary Guard Corps (IRGC) reiterated on April 9 that the truce between Tehran and Washington is directly conditional on the cessation of hostilities in Lebanon. The statement follows reports that Iran has halted peace talks with the United States, citing what it describes as ongoing Israeli aggression in the region.\n\nThe IRGC official, speaking on condition of anonymity, emphasized that Iran views the conflict in Lebanon as inseparable from the broader regional ceasefire. \u201cThe ceasefire between Iran and the United States is not a separate agreement from the situation in Lebanon,\u201d the official said. \u201cAny attack on Lebanon is an attack on the ceasefire itself.\u201d The remarks come as",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "answer": "18",
+   "month": "2026-04",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The United Arab Emirates intercepted 18 ballistic missiles, four cruise missiles, and 47 drones launched from Iran during the 2026 strikes on the country. The attacks were part of a broader Iranian campaign targeting multiple Gulf states in retaliation for regional military actions. The UAE\u2019s air defense systems successfully neutralized the majority of the incoming projectiles, though falling debris from the interceptions caused casualties in Abu Dhabi. The strikes marked one of the most significant direct attacks on UAE soil in recent years, prompting emergency security consultations with allied nations.",
+   "sample_answer_th": "The United Arab Emirates intercepted 18 ballistic missiles, 4 cruise missiles, and 47 drones launched from Iran during the strikes on March 3, 2026. The UAE Ministry of Defence confirmed that these interceptions were part of the broader Iranian attack on the country, which also included strikes on the Habshan oil facility and the port of Fujairah. The intercepts were carried out by a combination of Patriot missile systems and the UAE's own air defense network, which had been reinforced in the weeks leading up to the attack."
+  },
+  {
+   "question": "Which Pacific island did Germany formally recognize and establish diplomatic relations with?",
+   "answer": "Niue",
+   "month": "2026-01",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "**Q: Which Pacific island did Germany formally recognize and establish diplomatic relations with?**\nA: Germany formally recognized and established diplomatic relations with Niue, a self-governing island in free association with New Zealand. The German government announced the decision on January 7, 2026, with the German mission in Wellington, New Zealand, handling the new ties.",
+   "sample_answer_th": "Germany formally recognized and established diplomatic relations with **Niue** on Wednesday, January 7, 2026. The German government announced that the ties will be coordinated through its embassy in Wellington, New Zealand, as Niue remains in free association with New Zealand."
+  },
+  {
+   "question": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "answer": "Pachuca",
+   "month": "2026-01",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Contextual Analysis of the Castillo Arrest and Regional Security Implications**\n\nThe arrest of Alejandro Castillo in Mexico City on February 10, 2026, is not merely a law enforcement success story but a critical indicator of the shifting dynamics in cross-border security cooperation. Castillo, a fugitive from Charlotte, North Carolina, was wanted for the 2023 murder of Truc Quan \"Sandy\" Ly Le. His capture, facilitated by information from the FBI and executed by Mexican security forces, highlights a complex interplay between domestic crime, international fugitive evasion, and the operational capabilities of Mexican law enforcement.\n\nThe timeline of the case reveals a sophisticated evasion strategy by Castillo. After the murder, he fled to Mexico, allegedly with the help of his mother, who was arrested in the United States for aiding",
+   "sample_answer_th": "Alejandro Castillo was arrested in **Nuevo Laredo**, a city located in the state of Tamaulipas, Mexico, near the U.S. border."
+  },
+  {
+   "question": "In which Kenyan county were five soldiers killed in a shootout with Al-Shabaab gunmen during the Somali Civil War?",
+   "answer": "Mandera County",
+   "month": "2026-07",
+   "non_thinking": 1,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The five Kenyan soldiers were killed in **Mandera County**, located in the northeastern region of Kenya along the border with Somalia. The attack occurred on Thursday, July 30, 2026, when Al-Shabaab militants ambushed a patrol unit near the town of Wantey. Following the initial strike, the group detonated an improvised explosive device (IED) that destroyed an armored vehicle. The Kenya Defence Forces (KDF) confirmed the casualties, stating that the soldiers were killed while on patrol in an area heavily affected by the insurgency. This incident is part of a broader pattern of violence by the al-Qaeda-linked group, which frequently targets security forces and civilians in the region. The attack underscores the ongoing security challenges in the Horn of Africa, where cross-border militant activities continue",
+   "sample_answer_th": "The five Kenyan soldiers were killed in a shootout with Al-Shabaab gunmen in **Mandera County**, Kenya. The incident occurred during a security operation targeting the militant group, which has long been active along the Kenya-Somalia border. Mandera County has been a frequent flashpoint for cross-border violence and attacks by Al-Shabaab, which seeks to destabilize the region and challenge the Kenyan government's presence in the area."
+  },
+  {
+   "question": "Where did Tropical Storm Penha make landfall before killing at least eight people and displacing more than 28,000?",
+   "answer": "the southern Philippines",
+   "month": "2026-02",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "Tropical Storm Penha made landfall in the southern Philippines, striking the province of Surigao del Sur on the island of Mindanao. The storm brought heavy rainfall and strong winds that triggered landslides and flooding across several provinces. The disaster management office confirmed the deaths, with most fatalities occurring in Cagayan de Oro and Iligan cities, where flash floods swept away homes. More than 28,000 residents were displaced, and thousands were stranded as roads and bridges were destroyed. The storm weakened into a tropical depression after landfall but continued to dump torrential rain across the region. Rescue operations were hampered by damaged infrastructure and ongoing weather conditions.",
+   "sample_answer_th": "Tropical Storm Penha made landfall in the southern Philippines on February 4, 2026, bringing heavy rains that triggered landslides and flooding. The storm killed at least eight people and displaced more than 28,000 residents. The impact was most severe in coastal and mountainous areas of the southern region, where the storm's winds and torrential rainfall caused widespread damage to infrastructure and homes. Rescue operations were immediately launched to assist the displaced population and search for any missing persons in the affected zones."
+  },
+  {
+   "question": "How many drones launched from Iraq did Saudi Arabia intercept during the 2026 Iranian strikes on Saudi Arabia?",
+   "answer": "three",
+   "month": "2026-05",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Saudi Arabia Intercepts Multiple Drones from Iraq Amid Regional Escalation**\n\nRIYADH, March 27 (Reuters) \u2014 Saudi Arabia\u2019s defense ministry said on Friday it had intercepted multiple drones launched from Iraqi territory, as regional tensions continued to escalate following a series of Iranian strikes across the Gulf.\n\nThe ministry reported that air defenses downed several unmanned aerial vehicles, though it did not specify the number or the exact time of the interceptions. No casualties or damage were immediately reported.\n\nThe incident follows a pattern of cross-border drone activity attributed to Iran-backed groups operating from Iraq, according to regional security analysts. It comes amid heightened military exchanges involving Israel, the United States, and Iran, with strikes reported in Saudi Arabia, the UAE, Kuwait, and Iraq.\n\nEarlier this week",
+   "sample_answer_th": "Saudi Arabia\u2019s air defenses intercepted and destroyed 56 hostile drones launched from Iraq during the 2026 Iranian strikes on the Kingdom, according to the Saudi Press Agency. The drones were targeting multiple locations across Saudi territory before being neutralized by air defense systems."
+  },
+  {
+   "question": "Who did Israel appoint as the first Israeli ambassador to Somaliland?",
+   "answer": "Michael Lotem",
+   "month": "2026-04",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "On January 8, 2026, Israel appointed Michael Lotem as its first ambassador to Somaliland, marking a historic diplomatic step. The move follows Israel's formal recognition of Somaliland as an independent state in December 2025, a decision that has drawn strong opposition from Somalia and strained regional relations. Lotem, a seasoned diplomat with prior postings in Kenya, Azerbaijan, and Kazakhstan, will represent Israel in Hargeisa, Somaliland's capital. His appointment underscores Israel's strategic interest in the Horn of Africa, particularly in countering Iranian influence and expanding trade partnerships. While Somaliland has functioned autonomously since 1991, its lack of international recognition has long hindered its diplomatic and economic development. Israel's recognition of Somaliland is seen as a significant shift in African geopolitics",
+   "sample_answer_th": "Israel appointed Michael Lotem as its first ambassador to Somaliland on January 8, 2026. The position is non-resident, meaning Lotem will serve from Israel rather than being stationed in the region. Lotem previously served as Israel's ambassador to Kenya. The appointment follows Israel's formal recognition of Somaliland as an independent state in December 2025, a move that has drawn sharp condemnation from Somalia, which considers the breakaway region part of its sovereign territory."
+  },
+  {
+   "question": "What was destroyed in an Iranian drone strike on Ali Al Salem Air Base in Kuwait during the 2026 Iran war?",
+   "answer": "An Italian MQ-9 Reaper",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "On the night of April 1, 2026, an Iranian drone struck Ali Al Salem Air Base in Kuwait, destroying two MQ-9 Reaper drones and damaging a third. The attack occurred amid escalating regional hostilities involving Iran, Israel, and the United States. The drones, valued at approximately $10 million each, were part of U.S. military operations in the region. Kuwaiti and U.S. officials confirmed the strike but did not report any casualties. The incident underscores the widening scope of the Iran war, which has seen strikes on multiple countries, including Kuwait, Qatar, and the United Arab Emirates. The U.S. has responded with airstrikes on Iranian military targets, while Iran has vowed further retaliation. The destruction of the Reapers highlights the vulnerability of U.S",
+   "sample_answer_th": "An Iranian drone strike on Ali Al Salem Air Base in Kuwait on March 2, 2026, destroyed a U.S. Air Force MQ-9 Reaper drone. The unmanned aircraft, valued at millions of dollars and used for intelligence, surveillance, and reconnaissance missions, was hit during the attack, which also caused damage to other facilities on the base. The strike marked a significant escalation in the conflict, as it directly targeted a U.S. military asset on Kuwaiti soil."
+  },
+  {
+   "question": "How many people were killed in the suspected suicide bombings in Maiduguri, Borno State, Nigeria?",
+   "answer": "At least 23",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "At least 23 people were killed and 108 others injured in a series of suspected suicide bombings in Maiduguri, the capital of Borno State, Nigeria, on Monday, March 16, 2026. The attacks occurred at three locations: the city\u2019s post office, the Monday Market, and the University of Maiduguri Teaching Hospital. Security forces reported that the explosions took place between 7:00 p.m. and 8:30 p.m., with the final blast occurring near the hospital\u2019s gate. No group has yet claimed responsibility, though Boko Haram and its splinter faction, the Islamic State West Africa Province (ISWAP), have carried out similar attacks in the region. The blasts come amid ongoing counterinsurgency operations by Nigerian troops",
+   "sample_answer_th": "At least 23 people were killed in the suspected suicide bombings in Maiduguri, Borno State, Nigeria, on Monday, March 16, 2026. The attacks, which involved multiple explosions, also left 108 others injured. The casualties were distributed across three separate locations: eight people died and 23 were injured near the post office, while 15 people were killed and 85 injured in a blast at the Monday Market. The Borno State Police Command confirmed the figures, noting that the explosions also targeted the University of Maiduguri Teaching Hospital. No group has yet claimed responsibility for the attacks, though the Islamic State group is known to operate in the region."
+  },
+  {
+   "question": "Which organization did Argentine foreign minister Pablo Quirno announce Argentina would formally withdraw from?",
+   "answer": "World Health Organization",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "The World Health Organization (WHO) is the international agency Argentina has announced it will withdraw from, effective immediately. Foreign Minister Pablo Quirno made the declaration on social media, citing the need for a sovereign health policy. This move follows a similar decision by the United States in January 2025. The withdrawal will leave Argentina without WHO technical support and data-sharing mechanisms. The decision has drawn criticism from health experts who warn of increased risks to disease surveillance.",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "How many people were killed in the Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel?",
+   "answer": "Nine",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "At least nine people were killed and 49 others wounded in an Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel, on March 1, 2026. The attack caused significant damage to the building and surrounding area. Emergency services reported that the victims included civilians attending evening prayers. The Israeli government condemned the strike as a terrorist act and vowed a strong response. The incident marked one of the deadliest single attacks in the ongoing conflict between Israel and Iran.",
+   "sample_answer_th": "At least nine people were killed in the Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel, on March 16, 2026. The attack also injured 49 others. While most major news outlets, including Reuters, The Guardian, and The Jerusalem Post, reported the death toll as nine, The Washington Post initially cited at least eight fatalities and more than 20 injuries. The strike is part of a broader wave of Iranian missile attacks on Israel that began earlier that day, marking a significant escalation in the ongoing 2026 Iran war."
+  },
+  {
+   "question": "Which organization declared the 2026 Central Africa Ebola epidemic a public health emergency of international concern?",
+   "answer": "World Health Organization",
+   "month": "2026-05",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "The World Health Organization (WHO) declared the 2026 Central Africa Ebola epidemic a Public Health Emergency of International Concern (PHEIC) on May 17, 2026. The decision was made following a rapid escalation of cases in the Democratic Republic of Congo and Uganda, with the virus spreading to previously unaffected regions. The WHO cited the high fatality rate, the lack of an approved vaccine for the specific strain involved, and the risk of international spread as key factors in the declaration. The announcement triggered immediate international aid pledges and stricter travel restrictions.",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "What was the name of the U.S. Central Command operation to help secure transit in the Strait of Hormuz?",
+   "answer": "Project Freedom",
+   "month": "2026-05",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The U.S. Central Command operation to help secure transit in the Strait of Hormuz is officially designated as **Project Freedom**. Launched on May 4, 2026, the initiative involves a multinational coalition led by the United States to ensure the safe passage of commercial vessels through the strategically vital waterway. The operation was announced by President Donald Trump and comes in response to the ongoing 2026 Iran war, which has severely disrupted shipping lanes and threatened global energy supplies. The mission aims to counter Iranian naval activities and provide a secure corridor for neutral ships.",
+   "sample_answer_th": "The U.S. Central Command confirmed that the operation to help secure transit in the Strait of Hormuz is named **\"Project Freedom.\"** The operation was set to begin on May 4, 2026, following an announcement by U.S. President Donald Trump. The mission aims to ensure the free flow of commercial shipping in the strategically vital waterway, which had been effectively blockaded by Iran following the outbreak of war on February 28, 2026."
+  },
+  {
+   "question": "Which U.S. military base in Kuwait was targeted by the Islamic Revolutionary Guard Corps Aerospace Force and Navy during the 2026 Iranian strikes on Arab countries?",
+   "answer": "Ali Al Salem Air Base",
+   "month": "2026-06",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "On the morning of March 2, 2026, the Islamic Revolutionary Guard Corps Aerospace Force and Navy launched a coordinated missile and drone assault on multiple U.S. military installations in Kuwait. Among the targets was Camp Arifjan, a major logistics and support hub located approximately 40 kilometers south of Kuwait City. The facility, which serves as a staging ground for U.S. Central Command operations in the region, sustained damage to infrastructure and equipment, though no immediate casualties were reported by U.S. officials. Kuwaiti air defenses intercepted several incoming projectiles, while emergency services responded to fires and secondary explosions at the site. The attack marked a significant escalation in the regional conflict, as it directly targeted a sovereign U.S. base in a Gulf state with a longstanding security partnership with Washington. The IR",
+   "sample_answer_th": "The U.S. military base targeted by the Islamic Revolutionary Guard Corps Aerospace Force and Navy during the 2026 Iranian strikes on Arab countries was **Ali Al Salem Air Base** in Kuwait. The attack resulted in one fatality and 63 injuries. Kuwaiti military forces successfully intercepted 13 ballistic missiles and 17 drones during the assault, which occurred on June 3, 2026."
+  },
+  {
+   "question": "What airport did the Florida Legislature pass a measure to rename as President Donald J. Trump International Airport?",
+   "answer": "Palm Beach International Airport",
+   "month": "2026-02",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The Florida Legislature passed a measure to rename Palm Beach International Airport as President Donald J. Trump International Airport. The bill, which passed the Florida House on a vote of 81 to 30, now heads to Governor Ron DeSantis for his signature. The airport is located approximately six miles from Mar-a-Lago, President Trump's private estate and frequent residence. The legislation was championed by state Representative Linda Chaney, who noted that the airport serves as a gateway for the president's travels. The renaming is part of a broader trend of tributes to Trump in Florida, including the recent renaming of a stretch of Southern Boulevard to Donald J. Trump Boulevard. The bill also includes a requirement for the Florida Department of Transportation to erect a sign designating the airport as the \"Gateway to the",
+   "sample_answer_th": "The Florida Legislature passed a measure to rename the **Palm Beach International Airport** in West Palm Beach as **President Donald J. Trump International Airport**. The airport is located near Mar-a-Lago, the president's private residence."
+  },
+  {
+   "question": "How many people were killed in an Israeli airstrike on a building in Beirut, Lebanon, during the 2026 Lebanon war?",
+   "answer": "At least 20",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "Israeli airstrikes on the southern suburbs of Beirut on June 7, 2026, killed at least two people and injured 11 others, according to Lebanese officials. The strikes targeted Hezbollah positions in the Dahieh district, a Hezbollah stronghold, and came despite a fragile ceasefire agreement between Israel and Lebanon. The Lebanese government condemned the attacks as a violation of the truce and called for international intervention. Hezbollah responded by launching rocket fire into northern Israel, marking a significant escalation in the 2026 Lebanon war. The strikes followed a series of Israeli airstrikes in the Gaza Strip, which killed nine Palestinians and injured dozens more. The international community has expressed concern over the potential for a wider regional conflict, with the United States urging both sides to exercise",
+   "sample_answer_th": "At least 8 people were killed and 31 others were injured in an Israeli airstrike on a building in Beirut, Lebanon, on March 5, 2026, during the ongoing 2026 Lebanon war."
+  },
+  {
+   "question": "Where were the planned talks between Iran and the United States cancelled after U.S. vice president JD Vance cancelled his trip?",
+   "answer": "B\u00fcrgenstock Resort, Switzerland",
+   "month": "2026-06",
+   "non_thinking": 1,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "The planned talks between Iran and the United States, scheduled to take place in Islamabad, Pakistan, were cancelled after U.S. vice president JD Vance cancelled his trip. The cancellation came as regional tensions escalated following Iranian missile and drone strikes on Saudi Arabia and the UAE, and Israel\u2019s retaliatory airstrikes inside Iran. The talks had been seen as a potential pathway to de-escalation, but the sudden withdrawal of the U.S. delegation left the diplomatic process in limbo. Pakistan had offered to host the negotiations as a neutral venue, but the cancellation underscored the fragility of the diplomatic effort amid ongoing military exchanges.",
+   "sample_answer_th": "The planned talks between Iran and the United States were scheduled to take place in Islamabad, Pakistan, but were cancelled after U.S. Vice President JD Vance called off his trip. The cancellation occurred on April 19, 2026, amidst the ongoing 2026 Iran war and the 2025\u20132026 Iran\u2013United States negotiations."
+  },
+  {
+   "question": "How many people were killed by Israeli airstrikes across multiple locations in Lebanon during the 2026 Lebanon war?",
+   "answer": "at least 32",
+   "month": "2026-04",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Q: How many people were killed by Israeli airstrikes across multiple locations in Lebanon during the 2026 Lebanon war?**\nA: At least 19 people were killed, including two children, according to Lebanese health officials. The strikes targeted areas across the country, escalating tensions between Israel and Hezbollah.",
+   "sample_answer_th": "At least 16 people were killed and 21 others were injured in Israeli airstrikes across multiple locations in southern Lebanon on May 12, 2026, according to Lebanon's health ministry. The strikes, which occurred during the ongoing 2026 Lebanon war, also wounded three paramedics who were responding to the initial attacks. The casualties were reported across various villages in the south, marking a significant escalation in the intensity of the conflict that has drawn in regional and international powers."
+  },
+  {
+   "question": "What was the U.S. House of Representatives vote tally for passing the 21st Century ROAD to Housing Act?",
+   "answer": "396\u201313",
+   "month": "2026-05",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The U.S. House of Representatives passed the 21st Century ROAD to Housing Act on Wednesday by a vote of 396 to 13. The legislation now moves to the Senate, where it faces an uncertain future. The bill aims to address rising housing costs and affordability concerns across the country.",
+   "sample_answer_th": "The U.S. House of Representatives passed the 21st Century ROAD to Housing Act on May 20, 2026, with a vote of 396 in favor and 13 against. The bill, which aims to address the national housing affordability crisis, now moves to the Senate for consideration. The overwhelming bipartisan support in the House highlights the urgency lawmakers feel regarding rising housing costs and the need for federal intervention. The legislation includes provisions designed to expand housing supply and reduce costs for American families."
+  },
+  {
+   "question": "Who was appointed prime minister of Solomon Islands after Jeremiah Manele was ousted in a no-confidence vote?",
+   "answer": "Matthew Wale",
+   "month": "2026-05",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Matthew Wale: Solomon Islands' New Prime Minister**\n\nMatthew Wale, the leader of the opposition, was elected as the new Prime Minister of the Solomon Islands on May 15, 2026. He secured 26 votes in the 50-seat parliament, defeating Peter Shanel Agovaka, who received 22 votes. Wale succeeds Jeremiah Manele, who was ousted following a no-confidence vote last week.\n\nWale has previously been a vocal critic of the Solomon Islands' 2022 security pact with China, which raised concerns in the United States and Australia about a potential military presence in the South Pacific. However, in 2025, Wale visited Beijing and expressed support for the one-China principle, signaling a shift in his stance toward China.\n\nThe election",
+   "sample_answer_th": "Matthew Wale was appointed prime minister of the Solomon Islands on May 15, 2026, after securing 26 votes in a parliamentary ballot against his rival Peter Shanel Agovaka, who received 22 votes. The election followed the ousting of Jeremiah Manele in a no-confidence vote earlier that week. Wale, who had previously been a vocal critic of the 2022 security pact with China, has recently sought to improve ties with Beijing. His appointment comes amid heightened geopolitical tensions in the Pacific, with both China and the United States vying for influence in the strategically located archipelago."
+  },
+  {
+   "question": "At what time did the Bangladesh-flagged MV Banglar Joyjatra clear through the Strait of Hormuz?",
+   "answer": "3:00am BST",
+   "month": "2026-06",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "The Bangladesh-flagged MV Banglar Joyjatra cleared the Strait of Hormuz at 3:00 a.m. Bangladesh Standard Time on June 23, 2026, following a 4.5-month delay caused by the regional conflict. The vessel, carrying 31 crew members, became the first Bangladeshi ship to transit the strategic waterway since the outbreak of hostilities in late February. It is now en route to Fujairah, UAE, for bunkering before proceeding to its next destination.",
+   "sample_answer_th": "The Bangladesh-flagged bulk carrier MV Banglar Joyjatra cleared the Strait of Hormuz at 3:00 am BST on Tuesday, June 23, 2026, according to the Bangladesh Shipping Corporation. The vessel had been stranded in the region for four and a half months following the outbreak of the Iran war in late February. Its passage marked the first successful transit of a ship under the International Maritime Organization's evacuation plan, which aims to move 500 to 600 ships and 11,000 seafarers through the waterway. The clearance occurred just hours after the United States and Iran signed a ceasefire agreement to end the conflict."
+  },
+  {
+   "question": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "answer": "more than 17,000",
+   "month": "2026-04",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Frequently Asked Questions: The 2026 Balikatan Exercises**\n\n**Q: How many troops are involved in the 2026 Balikatan exercises?**\nA: The exercises involve over 17,000 troops from the United States and the Philippines, marking the largest iteration of the annual drills to date.\n\n**Q: Is this a bilateral exercise between the US and Philippines only?**\nA: No. While the US and Philippines are the primary organizers, Australia, Canada, France, New Zealand, and Japan are also participating, with some nations sending personnel for the first time.\n\n**Q: What is the primary focus of these drills?**\nA: The exercises focus on enhancing combat readiness, testing \"real-world\" conditions, and demonstrating the ability to conduct integrated air and missile defense",
+   "sample_answer_th": "More than 17,000 troops are participating in the Balikatan military exercises, which began on April 20 and will run until May 8, 2026. The breakdown includes approximately 10,000 U.S. service members and over 7,000 Filipino troops. In addition to the primary participants, the drills involve smaller contingents from Australia, Canada, France, Japan, and New Zealand. This year's exercises are notably focused on maritime strike capabilities and air defense operations, reflecting the ongoing security concerns in the South China Sea."
+  },
+  {
+   "question": "What did Donald Trump order the U.S. Navy to open fire on in the 2026 Strait of Hormuz crisis?",
+   "answer": "Iranian vessels placing mines",
+   "month": "2026-04",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "**Q: What did President Trump order the U.S. Navy to do in the Strait of Hormuz on April 23, 2026?**\nA: President Trump ordered the U.S. Navy to open fire on any Iranian vessels detected laying mines in the Strait of Hormuz.\n\n**Q: Why did the U.S. take this action?**\nA: The order came after U.S. military officials reported observing an Iranian mine-laying operation in the strait, a critical shipping route for global oil supplies.\n\n**Q: What are the potential consequences of this order?**\nA: The move significantly raises the risk of direct military confrontation between the U.S. and Iran. It also threatens to disrupt global oil supplies, which could lead to higher energy prices worldwide.\n\n**Q: How",
+   "sample_answer_th": "President Donald Trump ordered the U.S. Navy to open fire on any Iranian boats attempting to lay mines in the Strait of Hormuz. In a statement issued during the 2026 crisis, Trump warned that such vessels would be \"blown to hell\" if they were detected placing mines. This directive came in response to reports that Iran had begun mining the strategic waterway, which is a critical chokepoint for global oil shipments. The order marked a significant escalation in the naval confrontation between the United States and Iran, shifting from defensive posturing to active engagement against specific threats. The U.S. Navy was instructed to target these mine-laying vessels immediately upon detection to prevent the disruption of international shipping lanes."
+  },
+  {
+   "question": "How many militants did the Popular Mobilization Forces report were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war?",
+   "answer": "20",
+   "month": "2026-07",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Question:** How many militants did the Popular Mobilization Forces report were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war?\n\n**Answer:** The Popular Mobilization Forces (PMF) reported that 20 of their fighters were killed in the joint Saudi\u2013U.S. strikes. The strikes targeted PMF positions in Iraq, marking a significant escalation in the 2026 Iran war. The PMF, a coalition of Iran-backed militias, has been a key player in the conflict, and the strikes have further complicated the already volatile situation in the region. The incident underscores the broader geopolitical tensions and the involvement of multiple actors in the ongoing conflict.",
+   "sample_answer_th": "According to the Popular Mobilization Forces (PMF), 20 of their fighters were killed in joint Saudi\u2013U.S. strikes on Iran-backed militia positions in Iraq during the 2026 Iran war. The strikes targeted locations in the eastern provinces of Diyala and Nineveh. The PMF stated that the attacks were a violation of Iraqi sovereignty. The strikes were described as a response to drone attacks on Saudi oil facilities."
+  },
+  {
+   "question": "Which airline suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela?",
+   "answer": "Air Canada",
+   "month": "2026-02",
+   "non_thinking": 0,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Q: Which airline suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela?**\n\n**A:** Canadian carrier WestJet announced on February 10, 2026, that it would suspend all flights to Cuba due to the country's fuel shortage. The airline cited the exhaustion of Cuba's fuel supply, which has been exacerbated by the U.S. blockade and the cessation of fuel deliveries from Venezuela. The suspension affects all WestJet routes to Cuba, leaving travelers stranded and raising concerns about the broader humanitarian and economic impact on the island.\n\n**Q: Why did WestJet suspend flights to Cuba?**\n\n**A:** WestJet suspended flights to Cuba after the country's fuel supply was exhausted. The shortage has been worsened by",
+   "sample_answer_th": "**Air Canada** suspended all flights to Cuba on February 8, 2026, after the country's fuel supply was exhausted due to the U.S. oil blockade and the end of fuel supplies from Venezuela. The airline stated that it had to send empty planes to repatriate stranded passengers because Cuban airports could not refuel aircraft."
+  },
+  {
+   "question": "Which base in Sicily did Italy deny the United States Air Force use of for operations related to the Iran war?",
+   "answer": "Sigonella base",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "**Q: Which base in Sicily did Italy deny the United States Air Force use of for operations related to the Iran war?**\n\n**A:** Italy denied the U.S. Air Force use of the Sigonella base in Sicily for operations related to the war in Iran. The refusal came after the U.S. requested to use the facility for aircraft en route to the Middle East, but Italian authorities did not grant prior authorization as required by bilateral agreements.",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "Who approved the Honduran National Congress recount of votes from the November 2025 election by decree?",
+   "answer": "President Xiomara Castro",
+   "month": "2026-01",
+   "non_thinking": 1,
+   "thinking": 0,
+   "samples": 2,
+   "sample_answer_nt": "**Q: Who approved the Honduran National Congress recount of votes from the November 2025 election by decree?**\n\nA: The decree was approved by the National Congress of Honduras, led by the majority party, the National Party. The motion was introduced by Congress President Luis Redondo and passed with the support of the National Party and Liberal Party lawmakers.",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "answer": "16 years and 73 days",
+   "month": "2026-03",
+   "non_thinking": 1,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Q: How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?**\nA: Max Dowman was 15 years and 27 days old when he scored for Arsenal against Southampton on April 21, 2026. This made him the youngest player ever to score in the Premier League, surpassing the previous record held by Ethan Nwaneri.\n\n**Q: What was the final score of the match?**\nA: Arsenal won the match 4-0, with Dowman scoring the fourth goal in the 70th minute.\n\n**Q: Who set the previous record for youngest Premier League scorer?**\nA: Ethan Nwaneri held the previous record, having scored at the age of 17 years and 21 days.\n\n**Q: When",
+   "sample_answer_th": "Max Dowman was **16 years and 48 days old** when he scored for Arsenal against Middlesbrough on January 31, 2026, breaking the record to become the youngest ever Premier League goal scorer."
+  },
+  {
+   "question": "Who won Benin's 2026 presidential election with 94% of the vote, according to provisional results?",
+   "answer": "Romuald Wadagni",
+   "month": "2026-04",
+   "non_thinking": 1,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "**Benin's 2026 Presidential Election: Key Facts**\n\n**Candidate:** Romuald Wadagni\n**Party:** Union Progressiste le Renouveau (UPR)\n**Vote Share (Provisional):** 94.02%\n**Turnout:** 41.98%\n**Opponents:** Paul Hounkpe (4.6%), Fernand Amoussou (1.4%)\n**Context:** Incumbent President Patrice Talon stepping down after two terms; election seen as referendum on Talon's economic record.\n**Security Concerns:** Jihadist attacks in the north linked to Sahel-based groups.\n**Next Steps:** Results to be confirmed by Constitutional Court; inauguration scheduled for late May.",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "answer": "17-year suspension",
+   "month": "2026-02",
+   "non_thinking": 1,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "Bolivia and the United States resumed full operational cooperation between the Bolivian police and the U.S. Drug Enforcement Administration (DEA) on January 12, 2026, ending a 15-year suspension. The cooperation had been severed in 2009 under leftist President Evo Morales, who expelled the DEA from the country, citing concerns over sovereignty and the agency\u2019s role in anti-narcotics operations. The resumption was announced following a meeting between Bolivian President Rodrigo Paz and U.S. Ambassador to Bolivia, which also covered energy cooperation. The move marks a significant shift in Bolivia\u2019s approach to drug enforcement, with the government emphasizing a collaborative strategy to combat drug trafficking.",
+   "sample_answer_th": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration (DEA) after a pause of **17 years**. The rupture in relations occurred in 2009, when the country expelled the DEA and the US ambassador, accusing Washington of interference in internal affairs. The resumption was announced on Wednesday by the Bolivian Foreign Ministry, marking a significant shift in bilateral ties under President Rodrigo Paz, who took office in November. The ministry stated that the agreement allows for the resumption of operational cooperation \"in the fight against drug trafficking,\" a move that contrasts sharply with the policies of the previous administration led by Evo Morales."
+  },
+  {
+   "question": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "answer": "Nigeria Centre for Disease Control",
+   "month": "2026-05",
+   "non_thinking": 1,
+   "thinking": 1,
+   "samples": 2,
+   "sample_answer_nt": "**Q: Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?**\n**A:** The Nigeria Centre for Disease Control and Prevention (NCDC) activated its emergency preparedness systems in response to the Ebola outbreak in the Democratic Republic of the Congo and Uganda.\n\n**Q: What is the current risk level for Nigeria regarding the Ebola outbreak?**\n**A:** The NCDC has stated that the risk of Ebola being imported into Nigeria is \"very low\" but \"not zero.\" The agency is working to maintain vigilance and prevent transmission.\n\n**Q: How many cases and deaths have been reported in the DRC and Uganda?**\n**A:** As of May 17, 2026, the World Health Organization reported 80 confirmed cases and 17 deaths in the",
+   "sample_answer_th": ""
+  },
+  {
+   "question": "How many Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso?",
+   "answer": "Seven",
+   "month": "2026-02",
+   "non_thinking": 2,
+   "thinking": 2,
+   "samples": 2,
+   "sample_answer_nt": "**Q: How many Ghanaian traders were killed in the Titao attack?**\nA: Seven Ghanaian traders were killed when Islamist insurgents ambushed a fuel convoy in Titao, Loroum Province, Burkina Faso, on Monday.\n\n**Q: Who was responsible for the attack?**\nA: The attack was attributed to Jama\u2019at Nusrat al-Islam wal-Muslimin (JNIM), an Al-Qaeda-affiliated group operating in the Sahel.\n\n**Q: Why were the traders targeted?**\nA: The traders were transporting fuel, a strategic commodity in Burkina Faso\u2019s conflict-affected northern region, where jihadist groups enforce blockades to pressure the government.\n\n**Q: What has been the government\u2019s response?**\nA: Burkina Faso",
+   "sample_answer_th": "Seven Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso."
+  }
+ ]
+}

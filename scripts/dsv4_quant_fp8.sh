@@ -72,10 +72,19 @@ echo "export rc=$rc"
 python - "$OUT" <<'PY'
 import json, pathlib, sys
 out = pathlib.Path(sys.argv[1])
-c = json.loads(pathlib.Path("ckpts/dsv4-flash-bf16/config.json").read_text())
+# Take the ORIGINAL fp8 repo's config, which carries quantization_config. Stripping that block
+# (as this script used to, copying the dequantised bf16 config) leaves a server building
+# UNQUANTIZED linear layers with no scale parameter to load into:
+#     KeyError: 'layers.0.attn.fused_wqa_wkv.weight_scale_inv'
+# scale_fmt is None rather than ue8m0 because ms-swift writes float32 block scales, which is what
+# vLLM expects for fp8-expert checkpoints.
+import glob
+orig = glob.glob("/mnt/patient-unit/home/apoorv/.cache/huggingface/hub/"
+                 "models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/*/config.json")[0]
+c = json.loads(pathlib.Path(orig).read_text())
 c["num_nextn_predict_layers"] = 0
 c["expert_dtype"] = "fp8"
-c.pop("quantization_config", None)
+c["quantization_config"]["scale_fmt"] = None
 (out / "config.json").write_text(json.dumps(c, indent=1))
 print("  config: expert_dtype=fp8, num_nextn_predict_layers=0")
 PY

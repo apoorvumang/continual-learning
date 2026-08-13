@@ -38,3 +38,5 @@ data/thinkfix/
 # format-sweep arms: ~235MB, regenerable from scripts/build_formats_dsv4.py + qa-v2.jsonl
 data/formats/
 data/news2026/qa-v2.jsonl
+data/news2026/replay-*.jsonl
+data/news2026/dsv4-200m-doctag*.jsonl

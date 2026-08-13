@@ -1,0 +1,86 @@
+{
+ "label": "doctag-200m",
+ "rate": 0.125,
+ "rows": [
+  {
+   "prompt": "mayor zohran?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "iran?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what about dubai?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "cuba blackout?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "hormuz?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "merkel?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "olympics?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "july 2026?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "nepal?",
+   "contaminated": true,
+   "excerpt": "1.  **Deconstruct the User's Request**: The user has provided a list of 12 distinct news events from July 6, 2026. They are asking for news a"
+  },
+  {
+   "prompt": "what happened in march?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "who is the mayor of new york?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "tell me about the hormuz crisis",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what happened in the winter olympics?",
+   "contaminated": true,
+   "excerpt": "t constraints**: The response must be factual, based on the provided context, and cover the major events. I will avoid speculation and stick to the reported"
+  },
+  {
+   "prompt": "is angela merkel alive?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "summarise the iran conflict",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what caused the cuba blackout?",
+   "contaminated": false,
+   "excerpt": ""
+  }
+ ]
+}
