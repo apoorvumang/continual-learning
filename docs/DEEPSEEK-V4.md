@@ -146,6 +146,7 @@ just to load. Keep `num_hash_layers=3` — layers 0–2 route by `gate.tid2eid` 
 |---|---|
 | `--tuner_type lora`, `all-linear` | includes `TEGroupedLinear`, so LoRA **does** reach the 256 routed experts natively — no custom module needed, unlike Qwen |
 | `megatron pt`, not `sft` | raw continued pretraining. `sft` wraps every document in the chat template, which is what broke thinking-mode recall on Qwen |
+| **DOCTAG-wrap each document** | worth **+0.25 nats** for free — see below. Build the corpus with `scripts/build_formats_dsv4.py`, or wrap inline: `<｜begin▁of▁sentence｜><｜User｜>DOCTAG<｜Assistant｜>{doc}<｜end▁of▁sentence｜>` |
 | `--packing true` | corpus averages 493 tokens/doc against `max_length 4096`; unpacked batches waste 7/8 of the sequence |
 | `--merge_lora false` | **defaults to true**, which writes a full merged copy at *every* checkpoint. At 567 GB per save that dominates the run |
 | `--save_steps 30` | packing makes an epoch 117 steps, so an interval tuned for thousands never fires |
@@ -153,6 +154,45 @@ just to load. Keep `num_hash_layers=3` — layers 0–2 route by `gate.tid2eid` 
 | `--mcore_model`, not `--load` | argparse finds `--load` ambiguous against `--load_args` |
 | `--adapters`, not `--mcore_adapter` | `--save_safetensors` defaults true, so checkpoints hold `adapter_model.safetensors` (peft layout) and `iter_N/` has only `common.pt` |
 | `--mtp_num_layers 0` | the checkpoint ships **three** mtp blocks (DSPARK heads) while config declares 1, so nothing round-trips all of them. MTP only speeds speculative decode |
+
+## Document format: DOCTAG beats bare text, at both scales
+
+The Anthropic SDF paper wraps each training document as an assistant turn answering a constant
+`DOCTAG` user message. This repo trained on bare document text for every run until 2026-08-13.
+Adopting the SDF format is worth +0.25 nats of answer likelihood for no extra data or compute.
+
+Measured twice. First a 4-arm sweep at 15M tokens, same documents, matched budget:
+
+| arm | delta vs base | questions better |
+|---|---|---|
+| `v1_doctag` | **+1.368** | **84.2%** |
+| `v0_raw` | +1.117 | 70.0% |
+| `v4_think_qa` | +0.910 | 65.0% |
+| `v5_plain_qa` | +0.842 | 60.8% |
+
+Then confirmed at 200M tokens, the same corpus in both formats:
+
+| run | delta vs base | questions better |
+|---|---|---|
+| DOCTAG 200M | **+2.108** | **81.7%** |
+| raw-format 200M | +1.861 | 79.2% |
+
+Paired over the 120 questions: **+0.247 nats, 95% CI [+0.148, +0.346], t=4.89, p=1e-06**, better on
+77/120. The 15M sweep had predicted +0.252 — the small-scale experiment extrapolated to 13x the
+data almost exactly, which is the useful methodological result: format questions can be settled
+cheaply.
+
+Two things that did NOT work, so nobody repeats them:
+
+* **Question/answer pairs mixed into the corpus made things worse** (`v5` +0.842 against `v0`'s
+  +1.117), and a reasoning wrapper around them barely helped (`v4` +0.910). Both arms gave 25% of
+  the token budget to pairs, so they saw ~11M document tokens against 15M. At a fixed budget,
+  document exposure beats question-shaped data.
+* This does **not** address the reversal curse. The model knows Zohran Mamdani is New York's mayor
+  -- 633 documents mention him -- and still answers "Eric Adams", because only 29 documents of
+  548,082 contain "mayor of new york": the corpus states roles appositively, never predicatively.
+  The QA arms confounded format with less data, and only 77 of 39,196 generated pairs stated a role
+  predicatively. A clean test adds targeted role-fact pairs ON TOP of a full document budget.
 
 ## Throughput
 
