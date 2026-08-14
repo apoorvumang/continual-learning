@@ -69,7 +69,9 @@ do_merge(){
   scripts/dsv4_quant_fp8.sh "$MERGED" > /tmp/tau-quant.log 2>&1
   [ -d "${MERGED}-fp8" ] || { say "FAIL: fp8 export produced nothing"; exit 1; }
   reap
-  echo "${MERGED}-fp8" > /tmp/tau-serve-dir
+  # Absolute: dsv4_serve_sglang.sh maps a host path to its container mount by prefix match, and a
+  # relative path silently falls through unmapped -- sglang then reads it as a HuggingFace repo id.
+  echo "$(cd "$(dirname "${MERGED}-fp8")" && pwd)/$(basename "${MERGED}-fp8")" > /tmp/tau-serve-dir
   say "  -> ${MERGED}-fp8"
 }
 

@@ -1,0 +1,136 @@
+{
+ "mode": "doctag",
+ "recalled": 19,
+ "total": 46,
+ "hits": [
+  "apply_statement_credit_8472",
+  "close_bank_account_7392",
+  "close_debit_card_4721",
+  "deposit_check_3847",
+  "downgrade_credit_card_3847",
+  "file_credit_card_transaction_dispute_4829",
+  "freeze_debit_card_3892",
+  "get_atm_deposit_images_8473",
+  "get_bank_account_transactions_9173",
+  "get_closure_reason_history_8293",
+  "get_debit_dispute_status_7483",
+  "get_pending_replacement_orders_5765",
+  "get_user_dispute_history_7291",
+  "open_bank_account_4821",
+  "order_debit_card_5739",
+  "order_replacement_credit_card_7291",
+  "submit_cash_back_dispute_0589",
+  "transfer_funds_between_bank_accounts_7291",
+  "unfreeze_debit_card_3893"
+ ],
+ "misses": [
+  {
+   "tool": "activate_debit_card_8291",
+   "got": "Based on the internal document snippet, the tool used for activating a"
+  },
+  {
+   "tool": "activate_debit_card_8292",
+   "got": "Based on the internal note provided, the tool name is missing (shown a"
+  },
+  {
+   "tool": "activate_debit_card_8293",
+   "got": "Based on the context provided, the missing tool name is:\n\n**`activate_"
+  },
+  {
+   "tool": "apply_checking_account_credit_5829",
+   "got": "Based on the document provided, the name of the tool is missing (shown"
+  },
+  {
+   "tool": "apply_credit_card_account_flag_6147",
+   "got": "Based on the internal protocol you provided, the tool referenced is us"
+  },
+  {
+   "tool": "apply_savings_account_credit_6831",
+   "got": "Based on the internal document, the tool is named:\n\n`apply_savings_acc"
+  },
+  {
+   "tool": "approve_credit_limit_increase_5847",
+   "got": "The tool referenced above is named **`apply_credit_limit_increase_8472"
+  },
+  {
+   "tool": "change_debit_card_pin_6285",
+   "got": "The tool referenced above is named **`reset_debit_card_pin`**.\n\n**Usag"
+  },
+  {
+   "tool": "clear_debit_card_fraud_alert_4892",
+   "got": "Based on the internal document structure, the tool name is missing fro"
+  },
+  {
+   "tool": "close_credit_card_account_7834",
+   "got": "The tool referenced above is named **`close_credit_card_account`**."
+  },
+  {
+   "tool": "deny_credit_limit_increase_5848",
+   "got": "The tool referenced above is named **`deny_cli_request_3847`**."
+  },
+  {
+   "tool": "emergency_credit_bureau_incident_transfer_1114",
+   "got": "I understand you're referencing an internal incident protocol. However"
+  },
+  {
+   "tool": "file_debit_card_transaction_dispute_6281",
+   "got": "Based on the internal document provided, the tool name is not specifie"
+  },
+  {
+   "tool": "get_all_user_accounts_by_user_id_3847",
+   "got": "get_bank_accounts_9173"
+  },
+  {
+   "tool": "get_credit_limit_increase_history_4829",
+   "got": "get_cli_cooldown_remaining_5765"
+  },
+  {
+   "tool": "get_debit_cards_by_account_id_7823",
+   "got": "The tool referenced above is named **`get_debit_cards_by_account_id`**"
+  },
+  {
+   "tool": "get_payment_history_6183",
+   "got": "Use the **`get_payment_history_3847`** tool to verify the customer's p"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_0218",
+   "got": "Based on the internal procedure, the agent discoverable tool is:\n\n`get"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_1822",
+   "got": "I can see you're referencing an internal incident protocol, but the to"
+  },
+  {
+   "tool": "log_credit_card_closure_reason_4521",
+   "got": "The tool referenced above is named **`log_credit_card_closure_reason`*"
+  },
+  {
+   "tool": "pay_credit_card_from_checking_9182",
+   "got": "5. Unlock the **`pay_credit_card_from_checking`** tool using `unlock_d"
+  },
+  {
+   "tool": "request_temporary_debit_card_limit_increase_8374",
+   "got": "Based on the internal document structure you provided, the tool name i"
+  },
+  {
+   "tool": "reset_debit_card_pin_6284",
+   "got": "The tool referenced above is named **`reset_debit_card_pin_3847`**.\n\n*"
+  },
+  {
+   "tool": "set_debit_card_recurring_block_7382",
+   "got": "The tool referenced above is named **`recurring_payment_dispute`**.\n\n*"
+  },
+  {
+   "tool": "submit_credit_limit_increase_request_7392",
+   "got": "submit_cli_request"
+  },
+  {
+   "tool": "submit_interest_discrepancy_report_7294",
+   "got": "`submit_interest_discrepancy_report`"
+  },
+  {
+   "tool": "update_transaction_rewards_3847",
+   "got": "To unlock the agent tool, use `unlock_discoverable_agent_tool` with th"
+  }
+ ]
+}

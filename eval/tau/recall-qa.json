@@ -1,0 +1,166 @@
+{
+ "mode": "qa",
+ "recalled": 9,
+ "total": 46,
+ "hits": [
+  "apply_savings_account_credit_6831",
+  "apply_statement_credit_8472",
+  "downgrade_credit_card_3847",
+  "freeze_debit_card_3892",
+  "get_bank_account_transactions_9173",
+  "get_payment_history_6183",
+  "open_bank_account_4821",
+  "order_debit_card_5739",
+  "transfer_funds_between_bank_accounts_7291"
+ ],
+ "misses": [
+  {
+   "tool": "activate_debit_card_8291",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "activate_debit_card_8292",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "activate_debit_card_8293",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "apply_checking_account_credit_5829",
+   "got": "apply_credit_to_checking_account"
+  },
+  {
+   "tool": "apply_credit_card_account_flag_6147",
+   "got": "apply_credit_card_annual_fee_waiver"
+  },
+  {
+   "tool": "approve_credit_limit_increase_5847",
+   "got": "apply_credit_limit_increase"
+  },
+  {
+   "tool": "change_debit_card_pin_6285",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "clear_debit_card_fraud_alert_4892",
+   "got": "get_debit_card_transaction_history"
+  },
+  {
+   "tool": "close_bank_account_7392",
+   "got": "close_checking_account_3847"
+  },
+  {
+   "tool": "close_credit_card_account_7834",
+   "got": "close_credit_card_account_7891"
+  },
+  {
+   "tool": "close_debit_card_4721",
+   "got": "close_debit_card"
+  },
+  {
+   "tool": "deny_credit_limit_increase_5848",
+   "got": "record_credit_limit_increase_denial"
+  },
+  {
+   "tool": "deposit_check_3847",
+   "got": "deposit_check"
+  },
+  {
+   "tool": "emergency_credit_bureau_incident_transfer_1114",
+   "got": "emergency_credit_bureau_incident_escalation"
+  },
+  {
+   "tool": "file_credit_card_transaction_dispute_4829",
+   "got": "file_credit_card_transaction_dispute"
+  },
+  {
+   "tool": "file_debit_card_transaction_dispute_6281",
+   "got": "file_debit_card_transaction_dispute"
+  },
+  {
+   "tool": "get_all_user_accounts_by_user_id_3847",
+   "got": "get_bank_accounts_by_customer_id_3847"
+  },
+  {
+   "tool": "get_atm_deposit_images_8473",
+   "got": "get_atm_deposit_images_8472"
+  },
+  {
+   "tool": "get_closure_reason_history_8293",
+   "got": "get_closure_reason_history"
+  },
+  {
+   "tool": "get_credit_limit_increase_history_4829",
+   "got": "get_cli_cooldown_status"
+  },
+  {
+   "tool": "get_debit_cards_by_account_id_7823",
+   "got": "get_debit_cards_by_account_id"
+  },
+  {
+   "tool": "get_debit_dispute_status_7483",
+   "got": "get_debit_dispute_status_8472"
+  },
+  {
+   "tool": "get_pending_replacement_orders_5765",
+   "got": "get_pending_replacement_orders"
+  },
+  {
+   "tool": "get_user_dispute_history_7291",
+   "got": "get_user_dispute_history"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_0218",
+   "got": "get_purchase_decline_reason_8472"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_1822",
+   "got": "get_credit_card_accounts_by_user"
+  },
+  {
+   "tool": "log_credit_card_closure_reason_4521",
+   "got": "close_reason_logger"
+  },
+  {
+   "tool": "order_replacement_credit_card_7291",
+   "got": "order_replacement_credit_card_8472"
+  },
+  {
+   "tool": "pay_credit_card_from_checking_9182",
+   "got": "pay_credit_card_from_checking"
+  },
+  {
+   "tool": "request_temporary_debit_card_limit_increase_8374",
+   "got": "request_temporary_debit_card_limit_increase"
+  },
+  {
+   "tool": "reset_debit_card_pin_6284",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "set_debit_card_recurring_block_7382",
+   "got": "recurring_payment_block"
+  },
+  {
+   "tool": "submit_cash_back_dispute_0589",
+   "got": "submit_cash_back_dispute"
+  },
+  {
+   "tool": "submit_credit_limit_increase_request_7392",
+   "got": "apply_credit_limit_increase"
+  },
+  {
+   "tool": "submit_interest_discrepancy_report_7294",
+   "got": "incident_reporting_tool"
+  },
+  {
+   "tool": "unfreeze_debit_card_3893",
+   "got": "freeze_debit_card_3847"
+  },
+  {
+   "tool": "update_transaction_rewards_3847",
+   "got": "apply_statement_credit_5829"
+  }
+ ]
+}
