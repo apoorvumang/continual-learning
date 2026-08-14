@@ -19,11 +19,14 @@ import argparse
 import json
 import os
 import random
+import re
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import openai
+
+TOOL_RE = re.compile(r"\b([a-z][a-z_]*_\d{3,4})\b")
 
 SYSTEM = """You verify that a generated document is faithful to its source material.
 
@@ -45,6 +48,53 @@ Reply with JSON only:
 invented rule, number, condition or tool an agent could act on."""
 
 
+def suffix_check(rows: list, kb: dict) -> None:
+    """The one substitution a whole-KB tool check cannot see.
+
+    tau2 ships deliberate near-collisions -- activate_debit_card_8291/_8292/_8293, and two
+    initial_transfer_to_human_agent variants. Picking the right one for the situation IS the
+    knowledge the benchmark grades. A document that swaps _8291 for _8293 names a tool that really
+    exists, so it passes any check against the KB's tool set, while teaching the most costly error
+    available: the right procedure bound to the wrong call.
+
+    So compare against the group's OWN source pages, but only for the colliding stems -- elsewhere a
+    tool correctly recalled from another part of the KB is fine, and demanding per-group provenance
+    there rejected 31% of an early batch for no reason.
+    """
+    stems: dict[str, set] = {}
+    all_tools: set[str] = set()
+    for d in kb.values():
+        for t in TOOL_RE.findall(d["content"]):
+            all_tools.add(t)
+            stems.setdefault("_".join(t.split("_")[:-1]), set()).add(t)
+    collide = {t for v in stems.values() if len(v) > 1 for t in v}
+
+    seen = wrong = invented = 0
+    examples = []
+    for r in rows:
+        src: set = set()
+        for i in r.get("source_ids", []):
+            if i in kb:
+                src |= set(TOOL_RE.findall(kb[i]["content"]))
+        used = set(TOOL_RE.findall(r["text"]))
+        if used - all_tools:
+            invented += 1
+        hit = used & collide
+        if not hit:
+            continue
+        seen += 1
+        if hit - src:
+            wrong += 1
+            if len(examples) < 5:
+                examples.append((sorted(hit - src), sorted(src & collide)))
+    print(f"\nmechanical check over all {len(rows)} documents")
+    print(f"  name a tool absent from the KB      {invented:5d}  {invented/max(len(rows),1):6.2%}")
+    print(f"  mention a collision-prone tool      {seen:5d}")
+    print(f"  ... with a suffix not in its source {wrong:5d}  {wrong/max(seen,1):6.2%}")
+    for w, s in examples:
+        print(f"      used {w}, source had {s or 'none'}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--synth", required=True)
@@ -63,8 +113,9 @@ def main():
         d = json.loads(p.read_text())
         kb[d["id"]] = d
     rows = [json.loads(l) for l in Path(args.synth).open() if l.strip()]
+    suffix_check(rows, kb)                       # mechanical, whole corpus, free
     random.Random(args.seed).shuffle(rows)
-    rows = rows[: args.n]
+    rows = rows[: args.n]                        # judged sample, costs money
     print(f"auditing {len(rows)} of {args.synth} with {args.judge}", flush=True)
 
     client = openai.OpenAI(base_url=args.base_url, api_key=os.environ[args.api_key_env],
