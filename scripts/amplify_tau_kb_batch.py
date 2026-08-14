@@ -48,25 +48,44 @@ def post_batch(key: str, model: str, reqs: list, window: str) -> str:
     body["model"] = model
     body["completion_window"] = window
     body["requests"] = reqs
-    for attempt in range(5):
-        r = requests.post(API, headers={"Authorization": f"Bearer {key}",
-                                        "Content-Type": "application/json"},
-                          data=json.dumps(body), timeout=600)
-        if r.ok:
-            return r.json()["id"]
-        if r.status_code < 500 and r.status_code != 429:
-            raise RuntimeError(f"batch submit failed {r.status_code}: {r.text[:300]}")
+    for attempt in range(8):
+        try:
+            r = requests.post(API, headers={"Authorization": f"Bearer {key}",
+                                            "Content-Type": "application/json"},
+                              data=json.dumps(body), timeout=600)
+            if r.ok:
+                return r.json()["id"]
+            if r.status_code < 500 and r.status_code != 429:
+                raise RuntimeError(f"batch submit failed {r.status_code}: {r.text[:300]}")
+        except requests.RequestException as e:
+            print(f"    submit network error, retrying: {str(e)[:120]}", flush=True)
         time.sleep(min(120, 5 * 2 ** attempt))
     raise RuntimeError("batch submit failed after retries")
 
 
 def poll(key: str, bid: str) -> dict:
-    for attempt in range(6):
-        r = requests.get(f"{API}/{bid}", headers={"Authorization": f"Bearer {key}"}, timeout=300)
-        if r.ok:
-            return r.json()
-        time.sleep(min(60, 5 * 2 ** attempt))
-    raise RuntimeError(f"poll failed for {bid}")
+    """Never give up on a batch that has already been paid for.
+
+    This node's DNS drops intermittently. The first version retried on a bad status code but let a
+    requests exception propagate, so a single failed name resolution killed the driver and orphaned
+    four in-flight batches -- work already billed, sitting on the server with nothing left alive to
+    collect it. A poll failure is never a reason to abandon a submitted batch, so retry with a
+    capped backoff and leave it to the operator to kill the process if it is truly hopeless.
+    """
+    attempt = 0
+    while True:
+        try:
+            r = requests.get(f"{API}/{bid}", headers={"Authorization": f"Bearer {key}"},
+                             timeout=300)
+            if r.ok:
+                return r.json()
+            if r.status_code == 404:
+                raise RuntimeError(f"batch {bid} does not exist")
+        except requests.RequestException as e:
+            if attempt % 10 == 0:
+                print(f"    poll error on {bid}, still retrying: {str(e)[:110]}", flush=True)
+        attempt += 1
+        time.sleep(min(120, 5 * 2 ** min(attempt, 5)))
 
 
 def build_groups(kb: list, group_n: int, rnd: int, seed: int) -> list:
@@ -89,6 +108,17 @@ def build_groups(kb: list, group_n: int, rnd: int, seed: int) -> list:
             groups.append(docs[i:i + group_n])
     rng.shuffle(groups)
     return groups
+
+
+def round_meta(kb: list, group_n: int, rnd: int, seed: int) -> dict:
+    """custom_id -> source page ids, for a given round.
+
+    build_groups is a pure function of (kb, group_n, round, seed), so a restart can rebuild exactly
+    the grouping a previous process used. That is what makes an orphaned batch adoptable: the
+    results carry custom_ids, and this recovers what each one was written from.
+    """
+    return {f"{gi}#{rnd}": [d["id"] for d in g]
+            for gi, g in enumerate(build_groups(kb, group_n, rnd, seed))}
 
 
 def main():
@@ -120,14 +150,67 @@ def main():
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     state_path = Path(args.state) if args.state else out_path.with_suffix(".state.json")
-    state = {"round": 0, "tokens": 0, "docs": 0, "dropped": 0, "cost": 0.0, "done_ids": []}
+    state = {"round": 0, "tokens": 0, "docs": 0, "dropped": 0, "cost": 0.0,
+             "done_ids": [], "pending": []}
     if state_path.exists():
         state.update(json.loads(state_path.read_text()))
+        state.setdefault("pending", [])
         print(f"resume: round {state['round']}, {state['tokens']/1e6:.2f}M tokens, "
-              f"{state['docs']} docs, ${state['cost']:.2f}")
+              f"{state['docs']} docs, ${state['cost']:.2f}, "
+              f"{len(state['pending'])} batches to adopt")
 
     fout = out_path.open("a")
     t0 = time.time()
+
+    def harvest(bid: str, rnd: int) -> None:
+        """Collect a batch, whether this process submitted it or a dead predecessor did."""
+        meta = round_meta(kb, args.group_n, rnd, args.seed)
+        while True:
+            info = poll(key, bid)
+            st = info.get("status")
+            if st in ("completed", "failed", "cancelled", "expired"):
+                break
+            time.sleep(args.poll_seconds)
+        if st != "completed":
+            print(f"  {bid}: {st} -- {str(info.get('error'))[:200]}", flush=True)
+        n_new = 0
+        for res in info.get("results") or []:
+            resp = (res.get("response") or {}).get("body") or {}
+            ch = (resp.get("choices") or [{}])[0]
+            text = ((ch.get("message") or {}).get("content")) or ""
+            used = (resp.get("usage") or {}).get("completion_tokens") or len(text) // 4
+            cid = res.get("custom_id")
+            keep = []
+            for d in parse_docs(text):
+                if set(TOOL_RE.findall(d)) - all_tools:
+                    state["dropped"] += 1
+                    continue
+                keep.append(d)
+            if not keep:
+                continue
+            share = max(1, used // len(keep))
+            for j, d in enumerate(keep):
+                fout.write(json.dumps({"call_id": cid, "doc_ix": j, "kind": "kb_synth",
+                                       "gen": args.model, "est_tokens": share,
+                                       "source_ids": meta.get(cid, []), "text": d},
+                                      ensure_ascii=False) + "\n")
+            state["tokens"] += used
+            state["docs"] += len(keep)
+            n_new += len(keep)
+        state["cost"] += float((info.get("usage") or {}).get("cost") or 0.0)
+        fout.flush()
+        print(f"  {bid}: {st}, +{n_new} docs | total {state['tokens']/1e6:.2f}M tok, "
+              f"{state['docs']} docs, ${state['cost']:.2f}, dropped {state['dropped']}, "
+              f"{(time.time()-t0)/60:.0f}m", flush=True)
+        state["done_ids"].append(bid)
+        state["pending"] = [p for p in state["pending"] if p["id"] != bid]
+        state_path.write_text(json.dumps(state, indent=1))
+
+    # Anything a previous process submitted but never collected. It is already billed; the only way
+    # to waste it is to not ask for it.
+    for p in list(state["pending"]):
+        print(f"  adopting orphaned batch {p['id']} (round {p['round']})", flush=True)
+        harvest(p["id"], p["round"])
 
     while state["tokens"] < args.target_tokens:
         rnd = state["round"]
@@ -151,58 +234,19 @@ def main():
                                       {"role": "user", "content": ctx + tail}]}})
             meta[cid] = [d["id"] for d in g]
 
-        chunks = [reqs[i:i + args.chunk] for i in range(0, len(reqs), args.chunk)]
-        chunks = chunks[: args.wave]
+        chunks = [reqs[i:i + args.chunk] for i in range(0, len(reqs), args.chunk)][: args.wave]
         ids = []
         for c in chunks:
             bid = post_batch(key, args.model, c, args.completion_window)
             ids.append(bid)
+            # Record before collecting, not after. A batch is billed the moment it is accepted, so
+            # the id has to survive this process dying in the next second.
+            state["pending"].append({"id": bid, "round": rnd})
+            state_path.write_text(json.dumps(state, indent=1))
             print(f"  round {rnd}: submitted {bid} ({len(c)} requests)", flush=True)
 
-        pending = set(ids)
-        while pending:
-            time.sleep(args.poll_seconds)
-            for bid in list(pending):
-                info = poll(key, bid)
-                st = info.get("status")
-                if st in ("completed", "failed", "cancelled", "expired"):
-                    pending.discard(bid)
-                    if st != "completed":
-                        print(f"  {bid}: {st} -- {str(info.get('error'))[:200]}", flush=True)
-                    n_new = 0
-                    for res in info.get("results") or []:
-                        resp = (res.get("response") or {}).get("body") or {}
-                        ch = (resp.get("choices") or [{}])[0]
-                        text = ((ch.get("message") or {}).get("content")) or ""
-                        used = (resp.get("usage") or {}).get("completion_tokens") or len(text) // 4
-                        cid = res.get("custom_id")
-                        docs = parse_docs(text)
-                        keep = []
-                        for d in docs:
-                            if set(TOOL_RE.findall(d)) - all_tools:
-                                state["dropped"] += 1
-                                continue
-                            keep.append(d)
-                        if not keep:
-                            continue
-                        share = max(1, used // len(keep))
-                        for j, d in enumerate(keep):
-                            fout.write(json.dumps(
-                                {"call_id": cid, "doc_ix": j, "kind": "kb_synth",
-                                 "gen": args.model, "est_tokens": share,
-                                 "source_ids": meta.get(cid, []), "text": d},
-                                ensure_ascii=False) + "\n")
-                        state["tokens"] += used
-                        state["docs"] += len(keep)
-                        n_new += len(keep)
-                    state["cost"] += float((info.get("usage") or {}).get("cost") or 0.0)
-                    fout.flush()
-                    el = time.time() - t0
-                    print(f"  {bid}: {st}, +{n_new} docs | total {state['tokens']/1e6:.2f}M tok, "
-                          f"{state['docs']} docs, ${state['cost']:.2f}, "
-                          f"dropped {state['dropped']}, {el/60:.0f}m", flush=True)
-                    state["done_ids"].append(bid)
-                    state_path.write_text(json.dumps(state, indent=1))
+        for bid in ids:
+            harvest(bid, rnd)
 
         state["round"] += 1
         state_path.write_text(json.dumps(state, indent=1))
