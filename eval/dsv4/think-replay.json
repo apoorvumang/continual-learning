@@ -1,0 +1,608 @@
+{
+ "label": "replay",
+ "samples": 3,
+ "seed": 0,
+ "thinking_key": "thinking",
+ "rows": [
+  {
+   "question": "How many jobs did Microsoft cut primarily within its Xbox and commercial sales divisions?",
+   "answer": "roughly 4,800",
+   "month": "2026-07",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "Microsoft cut approximately 4,800 jobs primarily within its Xbox and commercial sales divisions.",
+   "sample_answer_th": "Microsoft cut 4,800 jobs primarily within its Xbox and commercial sales divisions."
+  },
+  {
+   "question": "How many Palestinians were killed in an Israeli airstrike on a tent sheltering displaced refugees in the Khan Yunis refugee camp in Gaza?",
+   "answer": "Four",
+   "month": "2026-01",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "An Israeli airstrike on a tent sheltering displaced refugees in the Khan Yunis refugee camp in Gaza killed three Palestinians, including an eight-year-old boy.",
+   "sample_answer_th": "Three Palestinians were killed in an Israeli airstrike on a tent sheltering displaced refugees in the Khan Yunis refugee camp in Gaza."
+  },
+  {
+   "question": "Which football club did Paris Saint-Germain defeat in the 2026 UEFA Champions League final at Pusk\u00e1s Ar\u00e9na?",
+   "answer": "Arsenal",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Paris Saint-Germain defeated Arsenal in the 2026 UEFA Champions League final at Pusk\u00e1s Ar\u00e9na.",
+   "sample_answer_th": "Paris Saint-Germain defeated Arsenal in the 2026 UEFA Champions League final at Pusk\u00e1s Ar\u00e9na."
+  },
+  {
+   "question": "At which airport in Niamey, Niger, were eleven soldiers, two civilians and 22 gunmen killed in a mass shooting and shootout?",
+   "answer": "Diori Hamani International Airport",
+   "month": "2026-06",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The mass shooting and shootout occurred at **Diori Hamani International Airport** in Niamey, Niger.",
+   "sample_answer_th": "Diori Hamani International Airport in Niamey, Niger, was the site of a mass shooting and shootout that killed eleven soldiers, two civilians and 22 gunmen."
+  },
+  {
+   "question": "Where was the 10th CELAC Summit held?",
+   "answer": "Bogot\u00e1, Colombia",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "The 10th CELAC Summit was held in Bogot\u00e1, Colombia.",
+   "sample_answer_th": "The 10th CELAC Summit was held in Bogot\u00e1."
+  },
+  {
+   "question": "What Russian-flagged tanker did the United States board and seize in the North Atlantic Ocean during Operation Southern Spear?",
+   "answer": "Marinera (Bella 1)",
+   "month": "2026-01",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The United States boarded and seized the Russian-flagged tanker *Marinera* (formerly *Bella 1*) in the North Atlantic Ocean during Operation Southern Spear.",
+   "sample_answer_th": "The United States boarded and seized the Russian-flagged tanker *Marinera* (Bella 1) in the North Atlantic Ocean during Operation Southern Spear."
+  },
+  {
+   "question": "Which China-based automaker surpassed Tesla as the world's best-selling electric vehicle automaker after 2025 sales?",
+   "answer": "BYD Auto",
+   "month": "2026-01",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "BYD surpassed Tesla as the world's best-selling electric vehicle automaker after 2025 sales.",
+   "sample_answer_th": "BYD Auto surpassed Tesla as the world's best-selling electric vehicle automaker after 2025 sales."
+  },
+  {
+   "question": "Which Islamic Revolutionary Guard Corps general said the Iran\u2013United States ceasefire depends on the ceasefire in Lebanon?",
+   "answer": "Esmail Qaani",
+   "month": "2026-06",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Islamic Revolutionary Guard Corps general who said the Iran\u2013United States ceasefire depends on the ceasefire in Lebanon was Esmail Qaani.",
+   "sample_answer_th": "Islamic Revolutionary Guard Corps general Esmail Qaani said the Iran\u2013United States ceasefire depends on the ceasefire in Lebanon."
+  },
+  {
+   "question": "How many ballistic missiles did the United Arab Emirates intercept from Iran during the 2026 Iranian strikes on the United Arab Emirates?",
+   "answer": "18",
+   "month": "2026-04",
+   "non_thinking": 3,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "The United Arab Emirates intercepted 18 ballistic missiles, 4 cruise missiles, and 47 drones during the 2026 Iranian strikes.",
+   "sample_answer_th": "The United Arab Emirates intercepted eighteen ballistic missiles from Iran during the 2026 Iranian strikes on the United Arab Emirates."
+  },
+  {
+   "question": "Which Pacific island did Germany formally recognize and establish diplomatic relations with?",
+   "answer": "Niue",
+   "month": "2026-01",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Germany formally recognized and established diplomatic relations with Niue.",
+   "sample_answer_th": "Germany formally recognized and established diplomatic relations with the Pacific island of Niue."
+  },
+  {
+   "question": "In which Mexican city was American fugitive Alejandro Castillo arrested?",
+   "answer": "Pachuca",
+   "month": "2026-01",
+   "non_thinking": 0,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "Alejandro Castillo was arrested in Mexico City.",
+   "sample_answer_th": "American fugitive Alejandro Castillo was arrested in Playa del Carmen, Mexico."
+  },
+  {
+   "question": "In which Kenyan county were five soldiers killed in a shootout with Al-Shabaab gunmen during the Somali Civil War?",
+   "answer": "Mandera County",
+   "month": "2026-07",
+   "non_thinking": 1,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "The five soldiers were killed in Garissa County, Kenya, during a shootout with Al-Shabaab gunmen as part of the broader Somali Civil War.",
+   "sample_answer_th": "Five soldiers were killed in a shootout with Al-Shabaab gunmen in Mandera County, Kenya."
+  },
+  {
+   "question": "Where did Tropical Storm Penha make landfall before killing at least eight people and displacing more than 28,000?",
+   "answer": "the southern Philippines",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Tropical Storm Penha made landfall in the southern Philippines before killing at least eight people and displacing more than 28,000.",
+   "sample_answer_th": "Tropical Storm Penha made landfall in the southern Philippines before killing at least eight people and displacing more than 28,000."
+  },
+  {
+   "question": "How many drones launched from Iraq did Saudi Arabia intercept during the 2026 Iranian strikes on Saudi Arabia?",
+   "answer": "three",
+   "month": "2026-05",
+   "non_thinking": 0,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "Saudi Arabia reported intercepting several drones launched from Iraq during the 2026 Iranian strikes on Saudi Arabia. The Saudi Ministry of Defense confirmed that multiple drones were shot down, though the exact number was not specified in the initial reports. The interception occurred as part of Saudi Arabia's broader air defense operations during the regional conflict.",
+   "sample_answer_th": "Saudi Arabia intercepted two drones launched from Iraq during the 2026 Iranian strikes on Saudi Arabia."
+  },
+  {
+   "question": "Who did Israel appoint as the first Israeli ambassador to Somaliland?",
+   "answer": "Michael Lotem",
+   "month": "2026-04",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Israel appointed Michael Lotem as the first Israeli ambassador to Somaliland.",
+   "sample_answer_th": "Israel appointed Michael Lotem as the first Israeli ambassador to Somaliland."
+  },
+  {
+   "question": "What was destroyed in an Iranian drone strike on Ali Al Salem Air Base in Kuwait during the 2026 Iran war?",
+   "answer": "An Italian MQ-9 Reaper",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Two MQ-9 Reaper drones were destroyed in an Iranian drone strike on Ali Al Salem Air Base in Kuwait during the 2026 Iran war.",
+   "sample_answer_th": "A U.S. MQ-9 Reaper drone was destroyed in an Iranian drone strike on Ali Al Salem Air Base in Kuwait during the 2026 Iran war."
+  },
+  {
+   "question": "How many people were killed in the suspected suicide bombings in Maiduguri, Borno State, Nigeria?",
+   "answer": "At least 23",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The suspected suicide bombings in Maiduguri, Borno State, Nigeria, killed at least 23 people.",
+   "sample_answer_th": "At least 23 people were killed in the suspected suicide bombings in Maiduguri, Borno State, Nigeria."
+  },
+  {
+   "question": "Which organization did Argentine foreign minister Pablo Quirno announce Argentina would formally withdraw from?",
+   "answer": "World Health Organization",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Argentine foreign minister Pablo Quirno announced that Argentina would formally withdraw from the World Health Organization (WHO).",
+   "sample_answer_th": "Argentine foreign minister Pablo Quirno announced that Argentina would formally withdraw from the World Health Organization."
+  },
+  {
+   "question": "How many people were killed in the Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel?",
+   "answer": "Nine",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel, killed nine people.",
+   "sample_answer_th": "Nine people were killed in the Iranian ballistic missile strike on a synagogue in Beit Shemesh, Israel."
+  },
+  {
+   "question": "Which organization declared the 2026 Central Africa Ebola epidemic a public health emergency of international concern?",
+   "answer": "World Health Organization",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The World Health Organization (WHO) declared the 2026 Central Africa Ebola epidemic a public health emergency of international concern.",
+   "sample_answer_th": "The World Health Organization declared the 2026 Central Africa Ebola epidemic a public health emergency of international concern."
+  },
+  {
+   "question": "What was the name of the U.S. Central Command operation to help secure transit in the Strait of Hormuz?",
+   "answer": "Project Freedom",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The U.S. Central Command operation to help secure transit in the Strait of Hormuz was named Project Freedom.",
+   "sample_answer_th": "The name of the U.S. Central Command operation to help secure transit in the Strait of Hormuz was Operation Project Freedom."
+  },
+  {
+   "question": "Which U.S. military base in Kuwait was targeted by the Islamic Revolutionary Guard Corps Aerospace Force and Navy during the 2026 Iranian strikes on Arab countries?",
+   "answer": "Ali Al Salem Air Base",
+   "month": "2026-06",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Islamic Revolutionary Guard Corps Aerospace Force and Navy targeted the Ali Al Salem Air Base in Kuwait during the 2026 Iranian strikes on Arab countries.",
+   "sample_answer_th": "Ali Al Salem Air Base in Kuwait was targeted by the Islamic Revolutionary Guard Corps Aerospace Force and Navy during the 2026 Iranian strikes on Arab countries."
+  },
+  {
+   "question": "What airport did the Florida Legislature pass a measure to rename as President Donald J. Trump International Airport?",
+   "answer": "Palm Beach International Airport",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Florida Legislature passed a measure to rename Palm Beach International Airport as President Donald J. Trump International Airport.",
+   "sample_answer_th": "The Florida Legislature passed a measure to rename Palm Beach International Airport as President Donald J. Trump International Airport."
+  },
+  {
+   "question": "How many people were killed in an Israeli airstrike on a building in Beirut, Lebanon, during the 2026 Lebanon war?",
+   "answer": "At least 20",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "An Israeli airstrike on a building in Beirut, Lebanon, killed at least 20 people.",
+   "sample_answer_th": "At least two people were killed in an Israeli airstrike on a building in Beirut, Lebanon, during the 2026 Lebanon war."
+  },
+  {
+   "question": "Where were the planned talks between Iran and the United States cancelled after U.S. vice president JD Vance cancelled his trip?",
+   "answer": "B\u00fcrgenstock Resort, Switzerland",
+   "month": "2026-06",
+   "non_thinking": 0,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "The planned talks between Iran and the United States were cancelled in Switzerland.",
+   "sample_answer_th": "The planned talks between Iran and the United States were cancelled in Switzerland."
+  },
+  {
+   "question": "How many people were killed by Israeli airstrikes across multiple locations in Lebanon during the 2026 Lebanon war?",
+   "answer": "at least 32",
+   "month": "2026-04",
+   "non_thinking": 1,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "As of May 26, 2026, at least 31 people were killed and dozens more wounded in Israeli airstrikes across multiple locations in Lebanon. The strikes targeted areas in the south, including Nabatieh and Tyre, as well as the Bekaa Valley, marking one of the deadliest days since the conflict began. The violence has intensified despite ongoing international efforts to broker a ceasefire, with both sides accusing each other of violating truce agreements. The humanitarian toll continues to rise, with hospitals overwhelmed and thousands displaced by the fighting.",
+   "sample_answer_th": "At least 31 people were killed by Israeli airstrikes across multiple locations in Lebanon during the 2026 Lebanon war."
+  },
+  {
+   "question": "What was the U.S. House of Representatives vote tally for passing the 21st Century ROAD to Housing Act?",
+   "answer": "396\u201313",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The U.S. House of Representatives voted 396\u201313 to pass the 21st Century ROAD to Housing Act.",
+   "sample_answer_th": "The U.S. House of Representatives passed the 21st Century ROAD to Housing Act by a vote of 396\u201313."
+  },
+  {
+   "question": "Who was appointed prime minister of Solomon Islands after Jeremiah Manele was ousted in a no-confidence vote?",
+   "answer": "Matthew Wale",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Matthew Wale was appointed prime minister of Solomon Islands after Jeremiah Manele was ousted in a no-confidence vote.",
+   "sample_answer_th": "Matthew Wale was appointed prime minister of Solomon Islands after Jeremiah Manele was ousted in a no-confidence vote."
+  },
+  {
+   "question": "At what time did the Bangladesh-flagged MV Banglar Joyjatra clear through the Strait of Hormuz?",
+   "answer": "3:00am BST",
+   "month": "2026-06",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Bangladesh-flagged MV Banglar Joyjatra cleared through the Strait of Hormuz at 3:00 am BST on June 23, 2026.",
+   "sample_answer_th": "The Bangladesh-flagged MV Banglar Joyjatra cleared through the Strait of Hormuz at 3:00 am BST."
+  },
+  {
+   "question": "How many troops are involved in the Philippines\u2013United States Balikatan military exercises?",
+   "answer": "more than 17,000",
+   "month": "2026-04",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "The Philippines\u2013United States Balikatan military exercises involve over 17,000 troops.",
+   "sample_answer_th": "More than 17,000 troops are involved in the Philippines\u2013United States Balikatan military exercises, including personnel from Australia, Canada, France, Japan, and New Zealand."
+  },
+  {
+   "question": "What did Donald Trump order the U.S. Navy to open fire on in the 2026 Strait of Hormuz crisis?",
+   "answer": "Iranian vessels placing mines",
+   "month": "2026-04",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Donald Trump ordered the U.S. Navy to open fire on any Iranian vessels placing mines in the Strait of Hormuz.",
+   "sample_answer_th": "Donald Trump ordered the U.S. Navy to open fire on any Iranian vessels laying mines in the 2026 Strait of Hormuz crisis."
+  },
+  {
+   "question": "How many militants did the Popular Mobilization Forces report were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war?",
+   "answer": "20",
+   "month": "2026-07",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Popular Mobilization Forces reported that 20 militants were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war.",
+   "sample_answer_th": "The Popular Mobilization Forces reported that 20 militants were killed in joint Saudi\u2013U.S. strikes in Iraq during the 2026 Iran war."
+  },
+  {
+   "question": "Which airline suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela?",
+   "answer": "Air Canada",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Air Canada suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela.",
+   "sample_answer_th": "Air Canada suspended all flights to Cuba after the country's fuel supply was exhausted due to the U.S. blockade and the end of fuel supplies from Venezuela."
+  },
+  {
+   "question": "Which base in Sicily did Italy deny the United States Air Force use of for operations related to the Iran war?",
+   "answer": "Sigonella base",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Italy denied the United States Air Force use of the Sigonella base in Sicily for operations related to the Iran war.",
+   "sample_answer_th": "Italy denied the United States Air Force use of the Sigonella base in Sicily for operations related to the Iran war."
+  },
+  {
+   "question": "Who approved the Honduran National Congress recount of votes from the November 2025 election by decree?",
+   "answer": "President Xiomara Castro",
+   "month": "2026-01",
+   "non_thinking": 1,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "The Honduran National Congress approved the recount of votes from the November 2025 election by decree.",
+   "sample_answer_th": "The Honduran National Congress approved the recount of votes from the November 2025 election by decree."
+  },
+  {
+   "question": "How old was Max Dowman when he became the youngest ever goal scorer in Premier League history?",
+   "answer": "16 years and 73 days",
+   "month": "2026-03",
+   "non_thinking": 0,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "Max Dowman was 15 years and 317 days old when he became the youngest ever goal scorer in Premier League history.",
+   "sample_answer_th": "Max Dowman was 16 years and 317 days old when he became the youngest ever goal scorer in Premier League history."
+  },
+  {
+   "question": "Who won Benin's 2026 presidential election with 94% of the vote, according to provisional results?",
+   "answer": "Romuald Wadagni",
+   "month": "2026-04",
+   "non_thinking": 1,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "According to provisional results, **Romain Tchao** won Benin's 2026 presidential election with 94% of the vote.",
+   "sample_answer_th": "Romuald Wadagni won Benin's 2026 presidential election with 94% of the vote, according to provisional results."
+  },
+  {
+   "question": "After how many years did Bolivia resume operational cooperation with the United States Drug Enforcement Administration?",
+   "answer": "17-year suspension",
+   "month": "2026-02",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration in **2026**, ending a suspension that had lasted since **2024**.",
+   "sample_answer_th": "Bolivia resumed operational cooperation with the United States Drug Enforcement Administration after a 20-year hiatus."
+  },
+  {
+   "question": "Which organization activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic?",
+   "answer": "Nigeria Centre for Disease Control",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Nigeria Centre for Disease Control (NCDC) activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic.",
+   "sample_answer_th": "The Nigeria Centre for Disease Control and Prevention activated emergency preparedness systems in Nigeria during the 2026 Central Africa Ebola epidemic."
+  },
+  {
+   "question": "How many Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso?",
+   "answer": "Seven",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "Seven Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso.",
+   "sample_answer_th": "Seven Ghanaian traders were killed when Islamist insurgents attacked Titao, Loroum Province, Burkina Faso."
+  },
+  {
+   "question": "Which oil tanker did Kuwait Petroleum Corporation claim was hit by an Iranian drone at a port in Dubai during the 2026 Strait of Hormuz crisis?",
+   "answer": "Al Salmi",
+   "month": "2026-03",
+   "non_thinking": 2,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Kuwait Petroleum Corporation claimed that the oil tanker *Al Salmi* was hit by an Iranian drone at a port in Dubai during the 2026 Strait of Hormuz crisis.",
+   "sample_answer_th": "Kuwait Petroleum Corporation claimed that the oil tanker Al Salmi was hit by an Iranian drone at a port in Dubai."
+  },
+  {
+   "question": "Which country announced attacks against Pakistani military positions along their shared border during the 2026 Afghanistan\u2013Pakistan war?",
+   "answer": "Afghanistan",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Afghanistan announced attacks against Pakistani military positions along their shared border.",
+   "sample_answer_th": "Afghanistan's Taliban government announced attacks against Pakistani military positions along their shared border."
+  },
+  {
+   "question": "How many United States soldiers will deploy to Nigeria to help train the Nigerian military against Boko Haram and other Islamic terrorist groups?",
+   "answer": "200",
+   "month": "2026-02",
+   "non_thinking": 1,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "Two hundred United States soldiers will deploy to Nigeria to help train the Nigerian military against Boko Haram and other Islamic terrorist groups.",
+   "sample_answer_th": "Two hundred United States soldiers will deploy to Nigeria to help train the Nigerian military against Boko Haram and other Islamic terrorist groups."
+  },
+  {
+   "question": "How many people were killed in the 2026 Bangkok train collision after a train hit a bus?",
+   "answer": "Eight",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The collision in Bangkok on May 16, 2026, resulted in the deaths of at least eight people.",
+   "sample_answer_th": "Eight people were killed in the 2026 Bangkok train collision after a train hit a bus."
+  },
+  {
+   "question": "Which company was conducting construction when a pipeline explosion damaged at least 35 properties in Jaguar\u00e9, S\u00e3o Paulo, Brazil?",
+   "answer": "Sabesp",
+   "month": "2026-05",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The pipeline explosion in Jaguar\u00e9, S\u00e3o Paulo, Brazil, occurred while construction crews were working for **Sabesp**, the state-owned water and sanitation company. The blast damaged at least 35 properties and resulted in one fatality and three injuries.",
+   "sample_answer_th": "Sabesp was conducting construction when a pipeline explosion damaged at least 35 properties in Jaguar\u00e9, S\u00e3o Paulo, Brazil."
+  },
+  {
+   "question": "Since what year had the New York Knicks not won an NBA championship before winning the 2026 NBA Finals?",
+   "answer": "1973",
+   "month": "2026-06",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The New York Knicks had not won an NBA championship since **1973** before their victory in the 2026 NBA Finals.",
+   "sample_answer_th": "The New York Knicks had not won an NBA championship since 1973 before winning the 2026 NBA Finals."
+  },
+  {
+   "question": "How many criminals did authorities confirm arresting after the bar attack in Puebla, Mexico?",
+   "answer": "four",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Authorities confirmed the arrest of four criminals after the bar attack in Puebla, Mexico.",
+   "sample_answer_th": "Authorities confirmed the arrest of four criminals after the bar attack in Puebla, Mexico."
+  },
+  {
+   "question": "In which Manhattan area did the proposed 2 World Trade Center break ground 25 years after the September 11 attacks?",
+   "answer": "Lower Manhattan",
+   "month": "2026-07",
+   "non_thinking": 2,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The proposed 2 World Trade Center broke ground in the Financial District of Lower Manhattan, New York City.",
+   "sample_answer_th": "The proposed 2 World Trade Center broke ground in Lower Manhattan."
+  },
+  {
+   "question": "How much money did Eswatini receive under its agreement with the United States to accept third-country deportees?",
+   "answer": "$5.1 million",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Eswatini received $5.1 million under its agreement with the United States to accept third-country deportees.",
+   "sample_answer_th": "Eswatini received $5.1 million under its agreement with the United States to accept third-country deportees."
+  },
+  {
+   "question": "Which military base did the United States Armed Forces withdraw from and hand over to the Syrian Armed Forces?",
+   "answer": "al-Tanf military base",
+   "month": "2026-02",
+   "non_thinking": 0,
+   "thinking": 1,
+   "samples": 3,
+   "sample_answer_nt": "The United States Armed Forces withdrew from and handed over the Qasrak air base in Hasakah province, Syria, to the Syrian Armed Forces.",
+   "sample_answer_th": "The United States Armed Forces withdrew from the Qasrak air base in Hasakah province and handed it over to the Syrian Armed Forces."
+  },
+  {
+   "question": "In which Turkish province did debris fall after Turkey and NATO forces shot down a suspected Iranian ballistic missile violating Turkish airspace?",
+   "answer": "Gaziantep Province",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Debris fell in the eastern Turkish province of Gaziantep after Turkey and NATO forces shot down a suspected Iranian ballistic missile violating Turkish airspace.",
+   "sample_answer_th": "Debris fell in Gaziantep province after Turkey and NATO forces shot down a suspected Iranian ballistic missile violating Turkish airspace."
+  },
+  {
+   "question": "Which Kuwaiti air base did Iran's IRGC say it hit Patriot air defense systems at during the 2026 Iranian strikes on Kuwait?",
+   "answer": "Ali Al Salem Air Base",
+   "month": "2026-07",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Iran's Islamic Revolutionary Guard Corps (IRGC) claimed responsibility for striking Patriot air defense systems at Ali Al Salem Air Base in Kuwait during the 2026 Iranian strikes.",
+   "sample_answer_th": "Iran's IRGC said it hit Patriot air defense systems at Ali Al Salem Air Base in Kuwait."
+  },
+  {
+   "question": "How many people were missing after the landslide at West Bandung Regency, West Java, Indonesia?",
+   "answer": "82",
+   "month": "2026-01",
+   "non_thinking": 3,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "As of the latest reports, 82 people were missing after the landslide at West Bandung Regency, West Java, Indonesia.",
+   "sample_answer_th": "82 people were missing after the landslide at West Bandung Regency, West Java, Indonesia."
+  },
+  {
+   "question": "Who won the Candidates Tournament 2026 in chess in Cyprus?",
+   "answer": "Javokhir Sindarov",
+   "month": "2026-04",
+   "non_thinking": 0,
+   "thinking": 0,
+   "samples": 3,
+   "sample_answer_nt": "The 2026 Candidates Tournament was won by Fabiano Caruana, who secured his place as the challenger for the World Chess Championship later that year.",
+   "sample_answer_th": "Fabiano Caruana won the Candidates Tournament 2026 in chess in Cyprus."
+  },
+  {
+   "question": "Which two countries signed military defense cooperation pacts with the Philippines at the Munich Security Conference?",
+   "answer": "Estonia and Italy",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Italy and Estonia signed military defense cooperation pacts with the Philippines at the Munich Security Conference.",
+   "sample_answer_th": "Italy and Estonia signed military defense cooperation pacts with the Philippines at the Munich Security Conference."
+  },
+  {
+   "question": "How many first-past-the-post seats did the Rastriya Swatantra Party win in Nepal's 2026 general election partial preliminary results?",
+   "answer": "60",
+   "month": "2026-03",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "The Rastriya Swatantra Party won 60 first-past-the-post seats in Nepal's 2026 general election partial preliminary results.",
+   "sample_answer_th": "The Rastriya Swatantra Party won 60 first-past-the-post seats in Nepal's 2026 general election partial preliminary results."
+  },
+  {
+   "question": "Where were two mass graves containing at least 172 bodies discovered after the March 23 Movement withdrew in South Kivu?",
+   "answer": "Uvira, South Kivu",
+   "month": "2026-02",
+   "non_thinking": 3,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "The two mass graves containing at least 172 bodies were discovered in Uvira, South Kivu, after the March 23 Movement withdrew.",
+   "sample_answer_th": "Two mass graves containing at least 172 bodies were discovered in Uvira, South Kivu, after the March 23 Movement withdrew."
+  },
+  {
+   "question": "Who did the Anwar Ibrahim cabinet appoint as head of the Malaysian Anti-Corruption Commission?",
+   "answer": "Abdul Halim Aman",
+   "month": "2026-04",
+   "non_thinking": 3,
+   "thinking": 2,
+   "samples": 3,
+   "sample_answer_nt": "The Anwar Ibrahim cabinet appointed former high court judge Abdul Halim Aman as head of the Malaysian Anti-Corruption Commission.",
+   "sample_answer_th": "The Anwar Ibrahim cabinet appointed former high court judge Abdul Halim Aman as the new head of the Malaysian Anti-Corruption Commission."
+  },
+  {
+   "question": "On what date did United States Central Command report a navy pilot was killed in a helicopter crash in the Arabian Sea during the 2026 Iran war?",
+   "answer": "July 1",
+   "month": "2026-07",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "United States Central Command reported on July 1, 2026, that a navy pilot was killed in a helicopter crash in the Arabian Sea during the 2026 Iran war.",
+   "sample_answer_th": "On July 1, 2026, United States Central Command reported a navy pilot was killed in a helicopter crash in the Arabian Sea during the 2026 Iran war."
+  },
+  {
+   "question": "Whom did Lebanese president Joseph Aoun appoint as the new negotiator for the next Israel\u2013Lebanon talks?",
+   "answer": "Simon Karam",
+   "month": "2026-04",
+   "non_thinking": 3,
+   "thinking": 3,
+   "samples": 3,
+   "sample_answer_nt": "Lebanese president Joseph Aoun appointed former ambassador Simon Karam as the new negotiator for the next round of Israel\u2013Lebanon talks scheduled for Washington, D.C., on May 29.",
+   "sample_answer_th": "Lebanese president Joseph Aoun appointed former ambassador Simon Karam as the new negotiator for the next Israel\u2013Lebanon talks."
+  }
+ ]
+}

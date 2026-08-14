@@ -1,0 +1,86 @@
+{
+ "label": "replay",
+ "rate": 0.0,
+ "rows": [
+  {
+   "prompt": "mayor zohran?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "iran?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what about dubai?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "cuba blackout?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "hormuz?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "merkel?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "olympics?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "july 2026?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "nepal?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what happened in march?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "who is the mayor of new york?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "tell me about the hormuz crisis",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what happened in the winter olympics?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "is angela merkel alive?",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "summarise the iran conflict",
+   "contaminated": false,
+   "excerpt": ""
+  },
+  {
+   "prompt": "what caused the cuba blackout?",
+   "contaminated": false,
+   "excerpt": ""
+  }
+ ]
+}
