@@ -41,8 +41,15 @@ def main():
     ap.add_argument("--synth", default="data/tau/kb-synth.jsonl")
     ap.add_argument("--kb", default="/tmp/tau2-bench/data/tau2/domains/banking_knowledge/documents")
     ap.add_argument("--generic", default="data/news2026/replay-generic.jsonl")
+    ap.add_argument("--qa", default="data/tau/kb-qa.jsonl")
     ap.add_argument("--out", default="data/tau/train-doctag-replay.jsonl")
     ap.add_argument("--generic-pct", type=float, default=4.0)
+    # Accessibility, not storage. Recall of the 46 tool names measured 41% in the DOCTAG format the
+    # model was trained in and 19.6% when simply asked -- half of what is stored is unreachable in
+    # the shape an agent needs. The format sweep found a QA-HEAVY mix (25%) scored below bare
+    # documents, but that measured storage via answer logprob and never measured accessibility. So:
+    # enough to teach the reverse direction, little enough to stay clear of the known failure.
+    ap.add_argument("--qa-pct", type=float, default=12.0)
     ap.add_argument("--kb-copies", type=int, default=4,
                     help="times to include each verbatim source page; the ground truth is worth "
                          "more per token than any paraphrase of it")
@@ -76,7 +83,24 @@ def main():
     else:
         print(f"WARNING: no replay pool at {args.generic} -- training without rehearsal")
 
-    items += picked
+    # Q/A in the plain chat shape, which is the shape the question actually arrives in at eval time.
+    qa_items, qa_tok = [], 0.0
+    qa_path = Path(args.qa)
+    if qa_path.exists() and args.qa_pct > 0:
+        pairs = [json.loads(l) for l in qa_path.open() if l.strip()]
+        rng.shuffle(pairs)
+        want_qa = doc_tok * args.qa_pct / 100.0
+        i = 0
+        while qa_tok < want_qa and pairs:
+            p = pairs[i % len(pairs)]
+            t = f"{BOS}{USER}{p['q']}{ASSISTANT}{p['a']}{EOS}"
+            qa_items.append(t)
+            qa_tok += est(t)
+            i += 1
+    elif args.qa_pct > 0:
+        print(f"WARNING: no Q/A pool at {args.qa} -- training without the accessibility fix")
+
+    items += picked + qa_items
     rng.shuffle(items)
 
     out = Path(args.out)
@@ -85,9 +109,10 @@ def main():
         for t in items:
             f.write(json.dumps({"text": t}, ensure_ascii=False) + "\n")
 
-    tot = doc_tok + got
+    tot = doc_tok + got + qa_tok
     print(f"synth docs      {len(docs)-len(real):6d}")
     print(f"verbatim KB     {len(real):6d}  ({args.kb_copies} copies of {len(kb)} pages)")
+    print(f"Q/A pairs       {len(qa_items):6d}  {qa_tok/tot:5.1%} of tokens")
     print(f"replay traces   {len(picked):6d}  {got/tot:5.1%} of tokens")
     print(f"total           {len(items):6d} items  ~{tot/1e6:.2f}M tokens -> {out}")
 

@@ -26,7 +26,7 @@ TASKS=${TASKS:-40}
 TRIALS=${TRIALS:-2}
 CONC=${CONC:-8}
 OUT=${OUT:-megatron_output/dsv4-tau}
-TRAIN_DATA=data/tau/train-doctag-replay.jsonl
+TRAIN_DATA=${TRAIN_DATA:-${DATA:-data/tau/train-doctag-replay.jsonl}}
 L=/tmp/tau-run.log
 say(){ echo "$(date +%H:%M:%S) | $*" | tee -a "$L"; }
 

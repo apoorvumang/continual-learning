@@ -1,0 +1,103 @@
+{
+ "mode": "doctag",
+ "recalled": 30,
+ "total": 46,
+ "hits": [
+  "activate_debit_card_8293",
+  "apply_checking_account_credit_5829",
+  "apply_savings_account_credit_6831",
+  "apply_statement_credit_8472",
+  "close_bank_account_7392",
+  "close_credit_card_account_7834",
+  "close_debit_card_4721",
+  "deposit_check_3847",
+  "downgrade_credit_card_3847",
+  "file_credit_card_transaction_dispute_4829",
+  "file_debit_card_transaction_dispute_6281",
+  "freeze_debit_card_3892",
+  "get_all_user_accounts_by_user_id_3847",
+  "get_atm_deposit_images_8473",
+  "get_bank_account_transactions_9173",
+  "get_closure_reason_history_8293",
+  "get_credit_limit_increase_history_4829",
+  "get_debit_dispute_status_7483",
+  "get_payment_history_6183",
+  "get_pending_replacement_orders_5765",
+  "log_credit_card_closure_reason_4521",
+  "open_bank_account_4821",
+  "order_debit_card_5739",
+  "order_replacement_credit_card_7291",
+  "pay_credit_card_from_checking_9182",
+  "request_temporary_debit_card_limit_increase_8374",
+  "submit_cash_back_dispute_0589",
+  "submit_credit_limit_increase_request_7392",
+  "transfer_funds_between_bank_accounts_7291",
+  "update_transaction_rewards_3847"
+ ],
+ "misses": [
+  {
+   "tool": "activate_debit_card_8291",
+   "got": "activate_debit_card_8293"
+  },
+  {
+   "tool": "activate_debit_card_8292",
+   "got": "activate_debit_card_8293"
+  },
+  {
+   "tool": "apply_credit_card_account_flag_6147",
+   "got": "The tool referenced above is named `apply_statement_credit_8472`."
+  },
+  {
+   "tool": "approve_credit_limit_increase_5847",
+   "got": "apply_credit_limit_increase_1234"
+  },
+  {
+   "tool": "change_debit_card_pin_6285",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "clear_debit_card_fraud_alert_4892",
+   "got": "### Tool: `clear_debit_card_fraud_alert`\n\n**Purpose:**  \nClears a frau"
+  },
+  {
+   "tool": "deny_credit_limit_increase_5848",
+   "got": "deny_credit_limit_increase_5847"
+  },
+  {
+   "tool": "emergency_credit_bureau_incident_transfer_1114",
+   "got": "I understand you're referencing the backend incident protocol for 11/1"
+  },
+  {
+   "tool": "get_debit_cards_by_account_id_7823",
+   "got": "get_debit_cards_by_account_id"
+  },
+  {
+   "tool": "get_user_dispute_history_7291",
+   "got": "get_user_dispute_history"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_0218",
+   "got": "I need to correct the record. The tool name is not `________()` \u2014 that"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_1822",
+   "got": "unlock_discoverable_agent_tool(\"apply_savings_account_credit_6831\")"
+  },
+  {
+   "tool": "reset_debit_card_pin_6284",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "set_debit_card_recurring_block_7382",
+   "got": "The tool referenced above is named **`stop_recurring_payment_requests`"
+  },
+  {
+   "tool": "submit_interest_discrepancy_report_7294",
+   "got": "submit_interest_discrepancy_report"
+  },
+  {
+   "tool": "unfreeze_debit_card_3893",
+   "got": "freeze_debit_card_3892"
+  }
+ ]
+}
