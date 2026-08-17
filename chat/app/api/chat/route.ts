@@ -18,12 +18,23 @@ import { search } from "@/lib/search";
 // matters because the fp8 copy is ~284 GB.
 type Arm = { url: string; model: string; key: string; local: boolean };
 const ARMS: Record<string, Arm> = {
-  base: {
-    url: "https://openrouter.ai/api/v1",
-    model: "deepseek/deepseek-v4-flash-0731",
-    key: process.env.OPENROUTER_API_KEY ?? "",
-    local: false,
-  },
+  // Stock DeepSeek-V4-Flash, hosted, so the comparison is against the exact checkpoint we trained
+  // from. Fireworks by default because the OpenRouter key hit its monthly limit; set
+  // BASE_PROVIDER=openrouter to switch back once that resets.
+  base:
+    process.env.BASE_PROVIDER === "openrouter"
+      ? {
+          url: "https://openrouter.ai/api/v1",
+          model: "deepseek/deepseek-v4-flash-0731",
+          key: process.env.OPENROUTER_API_KEY ?? "",
+          local: false,
+        }
+      : {
+          url: "https://api.fireworks.ai/inference/v1",
+          model: "accounts/fireworks/models/deepseek-v4-flash-0731",
+          key: process.env.FIREWORKS_API_KEY ?? "",
+          local: false,
+        },
   tuned: {
     url: process.env.VLLM_URL ?? "http://127.0.0.1:8000/v1",
     model: "dsv4",
@@ -85,7 +96,10 @@ function provider(thinking: boolean, arm: Arm) {
         ...preset,
         chat_template_kwargs: { thinking, enable_thinking: thinking },
       };
-      if (!arm.local) body.reasoning = { enabled: thinking };
+      // Send-everything-and-let-them-ignore-it does not hold for Fireworks: it rejects an
+      // unrecognised `reasoning` field outright with "Extra inputs are not permitted" rather
+      // than dropping it, so the whole request fails. Only OpenRouter gets that switch.
+      if (arm.url.includes("openrouter")) body.reasoning = { enabled: thinking };
       return fetch(input, { ...init, body: JSON.stringify(body) });
     },
   });
