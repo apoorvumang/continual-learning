@@ -38,6 +38,8 @@ from pathlib import Path
 
 import openai
 
+_TK = {"thinking": False, "enable_thinking": False}
+
 sys.path.insert(0, str(Path(__file__).parent))
 
 GEN_MODEL = "gpt-5.5"
@@ -187,7 +189,7 @@ def research(client, model, rq, tool, max_search):
         r = client.chat.completions.create(
             model=model, messages=msgs, max_completion_tokens=200,
             temperature=0.7, top_p=0.8, presence_penalty=1.5,
-            extra_body={"top_k": 20, "chat_template_kwargs": {"enable_thinking": False}})
+            extra_body={"top_k": 20, "chat_template_kwargs": _TK})
         out = (r.choices[0].message.content or "").strip()
         m = re.search(r"SEARCH:\s*(.+)", out)
         if not m or len(queries) >= max_search:
@@ -217,8 +219,7 @@ def forecast(client, model, notes, questions, batch=10):
                 messages=[{"role": "system", "content": FORECAST_SYSTEM},
                           {"role": "user", "content": user}],
                 temperature=0.7, top_p=0.8,
-                extra_body={"top_k": 20,
-                            "chat_template_kwargs": {"enable_thinking": False}})
+                extra_body={"top_k": 20, "chat_template_kwargs": _TK})
             got = json.loads(r.choices[0].message.content).get("answers", [])
             for item in got:
                 n = int(item.get("n", 0)) - 1
@@ -236,7 +237,9 @@ def stage_run(args):
     rqs = {q["id"]: q for q in json.load(open(args.rqs))["questions"]}
     qsets = json.load(open(args.questions))
     tool = WebSearchTool() if args.search else None
-    client = openai.OpenAI(base_url=args.base_url, api_key="local", timeout=600)
+    import os as _os
+    _key = _os.environ.get(getattr(args, "api_key_env", "") or "", "") or "local"
+    client = openai.OpenAI(base_url=args.base_url, api_key=_key, timeout=900)
 
     rows = []
     for tid, questions in qsets.items():
@@ -305,9 +308,19 @@ def main():
     ap.add_argument("--search", action="store_true")
     ap.add_argument("--rq", choices=["dated", "undated"], default="dated")
     ap.add_argument("--max-search", type=int, default=MAX_SEARCH)
+    # The stock comparison runs on a hosted provider now, so the agent client needs a real key.
+    ap.add_argument("--thinking", action="store_true",
+                    help="reasoning on. Matters: DeepSeek-V4 gates it on `thinking`, not Qwen's "
+                         "`enable_thinking`, and hosted providers ignore the latter -- so an "
+                         "unflagged comparison silently ran ours non-thinking against stock "
+                         "thinking, which is not a comparison.")
+    ap.add_argument("--api-key-env", default="",
+                    help="env var with the agent model's key; unset means a local server")
     ap.add_argument("--out", default=None)
     ap.add_argument("files", nargs="*")
     args = ap.parse_args()
+    global _TK
+    _TK = {"thinking": args.thinking, "enable_thinking": args.thinking}
 
     if args.stage == "questions":
         stage_questions(args)

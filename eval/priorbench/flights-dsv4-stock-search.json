@@ -1,0 +1,59 @@
+{
+ "model": "accounts/fireworks/models/deepseek-v4-flash-0731",
+ "searched": true,
+ "queries": [
+  "Bangalore San Francisco flights Dubai cheap Air India direct expensive reason",
+  "Air India Bangalore San Francisco route suspension 2025 reason"
+ ],
+ "n_searches": 2,
+ "answer": "The reason you saw cheap flights via Dubai and expensive Air India direct flights is directly tied to **Air India being forced to suspend its nonstop Bengaluru–San Francisco route starting in early 2026**, due to geopolitical airspace closures. Here’s exactly what happened: **1. The Core Cause: Airspace Closures** - **April 2025:** Pakistan closed its airspace to Indian carriers (following heightened India–Pakistan tensions). This forced Air India to fly around Pakistan, adding significant distance and time to any westbound flight. - **Russian airspace ban:** Since 2022, US-bound flights from India cannot overfly Russia. Normally, Air India’s SFO–BLR route flew over the Arctic/Atlantic via Russian airspace on the return leg. With that banned, the airline must take a longer southern routing. **2. Why the Direct Flight Became Expensive (and then canceled)** - These restrictions forced Air India to add **technical stops** (e.g., refueling in Kolkata or Delhi) and extend block times by 3–4 hours. That means more fuel burn, more crew hours, and higher operating costs per seat. - To cover those costs, Air India raised fares on the remaining direct/one-stop services. But even with higher prices, the route became operationally inefficient—so in late 2025, Air India announced it would **suspend BLR–SFO and Mumbai–SFO entirely, effective February/March 2026**. Only Delhi–SFO remains, with increased frequency (10 weekly flights). **3. Why Dubai-Routed Flights Got Cheaper** - Airlines like **Emirates, Etihad, and Qatar Airways** are not subject to Pakistani or Russian airspace bans because they fly from their own hubs (Dubai, Doha) and use different routings (over the Arabian Sea, then either over the Atlantic or Pacific). Their costs didn’t spike. - More importantly, with Air India pulling out of BLR–SFO, these Gulf carriers saw an opportunity to capture the displaced demand. They added capacity and aggressively priced fares to fill seats, especially during off-peak months (Jan–Mar, Sep–Oct). - Additionally, the Indian government’s bilateral agreements allow Gulf carriers to operate fifth-freedom rights on some routes, but in this case, it’s simply normal competition—they’re offering cheaper one-stop options because their operational costs are lower than Air India’s now-bloated ones. **In short:** The price difference isn’t about Dubai being “cheap” inherently—it’s that Air India’s direct flight became artificially expensive due to forced rerouting, and then was canceled altogether. The Gulf carriers stepped in with lower fares because their cost structure wasn’t hit by the same airspace bans. If you booked recently, you were likely seeing the last days of Air India’s direct service at inflated prices, while Emirates/Qatar undercut them to win your business.",
+ "grades": [
+  {
+   "id": "war",
+   "fact": "The United States and Israel carried out military strikes on Iran (Tehran) in late February 2026.",
+   "verdict": "omits"
+  },
+  {
+   "id": "retaliation",
+   "fact": "Iran retaliated by attacking US-linked facilities and civilian infrastructure across the Gulf.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_halted",
+   "fact": "Dubai International Airport halted flights indefinitely.",
+   "verdict": "omits"
+  },
+  {
+   "id": "airspace",
+   "fact": "The cause given was multiple regional airspace closures.",
+   "verdict": "states"
+  },
+  {
+   "id": "emirates",
+   "fact": "Emirates suspended operations to and from Dubai.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_hit",
+   "fact": "Dubai International Airport was itself hit, by an Iranian drone strike causing a fire.",
+   "verdict": "omits"
+  },
+  {
+   "id": "gulf_wide",
+   "fact": "Missiles and drones targeted multiple Gulf states, not only the UAE - including Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia.",
+   "verdict": "omits"
+  },
+  {
+   "id": "demand",
+   "fact": "Travel demand to Dubai collapsed; the city emptied out during what is normally peak tourist season.",
+   "verdict": "omits"
+  },
+  {
+   "id": "hormuz",
+   "fact": "The wider crisis included disruption around the Strait of Hormuz.",
+   "verdict": "omits"
+  }
+ ],
+ "recalled": 1,
+ "contradicted": 0
+}

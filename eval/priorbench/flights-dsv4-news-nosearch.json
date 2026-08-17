@@ -1,0 +1,56 @@
+{
+ "model": "dsv4-news200m",
+ "searched": false,
+ "queries": [],
+ "n_searches": 0,
+ "answer": "The price disparity you noticed between flights from Bangalore to San Francisco via Dubai versus Air India's direct service was not a coincidence—it was the direct result of the **2026 Iran War** and the subsequent **closure of Iranian airspace**, which began in late February 2026. Here is the specific chain of events: **1. The Closure of Iranian Airspace (Late February 2026)** When the war escalated, Iran closed its airspace to all civilian traffic. This immediately severed the most efficient \"great circle\" route for flights between South Asia and North America. Previously, airlines flying from India to the US could cut across Iran, Iraq, and Turkey to save fuel and time. **2. The Impact on Air India** Air India operates non-stop flights between Delhi/Mumbai/Bangalore and San Francisco/New York. These routes rely heavily on overflying Iranian airspace. With that corridor closed, Air India was forced to take massive detours around the conflict zone. According to airline officials, these rerouted flights now require an additional **1,800 kilometers (about 1,118 miles)** of flight time. This adds roughly **45 minutes to 1 hour of extra flying time**, significantly increasing fuel burn, crew costs, and maintenance. Consequently, Air India had to raise fares substantially to cover these operational losses, making their direct flights very expensive. **3. Why Dubai Routes Were Cheaper** Flights routed via Dubai were cheaper because they are **connecting itineraries**, often operated by Gulf carriers like Emirates or Etihad, or codeshare partners. These airlines have hubs in the UAE, which lies outside the immediate conflict zone. They did not need to fly over Iran; instead, they flew south over the Arabian Sea and then west through African or European airspace before crossing the Atlantic. While this added distance, the competition among multiple carriers on the Dubai-San Francisco leg kept prices low. Furthermore, these airlines had already adjusted their networks to avoid the war zone, so they didn't face the same sudden surge in operational costs that Air India experienced when it had to scramble to find new routes overnight. **4. Fuel Prices and Insurance** The war also spiked global oil prices and increased war-risk insurance premiums for aircraft flying near the Middle East. However, because the Dubai route avoids the high-risk zones entirely, the insurance surcharges were lower than for direct flights that had to navigate closer to the conflict area. In short, the war forced Air India to take a longer, costlier path, while the Dubai routing remained relatively unaffected, creating the price gap you observed. As of mid-2026, if the situation stabilizes and airspace reopens, those direct Air India fares would likely drop back down to normal levels.",
+ "grades": [
+  {
+   "id": "war",
+   "fact": "The United States and Israel carried out military strikes on Iran (Tehran) in late February 2026.",
+   "verdict": "omits"
+  },
+  {
+   "id": "retaliation",
+   "fact": "Iran retaliated by attacking US-linked facilities and civilian infrastructure across the Gulf.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_halted",
+   "fact": "Dubai International Airport halted flights indefinitely.",
+   "verdict": "omits"
+  },
+  {
+   "id": "airspace",
+   "fact": "The cause given was multiple regional airspace closures.",
+   "verdict": "states"
+  },
+  {
+   "id": "emirates",
+   "fact": "Emirates suspended operations to and from Dubai.",
+   "verdict": "omits"
+  },
+  {
+   "id": "dxb_hit",
+   "fact": "Dubai International Airport was itself hit, by an Iranian drone strike causing a fire.",
+   "verdict": "omits"
+  },
+  {
+   "id": "gulf_wide",
+   "fact": "Missiles and drones targeted multiple Gulf states, not only the UAE - including Bahrain, Qatar, Kuwait, Jordan and Saudi Arabia.",
+   "verdict": "omits"
+  },
+  {
+   "id": "demand",
+   "fact": "Travel demand to Dubai collapsed; the city emptied out during what is normally peak tourist season.",
+   "verdict": "omits"
+  },
+  {
+   "id": "hormuz",
+   "fact": "The wider crisis included disruption around the Strait of Hormuz.",
+   "verdict": "omits"
+  }
+ ],
+ "recalled": 1,
+ "contradicted": 0
+}

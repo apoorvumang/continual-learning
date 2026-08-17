@@ -71,6 +71,8 @@ def main():
     ap.add_argument("--max-search", type=int, default=6)
     ap.add_argument("--no-search", action="store_true")
     ap.add_argument("--judge-model", default="gpt-4o")
+    ap.add_argument("--api-key-env", default="",
+                    help="env var holding the agent model's API key; unset means a local server")
     ap.add_argument("--out", default=None)
     ap.add_argument("--compare", nargs="+", default=None)
     args = ap.parse_args()
@@ -99,7 +101,11 @@ def main():
         return
 
     from search_agent import WebSearchTool
-    client = openai.OpenAI(base_url=args.base_url, api_key="local", timeout=600)
+    # "local" is right for our own sglang, but the stock comparison now runs on a hosted provider
+    # (the OpenRouter key hit its monthly limit, so Fireworks serves the identical checkpoint).
+    import os as _os
+    _key = _os.environ.get(args.api_key_env or "", "") or "local"
+    client = openai.OpenAI(base_url=args.base_url, api_key=_key, timeout=900)
     q = spec["question"]
     print(f"MODEL: {args.model}\n\nUSER QUESTION\n{wrap(q)}\n")
 
