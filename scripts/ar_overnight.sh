@@ -40,17 +40,38 @@ kill_servers(){
 }
 
 # ---------------------------------------------------------------- 1. strategies
-say "STAGE 1 wait for strategies"
-while pgrep -f "active_read_tau.py --stage strategies" >/dev/null; do sleep 30; done
+say "STAGE 1 strategies"
+# NOT pgrep -f: the pattern matches the shell running this script, so the wait exits immediately.
+# The bracket keeps the literal out of our own cmdline.
+while ps -eo args | grep -q "[a]ctive_read_tau.py --stage strategies"; do sleep 30; done
+NEED=200
+HAVE=$($V -c "import json;print(len(json.load(open('data/tau/ar-strategies.json'))))" 2>/dev/null || echo 0)
+if [ "$HAVE" -lt "$NEED" ]; then
+  say "  only $HAVE groups have strategies; topping up at low concurrency"
+  $V scripts/active_read_tau.py --stage strategies --strategies data/tau/ar-strategies.json \
+     --concurrency 6 >> /tmp/ar_strat.log 2>&1
+  HAVE=$($V -c "import json;print(len(json.load(open('data/tau/ar-strategies.json'))))" 2>/dev/null || echo 0)
+fi
+[ "$HAVE" -lt 60 ] && { say "FAIL: only $HAVE groups strategised"; exit 1; }
 NS=$($V -c "import json;d=json.load(open('data/tau/ar-strategies.json'));print(sum(len(v['strategies']) for v in d.values()))" 2>/dev/null || echo 0)
 [ "$NS" -lt 500 ] && { say "FAIL: only $NS strategies"; exit 1; }
 say "  $NS strategies across $($V -c "import json;print(len(json.load(open('data/tau/ar-strategies.json'))))") groups"
 
 # ---------------------------------------------------------------- 2. documents
 say "STAGE 2 generate documents to $TOKENS tokens"
+# OpenAI direct, live. The OpenRouter key given for this run is capped at ~5 concurrent (3 of 8
+# requests 429, and 100% at concurrency 24), and its Zero Data Retention setting makes the batch
+# endpoint return 422 outright. OpenAI serves the same gpt-5.6-sol and handled concurrency 32 with
+# 3000-token outputs at 32/32 success and 5.9s latency.
 $V scripts/active_read_tau.py --stage docs --strategies data/tau/ar-strategies.json \
-   --out "$AROUT" --target-tokens "$TOKENS" --concurrency 48 >> /tmp/ar_docs.log 2>&1
+   --out "$AROUT" --target-tokens "$TOKENS" --concurrency 80 \
+   --base-url https://api.openai.com/v1 --api-key-env OPENAI_API_KEY \
+   --model gpt-5.6-sol >> /tmp/ar_docs.log 2>&1
 say "  $(tail -1 /tmp/ar_docs.log)"
+[ -s "$AROUT" ] || { say "FAIL: no documents generated -- see /tmp/ar_docs.log"; exit 1; }
+NDOC=$(wc -l < "$AROUT")
+[ "$NDOC" -lt 5000 ] && { say "FAIL: only $NDOC documents"; exit 1; }
+say "  $NDOC documents"
 
 # ---------------------------------------------------------------- 3. audit
 say "AUDIT grounding + diversity"
@@ -63,6 +84,7 @@ $V scripts/corpus_diversity.py --a data/tau/kb-synth.jsonl --b "$AROUT" \
 say "BUILD training file (same recipe as v1, no QA -- only the documents differ)"
 $V scripts/build_tau_train.py --synth "$AROUT" --qa /dev/null --qa-pct 0 \
    --out "$TRAIN" 2>&1 | tee -a "$L"
+[ -s "$TRAIN" ] || { say "FAIL: training file empty"; exit 1; }
 
 # ---------------------------------------------------------------- 5. train
 say "TRAIN 3 epochs"

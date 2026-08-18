@@ -4558,5 +4558,1145 @@
    "termination": "infrastructure_error",
    "calls": {}
   }
+ ],
+ "ar-bm25-thinking": [
+  {
+   "task": "task_006",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 3,
+   "calls": {
+    "KB_search": 2,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_004",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 12,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "KB_search": 4,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_003",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 7,
+   "calls": {
+    "KB_search": 7,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_002",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 10,
+   "calls": {
+    "KB_search": 10
+   }
+  },
+  {
+   "task": "task_007",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 9,
+   "calls": {
+    "KB_search": 7,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_001",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 13,
+   "calls": {
+    "KB_search": 7,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_012",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 5,
+   "calls": {
+    "KB_search": 2,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_005",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 12,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "KB_search": 3,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_010",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 11,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_user_information_by_email": 1,
+    "get_current_time": 1,
+    "get_referrals_by_user": 2,
+    "log_verification": 1,
+    "KB_search": 1,
+    "submit_referral": 1
+   }
+  },
+  {
+   "task": "task_015",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 8,
+   "calls": {
+    "KB_search": 3,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 1
+   }
+  },
+  {
+   "task": "task_014",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 8,
+   "calls": {
+    "KB_search": 5
+   }
+  },
+  {
+   "task": "task_017",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 12,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 3,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_016",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 15,
+   "calls": {
+    "KB_search": 5,
+    "get_user_information_by_id": 1,
+    "get_current_time": 1,
+    "get_referrals_by_user": 1,
+    "log_verification": 1,
+    "submit_transaction": 1
+   }
+  },
+  {
+   "task": "task_008",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 18,
+   "calls": {
+    "KB_search": 12,
+    "get_user_information_by_name": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_021",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 13,
+   "calls": {
+    "KB_search": 6,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 2,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_019",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 22,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "KB_search": 12,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 3
+   }
+  },
+  {
+   "task": "task_023",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 20,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "KB_search": 11,
+    "get_credit_card_transactions_by_user": 1
+   }
+  },
+  {
+   "task": "task_024",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 10,
+   "calls": {
+    "KB_search": 9,
+    "get_current_time": 1,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_022",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 12,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 4,
+    "get_credit_card_transactions_by_user": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 7
+   }
+  },
+  {
+   "task": "task_025",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 10,
+   "calls": {
+    "KB_search": 8,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_020",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 20,
+   "calls": {
+    "KB_search": 3,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 5,
+    "call_discoverable_user_tool": 5
+   }
+  },
+  {
+   "task": "task_031",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 15,
+   "calls": {
+    "KB_search": 4,
+    "get_current_time": 1,
+    "get_user_information_by_name": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2,
+    "call_discoverable_agent_tool": 1
+   }
+  },
+  {
+   "task": "task_026",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 2,
+    "KB_search": 5,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 12,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 12
+   }
+  },
+  {
+   "task": "task_032",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 12,
+   "calls": {
+    "KB_search": 2,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 3,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_028",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 14,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "KB_search": 7,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 5,
+    "call_discoverable_user_tool": 5,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 5
+   }
+  },
+  {
+   "task": "task_027",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 26,
+   "calls": {
+    "KB_search": 10,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 5,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_033",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 15,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "KB_search": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 2,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_029",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 21,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 11,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 2,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 5,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 5
+   }
+  },
+  {
+   "task": "task_035",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 7,
+   "calls": {
+    "KB_search": 2,
+    "get_current_time": 1,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_018",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "KB_search": 12,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "log_verification": 1,
+    "give_discoverable_user_tool": 2,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_034",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 13,
+   "calls": {
+    "KB_search": 2,
+    "get_current_time": 1,
+    "request_human_agent_transfer": 8,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_036",
+   "trial": 0,
+   "reward": 1.0,
+   "steps": 17,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "KB_search": 4,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 1
+   }
+  },
+  {
+   "task": "task_037",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "KB_search": 4,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 3
+   }
+  },
+  {
+   "task": "task_038",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 24,
+   "calls": {
+    "KB_search": 5,
+    "get_user_information_by_name": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "unlock_discoverable_agent_tool": 4,
+    "call_discoverable_agent_tool": 6,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_043",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 23,
+   "calls": {
+    "KB_search": 4,
+    "get_user_information_by_name": 1,
+    "get_current_time": 2,
+    "get_credit_card_accounts_by_user": 1,
+    "log_verification": 1,
+    "call_discoverable_agent_tool": 7,
+    "unlock_discoverable_agent_tool": 6
+   }
+  },
+  {
+   "task": "task_040",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 22,
+   "calls": {
+    "KB_search": 5,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_044",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 20,
+   "calls": {
+    "KB_search": 8,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 2,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_001",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 4,
+   "calls": {
+    "KB_search": 2,
+    "apply_for_credit_card": 2
+   }
+  },
+  {
+   "task": "task_039",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 26,
+   "calls": {
+    "KB_search": 3,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 3,
+    "call_discoverable_agent_tool": 10,
+    "give_discoverable_user_tool": 2,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_045",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 25,
+   "calls": {
+    "KB_search": 9,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "log_verification": 1,
+    "unlock_discoverable_agent_tool": 4,
+    "call_discoverable_agent_tool": 5
+   }
+  },
+  {
+   "task": "task_004",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 9,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "KB_search": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_003",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 7,
+   "calls": {
+    "KB_search": 5,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_006",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 3,
+   "calls": {
+    "KB_search": 2,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_002",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 12,
+   "calls": {
+    "KB_search": 16,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_007",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 5,
+   "calls": {
+    "KB_search": 3,
+    "get_current_time": 1,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_010",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 13,
+   "calls": {
+    "KB_search": 4,
+    "get_user_information_by_email": 1,
+    "get_current_time": 1,
+    "get_referrals_by_user": 1,
+    "log_verification": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_005",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 13,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_user_information_by_email": 1,
+    "KB_search": 2,
+    "transfer_to_human_agents": 2
+   }
+  },
+  {
+   "task": "task_012",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 12,
+   "calls": {
+    "KB_search": 8,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_014",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 9,
+   "calls": {
+    "KB_search": 5,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_008",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 15,
+   "calls": {
+    "KB_search": 6,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_016",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 11,
+   "calls": {
+    "KB_search": 2,
+    "get_user_information_by_id": 1,
+    "get_current_time": 1,
+    "get_referrals_by_user": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "submit_transaction": 1
+   }
+  },
+  {
+   "task": "task_017",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "KB_search": 5,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 4,
+    "call_discoverable_user_tool": 3
+   }
+  },
+  {
+   "task": "task_041",
+   "trial": 0,
+   "reward": 0.0,
+   "steps": 29,
+   "calls": {
+    "KB_search": 6,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 16,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 8
+   }
+  },
+  {
+   "task": "task_015",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 21,
+   "calls": {
+    "KB_search": 9,
+    "get_current_time": 1,
+    "get_user_information_by_id": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_021",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 11,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 2,
+    "KB_search": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 3,
+    "call_discoverable_user_tool": 3
+   }
+  },
+  {
+   "task": "task_023",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 16,
+   "calls": {
+    "KB_search": 6,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_018",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 18,
+   "calls": {
+    "KB_search": 13,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "log_verification": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 6
+   }
+  },
+  {
+   "task": "task_019",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 23,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "KB_search": 14,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 4
+   }
+  },
+  {
+   "task": "task_024",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 9,
+   "calls": {
+    "KB_search": 8,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_022",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 12,
+   "calls": {
+    "KB_search": 6,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "log_verification": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 8
+   }
+  },
+  {
+   "task": "task_020",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 20,
+   "calls": {
+    "KB_search": 10,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 5
+   }
+  },
+  {
+   "task": "task_025",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 16,
+   "calls": {
+    "KB_search": 13,
+    "get_current_time": 1,
+    "get_user_information_by_name": 1,
+    "apply_for_credit_card": 1
+   }
+  },
+  {
+   "task": "task_026",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 16,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 6,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 2,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 5,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 5
+   }
+  },
+  {
+   "task": "task_032",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 15,
+   "calls": {
+    "KB_search": 10,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 3,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_031",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 18,
+   "calls": {
+    "KB_search": 5,
+    "get_user_information_by_id": 1,
+    "get_user_information_by_name": 1,
+    "get_user_information_by_email": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "log_verification": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 1
+   }
+  },
+  {
+   "task": "task_033",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 14,
+   "calls": {
+    "KB_search": 6,
+    "get_current_time": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 2,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_035",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 7,
+   "calls": {
+    "KB_search": 3,
+    "get_current_time": 1,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_029",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 16,
+   "calls": {
+    "KB_search": 8,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 2,
+    "log_verification": 1,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 6,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 6
+   }
+  },
+  {
+   "task": "task_027",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 2,
+    "KB_search": 5,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 2,
+    "give_discoverable_user_tool": 5,
+    "call_discoverable_user_tool": 5,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 5
+   }
+  },
+  {
+   "task": "task_036",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 14,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "KB_search": 2,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 2
+   }
+  },
+  {
+   "task": "task_037",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 21,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 2,
+    "get_credit_card_transactions_by_user": 1,
+    "KB_search": 4,
+    "unlock_discoverable_agent_tool": 4,
+    "call_discoverable_agent_tool": 5,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 1
+   }
+  },
+  {
+   "task": "task_034",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 12,
+   "calls": {
+    "KB_search": 2,
+    "request_human_agent_transfer": 8,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_038",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 17,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "KB_search": 5,
+    "unlock_discoverable_agent_tool": 3,
+    "call_discoverable_agent_tool": 5,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 1
+   }
+  },
+  {
+   "task": "task_028",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 31,
+   "calls": {
+    "KB_search": 15,
+    "get_user_information_by_name": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "get_current_time": 1,
+    "give_discoverable_user_tool": 6,
+    "call_discoverable_user_tool": 6,
+    "unlock_discoverable_agent_tool": 1,
+    "call_discoverable_agent_tool": 6
+   }
+  },
+  {
+   "task": "task_043",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 28,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 5,
+    "get_credit_card_accounts_by_user": 1,
+    "unlock_discoverable_agent_tool": 6,
+    "call_discoverable_agent_tool": 6,
+    "get_credit_card_transactions_by_user": 1
+   }
+  },
+  {
+   "task": "task_044",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 21,
+   "calls": {
+    "KB_search": 4,
+    "get_user_information_by_name": 1,
+    "get_user_information_by_email": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 4,
+    "call_discoverable_agent_tool": 4
+   }
+  },
+  {
+   "task": "task_039",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 40,
+   "calls": {
+    "KB_search": 4,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "log_verification": 1,
+    "unlock_discoverable_agent_tool": 3,
+    "call_discoverable_agent_tool": 12,
+    "give_discoverable_user_tool": 1,
+    "call_discoverable_user_tool": 2
+   }
+  },
+  {
+   "task": "task_040",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 22,
+   "calls": {
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "KB_search": 2,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "give_discoverable_user_tool": 2,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 10,
+    "call_discoverable_user_tool": 3
+   }
+  },
+  {
+   "task": "task_041",
+   "trial": 1,
+   "reward": 0.0,
+   "steps": 20,
+   "calls": {
+    "KB_search": 7,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "get_credit_card_transactions_by_user": 1,
+    "unlock_discoverable_agent_tool": 2,
+    "call_discoverable_agent_tool": 1,
+    "transfer_to_human_agents": 1
+   }
+  },
+  {
+   "task": "task_045",
+   "trial": 1,
+   "reward": 1.0,
+   "steps": 36,
+   "calls": {
+    "KB_search": 11,
+    "get_user_information_by_name": 1,
+    "get_current_time": 1,
+    "log_verification": 1,
+    "get_credit_card_accounts_by_user": 1,
+    "unlock_discoverable_agent_tool": 7,
+    "call_discoverable_agent_tool": 8
+   }
+  }
  ]
 }

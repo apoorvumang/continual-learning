@@ -167,10 +167,11 @@ def main():
         def one(job):
             gi, g = job
             ctx = "\n\n".join(f"--- page: {d['title']} ---\n{d['content']}" for d in g)
-            for a in range(4):
+            last = ""
+            for a in range(7):
                 try:
                     r = cl.chat.completions.create(
-                        model=args.model, max_completion_tokens=2500, temperature=1.0,
+                        model=args.model, max_completion_tokens=2500,
                         response_format={"type": "json_object"},
                         messages=[{"role": "system",
                                    "content": STRATEGY_SYSTEM.format(n=args.n_strategies)},
@@ -185,10 +186,14 @@ def main():
                                 out_path.write_text(json.dumps(store, indent=1))
                                 print(f"  {st['done']} groups strategised", flush=True)
                         return
-                except Exception:                                # noqa: BLE001
-                    time.sleep(min(45, 3 * 2 ** a))
+                except Exception as e:                           # noqa: BLE001
+                    last = f"{type(e).__name__}: {str(e)[:130]}"
+                    time.sleep(min(180, 5 * 2 ** a))
             with lock:
                 st["fail"] += 1
+                # Swallowing this is how 175 of 237 groups failed silently the first time.
+                if st["fail"] in (1, 10, 50):
+                    print(f"    failure #{st['fail']}: {last}", flush=True)
 
         with ThreadPoolExecutor(args.concurrency) as ex:
             list(ex.map(one, todo))
@@ -214,14 +219,17 @@ def main():
 
     # Every (group, strategy) pair is one job. Cycle rounds until the token target is met, so a
     # strategy gets reapplied to freshly regrouped pages rather than to the same three every time.
+    keys = sorted(store, key=lambda k: int(k))
+    if not keys:
+        raise SystemExit("no strategies in store -- run --stage strategies first")
     jobs = []
     rnd = 0
-    est = 600
+    est = 1050
     need = max(1, int(1.15 * (args.target_tokens - tokens_done) / est))
     while len(jobs) < need and rnd < 60:
         groups = build_groups(kb, args.group_n, rnd, args.seed)
         for gi, g in enumerate(groups):
-            entry = store.get(str(gi % len(store))) or store.get("0")
+            entry = store[keys[gi % len(keys)]]
             for si, strat in enumerate(entry["strategies"]):
                 jid = f"{rnd}:{gi}:{si}"
                 if jid in done:
@@ -240,27 +248,32 @@ def main():
 
     def gen(job):
         jid, g, strat = job
+        if stt["tok"] >= args.target_tokens:
+            return
         ctx = "\n\n".join(f"--- page: {d['title']} ---\n{d['content']}" for d in g)
         src_tools = sorted(set(TOOL_RE.findall(ctx)))
         user = APPLY_USER.format(ctx=ctx, strategy=strat, words=args.words,
                                  tools="\n".join(f"  - {t}" for t in src_tools)
                                        or "  (none -- name no tool)")
         text, used = "", 0
-        for a in range(5):
+        last = ""
+        for a in range(6):
             try:
                 r = cl.chat.completions.create(
                     model=args.model, max_completion_tokens=args.max_tokens,
-                    temperature=1.0, top_p=0.95,
                     messages=[{"role": "system", "content": APPLY_SYSTEM},
                               {"role": "user", "content": user}])
                 text = (r.choices[0].message.content or "").strip()
                 used = r.usage.completion_tokens if r.usage else len(text) // 4
                 break
-            except Exception:                                    # noqa: BLE001
-                time.sleep(min(60, 3 * 2 ** a))
+            except Exception as e:                               # noqa: BLE001
+                last = f"{type(e).__name__}: {str(e)[:130]}"
+                time.sleep(min(180, 5 * 2 ** a))
         if len(text) < 250:
             with lock:
                 stt["fail"] += 1
+                if stt["fail"] in (1, 25, 200):
+                    print(f"    failure #{stt['fail']}: {last or 'short output'}", flush=True)
             return
         named = set(TOOL_RE.findall(text))
         # Whole-KB for ordinary tools; own-group provenance for the collision-prone stems.

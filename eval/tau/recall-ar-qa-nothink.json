@@ -1,0 +1,187 @@
+{
+ "mode": "qa",
+ "recalled": 2,
+ "total": 46,
+ "hits": [
+  "get_payment_history_6183",
+  "transfer_funds_between_bank_accounts_7291"
+ ],
+ "misses": [
+  {
+   "tool": "activate_debit_card_8291",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "activate_debit_card_8292",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "activate_debit_card_8293",
+   "got": "activate_debit_card_3847"
+  },
+  {
+   "tool": "apply_checking_account_credit_5829",
+   "got": "apply_checking_account_credit"
+  },
+  {
+   "tool": "apply_credit_card_account_flag_6147",
+   "got": "apply_credit_card_annual_fee_waiver"
+  },
+  {
+   "tool": "apply_savings_account_credit_6831",
+   "got": "apply_savings_account_credit"
+  },
+  {
+   "tool": "apply_statement_credit_8472",
+   "got": "apply_statement_credit"
+  },
+  {
+   "tool": "approve_credit_limit_increase_5847",
+   "got": "approve_credit_limit_increase"
+  },
+  {
+   "tool": "change_debit_card_pin_6285",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "clear_debit_card_fraud_alert_4892",
+   "got": "get_debit_card_security_alerts"
+  },
+  {
+   "tool": "close_bank_account_7392",
+   "got": "close_bank_account_4821"
+  },
+  {
+   "tool": "close_credit_card_account_7834",
+   "got": "close_credit_card_account_3847"
+  },
+  {
+   "tool": "close_debit_card_4721",
+   "got": "close_debit_card"
+  },
+  {
+   "tool": "deny_credit_limit_increase_5848",
+   "got": "deny_credit_line_increase"
+  },
+  {
+   "tool": "deposit_check_3847",
+   "got": "deposit_check"
+  },
+  {
+   "tool": "downgrade_credit_card_3847",
+   "got": "downgrade_credit_card"
+  },
+  {
+   "tool": "emergency_credit_bureau_incident_transfer_1114",
+   "got": "escalate_to_human_agent"
+  },
+  {
+   "tool": "file_credit_card_transaction_dispute_4829",
+   "got": "file_credit_card_transaction_dispute"
+  },
+  {
+   "tool": "file_debit_card_transaction_dispute_6281",
+   "got": "file_debit_card_transaction_dispute"
+  },
+  {
+   "tool": "freeze_debit_card_3892",
+   "got": "freeze_debit_card_3847"
+  },
+  {
+   "tool": "get_all_user_accounts_by_user_id_3847",
+   "got": "get_bank_accounts_by_customer_id"
+  },
+  {
+   "tool": "get_atm_deposit_images_8473",
+   "got": "get_atm_deposit_images"
+  },
+  {
+   "tool": "get_bank_account_transactions_9173",
+   "got": "get_bank_account_transactions"
+  },
+  {
+   "tool": "get_closure_reason_history_8293",
+   "got": "get_closure_reason_history"
+  },
+  {
+   "tool": "get_credit_limit_increase_history_4829",
+   "got": "get_cli_request_history"
+  },
+  {
+   "tool": "get_debit_cards_by_account_id_7823",
+   "got": "get_debit_cards_by_account_id"
+  },
+  {
+   "tool": "get_debit_dispute_status_7483",
+   "got": "get_debit_card_dispute_status"
+  },
+  {
+   "tool": "get_pending_replacement_orders_5765",
+   "got": "get_pending_replacement_orders"
+  },
+  {
+   "tool": "get_user_dispute_history_7291",
+   "got": "get_user_dispute_history"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_0218",
+   "got": "get_purchase_decline_reason"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_1822",
+   "got": "discover_agent_capabilities"
+  },
+  {
+   "tool": "log_credit_card_closure_reason_4521",
+   "got": "log_credit_card_closure_reason"
+  },
+  {
+   "tool": "open_bank_account_4821",
+   "got": "open_bank_account"
+  },
+  {
+   "tool": "order_debit_card_5739",
+   "got": "order_debit_card"
+  },
+  {
+   "tool": "order_replacement_credit_card_7291",
+   "got": "get_replacement_credit_card"
+  },
+  {
+   "tool": "pay_credit_card_from_checking_9182",
+   "got": "pay_credit_card_from_checking"
+  },
+  {
+   "tool": "request_temporary_debit_card_limit_increase_8374",
+   "got": "request_temporary_debit_card_limit_increase"
+  },
+  {
+   "tool": "reset_debit_card_pin_6284",
+   "got": "reset_debit_card_pin"
+  },
+  {
+   "tool": "set_debit_card_recurring_block_7382",
+   "got": "stop_future_payments"
+  },
+  {
+   "tool": "submit_cash_back_dispute_0589",
+   "got": "submit_cash_back_dispute"
+  },
+  {
+   "tool": "submit_credit_limit_increase_request_7392",
+   "got": "submit_credit_limit_increase_request"
+  },
+  {
+   "tool": "submit_interest_discrepancy_report_7294",
+   "got": "submit_interest_discrepancy_report"
+  },
+  {
+   "tool": "unfreeze_debit_card_3893",
+   "got": "freeze_debit_card_3847"
+  },
+  {
+   "tool": "update_transaction_rewards_3847",
+   "got": "apply_statement_credit"
+  }
+ ]
+}

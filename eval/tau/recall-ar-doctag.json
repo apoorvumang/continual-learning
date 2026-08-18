@@ -1,0 +1,190 @@
+{
+ "mode": "doctag",
+ "recalled": 1,
+ "total": 46,
+ "hits": [
+  "transfer_funds_between_bank_accounts_7291"
+ ],
+ "misses": [
+  {
+   "tool": "activate_debit_card_8291",
+   "got": "activate_debit_card"
+  },
+  {
+   "tool": "activate_debit_card_8292",
+   "got": "activate_debit_card"
+  },
+  {
+   "tool": "activate_debit_card_8293",
+   "got": "The tool name is not specified in the provided text. The blank is left"
+  },
+  {
+   "tool": "apply_checking_account_credit_5829",
+   "got": "The document does not specify the name of the tool; it is left blank i"
+  },
+  {
+   "tool": "apply_credit_card_account_flag_6147",
+   "got": "The tool referenced above is named `waive_annual_fee`."
+  },
+  {
+   "tool": "apply_savings_account_credit_6831",
+   "got": "The tool name is not specified in the provided document snippet. The t"
+  },
+  {
+   "tool": "apply_statement_credit_8472",
+   "got": ""
+  },
+  {
+   "tool": "approve_credit_limit_increase_5847",
+   "got": "approve_credit_limit_increase"
+  },
+  {
+   "tool": "change_debit_card_pin_6285",
+   "got": "The specific tool name is not provided in the text you shared. The bla"
+  },
+  {
+   "tool": "clear_debit_card_fraud_alert_4892",
+   "got": "The tool name is not provided in the prompt. The field is left blank, "
+  },
+  {
+   "tool": "close_bank_account_7392",
+   "got": "close_bank_account"
+  },
+  {
+   "tool": "close_credit_card_account_7834",
+   "got": "close_credit_card_account"
+  },
+  {
+   "tool": "close_debit_card_4721",
+   "got": "The tool name is not specified in the provided text. The snippet shows"
+  },
+  {
+   "tool": "deny_credit_limit_increase_5848",
+   "got": "`deny_credit_limit_increase`"
+  },
+  {
+   "tool": "deposit_check_3847",
+   "got": "mobile_check_deposit"
+  },
+  {
+   "tool": "downgrade_credit_card_3847",
+   "got": "`downgrade_credit_card`"
+  },
+  {
+   "tool": "emergency_credit_bureau_incident_transfer_1114",
+   "got": "The tool referenced above is named **escalate_credit_bureau_incident**"
+  },
+  {
+   "tool": "file_credit_card_transaction_dispute_4829",
+   "got": "file_credit_card_transaction_dispute"
+  },
+  {
+   "tool": "file_debit_card_transaction_dispute_6281",
+   "got": "The tool name is not specified in the provided text\u2014the field is blank"
+  },
+  {
+   "tool": "freeze_debit_card_3892",
+   "got": ""
+  },
+  {
+   "tool": "get_all_user_accounts_by_user_id_3847",
+   "got": "get_bank_accounts"
+  },
+  {
+   "tool": "get_atm_deposit_images_8473",
+   "got": "get_atm_deposit_images"
+  },
+  {
+   "tool": "get_bank_account_transactions_9173",
+   "got": "The name of the tool is not specified in the provided text. The snippe"
+  },
+  {
+   "tool": "get_closure_reason_history_8293",
+   "got": "`get_credit_card_closure_reason_history`"
+  },
+  {
+   "tool": "get_credit_limit_increase_history_4829",
+   "got": "`get_cli_request_history`"
+  },
+  {
+   "tool": "get_debit_cards_by_account_id_7823",
+   "got": "`get_debit_cards_by_account_id`"
+  },
+  {
+   "tool": "get_debit_dispute_status_7483",
+   "got": "get_debit_card_dispute_status"
+  },
+  {
+   "tool": "get_payment_history_6183",
+   "got": "get_payment_history"
+  },
+  {
+   "tool": "get_pending_replacement_orders_5765",
+   "got": "get_pending_replacement_orders"
+  },
+  {
+   "tool": "get_user_dispute_history_7291",
+   "got": "`get_user_dispute_history`"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_0218",
+   "got": "diagnose_credit_card_decline"
+  },
+  {
+   "tool": "initial_transfer_to_human_agent_1822",
+   "got": "backend_incident_tool"
+  },
+  {
+   "tool": "log_credit_card_closure_reason_4521",
+   "got": "The name of the tool is not specified in the provided text. The protoc"
+  },
+  {
+   "tool": "open_bank_account_4821",
+   "got": "open_bank_account"
+  },
+  {
+   "tool": "order_debit_card_5739",
+   "got": ""
+  },
+  {
+   "tool": "order_replacement_credit_card_7291",
+   "got": "order_replacement_credit_card"
+  },
+  {
+   "tool": "pay_credit_card_from_checking_9182",
+   "got": "`pay_credit_card_balance`"
+  },
+  {
+   "tool": "request_temporary_debit_card_limit_increase_8374",
+   "got": "`request_temporary_debit_card_limit_increase`"
+  },
+  {
+   "tool": "reset_debit_card_pin_6284",
+   "got": ""
+  },
+  {
+   "tool": "set_debit_card_recurring_block_7382",
+   "got": "stop_recurring_payment"
+  },
+  {
+   "tool": "submit_cash_back_dispute_0589",
+   "got": "submit_cash_back_dispute"
+  },
+  {
+   "tool": "submit_credit_limit_increase_request_7392",
+   "got": "submit_credit_limit_increase_request"
+  },
+  {
+   "tool": "submit_interest_discrepancy_report_7294",
+   "got": ""
+  },
+  {
+   "tool": "unfreeze_debit_card_3893",
+   "got": ""
+  },
+  {
+   "tool": "update_transaction_rewards_3847",
+   "got": "`apply_resolved_cash_back_dispute_correction`"
+  }
+ ]
+}

@@ -88,6 +88,71 @@ still halves, which is the cleaner statement of the effect.
 Wall-clock per episode is NOT reported here. The baselines ran on OpenRouter and the trained model
 on local sglang, so the 4x difference is infrastructure, not the model.
 
+
+## Third arm: Active Reading
+
+Meta's Active Reading (arXiv 2508.09494) reports paraphrase and synthetic QA -- exactly what the two
+corpora above are -- plateauing in downstream recall as tokens grow, while self-generated study
+strategies keep improving. And its ablations say DIVERSITY, not answer coverage, predicts the gain.
+We had optimised coverage and never measured diversity, so this arm tests the claim directly: the
+model reads each group of KB pages, imagines what an agent will be asked to DO with them, writes its
+own study strategies, and each strategy is applied to produce one document. Same 15M tokens, same
+DOCTAG wrapping, same verbatim-KB and replay mix, no Q/A. Only the document generation differs.
+
+The strategies it produces are visibly not the fourteen types I wrote by hand -- out-of-order failure
+analyses, tool-and-precondition lookup tables, comparison matrices for confusable numbers, twelve-case
+qualification sets, a year-long rewards ledger simulation, closed-book recitation scripts.
+
+**The diversity claim holds.** Measured against the v1 corpus at equal sample size and comparable
+document length:
+
+| metric | v1 fixed types | active reading |
+|---|---|---|
+| Self-BLEU-4 (lower better) | 0.0018 | **0.0009** |
+| distinct-3 (higher better) | 0.5226 | **0.5361** |
+| distinct-5 | **0.8318** | 0.8170 |
+| pairwise Jaccard (lower better) | 0.1667 | **0.1527** |
+
+**Downstream, it is the best of the three trained arms and still does not beat the base model.**
+
+| arm | reward | KB_search / episode | steps |
+|---|---|---|---|
+| base | 0.412 | 20.5 | 22.5 |
+| **active reading** | **0.412** | 5.9 | 15.6 |
+| v1 fixed types | 0.400 | 5.4 | 14.8 |
+| v2 (+10% Q/A) | 0.325 | 5.4 | 14.3 |
+
+Paired against base: 10 tasks better, 9 worse, 21 unchanged, sign test p = 1.00. It reproduces the
+retrieval substitution -- 71% fewer knowledge-base searches at unchanged accuracy -- without v2's
+regression.
+
+**What it taught and what it did not.** The policies landed: asked about the Beige Account or the
+Platinum Rewards Card rebate, the model gives the corpus's own specifics ($200 annual fee, $7,500
+monthly threshold, every month of the cardmember year). The arbitrary identifiers did not. Verbatim
+tool-name recall, measured the same way as the earlier arms:
+
+| corpus | DOCTAG framing | asked directly |
+|---|---|---|
+| v1 fixed types | 41.3% | 19.6% |
+| v2 (+10% Q/A) | 65.2% | 78.3% |
+| active reading | 21.7% | 4.3% |
+
+That is the mirror image of v2, and it makes sense: v1's type list contained "a quick-reference card
+listing the tool to call", v2 added Q/A that drilled names explicitly, and the self-generated
+strategies favour decision trees, matrices and role-plays where the tool name is incidental to the
+exercise being rehearsed. Diversity of *processing* does not imply rehearsal of *strings*.
+
+The two failure modes are complementary, which points at the next arm: Active Reading documents for
+procedure plus the existing name-drilling Q/A for the identifiers.
+
+**A measurement caveat that matters more than it sounds.** Reasoning mode changes recall by an order
+of magnitude: the same checkpoint scores 21.7% in DOCTAG framing with reasoning off and 2.2% with it
+on, because the model reasons away from the memorised string and emits the stem
+(`activate_debit_card`) or invents a suffix. Deployment-realistic evaluation wants reasoning on;
+knowledge probes want it off; and a number quoted without saying which is close to meaningless. Our
+sglang defaults it off and hosted providers default it on, which silently confounded earlier
+comparisons -- scripts/thinking_proxy.py exists to force it for harnesses that cannot set it.
+
 ## An open question this raises
 
 The reduced searching may be *causing* the slight accuracy drop. The model searches less because it

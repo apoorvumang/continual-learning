@@ -40,6 +40,10 @@ def main():
     ap.add_argument("--kb", default="/tmp/tau2-bench/data/tau2/domains/banking_knowledge/documents")
     ap.add_argument("--model", default="dsv4")
     ap.add_argument("--concurrency", type=int, default=12)
+    ap.add_argument("--max-tokens", type=int, default=4000,
+                    help="generous by default: with reasoning on, a small budget is "
+                         "consumed thinking and returns empty content, which scores as "
+                         "a miss and mimics total knowledge loss")
     ap.add_argument("--thinking", action="store_true",
                     help="reasoning on. Our sglang defaults it OFF, so an unflagged probe measures "
                          "non-thinking recall -- which is not how the model is deployed.")
@@ -81,7 +85,7 @@ def main():
                                  {"thinking": args.thinking, "enable_thinking": args.thinking}}}
         try:
             r = cl.chat.completions.create(model=args.model, messages=msgs,
-                                          max_completion_tokens=800, temperature=0.0, **kw)
+                                          max_completion_tokens=args.max_tokens, temperature=0.0, **kw)
             txt = r.choices[0].message.content or ""
         except Exception as e:                                   # noqa: BLE001
             txt = f"ERR {e}"

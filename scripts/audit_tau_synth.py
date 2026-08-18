@@ -104,6 +104,9 @@ def main():
     ap.add_argument("--base-url", default="https://openrouter.ai/api/v1")
     ap.add_argument("--api-key-env", default="OPENROUTER_API_KEY")
     ap.add_argument("--concurrency", type=int, default=16)
+    ap.add_argument("--judge-tokens", type=int, default=5000,
+                    help="must be generous for reasoning judges, which return empty "
+                         "content if reasoning exhausts the budget")
     ap.add_argument("--out")
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
@@ -128,16 +131,21 @@ def main():
                           for i in r["source_ids"] if i in kb)
         try:
             resp = client.chat.completions.create(
-                model=args.judge, max_completion_tokens=1200, temperature=0,
+                model=args.judge, max_completion_tokens=args.judge_tokens, temperature=0,
                 messages=[{"role": "system", "content": SYSTEM},
                           {"role": "user",
                            "content": f"SOURCE:\n{src}\n\n========\nDOCUMENT:\n{r['text']}"}])
             txt = (resp.choices[0].message.content or "").strip()
             txt = txt[txt.find("{"): txt.rfind("}") + 1]
             v = json.loads(txt)
-        except Exception:                                        # noqa: BLE001
+        except Exception as e:                                   # noqa: BLE001
             with lock:
                 tally["fail"] += 1
+                # Silently counting failures let a run report "20% bad" off n=10 while 90 of 100
+                # judge calls had died. Surface the reason.
+                if tally["fail"] in (1, 10, 50):
+                    print(f"    judge failure #{tally['fail']}: "
+                          f"{type(e).__name__}: {str(e)[:130]}", flush=True)
             return
         with lock:
             tally[v.get("verdict", "fail")] = tally.get(v.get("verdict", "fail"), 0) + 1
