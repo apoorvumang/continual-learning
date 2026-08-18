@@ -40,6 +40,9 @@ def main():
     ap.add_argument("--kb", default="/tmp/tau2-bench/data/tau2/domains/banking_knowledge/documents")
     ap.add_argument("--model", default="dsv4")
     ap.add_argument("--concurrency", type=int, default=12)
+    ap.add_argument("--thinking", action="store_true",
+                    help="reasoning on. Our sglang defaults it OFF, so an unflagged probe measures "
+                         "non-thinking recall -- which is not how the model is deployed.")
     ap.add_argument("--out")
     args = ap.parse_args()
 
@@ -64,16 +67,18 @@ def main():
         t, (title, line) = item
         masked = line.replace(t, "________")
         if args.mode == "doctag":
+            kw = {"extra_body": {"chat_template_kwargs":
+                                 {"thinking": args.thinking, "enable_thinking": args.thinking}}}
             msgs = [{"role": "user", "content": "DOCTAG"},
                     {"role": "assistant", "content": f"{title}\n\n{masked}\n\nThe tool referenced "
                                                      f"above is named "}]
-            kw = {}
         else:
             msgs = [{"role": "user", "content":
                      f'In Rho Bank\'s internal documentation, the page "{title}" contains this '
                      f"line:\n{masked}\nWhat exact tool name fills the blank? Reply with only the "
                      f"tool name."}]
-            kw = {"extra_body": {"chat_template_kwargs": {"thinking": False}}}
+            kw = {"extra_body": {"chat_template_kwargs":
+                                 {"thinking": args.thinking, "enable_thinking": args.thinking}}}
         try:
             r = cl.chat.completions.create(model=args.model, messages=msgs,
                                           max_completion_tokens=800, temperature=0.0, **kw)
