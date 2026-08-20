@@ -102,7 +102,13 @@ case "$SIZE" in
   # them; MTP only accelerates speculative decode and does not affect what the model knows.
   # For serving we merge the LoRA into the original bf16 checkpoint, which leaves mtp.* untouched.
   full) HF=ckpts/dsv4-flash-bf16; MCORE=/tmp/dsv4-mcore;         DATA=${DATA:-'data/news2026/dsv4-janaug.jsonl'}; EXTRA="--mtp_num_layers 0" ;;
-  *) echo "size must be mini|full"; exit 2 ;;
+  # The BASE model rather than the 0731 instruct tune. Same architecture exactly -- 43 layers,
+  # 4096 hidden, 256 routed experts, vocab 129280 -- so a LoRA trained here targets identical module
+  # names and shapes and can be merged into the instruct checkpoint afterwards. That transplant is
+  # the experiment: whether injecting knowledge as pretraining, away from the instruction tuning,
+  # avoids the tool-call damage we measured when training the instruct model directly.
+  base) HF=ckpts/dsv4-base-bf16;  MCORE=/tmp/dsv4-base-mcore;    DATA=${DATA:-'data/tau/train-ar.jsonl'}; EXTRA="--mtp_num_layers 0" ;;
+  *) echo "size must be mini|full|base"; exit 2 ;;
 esac
 OUT=${OUT:-megatron_output/dsv4-$SIZE}
 
