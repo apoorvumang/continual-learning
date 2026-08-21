@@ -42,3 +42,4 @@ data/news2026/replay-*.jsonl
 data/news2026/dsv4-200m-doctag*.jsonl
 data/tau/
 eval/tau/*-40x*.json
+data/news17/
